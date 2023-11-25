@@ -1,13 +1,7 @@
 <template>
-  <header>
-      <nav>
-        <a class="link" href="/">Main link</a>
-      </nav>
-  </header>
-
-  <RouterView />
+  <RouterView/>
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router'
+import {RouterView} from 'vue-router'
 </script>
