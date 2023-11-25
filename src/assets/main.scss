@@ -6,6 +6,37 @@
 // Путь до public
 $public: "../../public";
 
+// Подключение шрифтов
+@font-face {
+  font-family: 'Articulat CF';
+  src: local('Articulat CF'), url('#{$public}/fonts/ArticulatCF-Regular.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Articulat CF';
+  src: local('Articulat CF'), url('#{$public}/fonts/ArticulatCF-Medium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Articulat CF';
+  src: local('Articulat CF'), url('#{$public}/fonts/ArticulatCF-DemiBold.otf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Atyp Display';
+  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Atyp Display';
+  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Light.ttf');
+  font-weight: 300;
+}
+
 // Scrollbar + selection
 ::selection {
   background: rgba(1, 183, 255, 0.7);
@@ -14,20 +45,25 @@ $public: "../../public";
 *::-webkit-scrollbar {
   width: 12px; /* ширина scrollbar */
 }
+
 *::-webkit-scrollbar-track {
   background: #fff; /* цвет дорожки */
 }
+
 *::-webkit-scrollbar-thumb {
   background-color: #b1b1b1; /* цвет плашки */
   &:hover {
     background-color: #777777;
   }
+
   &:active {
     background-color: #4b4b4b;
   }
+
   border-radius: 5px;
   border: 2px solid #fff; /* padding вокруг плашки */
 }
+
 @media (min-width: 968px) {
   ::-webkit-scrollbar-button {
     height: 15px;
@@ -111,4 +147,12 @@ textarea {
 // Для wow.js
 .wow {
   visibility: hidden;
+}
+
+body {
+  font-family: Articulat CF;
+  color: #052E3E;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
 }
