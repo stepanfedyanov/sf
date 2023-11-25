@@ -2,156 +2,24 @@
 
 // Импорт дополнительных файлов стилей и настроек
 @import "./mixins/adaptive-value.scss";
-
-// Путь до public
-$public: "../../public";
-
+// Подключение переменных
+@import "./variables";
 // Подключение шрифтов
-@font-face {
-  font-family: 'Articulat CF';
-  src: local('Articulat CF'), url('#{$public}/fonts/ArticulatCF-Regular.otf');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Articulat CF';
-  src: local('Articulat CF'), url('#{$public}/fonts/ArticulatCF-Medium.otf');
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: 'Articulat CF';
-  src: local('Articulat CF'), url('#{$public}/fonts/ArticulatCF-DemiBold.otf');
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: 'Atyp Display';
-  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Regular.ttf');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Atyp Display';
-  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Light.ttf');
-  font-weight: 300;
-}
-
+@import "./fonts";
 // Scrollbar + selection
-::selection {
-  background: rgba(1, 183, 255, 0.7);
-}
-
-*::-webkit-scrollbar {
-  width: 12px; /* ширина scrollbar */
-}
-
-*::-webkit-scrollbar-track {
-  background: #fff; /* цвет дорожки */
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #b1b1b1; /* цвет плашки */
-  &:hover {
-    background-color: #777777;
-  }
-
-  &:active {
-    background-color: #4b4b4b;
-  }
-
-  border-radius: 5px;
-  border: 2px solid #fff; /* padding вокруг плашки */
-}
-
-@media (min-width: 968px) {
-  ::-webkit-scrollbar-button {
-    height: 15px;
-    width: 10px;
-  }
-  ::-webkit-scrollbar-button:vertical:increment {
-    background: url("#{$public}/icons/arrow-down.svg") center no-repeat;
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-  ::-webkit-scrollbar-button:vertical:decrement {
-    background: url("#{$public}/icons/arrow.svg") center no-repeat;
-  }
-}
+@import "./scrollbar&selection";
 
 // Настройка для миксинов
 $maxWidth: 1920;
 $maxWidthContainer: 1200;
 
 // Начальная настройка проекта
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
+@import "./start";
 
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  font-weight: 400;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  display: inline-block;
-  color: inherit;
-  text-decoration: none;
-}
-
-p {
-  margin: 0;
-}
-
-input,
-button,
-textarea {
-  font-family: inherit;
-}
-
-// Вспомогательный класс, чтобы скрывать элемент из поля зрения, например, при стилизации чекбоксов
-.vhidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-// Для wow.js
-.wow {
-  visibility: hidden;
-}
-
+// Общие стили
 body {
   font-family: Articulat CF;
-  color: #052E3E;
+  color: #052e3e;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;

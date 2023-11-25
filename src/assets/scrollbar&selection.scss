@@ -1,0 +1,41 @@
+// Scrollbar + selection
+::selection {
+  background: rgba(1, 183, 255, 0.7);
+}
+
+*::-webkit-scrollbar {
+  width: 12px; /* ширина scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: #fff; /* цвет дорожки */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #b1b1b1; /* цвет плашки */
+  &:hover {
+    background-color: #777777;
+  }
+
+  &:active {
+    background-color: #4b4b4b;
+  }
+
+  border-radius: 5px;
+  border: 2px solid #fff; /* padding вокруг плашки */
+}
+
+@media (min-width: 968px) {
+  ::-webkit-scrollbar-button {
+    height: 15px;
+    width: 10px;
+  }
+  ::-webkit-scrollbar-button:vertical:increment {
+    background: url("#{$public}/icons/arrow-down.svg") center no-repeat;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  ::-webkit-scrollbar-button:vertical:decrement {
+    background: url("#{$public}/icons/arrow.svg") center no-repeat;
+  }
+}
