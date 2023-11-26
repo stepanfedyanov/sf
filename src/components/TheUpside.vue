@@ -3,7 +3,7 @@ import TheContainer from './TheContainer.vue'
 </script>
 
 <template>
-  <section class="upside wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+  <section class="upside wow animate__animated animate__fadeInDown" data-wow-delay="0.8s" data-wow-duration="1.8s">
     <TheContainer>
       <div class="upside__inner">
         <h2 class="upside__title">Join the upside</h2>

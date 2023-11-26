@@ -5,7 +5,7 @@ defineProps({
 </script>
 
 <template>
-  <a class="logo wow animate__animated animate__fadeIn" data-wow-delay=".4s" href="/">
+  <a class="logo animate__animated animate__fadeIn" data-wow-delay=".4s" href="/">
     <svg
       class="logo__img"
       width="146"

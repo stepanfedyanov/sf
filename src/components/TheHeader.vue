@@ -17,6 +17,7 @@ import TheNavigation from './TheNavigation.vue'
   max-width: 1080px;
   width: 100%;
   position: fixed;
+  z-index: 110;
   top: 38px;
   left: 50%;
   transform: translateX(-50%);
