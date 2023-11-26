@@ -7,13 +7,32 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
 <template>
   <nav class="header__nav">
     <ul class="header__nav-list">
-      <li class="header__nav-item" v-for="item in items" :key="item">
+      <li
+        class="header__nav-item wow animate__animated animate__fadeIn"
+        :data-wow-delay="`${0.2 * idx}s`"
+        v-for="(item, idx) in items"
+        :key="item"
+      >
         <a class="header__nav-item-link" href="/">{{ item }}</a>
       </li>
     </ul>
     <div class="header__btns">
-      <TheButton color="white" size="small"> Log in </TheButton>
-      <TheButton color="black" size="small"> Register </TheButton>
+      <TheButton
+        class="wow animate__animated animate__fadeIn"
+        data-wow-delay=".2s"
+        color="white"
+        size="small"
+      >
+        Log in
+      </TheButton>
+      <TheButton
+        class="wow animate__animated animate__fadeIn"
+        data-wow-delay=".4s"
+        color="black"
+        size="small"
+      >
+        Register
+      </TheButton>
     </div>
   </nav>
 </template>

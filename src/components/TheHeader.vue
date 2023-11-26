@@ -4,7 +4,7 @@ import TheNavigation from './TheNavigation.vue'
 </script>
 
 <template>
-  <header class="header">
+  <header class="header animate__animated animate__fadeIn">
     <div class="header__inner">
       <TheLogotype fill="#052E3E" />
       <TheNavigation />

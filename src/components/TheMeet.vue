@@ -7,11 +7,11 @@ import TheContainer from './TheContainer.vue'
   <section class="meet">
     <TheContainer>
       <div class="meet__inner">
-        <h1 class="meet__title">Meet Wealth Management 3.0</h1>
-        <p class="meet__text">
+        <h1 class="meet__title wow animate__animated animate__fadeIn" data-wow-delay="0.6s">Meet Wealth Management 3.0</h1>
+        <p class="meet__text wow animate__animated animate__fadeIn" data-wow-delay="0.8s">
           Global digital wealth management ecosystem, built by professional community
         </p>
-        <TheButton color="white" size="big">Get early acceses</TheButton>
+        <TheButton class="wow animate__animated animate__fadeIn" data-wow-delay="1s" color="white" size="big">Get early acceses</TheButton>
       </div>
     </TheContainer>
   </section>

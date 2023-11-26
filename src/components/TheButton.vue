@@ -21,7 +21,7 @@ defineProps({
 
 <style lang="scss">
 .btn {
-  font-family: Inter;
+  font-family: 'Articulat CF';
   cursor: pointer;
   outline: none;
   border-radius: 34px;
@@ -31,6 +31,7 @@ defineProps({
   span {
     position: relative;
     z-index: 3;
+    top: 1px;
   }
   &::before {
     content: '';
@@ -77,7 +78,6 @@ defineProps({
     line-height: calc(24 / 14);
     font-size: 14px;
     padding: 10px 50px;
-    letter-spacing: -0.21px;
   }
 }
 </style>

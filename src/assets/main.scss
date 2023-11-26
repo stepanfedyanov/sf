@@ -6,6 +6,8 @@
 @import "./fonts";
 // Scrollbar + selection
 @import "./scrollbar&selection";
+// Анимации
+@import "animate.css";
 
 // Настройка для миксинов
 $maxWidth: 1920;
@@ -16,7 +18,7 @@ $maxWidthContainer: 1200;
 
 // Общие стили
 body {
-  font-family: 'Articulat CF', sans-serif;
+  font-family: "Articulat CF", sans-serif;
   color: #052e3e;
   font-size: 13px;
   font-style: normal;
