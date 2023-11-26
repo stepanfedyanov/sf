@@ -15,7 +15,6 @@ $maxWidthContainer: 1200;
 
 h1 {
   @include adaptive-value('font-size', 35, 12, 1);
-  font-weight: bold;
   text-align: center;
 }
 </style>
