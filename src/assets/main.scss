@@ -1,7 +1,5 @@
 @import "normalize.css";
 
-// Импорт дополнительных файлов стилей и настроек
-@import "./mixins/adaptive-value.scss";
 // Подключение переменных
 @import "./variables";
 // Подключение шрифтов
@@ -18,7 +16,7 @@ $maxWidthContainer: 1200;
 
 // Общие стили
 body {
-  font-family: Articulat CF;
+  font-family: 'Articulat CF', sans-serif;
   color: #052e3e;
   font-size: 13px;
   font-style: normal;
