@@ -8,7 +8,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
   <nav class="header__nav">
     <ul class="header__nav-list">
       <li
-        class="header__nav-item wow animate__animated animate__fadeIn"
+        class="header__nav-item animate__animated animate__fadeIn"
         :data-wow-delay="`${0.2 * idx}s`"
         v-for="(item, idx) in items"
         :key="item"
@@ -18,7 +18,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     </ul>
     <div class="header__btns">
       <TheButton
-        class="wow animate__animated animate__fadeIn"
+        class="animate__animated animate__fadeIn"
         data-wow-delay=".2s"
         color="white"
         size="small"
@@ -26,7 +26,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
         Log in
       </TheButton>
       <TheButton
-        class="wow animate__animated animate__fadeIn"
+        class="animate__animated animate__fadeIn"
         data-wow-delay=".4s"
         color="black"
         size="small"

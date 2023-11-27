@@ -28,11 +28,9 @@ import TheUpside from './TheUpside.vue'
   background: #a5cce0;
   padding-bottom: 60px;
   position: relative;
-  overflow: hidden;
   &__inner {
     position: relative;
     z-index: 10;
-    overflow: hidden;
   }
 }
 </style>

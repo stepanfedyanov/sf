@@ -1,10 +1,11 @@
 <script setup>
 import TheJoinSection from '../components/TheJoinSection.vue'
+import TheHowSection from '../components/TheHowSection.vue'
 </script>
-
 
 <template>
   <main>
-    <TheJoinSection/>
+    <TheJoinSection />
+    <TheHowSection />
   </main>
 </template>
