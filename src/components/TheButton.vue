@@ -15,7 +15,9 @@ defineProps({
       big: size === 'big'
     }"
   >
-    <span><slot /></span>
+    <span>
+      <slot />
+    </span>
   </button>
 </template>
 
