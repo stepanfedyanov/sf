@@ -17,9 +17,8 @@ import TheContainer from './TheContainer.vue'
 @import '../assets/mixins/adaptive-value.scss';
 .upside {
   margin-top: 271px;
-  &__inner {
-  }
   &__title {
+    font-family: 'Atyp Display', sans-serif;
     color: #a5cce0;
     text-align: center;
     font-size: 160px;

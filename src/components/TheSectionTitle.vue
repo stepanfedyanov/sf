@@ -12,7 +12,7 @@ defineProps({
 
 <style lang="scss">
 .section-title {
-  font-family: 'Atyp Display';
+  font-family: 'Atyp Display', sans-serif;
   text-align: center;
   font-size: 96px;
   line-height: normal;

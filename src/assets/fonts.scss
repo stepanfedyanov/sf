@@ -1,30 +1,30 @@
 // Подключение шрифтов
 @font-face {
   font-family: 'Articulat CF';
-  src: local('Articulat CF'), url('#{$public}/fonts/ArticulatCF-Regular.otf');
+  src: local('0'), url('#{$public}/fonts/ArticulatCF-Regular.otf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Articulat CF';
-  src: local('Articulat CF'), url('#{$public}/fonts/ArticulatCF-Medium.otf');
+  src: local('0'), url('#{$public}/fonts/ArticulatCF-Medium.otf');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Articulat CF';
-  src: local('Articulat CF'), url('#{$public}/fonts/ArticulatCF-DemiBold.otf');
+  src: local('0'), url('#{$public}/fonts/ArticulatCF-DemiBold.otf');
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Atyp Display';
-  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Regular.otf');
+  src: local('0'), url('#{$public}/fonts/AtypDisplay-Regular.otf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Atyp Display';
-  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Light.otf');
+  src: local('0'), url('#{$public}/fonts/AtypDisplay-Light.otf');
   font-weight: 300;
 }

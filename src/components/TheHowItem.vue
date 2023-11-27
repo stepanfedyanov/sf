@@ -47,7 +47,7 @@ defineProps({
     margin-bottom: 47px;
   }
   &__item-title {
-    font-family: 'Atyp Display';
+    font-family: 'Atyp Display', sans-serif;
     font-size: 64px;
     line-height: calc(58 / 64);
     max-width: 360px;
