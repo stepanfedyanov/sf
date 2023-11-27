@@ -19,12 +19,12 @@
 
 @font-face {
   font-family: 'Atyp Display';
-  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Regular.ttf');
+  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Regular.otf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Atyp Display';
-  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Light.ttf');
+  src: local('Atyp Display'), url('#{$public}/fonts/AtypDisplay-Light.otf');
   font-weight: 300;
 }

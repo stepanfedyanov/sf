@@ -1,9 +1,10 @@
+<script setup>
+import TheJoinSection from '../components/TheJoinSection.vue'
+</script>
+
+
 <template>
   <main>
-    <TheMainBlock/>
+    <TheJoinSection/>
   </main>
 </template>
-
-<script setup>
-import TheMainBlock from '../components/TheMainBlock.vue'
-</script>
