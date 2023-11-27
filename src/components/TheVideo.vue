@@ -5,7 +5,7 @@
     <video
       class="intro__video"
       src="https://v3.cdnpk.net/videvo_files/video/free/video0465/large_watermarked/_import_6131b9db2c1673.98240360_preview.mp4"
-      poster="@/../public/img/TheIntroSection/video-poster.jpg"
+      poster="/public/img/TheIntroSection/video-poster.jpg"
     ></video>
     <div class="intro__video-btn-wrapper">
       <svg

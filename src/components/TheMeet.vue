@@ -26,7 +26,7 @@ import TheContainer from './TheContainer.vue'
     }
   }
   &__title {
-    font-family: 'Atyp Display';
+    font-family: 'Atyp Display', sans-serif;
     font-size: 70px;
     line-height: calc(78 / 70);
     letter-spacing: 1.4px;

@@ -15,13 +15,14 @@ defineProps({
       big: size === 'big'
     }"
   >
-    <span><slot /></span>
+    <span>
+      <slot />
+    </span>
   </button>
 </template>
 
 <style lang="scss">
 .btn {
-  font-family: 'Articulat CF';
   cursor: pointer;
   outline: none;
   border-radius: 34px;
