@@ -36,7 +36,7 @@ import TheContainer from './TheContainer.vue'
       left: -125px;
       width: 1140px;
       height: 314px;
-      background: url('#{$public}/img/TheJoinSection/text-cloud.png');
+      background: url('/img/TheJoinSection/text-cloud.png');
     }
   }
 }
