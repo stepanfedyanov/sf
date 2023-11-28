@@ -2,7 +2,10 @@
 import TheSliderButton from './TheSliderButton.vue'
 import { ref } from 'vue'
 const swiper = ref(null)
-const sliders = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const sliders = [
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit numquam quisquam unde cumque exercitationem vitae reiciendis vero quia a laborum dicta, excepturi debitis eos sit sequi! Esse distinctio tenetur consequuntur?',
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium qui nulla molestias architecto maiores quia ad quis neque officiis, fugit dolor iure?',
+]
 </script>
 
 <template>
@@ -15,11 +18,12 @@ const sliders = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         }
         `
       ]"
+      :effect="'fade'"
+      :fadeEffect="{ crossFade: true }"
       class="swiper video__swiper"
       ref="swiper"
       :speed="900"
       :grabCursor="true"
-      :spaceBetween='300'
       :autoplay="{
         delay: 2500,
         disableOnInteraction: false
@@ -32,8 +36,7 @@ const sliders = [1, 2, 3, 4, 5, 6, 7, 8, 9]
       >
         <blockquote class="video-slide__quote">
           <p class="video-slide__text">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-            tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            {{ slider }}
           </p>
           <cite class="video-slide__author">Ilya Oprenko, CEO Skyfort</cite>
         </blockquote>
