@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="join__upper-clouds" src="img/TheJoinSection/upper-clouds.png" alt="" />
+    <img class="join__upper-clouds" src="/img/TheJoinSection/upper-clouds.png" alt="" />
     <div class="join__buildings-wrapper">
       <img class="join__buildings" src="/img/TheJoinSection/buildings.png" alt="" />
     </div>

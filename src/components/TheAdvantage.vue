@@ -83,6 +83,11 @@ const swiper = ref(null)
                     />
                   </svg>
                 </a>
+                <div class="adv-slide__tag" v-if="card.tag.length > 0">
+                  <span>
+                    {{ card.tag }}
+                  </span>
+                </div>
                 <img
                   class="adv-slide__img"
                   :src="card.imgSrc"
@@ -189,18 +194,16 @@ const swiper = ref(null)
   &__swiper-button-next {
     position: absolute;
     top: 50%;
-    transform: translateX(-50%);
     right: -64px;
     z-index: 5;
-    transform: translateX(100%);
+    transform: translateX(100%) translateY(-50%);
   }
   &__swiper-button-prev {
     position: absolute;
     top: 50%;
-    transform: translateX(-50%);
     left: -64px;
     z-index: 5;
-    transform: translateX(-100%);
+    transform: translateX(-100%) translateY(-50%);
   }
 }
 
@@ -211,6 +214,23 @@ const swiper = ref(null)
   flex-direction: column;
   &__inner {
     flex: 0 1 100% !important;
+  }
+  &__tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    top: 26px;
+    left: 19px;
+    padding: 8px 19px;
+    border-radius: 53px;
+    background: #fff;
+    span {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: -0.12px;
+      transform: translateY(1px);
+    }
   }
   &__link {
     position: absolute;
