@@ -3,10 +3,10 @@ import TheContainer from './TheContainer.vue'
 </script>
 
 <template>
-  <section class="upside wow animate__animated animate__fadeInDown" data-wow-delay="0.8s" data-wow-duration="1.8s">
+  <section class="upside">
     <TheContainer>
       <div class="upside__inner">
-        <h2 class="upside__title">Join the upside</h2>
+        <h2 class="upside__title wow animate__animated animate__fadeInUpBig" data-wow-delay=".3s">Join the upside</h2>
       </div>
     </TheContainer>
   </section>
@@ -16,7 +16,6 @@ import TheContainer from './TheContainer.vue'
 @import '../assets/variables.scss';
 @import '../assets/mixins/adaptive-value.scss';
 .upside {
-  margin-top: 271px;
   &__inner {
   }
   &__title {
@@ -29,16 +28,16 @@ import TheContainer from './TheContainer.vue'
     position: relative;
     user-select: none;
     pointer-events: none;
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: 1;
-      top: 50px;
-      left: -125px;
-      width: 1140px;
-      height: 314px;
-      background: url('#{$public}/img/TheJoinSection/text-cloud.png');
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   z-index: 1;
+    //   top: 50px;
+    //   left: -125px;
+    //   width: 1140px;
+    //   height: 314px;
+    //   background: url('#{$public}/img/TheJoinSection/text-cloud.png');
+    // }
   }
 }
 </style>
