@@ -5,7 +5,6 @@ import TheIntroSection from '../components/TheIntroSection.vue'
 import TheAdvantagesSection from '../components/TheAdvantagesSection.vue'
 import TheFAQSection from '../components/TheFAQSection.vue'
 
-import 'swiper/css'
 import { register } from 'swiper/element/bundle'
 register();
 </script>

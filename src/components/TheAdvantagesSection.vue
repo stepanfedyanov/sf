@@ -15,7 +15,7 @@ const sections = [
         desc: '',
         title: 'Wealth Management',
         href: '',
-        imgSrc: '/img/TheAdvantagesSection/1/1.jpg',
+        imgSrc: './img/TheAdvantagesSection/1/1.jpg',
         columns: [
           {
             items: ['financial checkup', 'wealth planning', 'asset aggregation', 'asset management']
@@ -31,7 +31,7 @@ const sections = [
         desc: '',
         title: 'Financial Infrastructure',
         href: '',
-        imgSrc: '/img/TheAdvantagesSection/1/2.jpg',
+        imgSrc: './img/TheAdvantagesSection/1/2.jpg',
         columns: [
           {
             items: ['bank accounts', 'daily banking', 'broker accounts']
@@ -47,7 +47,7 @@ const sections = [
         desc: '',
         title: 'Alternative investments',
         href: '',
-        imgSrc: '/img/TheAdvantagesSection/1/3.jpg',
+        imgSrc: './img/TheAdvantagesSection/1/3.jpg',
         columns: [
           {
             items: ['PE & VC deals', 'real estate', 'private debt', 'commodities']
@@ -63,7 +63,7 @@ const sections = [
         desc: '',
         title: 'Corporate Finance',
         href: '',
-        imgSrc: '/img/TheAdvantagesSection/1/4.jpg',
+        imgSrc: './img/TheAdvantagesSection/1/4.jpg',
         columns: [
           {
             items: ['reporting consolidation', 'management optimisation']
@@ -79,7 +79,7 @@ const sections = [
         desc: '',
         title: 'Lifestyle Services',
         href: '',
-        imgSrc: '/img/TheAdvantagesSection/1/5.jpg',
+        imgSrc: './img/TheAdvantagesSection/1/5.jpg',
         columns: [
           {
             items: ['citizenship & visas', 'education', 'personal security']
@@ -105,7 +105,7 @@ const sections = [
         desc: 'Manulife Investment Management co-strategists Macan Nia and Kevin Headland explain why co-strategists Macan Nia and Kevin Headland...',
         title: 'Economy dodges recession, but warning signs remain',
         href: '',
-        imgSrc: '/img/TheAdvantagesSection/2/1.jpg',
+        imgSrc: './img/TheAdvantagesSection/2/1.jpg',
         columns: []
       },
       {
@@ -114,7 +114,7 @@ const sections = [
         desc: 'Manulife Investment Management co-strategists Macan Nia and Kevin Headland explain why co-strategists Macan Nia and Kevin Headland...',
         title: 'Economy dodges recession, but warning signs remain',
         href: '',
-        imgSrc: '/img/TheAdvantagesSection/2/2.jpg',
+        imgSrc: './img/TheAdvantagesSection/2/2.jpg',
         columns: []
       },
       {
@@ -123,7 +123,7 @@ const sections = [
         desc: 'Manulife Investment Management co-strategists Macan Nia and Kevin Headland explain why co-strategists Macan Nia and Kevin Headland...',
         title: 'Economy dodges recession, but warning signs remain',
         href: '',
-        imgSrc: '/img/TheAdvantagesSection/2/3.jpg',
+        imgSrc: './img/TheAdvantagesSection/2/3.jpg',
         columns: []
       },
       {
@@ -132,7 +132,7 @@ const sections = [
         desc: 'Manulife Investment Management co-strategists Macan Nia and Kevin Headland explain why co-strategists Macan Nia and Kevin Headland...',
         title: 'Economy dodges recession, but warning signs remain',
         href: '',
-        imgSrc: '/img/TheAdvantagesSection/2/4.jpg',
+        imgSrc: './img/TheAdvantagesSection/2/4.jpg',
         columns: []
       }
     ]
