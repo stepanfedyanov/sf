@@ -22,6 +22,9 @@ import TheVideoSlider from './TheVideoSlider.vue'
 
 <style lang="scss">
 .intro {
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden;
   padding-bottom: 100px;
   &__title {
     margin-bottom: 40px;

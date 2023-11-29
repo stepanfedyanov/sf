@@ -40,9 +40,6 @@ defineProps({
 
 <style lang="scss">
 .swiper-button-img {
-  position: absolute;
-  top: 0;
-  right: -64px;
   cursor: pointer;
   path {
     transition: 0.15s;
@@ -56,8 +53,6 @@ defineProps({
   }
   &.reversed {
     transform: rotate(180deg);
-    right: auto;
-    left: -64px;
   }
 }
 </style>

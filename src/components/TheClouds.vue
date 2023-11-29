@@ -13,7 +13,7 @@ const screenWidth = (screen && typeof screen.width === 'number') ? screen.width 
 const cloudsClass = 'join__upper-clouds';
 const speedX = 1;
 const changeSpeedXTime = 10; // seconds
-const cloudImage = '/img/TheJoinSection/upper-clouds.png';
+const cloudImage = './img/TheJoinSection/upper-clouds.png';
 const cloudWidth = 2488;
 const cloudXInitPosition = -(screenWidth * screenAppearPercent);
 
@@ -85,7 +85,7 @@ onMounted(() => {
     />
 
     <div class="join__buildings-wrapper">
-      <img class="join__buildings" src="@/../public/img/TheJoinSection/buildings.png" alt="" />
+      <img class="join__buildings" src="/img/TheJoinSection/buildings.png" alt="" />
       <img class="join__buildings_clouds" src="/img/TheJoinSection/background-clouds.png" alt="Clouds">
     </div>
   </div>

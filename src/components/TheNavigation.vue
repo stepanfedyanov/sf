@@ -47,8 +47,6 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     display: flex;
     align-items: center;
   }
-  &__nav-item {
-  }
   &__nav-item + &__nav-item {
     margin-left: 40px;
   }
