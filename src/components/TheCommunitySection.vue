@@ -59,6 +59,7 @@ const staff = [
 .community {
   padding-top: 67px;
   background: #a5cce0;
+  overflow: hidden;
   &__title {
     margin-bottom: 50px;
     text-align: center;
