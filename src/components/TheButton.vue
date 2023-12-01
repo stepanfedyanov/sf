@@ -13,6 +13,7 @@ defineProps({
       black: color === 'black',
       blue: color === 'blue',
       small: size === 'small',
+      medium: size === 'medium',
       big: size === 'big'
     }"
   >
@@ -87,6 +88,15 @@ defineProps({
     line-height: calc(24 / 11);
     font-size: 11px;
     padding: 4px 22px;
+  }
+  &.medium {
+    letter-spacing: -0.165px;
+    line-height: calc(24 / 14);
+    font-size: 14px;
+    padding: 4px 50px;
+    span {
+      min-width: 60px;
+    }
   }
   &.big {
     line-height: calc(24 / 14);
