@@ -11,6 +11,7 @@ defineProps({
     :class="{
       white: color === 'white',
       black: color === 'black',
+      blue: color === 'blue',
       small: size === 'small',
       big: size === 'big'
     }"
@@ -31,6 +32,7 @@ defineProps({
   transition: 0.2s;
   span {
     position: relative;
+    display: inline-block;
     z-index: 3;
     top: 1px;
   }
@@ -69,6 +71,17 @@ defineProps({
         #052e3e;
     }
   }
+  &.blue {
+    color: #052e3e;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: #a5cce0;
+    transition: 0.2s;
+    @media (hover: hover) {
+      &:hover {
+        background-color: #7db5d1;
+      }
+    }
+  }
   &.small {
     letter-spacing: -0.165px;
     line-height: calc(24 / 11);
@@ -77,8 +90,11 @@ defineProps({
   }
   &.big {
     line-height: calc(24 / 14);
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px 50px;
+    span {
+      min-width: 116px;
+    }
   }
 }
 </style>
