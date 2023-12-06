@@ -23,7 +23,11 @@ import TheNavigation from './TheNavigation.vue'
   transform: translateX(-50%);
   border-radius: 34px;
   border: 1px solid #dbecf5;
-  background: linear-gradient(92deg, rgba(255, 255, 255, 0.69) -36.65%, rgba(255, 255, 255, 0) 140.09%);
+  background: linear-gradient(
+    92deg,
+    rgba(255, 255, 255, 0.69) -36.65%,
+    rgba(255, 255, 255, 0) 140.09%
+  );
   backdrop-filter: blur(15px);
   padding: 16px 38px;
   &__inner {
