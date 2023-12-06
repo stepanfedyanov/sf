@@ -1,15 +1,49 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 import TheSectionTitle from './TheSectionTitle.vue'
 import TheSliderButton from './TheSliderButton.vue'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 defineProps({
   settings: Object
 })
 
+gsap.registerPlugin(ScrollTrigger);
+
 const swiper = ref(null)
+
+onMounted(() => {
+  gsap.set('.advantage__swiper-slide', { yPercent: 200 });
+
+  const opacityTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.intro',
+      start: 'bottom bottom',
+      end: '+=100%',
+      scrub: true,
+    }
+  });
+
+  const sliderTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.advantage',
+      start: 'top center',
+      scrub: false,
+      markers: true,
+    }
+  });
+
+  opacityTimeline
+    .addLabel('fadeOut')
+    .fromTo('.intro', { opacity: 1 }, { opacity: 0 }, 'fadeOut+=0.3')
+    .fromTo('.advantage', { opacity: 0 }, { opacity: 1 }, 'fadeIn')
+
+  sliderTimeline.to('.advantage__swiper-slide', { yPercent: 0, duration: 1, stagger: 0.5 });
+
+});
 </script>
 
 <template>
@@ -31,9 +65,7 @@ const swiper = ref(null)
         </p>
 
         <div
-          class="swiper-block wow animate__animated animate__fadeIn"
-          data-wow-duration="1.4s"
-          data-wow-delay="0.5s"
+          class="swiper-block"
         >
           <swiper-container
             ref="swiper"
