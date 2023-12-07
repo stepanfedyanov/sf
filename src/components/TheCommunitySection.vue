@@ -11,28 +11,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const staff = [
   {
-    img: '/img/TheCommunitySection/staff/1.jpg',
+    img: './img/TheCommunitySection/staff/1.jpg',
     name: 'Ilya Oprenko',
     position: 'Founder / CEO',
     desc: 'Dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam.',
     href: '#'
   },
   {
-    img: '/img/TheCommunitySection/staff/1.jpg',
+    img: './img/TheCommunitySection/staff/1.jpg',
     name: 'Sergey Ishkov',
     position: 'Co-founder / CFO',
     desc: 'Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Nisl ut ut ut',
     href: '#'
   },
   {
-    img: '/img/TheCommunitySection/staff/1.jpg',
+    img: './img/TheCommunitySection/staff/1.jpg',
     name: 'Ilya Oprenko',
     position: 'Founder / CEO',
     desc: 'Dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam.',
     href: '#'
   },
   {
-    img: '/img/TheCommunitySection/staff/1.jpg',
+    img: './img/TheCommunitySection/staff/1.jpg',
     name: 'Sergey Ishkov',
     position: 'Co-founder / CFO',
     desc: 'Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Nisl ut ut ut',
