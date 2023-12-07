@@ -1,5 +1,9 @@
 <script setup>
+import { onMounted } from 'vue';
 import TheAdvantage from './TheAdvantage.vue'
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const sections = [
   {
@@ -138,13 +142,32 @@ const sections = [
     ]
   }
 ]
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  const opacityTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.intro',
+      start: 'bottom bottom',
+      end: '+=100%',
+      scrub: true,
+    }
+  });
+
+  opacityTimeline
+    .to('.intro', { opacity: 0 }, '+=0.2')
+    .fromTo('.advantages', { opacity: 0 }, { opacity: 1 })
+});
 </script>
 
 <template>
   <section class="advantages">
     <TheAdvantage
       class="advantage"
-      v-for="section in sections"
+      v-for="(section, idx) in sections"
+      :id="`advantage-${idx}`"
+      :idx="idx"
       :key="section.title"
       :settings="section"
     />

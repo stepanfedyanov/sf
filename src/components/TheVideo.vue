@@ -50,10 +50,12 @@
     margin-bottom: 80px;
     border-radius: 40px;
     overflow: hidden;
+    margin: 0 auto;
     position: relative;
+    width: 95vw;
   }
   &__video {
-    max-width: 100%;
+    width: 100%;
   }
   &__video-btn-wrapper {
     position: absolute;

@@ -1,20 +1,56 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref, toRefs } from 'vue'
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 import TheSectionTitle from './TheSectionTitle.vue'
 import TheSliderButton from './TheSliderButton.vue'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-defineProps({
-  settings: Object
-})
+const props = defineProps({
+  settings: Object,
+  idx: Number,
+});
+
+const { idx, settings } = toRefs(props); 
+
+gsap.registerPlugin(ScrollTrigger);
 
 const swiper = ref(null)
+const advantageElement = ref(null);
+
+onMounted(() => {
+  const sliderTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: advantageElement.value,
+      start: 'bottom-=40% bottom',
+      scrub: false,
+    }
+  });
+
+  const opacityTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#advantage-0',
+      start: 'bottom bottom',
+      end: '+=100%',
+      scrub: true,
+    }
+  });
+
+  gsap.set(`.advantage__swiper-slide-${idx.value}`, { yPercent: 200 });
+  sliderTimeline.from(`.advantage__swiper-slide-${idx.value}`, { yPercent: 200 });
+  sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0, duration: 0.5, stagger: 0.3 });
+
+  opacityTimeline
+    .to('#advantage-0', { opacity: 0 }, '+=0.2')
+    .fromTo('#advantage-1', { opacity: 0 }, { opacity: 1 })
+});
 </script>
 
 <template>
   <section
     class="advantage"
+    ref="advantageElement"
     :class="{ blue: settings.style === 'blue', white: settings.style === 'white' }"
   >
     <TheContainer>
@@ -31,9 +67,7 @@ const swiper = ref(null)
         </p>
 
         <div
-          class="swiper-block wow animate__animated animate__fadeIn"
-          data-wow-duration="1.4s"
-          data-wow-delay="0.5s"
+          class="swiper-block"
         >
           <swiper-container
             ref="swiper"
@@ -57,8 +91,8 @@ const swiper = ref(null)
             spaceBetween="21"
           >
             <swiper-slide
-              class="swiper-slide advantage__swiper-slide adv-slide"
               :class="[
+                `swiper-slide advantage__swiper-slide advantage__swiper-slide-${idx} adv-slide`,
                 { blue: settings.style === 'blue', white: settings.style === 'white' },
                 settings.cardStyle
               ]"

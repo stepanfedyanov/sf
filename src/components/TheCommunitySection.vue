@@ -3,6 +3,11 @@ import TheContainer from './TheContainer.vue'
 import TheSectionTitle from './TheSectionTitle.vue'
 import TheCommunitySlider from './TheCommunitySlider.vue'
 import TheArchitecture from './TheArchitecture.vue'
+import { onMounted, ref } from 'vue';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const staff = [
   {
@@ -34,10 +39,44 @@ const staff = [
     href: '#'
   }
 ]
+
+const stars = ref([]);
+
+const startAppearTime = 1500;
+const maxStarsCount = 20;
+
+onMounted(() => {
+  const opacityTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.advantages',
+      start: 'bottom bottom',
+      end: '+=100%',
+      scrub: true,
+    }
+  });
+
+  opacityTimeline
+    .to('.advantages', { opacity: 0 }, '+=0.2')
+    .fromTo('.community', { opacity: 0 }, { opacity: 1 }, '+=0.4')
+
+  setInterval(() => {
+    stars.value.push({
+      x: `${Math.ceil(Math.random() * 100)}%`,
+      y: `${Math.ceil(Math.random() * 100)}%`,
+    });
+
+    if (stars.value.length > maxStarsCount) stars.value.shift()
+  }, startAppearTime);
+});
 </script>
 
 <template>
   <section class="community">
+    <div class="community__stars">
+      <TransitionGroup name="fade">
+        <span v-for="star in stars" :key="`star-${star.x}-${star.y}`" class="community__star" :style="`left: ${star.x}; top: ${star.y}`" />
+      </TransitionGroup>
+    </div>
     <TheContainer>
       <div class="community__inner">
         <TheSectionTitle class="community__title" color="#052E3E"
@@ -60,6 +99,22 @@ const staff = [
   padding-top: 67px;
   background: #a5cce0;
   overflow: hidden;
+  &__stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35vh;
+    z-index: -1;
+  }
+  &__star {
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   &__title {
     margin-bottom: 50px;
     text-align: center;
@@ -83,5 +138,15 @@ const staff = [
     height: 2092px;
     max-width: initial;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

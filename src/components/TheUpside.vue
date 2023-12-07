@@ -1,14 +1,32 @@
 <script setup>
-import TheContainer from './TheContainer.vue'
+import { onMounted, ref } from 'vue';
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const upsideContainer = ref(null);
+const upsideTitle = ref(null);
+
+onMounted(() => {
+  const heightOfContainer = upsideContainer.value.offsetHeight;
+
+  ScrollTrigger.create({
+    trigger: upsideContainer.value,
+    start: "10% bottom",
+    end: "bottom bottom",
+    onUpdate: (self) => {
+      upsideTitle.value.style.opacity = `${self.progress.toFixed(3) - 0.2}`;
+      upsideTitle.value.style.bottom = `${Math.ceil(heightOfContainer * 0.7 * self.progress.toFixed(3))}px`;
+    },
+  });
+});
 </script>
 
 <template>
-  <section class="upside">
-    <TheContainer>
-      <div class="upside__inner">
-        <h2 class="upside__title wow animate__animated animate__fadeInUpBig" data-wow-delay=".3s">Join the upside</h2>
-      </div>
-    </TheContainer>
+  <section class="upside" ref="upsideContainer">
+    <h2 class="upside__title" ref="upsideTitle">Join the upside</h2>
   </section>
 </template>
 
@@ -16,7 +34,9 @@ import TheContainer from './TheContainer.vue'
 @import '../assets/variables.scss';
 @import '../assets/mixins/adaptive-value.scss';
 .upside {
+  height: 100%;
   &__title {
+    max-width: 1024px;
     font-family: 'Atyp Display', sans-serif;
     color: #a5cce0;
     text-align: center;
@@ -24,9 +44,12 @@ import TheContainer from './TheContainer.vue'
     line-height: calc(140 / 160);
     letter-spacing: -1.6px;
     font-weight: 300;
-    position: relative;
     user-select: none;
     pointer-events: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
     // &::before {
     //   content: '';
     //   position: absolute;

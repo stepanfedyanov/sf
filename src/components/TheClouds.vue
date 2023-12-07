@@ -6,16 +6,18 @@ const clouds = ref([]);
 
 // Constants:
 // ======================
-const screenDetectorPercent = 0.9; // if center of active cloud in this position – activate smth
+const screenDetectorPercents = [0.9, 0.9, 0.9, 0.9, 0]; // if center of active cloud in this position – activate smth
 const screenAppearPercent = 0.6;
 const screenWidth = (screen && typeof screen.width === 'number') ? screen.width : null;
 
 const cloudsClass = 'join__upper-clouds';
-const speedX = 1;
 const changeSpeedXTime = 10; // seconds
-const cloudImage = './img/TheJoinSection/upper-clouds.png';
-const cloudWidth = 2488;
-const cloudXInitPosition = -(screenWidth * screenAppearPercent);
+const cloudsImagesPath = (id) => `./img/Clouds/clouds-${id}.png`;
+const cloudsYInitPosition = [5, -5, 50, 50, 40];
+const cloudsXSpeed = [0.5, 0.4, 0.3, 0.4, 0.2];
+const cloudsWidth = [900, 800, 300, 500, screenWidth];
+const defaultCloudsXInitPosition = -(screenWidth * screenAppearPercent);
+const cloudXInitPositions = [defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, -(screenWidth / 2)];
 
 // Functions:
 // ======================
@@ -24,12 +26,16 @@ const cloudXInitPosition = -(screenWidth * screenAppearPercent);
  * Create cloud element and add it to clouds array
  * @param {*} xInitPosition 
  */
-const createCloud = (xInitPosition = null) => {
+const createCloud = ({xInitPosition = null, idx = 1}) => {
   const cloudElement = {
-    class: cloudsClass,
-    src: cloudImage,
+    idx,
+    class: `join__upper-clouds ${cloudsClass}-${idx}`,
+    src: cloudsImagesPath(idx),
     alt: 'Clouds',
-    xPosition: xInitPosition ?? cloudXInitPosition,
+    speedX: cloudsXSpeed[idx - 1],
+    yPosition: cloudsYInitPosition[idx - 1],
+    xPosition: xInitPosition ?? cloudXInitPositions[idx - 1],
+    screenDetectorPercent: screenDetectorPercents[idx - 1],
     active: true
   };
   
@@ -41,12 +47,12 @@ const createCloud = (xInitPosition = null) => {
  */
 const checkScreenBorder = () => {
   clouds.value.forEach((cloudItem, idx, cloudsArrayReturned) => {
-    if (cloudItem.active && (cloudItem.xPosition >= screenWidth * screenDetectorPercent)) {
+    if (cloudItem.active && (cloudItem.xPosition >= screenWidth * cloudItem.screenDetectorPercent)) {
       cloudItem.active = false;
-      createCloud();
+      createCloud({idx: cloudItem.idx });
     }
 
-    if (cloudItem.xPosition >= (screenWidth + cloudWidth / 2)) {
+    if (cloudItem.xPosition >= (screenWidth + cloudsWidth[cloudItem.idx - 1] / 2)) {
       cloudsArrayReturned.splice(idx, 1);
     }
   });
@@ -59,13 +65,17 @@ const changeCloudPosition = () => {
   checkScreenBorder();
 
   clouds.value.forEach(cloud => {
-    cloud.xPosition = cloud.xPosition + speedX;
+    cloud.xPosition = cloud.xPosition + cloud.speedX;
   });
 };
 
 onMounted(() => {
   // Init clouds animations
-  createCloud(screenWidth * 1.2);
+  createCloud({ xInitPosition: screenWidth * 0.6, idx: 1 });
+  createCloud({ xInitPosition: screenWidth * -0.1, idx: 2 });
+  createCloud({ xInitPosition: screenWidth * 0.4, idx: 3 });
+  createCloud({ xInitPosition: screenWidth * 0.3, idx: 4 });
+  createCloud({ xInitPosition: screenWidth / 2, idx: 5 });
 
   setInterval(() => {
     changeCloudPosition();
@@ -79,7 +89,7 @@ onMounted(() => {
       v-for="(cloud, idx) in clouds"
       :key="`cloud-${idx}`"
       :class="cloud.class"
-      :style="`left: ${cloud.xPosition}px`"
+      :style="`left: ${cloud.xPosition}px; top: ${cloud.yPosition}%;`"
       :src="cloud.src"
       :alt="cloud.alt"
     />
@@ -113,8 +123,29 @@ onMounted(() => {
     top: -140px;
     left: 50%;
     z-index: 5;
-    min-width: 2488px;
     transform: translateX(calc(-55%));
+    &-1 {
+      opacity: 0.8;
+      max-width: 900px;
+      z-index: 0;
+    }
+    &-2 {
+      opacity: 0.9;
+      max-width: 800px;
+      z-index: 0;
+    }
+    &-3 {
+      max-width: 300px;
+      z-index: 1;
+    }
+    &-4 {
+      max-width: 500px;
+      z-index: 1;
+    }
+    &-5 {
+      max-width: 100%;
+      z-index: 2;
+    }
   }
   &__buildings {
     position: absolute;
@@ -123,7 +154,7 @@ onMounted(() => {
     z-index: 1;
     &_clouds {
       position: absolute;
-      bottom: -390px;
+      bottom: -100px;
       left: 336px;
       z-index: 1;
     }
