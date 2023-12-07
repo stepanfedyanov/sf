@@ -10,32 +10,32 @@ const sections = [
     size: 'small',
     items: [
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }
@@ -50,32 +50,32 @@ const sections = [
     size: 'small',
     items: [
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }
@@ -90,12 +90,12 @@ const sections = [
     size: 'big',
     items: [
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
-        img: '/img/TheForSection/1/1.svg',
+        img: './img/TheForSection/1/1.svg',
         title: 'Personal Wealth Manager 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }

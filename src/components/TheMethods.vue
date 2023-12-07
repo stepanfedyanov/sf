@@ -3,12 +3,12 @@ import TheContainer from './TheContainer.vue'
 
 const cards = [
   {
-    img: '/img/TheCommunitySection/methods/main.jpg',
+    img: './img/TheCommunitySection/methods/main.jpg',
     title: 'Analytics',
     desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
   },
   {
-    img: '/img/TheCommunitySection/methods/main.jpg',
+    img: './img/TheCommunitySection/methods/main.jpg',
     title: 'Strategy',
     desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
   }
