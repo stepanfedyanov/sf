@@ -37,11 +37,10 @@ const howItemsContainer = ref(null);
 onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: howItemsContainer.value,
+      trigger: '.how',
       start: "top bottom",
       end: "bottom bottom",
       scrub: true,
-      pinSpacing: false,
     }
   });
 
@@ -56,8 +55,8 @@ onMounted(() => {
 
   tl
   .addLabel('first')
-    .to('.how__item-info-0', { opacity: 1 }, 'first+=0.3')
-    .fromTo('#how-item-0 .how__item-img', { x: '100%', opacity: 0 }, { x: '0%', opacity: 1 }, 'first+=0.1')
+    .to('.how__item-info-0', { opacity: 1 }, 'first+=0.5')
+    .fromTo('#how-item-0 .how__item-img', { x: '100%', opacity: 0 }, { x: '0%', opacity: 1 }, 'first+=0.3')
     .fromTo('#how-item-0 .how__item-img-text', { opacity: 0 }, { opacity: 1 })
   .addLabel('second')
     .to('.how__item-info-0', { opacity: 0 }, 'second+=0.2')
@@ -89,6 +88,7 @@ onMounted(() => {
 <style lang="scss">
 .how {
   margin: 100px 0;
+  min-height: 100vh;
   &__list {
     display: flex;
     flex-direction: column;

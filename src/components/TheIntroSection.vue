@@ -12,13 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 const introSection = ref(null);
 
 onMounted(() => {
-  // ScrollTrigger.create({
-  //   trigger: introSection.value,
-  //   start: 'top top',
-  //   pin: true,
-  //   pinSpacing: false,
-  // });
-
   const opacityTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: '.how',
@@ -27,23 +20,12 @@ onMounted(() => {
       scrub: true,
     }
   });
-
   
   // Add two labels: first label is fadeOut, we need to set opacity for .how from 1 to 0 by 30% j scrolling
   // second label is fadeIn, we need to set opacity for .intro from 0 to 1 by 30% j scrolling
   opacityTimeline
-    .addLabel('fadeOut')
-    .fromTo('.how', { opacity: 1 }, { opacity: 0 }, 'fadeOut+=0.3')
-    .fromTo('.intro', { opacity: 0 }, { opacity: 1 }, 'fadeIn+=0.5');
-
-  // const tlOpacity = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '.intro',
-  //     start: 'top center',
-  //     end: '+=30%',
-  //     scrub: true,
-  //   }
-  // });
+    .to('.how', { opacity: 0 }, '+=0.2')
+    .fromTo('.intro', { opacity: 0 }, { opacity: 1 }, '+=0.4');
 
   // GSAP timeline with scrollTrigger for main element
   const tl = gsap.timeline({
