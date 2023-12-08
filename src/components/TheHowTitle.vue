@@ -24,7 +24,7 @@ defineProps({
     width: 50%;
     height: 50vh;
     position: sticky;
-    top: 15vh;
+    top: 20vh;
   }
   &__item-info {
     position: absolute;

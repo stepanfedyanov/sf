@@ -23,27 +23,29 @@ onMounted(() => {
   const sliderTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: advantageElement.value,
-      start: 'bottom-=40% bottom',
+      start: 'top+=20% bottom',
       scrub: false,
     }
   });
 
-  const opacityTimeline = gsap.timeline({
+  gsap.set(`.advantage__swiper-slide-${idx.value}`, { yPercent: 50, opacity: 0 });
+  sliderTimeline.from(`.advantage__swiper-slide-${idx.value}`, { yPercent: 50, opacity: 0 });
+  sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0, opacity: 1, duration: 0.5, stagger: 0.3 });
+
+  const nextBlockTimeline = gsap.timeline({
     scrollTrigger: {
-      trigger: '#advantage-0',
+      trigger: `#advantage-${idx.value}`,
       start: 'bottom bottom',
-      end: '+=100%',
+      end: '+=50%',
       scrub: true,
+      pin: true
     }
   });
 
-  gsap.set(`.advantage__swiper-slide-${idx.value}`, { yPercent: 200 });
-  sliderTimeline.from(`.advantage__swiper-slide-${idx.value}`, { yPercent: 200 });
-  sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0, duration: 0.5, stagger: 0.3 });
+  gsap.set(`#advantage-${idx.value} .advantage__next-background`, { opacity: 0, background: gsap.getProperty(idx.value === 1 ? '.community' : `#advantage-${idx.value + 1}`, 'background') });
 
-  opacityTimeline
-    .to('#advantage-0', { opacity: 0 }, '+=0.2')
-    .fromTo('#advantage-1', { opacity: 0 }, { opacity: 1 })
+  nextBlockTimeline
+    .to(`#advantage-${idx.value} .advantage__next-background`, { opacity: 1 })
 });
 </script>
 
@@ -176,8 +178,7 @@ onMounted(() => {
         </div>
 
         <TheButton
-          class="advantage__btn wow animate__animated animate__bounceIn"
-          data-wow-delay="0.5s"
+          class="advantage__btn wow animate__animated animate__fadeIn"
           data-wow-duration="1.4s"
           color="white"
           size="big"
@@ -186,6 +187,8 @@ onMounted(() => {
         </TheButton>
       </div>
     </TheContainer>
+
+    <div class="advantage__next-background" />
   </section>
 </template>
 
@@ -238,6 +241,14 @@ onMounted(() => {
     left: -64px;
     z-index: 5;
     transform: translateX(-100%) translateY(-50%);
+  }
+  &__next-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
   }
 }
 

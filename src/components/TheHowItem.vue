@@ -30,6 +30,7 @@ defineProps({
 .how {
   &__item {
     width: 100%;
+    padding-bottom: 15vh;
   }
   &__item-inner {
     display: flex;

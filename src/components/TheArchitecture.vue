@@ -1,24 +1,55 @@
 <script setup>
 import TheContainer from './TheContainer.vue'
 import TheMethods from './TheMethods.vue'
+import TheClouds from './TheClouds.vue';
+import { onMounted, ref } from 'vue';
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const architecture = ref(null);
+const architectureTitle = ref(null);
+
+onMounted(() => {
+  gsap.set(architectureTitle.value, {
+    yPercent: 300,
+    opacity: 0
+  });
+
+  gsap.to(architectureTitle.value, {
+    scrollTrigger: {
+      trigger: architecture.value,
+      start: "top bottom",
+      end: "center bottom",
+      scrub: true,
+    },
+    yPercent: 0,
+    opacity: 1,
+  })
+});
 </script>
 
 <template>
-  <section class="architecture">
+  <section class="architecture" ref="architecture">
     <TheContainer>
       <div class="architecture__inner">
-        <img
+        <video
+          autoplay
+          muted
+          loop
           class="architecture__img"
-          src="/img/TheCommunitySection/architecture/town.png"
-          alt=""
+          src="/img/TheCommunitySection/architecture/town.webm"
+          alt="Town"
         />
-        <h2 class="architecture__title">Ecosystem Architecture</h2>
+        <h2 class="architecture__title" ref="architectureTitle">Ecosystem Architecture</h2>
         <p class="architecture__desc">
           We are building a holistic infrastructure for capital owners and independent professionals
           based on industry’s best practices
         </p>
       </div>
     </TheContainer>
+    <TheClouds :buildings="false" :many-clouds="true" class="join__clouds" />
     <TheMethods />
     <TheContainer>
       <div class="community__scroll">
@@ -58,7 +89,7 @@ import TheMethods from './TheMethods.vue'
     left: 50%;
     transform: translateX(-50%);
     top: 182px;
-    z-index: 5;
+    z-index: 10;
   }
   &__title {
     color: #fff;
@@ -76,6 +107,8 @@ import TheMethods from './TheMethods.vue'
     letter-spacing: 0.36px;
     max-width: 744px;
     margin: 0 auto;
+    position: relative;
+    z-index: 5;
   }
 }
 </style>

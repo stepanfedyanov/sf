@@ -1,23 +1,38 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, toRefs } from 'vue';
+
+const props = defineProps({
+  buildings: {
+    type: Boolean,
+    required: false,
+    default: true
+  },
+  manyClouds: {
+    type: Boolean,
+    required: false,
+    default: false
+  }
+});
+
+const { manyClouds } = toRefs(props);
 
 // Clouds array
 const clouds = ref([]);
 
 // Constants:
 // ======================
-const screenDetectorPercents = [0.9, 0.9, 0.9, 0.9, 0]; // if center of active cloud in this position – activate smth
+const screenDetectorPercents = [0.9, 0.9, 0.9, 0.9, 0, 0, 0.6]; // if center of active cloud in this position – activate smth
 const screenAppearPercent = 0.6;
 const screenWidth = (screen && typeof screen.width === 'number') ? screen.width : null;
 
 const cloudsClass = 'join__upper-clouds';
 const changeSpeedXTime = 10; // seconds
 const cloudsImagesPath = (id) => `./img/Clouds/clouds-${id}.png`;
-const cloudsYInitPosition = [5, -5, 50, 50, 40];
-const cloudsXSpeed = [0.5, 0.4, 0.3, 0.4, 0.2];
-const cloudsWidth = [900, 800, 300, 500, screenWidth];
+const cloudsYInitPosition = [5, -5, 50, 50, 40, 40, 10];
+const cloudsXSpeed = [0.5, 0.4, 0.3, 0.4, 0.2, 0.2, 0.5];
+const cloudsWidth = [900, 800, 300, 500, screenWidth, screenWidth, 900];
 const defaultCloudsXInitPosition = -(screenWidth * screenAppearPercent);
-const cloudXInitPositions = [defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, -(screenWidth / 2)];
+const cloudXInitPositions = [defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, -(screenWidth / 2), -(screenWidth / 1.5), defaultCloudsXInitPosition];
 
 // Functions:
 // ======================
@@ -75,7 +90,9 @@ onMounted(() => {
   createCloud({ xInitPosition: screenWidth * -0.1, idx: 2 });
   createCloud({ xInitPosition: screenWidth * 0.4, idx: 3 });
   createCloud({ xInitPosition: screenWidth * 0.3, idx: 4 });
-  createCloud({ xInitPosition: screenWidth / 2, idx: 5 });
+  if (manyClouds.value) createCloud({ xInitPosition: screenWidth * 0.4, idx: 5 });
+  if (manyClouds.value) createCloud({ xInitPosition: screenWidth * 0.1, idx: 6 });
+  if (manyClouds.value) createCloud({ xInitPosition: screenWidth * 0.2, idx: 7 });
 
   setInterval(() => {
     changeCloudPosition();
@@ -94,7 +111,7 @@ onMounted(() => {
       :alt="cloud.alt"
     />
 
-    <div class="join__buildings-wrapper">
+    <div v-if="buildings" class="join__buildings-wrapper">
       <img class="join__buildings" src="/img/TheJoinSection/buildings.png" alt="" />
       <img class="join__buildings_clouds" src="/img/TheJoinSection/background-clouds.png" alt="Clouds">
     </div>
@@ -145,6 +162,15 @@ onMounted(() => {
     &-5 {
       max-width: 100%;
       z-index: 2;
+    }
+    &-6 {
+      max-width: 100%;
+      z-index: 2;
+    }
+    &-7 {
+      opacity: 0.8;
+      max-width: 900px;
+      z-index: 0;
     }
   }
   &__buildings {
