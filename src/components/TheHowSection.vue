@@ -59,12 +59,30 @@ onMounted(() => {
     .fromTo('#how-item-0 .how__item-img', { x: '100%', opacity: 0 }, { x: '0%', opacity: 1 }, 'first+=0.3')
     .fromTo('#how-item-0 .how__item-img-text', { opacity: 0 }, { opacity: 1 })
   .addLabel('second')
-    .to('.how__item-info-0', { opacity: 0 }, 'second+=0.2')
+    .to('.how__item-info-0', { opacity: 0 })
     .to('#how-item-0 .how__item-img', { opacity: 0 }, 'second+=0.1')
     .to('#how-item-0 .how__item-img-text', { opacity: 0 }, 'second+=0.1')
-    .to('.how__item-info-1', { opacity: 1 }, 'second+=0.3')
+    .to('.how__item-info-1', { opacity: 1 }, 'second+=0.5')
     .fromTo('#how-item-1 .how__item-img', { x: '100%', opacity: 0 }, { x: '0%', opacity: 1 }, 'second+=0.2')
     .fromTo('#how-item-1 .how__item-img-text', { opacity: 0 }, { opacity: 1 })
+
+  const nextBlockTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.how',
+      start: 'bottom bottom',
+      end: '+=50%',
+      scrub: true,
+      pin: true
+    }
+  });
+
+  gsap.set('.how__next-background', { opacity: 0, background: gsap.getProperty('.intro', 'background') });
+
+  nextBlockTimeline
+  .addLabel('nextBlockFadeIn')
+    .to('.how__next-background', { opacity: 1 }, 'nextBlockFadeIn')
+    .to('.intro', { opacity: 1 }, 'nextBlockFadeIn')
+
 });
 </script>
 
@@ -82,6 +100,8 @@ onMounted(() => {
         </ul>
       </div>
     </TheContainer>
+
+    <div class="how__next-background" />
   </section>
 </template>
 
@@ -89,6 +109,7 @@ onMounted(() => {
 .how {
   margin: 100px 0;
   min-height: 100vh;
+  position: relative;
   &__list {
     display: flex;
     flex-direction: column;
@@ -101,6 +122,13 @@ onMounted(() => {
   }
   &__item + &__item {
     margin-top: 94px;
+  }
+  &__next-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
   }
 }
 </style>

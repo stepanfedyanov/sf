@@ -40,30 +40,24 @@ const staff = [
   }
 ]
 
+const random = (min, max) => { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+};
+
 const stars = ref([]);
 
-const startAppearTime = 1500;
-const maxStarsCount = 20;
+const startAppearTime = 1000;
+const maxStarsCount = 5;
+let lastHalf = 0;
 
 onMounted(() => {
-  const opacityTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.advantages',
-      start: 'bottom bottom',
-      end: '+=100%',
-      scrub: true,
-    }
-  });
-
-  opacityTimeline
-    .to('.advantages', { opacity: 0 }, '+=0.2')
-    .fromTo('.community', { opacity: 0 }, { opacity: 1 }, '+=0.4')
-
   setInterval(() => {
     stars.value.push({
-      x: `${Math.ceil(Math.random() * 100)}%`,
+      x: `${lastHalf === 1 ? random(1, 20) : random(80, 100)}%`,
       y: `${Math.ceil(Math.random() * 100)}%`,
     });
+
+    lastHalf = lastHalf === 1 ? 0 : 1;
 
     if (stars.value.length > maxStarsCount) stars.value.shift()
   }, startAppearTime);
@@ -90,7 +84,6 @@ onMounted(() => {
     </TheContainer>
     <TheCommunitySlider :staff="staff" />
     <TheArchitecture />
-    <img class="community__clouds" src="/img/TheCommunitySection/clouds.png" alt="" />
   </section>
 </template>
 

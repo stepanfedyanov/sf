@@ -2,7 +2,6 @@
 
 <template>
   <div class="join-title__clouds">
-    <img class="join-title__clouds-1" src="/img/TheJoinSection/TitleClouds/cloud-1.png" alt="Clouds"/>
     <img class="join-title__clouds-2" src="/img/TheJoinSection/TitleClouds/cloud-2.png" alt="Clouds"/>
     <img class="join-title__clouds-3" src="/img/TheJoinSection/TitleClouds/cloud-3.png" alt="Clouds"/>
   </div>

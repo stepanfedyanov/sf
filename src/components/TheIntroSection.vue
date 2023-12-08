@@ -12,33 +12,33 @@ gsap.registerPlugin(ScrollTrigger);
 const introSection = ref(null);
 
 onMounted(() => {
-  const opacityTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.how',
-      start: 'bottom bottom',
-      end: '+=100%',
-      scrub: true,
-    }
-  });
-  
-  // Add two labels: first label is fadeOut, we need to set opacity for .how from 1 to 0 by 30% j scrolling
-  // second label is fadeIn, we need to set opacity for .intro from 0 to 1 by 30% j scrolling
-  opacityTimeline
-    .to('.how', { opacity: 0 }, '+=0.2')
-    .fromTo('.intro', { opacity: 0 }, { opacity: 1 }, '+=0.4');
-
   // GSAP timeline with scrollTrigger for main element
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.intro',
       start: 'top bottom',
-      end: 'bottom bottom',
+      end: 'center bottom',
       scrub: true,
     }
   });
 
   // Set to .intro__video scale 0.8 to 1 on 30% of scroll
   tl.fromTo('.intro__video-wrapper', { scale: 0.8 }, { scale: 1 }, '+=0.5');
+
+  const nextBlockTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.intro',
+      start: 'bottom bottom',
+      end: '+=50%',
+      scrub: true,
+      pin: true
+    }
+  });
+
+  gsap.set('.intro__next-background', { opacity: 0, background: gsap.getProperty('.blue', 'background') });
+
+  nextBlockTimeline
+    .to('.intro__next-background', { opacity: 1 })
 });
 </script>
 
@@ -56,6 +56,7 @@ onMounted(() => {
     <TheContainer>
       <TheVideoSlider class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s" />
     </TheContainer>
+    <div class="intro__next-background" />
   </section>
 </template>
 
@@ -66,8 +67,17 @@ onMounted(() => {
   margin: 0 auto;
   overflow: hidden;
   padding-bottom: 100px;
+  padding-bottom: 15vh;
   &__title {
     margin-bottom: 40px;
+  }
+  &__next-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
   }
 }
 </style>
