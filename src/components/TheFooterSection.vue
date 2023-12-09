@@ -1,5 +1,4 @@
 <script setup>
-import TheLogotype from './TheLogotype.vue'
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 
@@ -121,7 +120,7 @@ const navList = [
         <div class="footer__bottom">
           <div class="footer__bottom-line">
             <div class="footer__logo-wrapper wow animate__animated animate__fadeIn">
-              <TheLogotype fill="#ffffff" />
+              <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип" />
             </div>
             <ul class="socials__list">
               <li
@@ -171,7 +170,7 @@ const navList = [
         </div>
         <div class="footer__bottom">
           <div class="footer__logo-wrapper">
-            <TheLogotype fill="#ffffff" />
+            <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип" />
           </div>
           <ul class="socials__list">
             <li class="socials__item" v-for="item in socialsList" :key="item.title">

@@ -37,7 +37,7 @@ import TheContainer from './TheContainer.vue'
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 70, 36, 1);
     line-height: calc(78 / 70);
-    letter-spacing: 1.4px;
+    letter-spacing: 0.7px;
     max-width: 580px;
   }
   &__text {

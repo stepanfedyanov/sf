@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
-  "dependencies": {
+"dependencies": {
     "@studio-freight/lenis": "^1.0.29",
     "animate.css": "^4.1.1",
     "gsap": "^3.12.3",
