@@ -107,6 +107,9 @@ onMounted(() => {
 
 <style lang="scss">
 .how {
+  background: #fff;
+  position: relative;
+  padding: 100px 0;
   margin: 100px 0;
   min-height: 100vh;
   position: relative;
@@ -129,6 +132,14 @@ onMounted(() => {
     left: 0;
     width: 100vw;
     height: 100vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .how {
+    &__item + &__item {
+      margin-top: 89px;
+    }
   }
 }
 </style>

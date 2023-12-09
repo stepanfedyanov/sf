@@ -9,9 +9,6 @@ import TheFooterSection from '../components/TheFooterSection.vue'
 import TheCommunitySection from '../components/TheCommunitySection.vue'
 import TheLibertySection from '../components/TheLibertySection.vue'
 import TheForSection from '../components/TheForSection.vue'
-
-import { register } from 'swiper/element/bundle'
-register()
 </script>
 
 <template>

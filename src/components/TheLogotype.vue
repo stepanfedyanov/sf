@@ -62,6 +62,7 @@ defineProps({
 .logo {
   display: block;
   svg {
+    @include adaptive-value('width', 146, 95, 1);
     display: block;
   }
 }

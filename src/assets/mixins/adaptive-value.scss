@@ -2,7 +2,8 @@
 // чтобы при уменьшении или увеличении экрана паддинги, размеры шрифта автоматически
 // увеличивались / уменьшались в границах от десктопного значения до телефонного
 // Подробнее: https://www.youtube.com/watch?v=eaOAY0vIB4U
-
+$maxWidth: 1920;
+$maxWidthContainer: 1044;
 @mixin adaptive-value($property, $startSize, $minSize, $type) {
   $addSize: $startSize - $minSize;
   @if $type == 1 {

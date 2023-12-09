@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const swiper = ref(null)
 const sliders = [
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit numquam quisquam unde cumque exercitationem vitae reiciendis vero quia a laborum dicta, excepturi debitis eos sit sequi! Esse distinctio tenetur consequuntur?',
-  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium qui nulla molestias architecto maiores quia ad quis neque officiis, fugit dolor iure?',
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium qui nulla molestias architecto maiores quia ad quis neque officiis, fugit dolor iure?'
 ]
 </script>
 
@@ -15,6 +15,29 @@ const sliders = [
         `
         :host .swiper {
           overflow: visible !important;
+        }
+        .swiper-pagination {
+          display: none;
+        }
+        @media (max-width: 800px) {
+          .swiper-pagination {
+            display: block;
+            top: auto !important;
+            bottom: -50px !important;
+            transform: translateY(50%) !important;
+          }
+          .swiper-pagination-bullet {
+            width: 4px !important;
+            height: 4px !important;
+            background-color: #DDD8D5 !important;
+            margin: 0 8px !important;
+            opacity: 1 !important;
+            transition: 0.2s !important;
+          }
+          .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            background-color: #052E3E !important;
+          }
         }
         `
       ]"
@@ -27,6 +50,9 @@ const sliders = [
       :autoplay="{
         delay: 2500,
         disableOnInteraction: false
+      }"
+      :pagination="{
+        clickable: true
       }"
     >
       <swiper-slide
@@ -48,6 +74,7 @@ const sliders = [
     <div class="swiper-button-next video__swiper-button-next" @click="swiper.swiper.slideNext()">
       <TheSliderButton direction="next" />
     </div>
+    <div class="swiper-pagination video__swiper-pagination"></div>
   </div>
 </template>
 
@@ -66,12 +93,14 @@ const sliders = [
     top: 0;
     right: -64px;
     transform: translateX(100%);
+    @include adaptive-value('width', 54, 36, 1);
   }
   &__swiper-button-prev {
     position: absolute;
     top: 0;
     left: -64px;
     transform: translateX(-100%);
+    @include adaptive-value('width', 54, 36, 1);
   }
 }
 .video-slide {
@@ -82,17 +111,57 @@ const sliders = [
   }
   &__text {
     text-align: center;
-    font-size: 18px;
+    @include adaptive-value('font-size', 18, 14, 1);
     line-height: calc(24 / 18);
     letter-spacing: -0.27px;
-    margin-bottom: 17px;
+    @include adaptive-value('margin-bottom', 17, 22, 1);
   }
   &__author {
-    font-size: 14px;
+    @include adaptive-value('font-size', 14, 15, 1);
     font-style: normal;
     font-weight: 700;
     line-height: calc(24 / 14);
     letter-spacing: -0.21px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .video {
+    &__swiper-button-next {
+      @include adaptive-value('right', 64, 0, 1);
+    }
+    &__swiper-button-prev {
+      @include adaptive-value('left', 64, 0, 1);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .video {
+    &__swiper-button-next {
+      bottom: -50px;
+      top: auto;
+      transform: translate(100%, 53%);
+      right: 100px;
+      @include adaptive-value('right', 100, 50, 1);
+    }
+    &__swiper-button-prev {
+      bottom: -50px;
+      transform: translate(-100%, 53%);
+      top: auto;
+      left: 100px;
+      @include adaptive-value('left', 100, 50, 1);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .video-slide {
+    &__text {
+      max-width: 297px;
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 }
 </style>

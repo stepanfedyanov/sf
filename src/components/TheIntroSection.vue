@@ -66,10 +66,27 @@ onMounted(() => {
   max-width: 1920px;
   margin: 0 auto;
   overflow: hidden;
-  padding-bottom: 100px;
+  @include adaptive-value('padding-bottom', 100, 60, 1);
   padding-bottom: 15vh;
   &__title {
-    margin-bottom: 40px;
+    @include adaptive-value('margin-bottom', 40, 49, 1);
+  }
+}
+
+@media (max-width: 800px) {
+  .intro {
+    padding-bottom: 140px;
+  }
+}
+
+@media (max-width: 500px) {
+  .intro {
+    &__title {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: calc(52 / 48);
+    }
   }
   &__next-background {
     position: absolute;

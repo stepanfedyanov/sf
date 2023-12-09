@@ -186,4 +186,21 @@ onMounted(() => {
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .join {
+    &::before {
+      background: linear-gradient(to bottom, transparent 75%, #fff 90%);
+    }
+    &__buildings {
+      top: 420px;
+      left: 50%;
+      transform: translateX(-50%);
+      right: auto;
+    }
+    &__upper-clouds {
+      top: 0px;
+    }
+  }
+}
 </style>

@@ -26,6 +26,7 @@ import TheClouds from './TheClouds.vue'
   position: relative;
   background: linear-gradient(to bottom, #a5cce0 10%, #fff 90%);
   padding-bottom: 60px;
+  @include adaptive-value('padding-bottom', 60, 0, 1);
   position: relative;
   min-height: 1024px;
   &__inner {
