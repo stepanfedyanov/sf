@@ -5,11 +5,20 @@
 </template>
 
 <script setup>
+import { onMounted, watch } from 'vue';
 import { useGlobalStore } from '../stores/global';
 import { storeToRefs } from 'pinia';
 
 const globalStore = useGlobalStore();
 const { pageIsLoaded } = storeToRefs(globalStore);
+
+onMounted(() => {
+  if (document && document.body) document.body.style.overflow = 'hidden';
+});
+
+watch(pageIsLoaded, () => {
+  if (document && document.body) document.body.style.overflow = 'auto';
+});
 </script>
 
 <style lang="scss">
