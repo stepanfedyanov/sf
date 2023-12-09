@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const architecture = ref(null);
 const architectureTitle = ref(null);
+const townVideo = ref(null);
 
 const globalStore = useGlobalStore();
 
@@ -19,6 +20,9 @@ const pageIsLoaded = () => {
 };
 
 onMounted(() => {
+  townVideo.value.muted = true;
+  townVideo.value.play();
+
   gsap.set(architectureTitle.value, {
     yPercent: 300,
     opacity: 0
@@ -42,9 +46,10 @@ onMounted(() => {
     <TheContainer>
       <div class="architecture__inner">
         <video
-          autoplay="true"
-          muted="true"
-          loop="true"
+          ref="townVideo"
+          autoplay
+          muted
+          loop
           class="architecture__img"
           src="/img/TheCommunitySection/architecture/town.webm"
           alt="Town"
