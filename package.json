@@ -10,7 +10,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.29",
     "animate.css": "^4.1.1",
+    "gsap": "^3.12.3",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
     "primevue": "^3.42.0",

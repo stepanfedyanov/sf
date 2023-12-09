@@ -1,30 +1,22 @@
 <script setup>
 defineProps({
-  info: Object
+  info: Object,
+  id: String
 })
 </script>
 
 <template>
-  <article class="how__item">
+  <article class="how__item" :id="id" ref="container">
     <div class="how__item-inner">
-      <div class="how__item-info">
-        <p class="how__item-desc wow animate__animated animate__fadeIn">{{ info.desc }}</p>
-        <h2 class="how__item-title wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-          {{ info.title }}
-        </h2>
-      </div>
       <div class="how__item-img-col">
         <img
-          class="how__item-img wow animate__animated animate__fadeInRight"
-          data-wow-delay=".6s"
-          data-wow-duration="1.6s"
+          class="how__item-img"
           :src="info.img"
           :alt="info.title"
         />
         <p
-          class="how__item-img-text wow animate__animated animate__fadeIn"
-          :data-wow-delay="`${0.2 * idx}s`"
-          v-for="(text, idx) in info.texts"
+          class="how__item-img-text"
+          v-for="text in info.texts"
           :key="text"
         >
           {{ text }}
@@ -82,6 +74,10 @@ defineProps({
     @include adaptive-value('font-size', 64, 30, 1);
     line-height: calc(58 / 64);
     max-width: 360px;
+  }
+  &__item {
+    width: 100%;
+    padding-bottom: 15vh;
   }
   &__item-inner {
     display: flex;

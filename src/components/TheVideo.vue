@@ -51,7 +51,9 @@
     @include adaptive-value('border-radius', 40, 30, 1);
     overflow: hidden;
     min-height: 525px;
+    margin: 0 auto;
     position: relative;
+    width: 95vw;
   }
   &__video {
     max-width: 100%;

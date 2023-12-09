@@ -148,6 +148,15 @@ const sections = [
 </template>
 
 <style lang="scss">
+@keyframes gradientAnimation {
+  0% {
+    border-image-source: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+  }
+  100% {
+    border-image-source: linear-gradient(to top, black, rgba(0, 0, 0, 0));
+  }
+}
+
 .for {
   &__section {
     @include adaptive-value('padding-top', 78, 65, 1);
@@ -214,6 +223,7 @@ const sections = [
     padding: 20px 22px;
     border-left: 1px solid transparent;
     border-image: linear-gradient(to bottom, rgba(#000, 1), rgba(#000, 0));
+    animation: gradientAnimation 4s infinite alternate;
     border-image-slice: 1;
   }
   &__item-img {

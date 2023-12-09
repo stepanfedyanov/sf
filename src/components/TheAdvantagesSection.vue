@@ -1,6 +1,9 @@
 <script setup>
 import TheAdvantage from './TheAdvantage.vue'
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const sections = [
   {
     title: 'Products & Services',
@@ -138,13 +141,18 @@ const sections = [
     ]
   }
 ]
+
+gsap.registerPlugin(ScrollTrigger);
+
 </script>
 
 <template>
   <section class="advantages">
     <TheAdvantage
       class="advantage"
-      v-for="section in sections"
+      v-for="(section, idx) in sections"
+      :id="`advantage-${idx}`"
+      :idx="idx"
       :key="section.title"
       :settings="section"
     />

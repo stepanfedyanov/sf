@@ -81,6 +81,7 @@ const sliders = [
 <style lang="scss">
 .swiper-block {
   position: relative;
+  margin-top: 60px;
 }
 .video {
   &__swiper {
