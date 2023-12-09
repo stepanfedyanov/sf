@@ -42,9 +42,9 @@ onMounted(() => {
     <TheContainer>
       <div class="architecture__inner">
         <video
-          autoplay
-          muted
-          loop
+          autoplay="true"
+          muted="true"
+          loop="true"
           class="architecture__img"
           src="/img/TheCommunitySection/architecture/town.webm"
           alt="Town"

@@ -17,7 +17,7 @@ onMounted(() => {
 });
 
 watch(pageIsLoaded, () => {
-  if (document && document.body) document.body.style.overflow = 'auto';
+  if (document && document.body) document.body.style.overflow = '';
 });
 </script>
 
