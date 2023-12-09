@@ -20,6 +20,7 @@ onMounted(() => {
 
 watch(pageIsLoaded, () => {
   if (document && document.body) document.body.style.overflow = '';
+  if (window) window.scrollTo(0, 0);
 });
 </script>
 
