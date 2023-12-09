@@ -108,8 +108,6 @@ onMounted(() => {
 <style lang="scss">
 .how {
   background: #fff;
-  position: relative;
-  padding: 100px 0;
   margin: 100px 0;
   min-height: 100vh;
   position: relative;

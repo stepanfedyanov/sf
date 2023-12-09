@@ -21,7 +21,6 @@ onMounted(() => {
       scrub: true,
     }
   });
-
   // Set to .intro__video scale 0.8 to 1 on 30% of scroll
   tl.fromTo('.intro__video-wrapper', { scale: 0.8 }, { scale: 1 }, '+=0.5');
 
@@ -71,6 +70,14 @@ onMounted(() => {
   &__title {
     @include adaptive-value('margin-bottom', 40, 49, 1);
   }
+  &__next-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 800px) {
@@ -87,14 +94,6 @@ onMounted(() => {
       margin-right: auto;
       line-height: calc(52 / 48);
     }
-  }
-  &__next-background {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
   }
 }
 </style>

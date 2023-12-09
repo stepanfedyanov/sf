@@ -5,11 +5,18 @@ import TheClouds from './TheClouds.vue';
 import { onMounted, ref } from 'vue';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGlobalStore } from '../stores/global';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const architecture = ref(null);
 const architectureTitle = ref(null);
+
+const globalStore = useGlobalStore();
+
+const pageIsLoaded = () => {
+  globalStore.changePageIsLoaded(true);
+};
 
 onMounted(() => {
   gsap.set(architectureTitle.value, {
@@ -41,6 +48,7 @@ onMounted(() => {
           class="architecture__img"
           src="/img/TheCommunitySection/architecture/town.webm"
           alt="Town"
+          @canplay="pageIsLoaded"
         />
         <h2 class="architecture__title" ref="architectureTitle">Ecosystem Architecture</h2>
         <p class="architecture__desc wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
