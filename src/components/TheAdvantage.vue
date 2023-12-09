@@ -38,23 +38,70 @@ const swiper = ref(null)
           <swiper-container
             ref="swiper"
             :grabCursor="true"
+            :centeredSlidesBounds="true"
+            :breakpoints="{
+              381: {
+                slidesPerView: 1.2
+              },
+              460: {
+                slidesPerView: 1.5
+              },
+              580: {
+                slidesPerView: 2
+              },
+              900: {
+                slidesPerView: 3
+              }
+            }"
             :injectStyles="[
               `
-            :host .swiper {
+              @media (min-width: 55px) {
+                :host .swiper {
               overflow: visible;
+            }
+              }
+           
+            
+            @media (min-width: 381px) {
+              :host .swiper-slide {
+              height: auto;
             }
             :host .swiper-wrapper {
               align-items: stretch;
             }
-            :host .swiper-slide {
-              height: auto;
             }
+            
+            .swiper-pagination {
+              display: none;
+              top: auto !important;
+              bottom: -44px !important;
+              transform: translateY(50%) !important;
+            }
+            @media (max-width: 600px) {
+              .swiper-pagination {
+                display: block;
+              }
+            }
+            .swiper-pagination-bullet {
+              background: #fff !important;
+              width: 4px !important;
+              height: 4px !important;
+              opacity: 1 !important;
+              transition: .2s !important;
+            }
+            .swiper-pagination-bullet-active {
+              background-color: #052E3E !important;
+            } 
+            
             `
             ]"
             class="swiper advantage__swiper"
-            slides-per-view="3"
+            slidesPerView="1"
             speed="700"
             spaceBetween="21"
+            :pagination="{
+              clickable: true
+            }"
           >
             <swiper-slide
               class="swiper-slide advantage__swiper-slide adv-slide"
@@ -91,7 +138,7 @@ const swiper = ref(null)
                 <img
                   class="adv-slide__img"
                   :src="card.imgSrc"
-                  alt=""
+                  :alt="`Image ${card.title}`"
                   v-if="settings.cardStyle === 'top-image'"
                 />
                 <div class="adv-slide__inner-wrapper">
@@ -122,7 +169,7 @@ const swiper = ref(null)
               <img
                 class="adv-slide__img"
                 :src="card.imgSrc"
-                alt=""
+                :alt="`Image ${card.title}`"
                 v-if="settings.cardStyle === 'bottom-image'"
               />
             </swiper-slide>
@@ -139,10 +186,13 @@ const swiper = ref(null)
           >
             <TheSliderButton direction="next" />
           </div>
+          <div class="swiper-pagination advantage__swiper-pagination"></div>
         </div>
 
         <TheButton
           class="advantage__btn wow animate__animated animate__bounceIn"
+          href="https://google.com"
+          target="_blank"
           data-wow-delay="0.5s"
           data-wow-duration="1.4s"
           color="white"
@@ -162,8 +212,8 @@ const swiper = ref(null)
 .advantage {
   padding: 75px 0;
   &__btn {
-    margin: 0 auto;
     display: block;
+    text-align: center;
   }
   &.blue {
     background: #a5cce0;
@@ -174,13 +224,13 @@ const swiper = ref(null)
   &__title {
     text-align: center;
     font-family: 'Atyp Display', sans-serif;
-    font-size: 96px;
+    @include adaptive-value('font-size', 96, 48, 1);
     letter-spacing: -1.92px;
-    margin-bottom: 10px;
+    @include adaptive-value('margin-bottom', 10, 61, 1);
   }
   &__desc {
     text-align: center;
-    font-size: 18px;
+    @include adaptive-value('font-size', 18, 19, 1);
     line-height: calc(24 / 18);
     letter-spacing: 0.36px;
     max-width: 740px;
@@ -188,7 +238,7 @@ const swiper = ref(null)
     margin-bottom: 65px;
   }
   &__swiper {
-    margin-bottom: 80px;
+    @include adaptive-value('margin-bottom', 80, 32, 1);
     overflow: visible !important;
   }
   &__swiper-button-next {
@@ -197,6 +247,9 @@ const swiper = ref(null)
     right: -64px;
     z-index: 5;
     transform: translateX(100%) translateY(-50%);
+    svg {
+      @include adaptive-value('width', 54, 24, 1);
+    }
   }
   &__swiper-button-prev {
     position: absolute;
@@ -204,6 +257,9 @@ const swiper = ref(null)
     left: -64px;
     z-index: 5;
     transform: translateX(-100%) translateY(-50%);
+    svg {
+      @include adaptive-value('width', 54, 24, 1);
+    }
   }
 }
 
@@ -222,14 +278,18 @@ const swiper = ref(null)
     z-index: 5;
     top: 26px;
     left: 19px;
-    padding: 8px 19px;
-    border-radius: 53px;
+    @include adaptive-value('padding-top', 8, 6.79, 1);
+    @include adaptive-value('padding-bottom', 8, 6.79, 1);
+    @include adaptive-value('padding-left', 19, 16.12, 1);
+    @include adaptive-value('padding-right', 19, 16.12, 1);
+    @include adaptive-value('border-radius', 53, 45, 1);
     background: #fff;
     span {
-      font-size: 12px;
-      line-height: 16px;
+      @include adaptive-value('font-size', 12, 10, 1);
+      line-height: calc(16 / 12);
       letter-spacing: -0.12px;
-      transform: translateY(1px);
+      position: relative;
+      top: 1px;
     }
   }
   &__link {
@@ -237,11 +297,14 @@ const swiper = ref(null)
     z-index: 2;
     top: 17px;
     right: 22px;
-    padding: 20.8px;
+    @include adaptive-value('padding', 20.8, 17.6, 1);
     background: #fff;
     border-radius: 50%;
     display: flex;
     cursor: pointer;
+    svg {
+      @include adaptive-value('width', 10.3, 8.7, 1);
+    }
     path {
       transition: 0.15s;
     }
@@ -255,14 +318,14 @@ const swiper = ref(null)
   }
   &__title {
     font-family: 'Atyp Display', sans-serif;
-    font-size: 26px;
-    line-height: 30px;
-    margin-bottom: 17px;
-    padding-right: 29px;
+    @include adaptive-value('font-size', 26, 22, 1);
+    line-height: calc(30 / 26);
+    @include adaptive-value('margin-bottom', 17, 14, 1);
+    @include adaptive-value('padding-right', 29, 50, 1);
   }
   &__columns {
     display: flex;
-    margin-bottom: 34px;
+    @include adaptive-value('margin-bottom', 34, 28, 1);
   }
   &__column {
     display: flex;
@@ -272,7 +335,7 @@ const swiper = ref(null)
   }
   &__item {
     padding-left: 11px;
-    font-size: 12px;
+    @include adaptive-value('font-size', 12, 10.2, 1);
     line-height: calc(14 / 12);
     letter-spacing: 0.24px;
     position: relative;
@@ -288,34 +351,37 @@ const swiper = ref(null)
     }
   }
   &__item + &__item {
-    margin-top: 4px;
+    @include adaptive-value('margin-top', 4, 3.39, 1);
   }
   &__column + &__column {
-    margin-left: 4px;
+    @include adaptive-value('margin-left', 4, 3.39, 1);
   }
   &__img {
     display: block;
-    border-radius: 44px;
+    @include adaptive-value('border-radius', 44, 33, 1);
     transform: translateY(1px);
   }
   &__desc {
     margin-bottom: 12px;
-    font-size: 12px;
+    @include adaptive-value('margin-bottom', 12, 10.18, 1);
+    @include adaptive-value('font-size', 12, 10.18, 1);
     line-height: calc(14.5 / 12);
     letter-spacing: 0.24px;
     max-width: 210px;
   }
   &__date {
-    font-size: 10px;
     line-height: calc(14 / 10);
+    @include adaptive-value('font-size', 10, 8.5, 1);
     letter-spacing: -0.1px;
   }
   &.blue {
     .adv-slide__inner {
-      padding: 60px 9px 0 38px;
+      @include adaptive-value('padding-top', 60, 50, 1);
+      @include adaptive-value('padding-right', 9, 7.6, 1);
+      @include adaptive-value('padding-left', 38, 32.24, 1);
     }
     border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 46px;
+    @include adaptive-value('border-radius', 46, 37, 1);
     background: linear-gradient(
       154deg,
       rgba(255, 255, 255, 0.8) 5.42%,
@@ -323,24 +389,64 @@ const swiper = ref(null)
     );
   }
   &.white {
-    border-radius: 40px;
+    @include adaptive-value('border-radius', 40, 33, 1);
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: #fff;
     .adv-slide__img {
-      border-radius: 38px;
+      @include adaptive-value('border-radius', 38, 33, 1);
+      width: 100%;
+      object-fit: cover;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       transform: translateY(-1px);
     }
     .adv-slide__title {
       padding: 0;
-      margin-bottom: 12px;
-      font-size: 18px;
+      @include adaptive-value('margin-bottom', 12, 10.18, 1);
+      @include adaptive-value('font-size', 18, 15.27, 1);
       line-height: calc(22 / 18);
     }
     .adv-slide__inner-wrapper {
-      padding: 24px 30px;
+      @include adaptive-value('padding-top', 24, 20, 1);
+      @include adaptive-value('padding-bottom', 24, 20, 1);
+      @include adaptive-value('padding-left', 30, 25, 1);
+      @include adaptive-value('padding-right', 30, 25, 1);
     }
+  }
+}
+
+@media (max-width: 1280px) {
+  .advantage {
+    &__swiper-button-next {
+      right: 48px;
+    }
+    &__swiper-button-prev {
+      left: 48px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .advantage {
+    &__swiper {
+      margin-bottom: 84px;
+    }
+    &__swiper-button-next {
+      top: auto;
+      bottom: -44px;
+      transform: translateY(50%);
+    }
+    &__swiper-button-prev {
+      top: auto;
+      bottom: -44px;
+      transform: translateY(50%);
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .adv-slide {
+    height: 100% !important;
   }
 }
 </style>

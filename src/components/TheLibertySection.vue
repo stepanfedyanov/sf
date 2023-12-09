@@ -318,10 +318,14 @@ const items = [
         <div class="liberty__link-wrapper">
           <a class="liberty__main-link" href="#">
             <span class="liberty__main-link-left">
-              <img class="liberty__link-img" src="/img/TheLibertySection/link-img.svg" alt="" />
+              <img
+                class="liberty__link-img"
+                src="/img/TheLibertySection/link-img.svg"
+                alt="Read the Skyfort manifesto"
+              />
               <span class="liberty__link-text">Read the Skyfort manifesto</span>
             </span>
-            <img class="liberty__link-arrow" src="/img/TheLibertySection/arrow.svg" alt="" />
+            <img class="liberty__link-arrow" src="/img/global/arrow.svg" alt="Arrow" />
           </a>
         </div>
       </div>
@@ -332,35 +336,42 @@ const items = [
 <style lang="scss">
 .liberty {
   background: #ddd8d5;
-  padding: 128px 0 80px;
-  &__inner {
-  }
+  @include adaptive-value('padding-top', 128, 80, 1);
+  padding-bottom: 80px;
   &__title {
     font-feature-settings: 'ss02' on;
-    margin-bottom: 49px;
+    @include adaptive-value('margin-bottom', 49, 77, 1);
+    line-height: calc(84 / 96);
   }
   &__desc {
     text-align: center;
-    font-size: 18px;
+    @include adaptive-value('font-size', 18, 20, 1);
     line-height: calc(24 / 18);
     letter-spacing: 0.36px;
     max-width: 785px;
-    margin: 0 auto 66px;
+    margin: 0 auto;
+    @include adaptive-value('margin-bottom', 66, 46, 1);
   }
   &__list {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 84px;
+    justify-content: center;
+    margin: -9px;
+    flex-wrap: wrap;
+    @include adaptive-value('margin-bottom', 84, 69, 1);
   }
   &__item {
     max-width: 322px;
     width: 100%;
+    margin: 9px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 47px 40px 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    @include adaptive-value('padding-top', 47, 24, 1);
+    @include adaptive-value('padding-bottom', 30, 24, 1);
     border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(
@@ -374,22 +385,23 @@ const items = [
   }
   &__item-title {
     font-family: 'Atyp Display', sans-serif;
-    font-size: 20px;
+    @include adaptive-value('font-size', 20, 17, 1);
     line-height: calc(24 / 20);
-    margin-bottom: 18px;
+    @include adaptive-value('margin-bottom', 18, 9, 1);
   }
   &__item-desc {
     font-family: 'Articulat CF', sans-serif;
-    font-size: 12px;
+    @include adaptive-value('font-size', 12, 10, 1);
     line-height: calc(15 / 12);
-  }
-  &__link-wrapper {
   }
   &__main-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 32.5px 48px;
+    @include adaptive-value('padding-top', 32.5, 21, 1);
+    @include adaptive-value('padding-bottom', 32.5, 21, 1);
+    @include adaptive-value('padding-left', 48, 24, 1);
+    @include adaptive-value('padding-right', 48, 24, 1);
     border-radius: 40px;
     background: #fff;
   }
@@ -398,11 +410,12 @@ const items = [
     align-items: center;
   }
   &__link-img {
-    margin-right: 24px;
+    @include adaptive-value('margin-right', 24, 16, 1);
+    @include adaptive-value('width', 39, 24, 1);
   }
   &__link-text {
     font-family: 'Atyp Display', sans-serif;
-    font-size: 20px;
+    @include adaptive-value('font-size', 20, 10, 1);
     line-height: calc(24 / 20);
     position: relative;
     &::before {
@@ -416,6 +429,7 @@ const items = [
     }
   }
   &__link-arrow {
+    @include adaptive-value('width', 24, 18, 1);
   }
 }
 </style>

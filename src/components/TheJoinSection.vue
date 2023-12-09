@@ -27,6 +27,7 @@ import TheUpside from './TheUpside.vue'
   position: relative;
   background: #a5cce0;
   padding-bottom: 60px;
+  @include adaptive-value('padding-bottom', 60, 0, 1);
   position: relative;
   &__inner {
     position: relative;

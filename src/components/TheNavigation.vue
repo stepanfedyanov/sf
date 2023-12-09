@@ -46,9 +46,11 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
   &__nav-list {
     display: flex;
     align-items: center;
+    position: relative;
+    top: 2px;
   }
   &__nav-item + &__nav-item {
-    margin-left: 40px;
+    @include adaptive-value('margin-left', 40, 0, 1);
   }
   &__nav-item-link {
     letter-spacing: -0.195px;
@@ -75,12 +77,23 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     }
   }
   &__btns {
-    margin-left: 40px;
+    @include adaptive-value('margin-left', 40, 0, 1);
     display: flex;
     align-items: center;
   }
-  .btn + .btn {
-    margin-left: 6px;
+  .btn-wrapper + .btn-wrapper  {
+    @include adaptive-value('margin-left', 6, 5, 1);
+  }
+}
+
+@media (max-width: 750px) {
+  .header {
+    &__nav-list {
+      display: none;
+    }
+    &__btns {
+      display: none;
+    }
   }
 }
 </style>

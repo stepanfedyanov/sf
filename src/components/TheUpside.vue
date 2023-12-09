@@ -21,7 +21,7 @@ import TheContainer from './TheContainer.vue'
     font-family: 'Atyp Display', sans-serif;
     color: #a5cce0;
     text-align: center;
-    font-size: 160px;
+    @include adaptive-value('font-size', 160, 72, 1);
     line-height: calc(140 / 160);
     letter-spacing: -1.6px;
     font-weight: 300;
@@ -37,6 +37,22 @@ import TheContainer from './TheContainer.vue'
       width: 1140px;
       height: 314px;
       background: url('/img/TheJoinSection/text-cloud.png');
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .upside {
+    margin-top: 470px;
+    &__title {
+      max-width: 312px;
+      margin: 0 auto;
+      &::before {
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include adaptive-value('top', 250, -50, 1);
+      }
     }
   }
 }

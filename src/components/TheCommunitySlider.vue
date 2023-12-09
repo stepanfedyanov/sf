@@ -25,15 +25,57 @@ defineProps({
         :host .swiper-slide {
           height: auto;
         }
+
+              :host .swiper-slide {
+              height: auto;
+            }
+            :host .swiper-wrapper {
+              align-items: stretch;
+            }
+            
+            .swiper-pagination {
+              display: none;
+              top: auto !important;
+              bottom: -44px !important;
+              transform: translateY(50%) !important;
+            }
+            @media (max-width: 600px) {
+              .swiper-pagination {
+                display: block;
+              }
+            }
+            .swiper-pagination-bullet {
+              background: #fff !important;
+              width: 4px !important;
+              height: 4px !important;
+              opacity: 1 !important;
+              transition: .2s !important;
+            }
+            .swiper-pagination-bullet-active {
+              background-color: #052E3E !important;
+            } 
         `
         ]"
+        :breakpoints="{
+          540: {
+            slidesPerView: 1.5
+          },
+          765: {
+            slidesPerView: 2,
+            centeredSlides: false
+          }
+        }"
         class="swiper community__swiper"
         ref="swiper"
         :spaceBetween="20"
-        :slidesPerView="2"
+        :slidesPerView="1.2"
+        :centeredSlides="true"
         :speed="900"
         :grabCursor="true"
         :initialSlide="1"
+        :pagination="{
+          clickable: true
+        }"
       >
         <swiper-slide
           class="swiper-slide community__swiper-slide community-slide"
@@ -41,7 +83,7 @@ defineProps({
           :key="person.href"
         >
           <div class="community-slide__card">
-            <img class="community-slide__img" :src="person.img" alt="" />
+            <img class="community-slide__img" :src="person.img" :alt="`Photo ${person.name}`" />
             <h3 class="community-slide__name">
               {{ person.name }}
             </h3>
@@ -90,6 +132,9 @@ defineProps({
     right: 0;
     z-index: 5;
     transform: translateX(50%) translateY(-50%);
+    svg {
+      @include adaptive-value('width', 54, 24, 1);
+    }
   }
   &__swiper-button-prev {
     position: absolute;
@@ -97,11 +142,18 @@ defineProps({
     left: 0;
     z-index: 5;
     transform: translateX(-50%) translateY(-50%);
+    svg {
+      @include adaptive-value('width', 54, 24, 1);
+    }
   }
 }
 .community-slide {
-  padding: 50px 72px;
-  border-radius: 40px;
+  height: auto !important;
+  @include adaptive-value('border-radius', 40, 33, 1);
+  @include adaptive-value('padding-top', 50, 30, 1);
+  @include adaptive-value('padding-bottom', 50, 30, 1);
+  @include adaptive-value('padding-left', 72, 28, 1);
+  @include adaptive-value('padding-right', 72, 28, 1);
   border: 1px solid rgba(255, 255, 255, 0.5);
   background: linear-gradient(
     154deg,
@@ -112,28 +164,59 @@ defineProps({
   &__img {
     margin: 0 auto;
     border-radius: 50%;
-    margin-bottom: 24px;
+    @include adaptive-value('margin-bottom', 24, 19.5, 1);
+    @include adaptive-value('width', 148, 83, 1);
   }
   &__name {
     color: #fff;
     text-align: center;
-    font-size: 24px;
+    @include adaptive-value('font-size', 24, 19, 1);
     line-height: calc(32 / 24);
     letter-spacing: -0.48px;
     font-weight: 300;
     font-family: 'Atyp Display', sans-serif;
-    margin-bottom: 6px;
+    @include adaptive-value('margin-bottom', 6, 0, 1);
   }
   &__position {
-    font-size: 16px;
+    @include adaptive-value('font-size', 16, 11, 1);
     line-height: calc(24 / 16);
-    margin-bottom: 20px;
+    @include adaptive-value('margin-bottom', 20, 14, 1);
   }
   &__desc {
     font-size: 12px;
     line-height: calc(16 / 12);
     max-width: 268px;
-    margin: 0 auto 37px;
+    margin: 0 auto;
+    @include adaptive-value('margin-bottom', 37, 27, 1);
+  }
+}
+
+@media (max-width: 1100px) {
+  .community {
+    &__swiper-button-next {
+      right: 32px;
+    }
+    &__swiper-button-prev {
+      left: 32px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .community {
+    &__swiper {
+      margin-bottom: 84px;
+    }
+    &__swiper-button-next {
+      top: auto;
+      bottom: -44px;
+      transform: translateY(50%);
+    }
+    &__swiper-button-prev {
+      top: auto;
+      bottom: -44px;
+      transform: translateY(50%);
+    }
   }
 }
 </style>

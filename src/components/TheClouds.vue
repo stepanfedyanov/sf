@@ -1,8 +1,8 @@
 <template>
   <div>
-    <img class="join__upper-clouds" src="/img/TheJoinSection/upper-clouds.png" alt="" />
+    <img class="join__upper-clouds" src="/img/TheJoinSection/upper-clouds.png" alt="Clouds" />
     <div class="join__buildings-wrapper">
-      <img class="join__buildings" src="/img/TheJoinSection/buildings.png" alt="" />
+      <img class="join__buildings" src="/img/TheJoinSection/buildings.png" alt="Clouds" />
     </div>
   </div>
 </template>
@@ -43,6 +43,23 @@
     top: 170px;
     right: 35px;
     z-index: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .join {
+    &::before {
+      background: linear-gradient(to bottom, transparent 75%, #fff 90%);
+    }
+    &__buildings {
+      top: 420px;
+      left: 50%;
+      transform: translateX(-50%);
+      right: auto;
+    }
+    &__upper-clouds {
+      top: 0px;
+    }
   }
 }
 </style>

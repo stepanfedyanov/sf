@@ -137,36 +137,72 @@ const navList = [
           </div>
         </div>
       </div>
+
+      <div class="footer__inner _mobile">
+        <div class="footer__top">
+          <h2 class="footer__title">Join the community</h2>
+          <p class="footer__desc">
+            Get access to private community of wealth management professionals, experts and service
+            providers to attend special events, share knowledge, network and collaborate globally.
+          </p>
+          <TheButton size="big" color="blue">Apply Now</TheButton>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__logo-wrapper">
+            <TheLogotype fill="#ffffff" />
+          </div>
+          <ul class="socials__list">
+            <li class="socials__item" v-for="item in socialsList" :key="item.title">
+              <a class="socials__link" :href="item.href" v-html="item.icon"></a>
+            </li>
+          </ul>
+          <nav class="footer__nav">
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item" v-for="item in navList" :key="item.title">
+                <a class="footer__nav-link" :href="item.href">
+                  {{ item.title }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <a class="footer__bottom-link" href="#">Skyfort - 2023 - All rights reserved</a>
+        </div>
+      </div>
     </TheContainer>
   </footer>
 </template>
 
 <style lang="scss">
 .footer {
-  padding: 100px 0 60px;
+  @include adaptive-value('padding-top', 100, 80, 1);
+  padding-bottom: 48px;
   background: #052e3e;
   color: #fff;
+  ._mobile {
+    display: none;
+  }
   &__top {
-    padding-bottom: 85px;
+    @include adaptive-value('padding-bottom', 85, 66, 1);
     text-align: center;
     border-bottom: 1px solid #fff;
   }
   &__title {
     font-family: 'Atyp Display', sans-serif;
-    font-size: 90px;
+    @include adaptive-value('font-size', 90, 48, 1);
     font-weight: 300;
-    margin-bottom: 30px;
+    @include adaptive-value('margin-bottom', 30, 40, 1);
   }
   &__desc {
     max-width: 788px;
-    margin: 0 auto 72px;
-    font-size: 18px;
+    margin: 0 auto;
+    @include adaptive-value('margin-bottom', 72, 57, 1);
+    @include adaptive-value('font-size', 18, 20, 1);
     line-height: calc(24 / 18);
     letter-spacing: 0.36px;
     font-weight: 400;
   }
   &__bottom {
-    padding-top: 44px;
+    @include adaptive-value('padding-top', 44, 32, 1);
   }
   &__bottom-line {
     display: flex;
@@ -181,12 +217,13 @@ const navList = [
     align-items: center;
   }
   &__nav-item + &__nav-item {
-    margin-left: 43px;
+    @include adaptive-value('margin-left', 43, 19, 1);
   }
   &__nav-link,
   &__bottom-link {
     line-height: calc(24 / 13);
     letter-spacing: -0.195px;
+    @include adaptive-value('font-size', 13, 9, 1);
   }
 }
 .socials {
@@ -194,8 +231,60 @@ const navList = [
     display: flex;
     align-items: center;
   }
+  &__item {
+    @include adaptive-value('width', 38, 23, 1);
+    svg {
+      width: 100%;
+    }
+  }
   &__item + &__item {
-    margin-left: 26px;
+    @include adaptive-value('margin-left', 26, 17, 1);
+  }
+}
+
+@media (max-width: 515px) {
+  .footer {
+    &__inner {
+      display: none;
+    }
+    ._mobile {
+      display: block;
+    }
+    &__logo-wrapper {
+      text-align: center;
+      .logo__img {
+        margin: 0 auto;
+      }
+      @include adaptive-value('margin-bottom', 48, 30, 1);
+    }
+    &__nav-list {
+      justify-content: center;
+    }
+    &__nav-item {
+      padding: 5px 0;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 6px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        height: 1px;
+      }
+    }
+    &__bottom-link {
+      display: block;
+      text-align: center;
+      padding: 5px 0;
+    }
+  }
+
+  .socials {
+    &__list {
+      justify-content: center;
+      @include adaptive-value('margin-bottom', 30, 18, 1);
+    }
   }
 }
 </style>

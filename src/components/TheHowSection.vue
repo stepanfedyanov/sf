@@ -5,7 +5,7 @@ const items = [
   {
     desc: 'For mindful private investors',
     title: 'Digital multi-family office',
-    img: '/img/TheHowSection/investors.jpg',
+    img: './img/TheHowSection/investors.jpg',
     texts: [
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
       'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla',
@@ -15,7 +15,7 @@ const items = [
   {
     desc: 'For next-gen wealth managers',
     title: 'Infrastructure as a service',
-    img: '/img/TheHowSection/managers.jpg',
+    img: './img/TheHowSection/managers.jpg',
     texts: [
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
       'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla',
@@ -39,10 +39,19 @@ const items = [
 
 <style lang="scss">
 .how {
+  background: #fff;
   position: relative;
-  margin: 100px 0;
+  padding: 100px 0;
   &__item + &__item {
     margin-top: 94px;
+  }
+}
+
+@media (max-width: 550px) {
+  .how {
+    &__item + &__item {
+      margin-top: 89px;
+    }
   }
 }
 </style>

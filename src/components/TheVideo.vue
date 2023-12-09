@@ -48,12 +48,18 @@
 .intro {
   &__video-wrapper {
     margin-bottom: 80px;
-    border-radius: 40px;
+    @include adaptive-value('border-radius', 40, 30, 1);
     overflow: hidden;
+    min-height: 525px;
     position: relative;
   }
   &__video {
     max-width: 100%;
+    height: 100%;
+    width: 100%;
+    min-height: 525px;
+    object-fit: cover;
+    object-position: center;
   }
   &__video-btn-wrapper {
     position: absolute;
@@ -62,6 +68,7 @@
     transform: translate(-50%, -50%);
   }
   &__video-btn {
+    @include adaptive-value('width', 90, 52, 1);
     cursor: pointer;
     .play-stop-opacity {
       transition: 0.15s;
@@ -75,4 +82,6 @@
     }
   }
 }
+
+
 </style>

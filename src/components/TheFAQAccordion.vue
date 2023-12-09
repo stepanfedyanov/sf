@@ -55,11 +55,14 @@ const items = [
 
 <style lang="scss">
 .accordion {
-  padding: 42px 36px;
+  @include adaptive-value('padding-top', 42, 32, 1);
+  @include adaptive-value('padding-bottom', 42, 32, 1);
+  @include adaptive-value('padding-left', 36, 27, 1);
+  @include adaptive-value('padding-right', 36, 27, 1);
   border-radius: 40px;
   background: #f2f3f5;
   .p-accordion-tab + .p-accordion-tab {
-    margin-top: 12px;
+    @include adaptive-value('margin-top', 12, 14, 1);
   }
   .p-toggleable-content {
     line-height: calc(21 / 13);
@@ -71,13 +74,16 @@ const items = [
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    padding-bottom: 48px;
+    @include adaptive-value('padding-bottom', 48, 28, 1);
   }
   .p-accordion-header {
     position: relative;
     font-family: 'Atyp Display';
-    font-size: 20px;
+    @include adaptive-value('font-size', 20, 10, 1);
     line-height: calc(24 / 20);
+    svg {
+      @include adaptive-value('width', 24, 16, 1);
+    }
     &::before {
       content: '';
       position: absolute;
@@ -86,6 +92,17 @@ const items = [
       background-color: #000;
       bottom: 24px;
       left: 0;
+    }
+  }
+  .p-accordion-content {
+    @include adaptive-value('font-size', 13, 10, 1);
+  }
+}
+
+@media (max-width: 800px) {
+  .faq {
+    &__title {
+      text-align: center;
     }
   }
 }

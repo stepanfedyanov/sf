@@ -14,7 +14,7 @@ defineProps({
 .section-title {
   font-family: 'Atyp Display', sans-serif;
   text-align: center;
-  font-size: 96px;
+  @include adaptive-value('font-size', 96, 44, 1);
   line-height: normal;
   font-weight: 300;
 }
