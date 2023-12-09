@@ -3,6 +3,11 @@ import TheContainer from './TheContainer.vue'
 import TheSectionTitle from './TheSectionTitle.vue'
 import TheCommunitySlider from './TheCommunitySlider.vue'
 import TheArchitecture from './TheArchitecture.vue'
+import { onMounted, ref } from 'vue';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const staff = [
   {
@@ -34,10 +39,38 @@ const staff = [
     href: '#'
   }
 ]
+
+const random = (min, max) => { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+};
+
+const stars = ref([]);
+
+const startAppearTime = 1000;
+const maxStarsCount = 5;
+let lastHalf = 0;
+
+onMounted(() => {
+  setInterval(() => {
+    stars.value.push({
+      x: `${lastHalf === 1 ? random(1, 20) : random(80, 100)}%`,
+      y: `${Math.ceil(Math.random() * 100)}%`,
+    });
+
+    lastHalf = lastHalf === 1 ? 0 : 1;
+
+    if (stars.value.length > maxStarsCount) stars.value.shift()
+  }, startAppearTime);
+});
 </script>
 
 <template>
   <section class="community">
+    <div class="community__stars">
+      <TransitionGroup name="fade">
+        <span v-for="star in stars" :key="`star-${star.x}-${star.y}`" class="community__star" :style="`left: ${star.x}; top: ${star.y}`" />
+      </TransitionGroup>
+    </div>
     <TheContainer>
       <div class="community__inner">
         <TheSectionTitle
@@ -57,12 +90,6 @@ const staff = [
       :staff="staff"
     />
     <TheArchitecture />
-    <img
-      class="community__clouds wow animate__animated animate__fadeIn"
-      data-wow-delay="0.5s"
-      src="/img/TheCommunitySection/clouds.png"
-      alt="Clouds"
-    />
   </section>
 </template>
 
@@ -71,6 +98,22 @@ const staff = [
   @include adaptive-value('padding-top', 67, 80, 1);
   background: #a5cce0;
   overflow: hidden;
+  &__stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35vh;
+    z-index: -1;
+  }
+  &__star {
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   &__title {
     @include adaptive-value('margin-bottom', 50, 81, 1);
     color: #fff;
@@ -97,5 +140,15 @@ const staff = [
     height: 2092px;
     max-width: initial;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

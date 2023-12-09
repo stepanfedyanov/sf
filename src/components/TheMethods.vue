@@ -1,5 +1,9 @@
 <script setup>
+import { onMounted } from 'vue';
 import TheContainer from './TheContainer.vue'
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const cards = [
   {
@@ -13,6 +17,22 @@ const cards = [
     desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
   }
 ]
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  const sliderTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.methods',
+      start: 'top+=20% bottom',
+      scrub: false,
+    }
+  });
+
+  gsap.set('.methods__card', { yPercent: 50, opacity: 0 });
+  sliderTimeline.from('.methods__card', { yPercent: 50, opacity: 0 });
+  sliderTimeline.to('.methods__card', { yPercent: 0, opacity: 1, duration: 0.5, stagger: 0.3 });
+});
 </script>
 
 <template>

@@ -1,12 +1,33 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 import TheSliderButton from './TheSliderButton.vue'
 const swiper = ref(null)
 
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger)
+
 defineProps({
   staff: Object
+})
+
+onMounted(() => {
+  const slideSize = swiper.value.swiper.slidesSizesGrid[0];
+  
+  gsap.set('.community__swiper', { x: slideSize })
+
+ gsap.to('.community__swiper', {
+    x: 0,
+    scrollTrigger: {
+      trigger: '.community',
+      start: 'top+=20% bottom',
+      end: 'center-=10% bottom',
+      scrub: true,
+    }
+  });
 })
 </script>
 

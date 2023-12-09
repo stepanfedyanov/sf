@@ -1,22 +1,59 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref, toRefs } from 'vue'
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 import TheSectionTitle from './TheSectionTitle.vue'
 import TheSliderButton from './TheSliderButton.vue'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-defineProps({
-  settings: Object
-})
+const props = defineProps({
+  settings: Object,
+  idx: Number,
+});
+
+const { idx, settings } = toRefs(props); 
+
+gsap.registerPlugin(ScrollTrigger);
 
 const swiper = ref(null)
 
+const advantageElement = ref(null);
 
+onMounted(() => {
+  const sliderTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: advantageElement.value,
+      start: 'top+=20% bottom',
+      scrub: false,
+    }
+  });
+
+  gsap.set(`.advantage__swiper-slide-${idx.value}`, { yPercent: 50, opacity: 0 });
+  sliderTimeline.from(`.advantage__swiper-slide-${idx.value}`, { yPercent: 50, opacity: 0 });
+  sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0, opacity: 1, duration: 0.5, stagger: 0.3 });
+
+  const nextBlockTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: `#advantage-${idx.value}`,
+      start: 'bottom bottom',
+      end: '+=50%',
+      scrub: true,
+      pin: true
+    }
+  });
+
+  gsap.set(`#advantage-${idx.value} .advantage__next-background`, { opacity: 0, background: gsap.getProperty(idx.value === 1 ? '.community' : `#advantage-${idx.value + 1}`, 'background') });
+
+  nextBlockTimeline
+    .to(`#advantage-${idx.value} .advantage__next-background`, { opacity: 1 })
+});
 </script>
 
 <template>
   <section
     class="advantage"
+    ref="advantageElement"
     :class="{ blue: settings.style === 'blue', white: settings.style === 'white' }"
   >
     <TheContainer>
@@ -33,9 +70,7 @@ const swiper = ref(null)
         </p>
 
         <div
-          class="swiper-block wow animate__animated animate__fadeIn"
-          data-wow-duration="1.4s"
-          data-wow-delay="0.5s"
+          class="swiper-block"
         >
           <swiper-container
             ref="swiper"
@@ -105,8 +140,8 @@ const swiper = ref(null)
             }"
           >
             <swiper-slide
-              class="swiper-slide advantage__swiper-slide adv-slide"
               :class="[
+                `swiper-slide advantage__swiper-slide advantage__swiper-slide-${idx} adv-slide`,
                 { blue: settings.style === 'blue', white: settings.style === 'white' },
                 settings.cardStyle
               ]"
@@ -191,10 +226,7 @@ const swiper = ref(null)
         </div>
 
         <TheButton
-          class="advantage__btn wow animate__animated animate__bounceIn"
-          href="https://google.com"
-          target="_blank"
-          data-wow-delay="0.5s"
+          class="advantage__btn wow animate__animated animate__fadeIn"
           data-wow-duration="1.4s"
           color="white"
           size="big"
@@ -203,6 +235,8 @@ const swiper = ref(null)
         </TheButton>
       </div>
     </TheContainer>
+
+    <div class="advantage__next-background" />
   </section>
 </template>
 
@@ -261,6 +295,14 @@ const swiper = ref(null)
     svg {
       @include adaptive-value('width', 54, 24, 1);
     }
+  }
+  &__next-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
   }
 }
 

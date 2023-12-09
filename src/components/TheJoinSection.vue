@@ -2,7 +2,6 @@
 import TheHeader from './TheHeader.vue'
 import TheMeet from './TheMeet.vue'
 import TheClouds from './TheClouds.vue'
-import TheUpside from './TheUpside.vue'
 </script>
 
 <template>
@@ -10,7 +9,6 @@ import TheUpside from './TheUpside.vue'
     <div class="join__inner">
       <TheHeader />
       <TheMeet />
-      <TheUpside />
     </div>
     <TheClouds class="join__clouds" />
   </section>
@@ -24,13 +22,16 @@ import TheUpside from './TheUpside.vue'
   }
 }
 .join {
+  overflow: hidden;
   position: relative;
-  background: #a5cce0;
+  background: linear-gradient(to bottom, #a5cce0 10%, #fff 90%);
   padding-bottom: 60px;
   @include adaptive-value('padding-bottom', 60, 0, 1);
   position: relative;
+  min-height: 1024px;
   &__inner {
     position: relative;
+    padding-bottom: 70px;
     z-index: 10;
   }
 }
