@@ -76,11 +76,11 @@ onMounted(() => {
     }
   });
 
-  gsap.set('.how__next-background', { opacity: 0, background: gsap.getProperty('.intro', 'background') });
+  gsap.set('.how__next-background', { opacity: 0, visibility: 'hidden', background: gsap.getProperty('.intro', 'background') });
 
   nextBlockTimeline
   .addLabel('nextBlockFadeIn')
-    .to('.how__next-background', { opacity: 1 }, 'nextBlockFadeIn')
+    .to('.how__next-background', { opacity: 1, visibility: 'visible' }, 'nextBlockFadeIn')
     .to('.intro', { opacity: 1 }, 'nextBlockFadeIn')
 
 });
@@ -130,6 +130,7 @@ onMounted(() => {
     left: 0;
     width: 100vw;
     height: 100vh;
+    z-index: 999;
   }
 }
 

@@ -34,10 +34,10 @@ onMounted(() => {
     }
   });
 
-  gsap.set('.intro__next-background', { opacity: 0, background: gsap.getProperty('.blue', 'background') });
+  gsap.set('.intro__next-background', { opacity: 0, visibility: 'hidden', background: gsap.getProperty('.blue', 'background') });
 
   nextBlockTimeline
-    .to('.intro__next-background', { opacity: 1 })
+    .to('.intro__next-background', { opacity: 1, visibility: 'visible' })
 });
 </script>
 
@@ -76,7 +76,7 @@ onMounted(() => {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 999;
   }
 }
 

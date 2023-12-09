@@ -39,14 +39,14 @@ onMounted(() => {
       start: 'bottom bottom',
       end: '+=50%',
       scrub: true,
-      pin: true
+      pin: true,
     }
   });
 
-  gsap.set(`#advantage-${idx.value} .advantage__next-background`, { opacity: 0, background: gsap.getProperty(idx.value === 1 ? '.community' : `#advantage-${idx.value + 1}`, 'background') });
+  gsap.set(`#advantage-${idx.value} .advantage__next-background`, { opacity: 0, visibility: 'hidden', background: gsap.getProperty(idx.value === 1 ? '.community' : `#advantage-${idx.value + 1}`, 'background') });
 
   nextBlockTimeline
-    .to(`#advantage-${idx.value} .advantage__next-background`, { opacity: 1 })
+    .to(`#advantage-${idx.value} .advantage__next-background`, { opacity: 1, visibility: 'visible' })
 });
 </script>
 
@@ -302,7 +302,7 @@ onMounted(() => {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 5;
+    z-index: 999;
   }
 }
 
