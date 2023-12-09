@@ -39,7 +39,6 @@ const swiper = ref(null)
         >
           <swiper-container
             ref="swiper"
-            :grabCursor="true"
             :centeredSlidesBounds="true"
             :breakpoints="{
               381: {

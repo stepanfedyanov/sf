@@ -50,7 +50,6 @@ const sliders = [
       class="swiper video__swiper"
       ref="swiper"
       :speed="900"
-      :grabCursor="true"
       :autoplay="{
         delay: 2500,
         disableOnInteraction: false

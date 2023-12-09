@@ -1,15 +1,30 @@
 <script setup>
+import { ref } from 'vue'
 import TheLogotype from './TheLogotype.vue'
 import TheNavigation from './TheNavigation.vue'
 import TheButton from './TheButton.vue'
+
+const _opened = ref(false)
+
+const openNavbar = () => {
+  _opened.value = !_opened.value;
+  if (document && document.documentElement) document.documentElement.classList.toggle('_fixed')
+}
 </script>
 
 <template>
-  <header class="header _opened animate__animated animate__fadeIn">
+  <header
+    :class="[
+      'header animate__animated animate__fadeIn',
+      {
+        _opened: _opened
+      }
+    ]"
+  >
     <div class="header__inner">
       <div class="header__inner-row">
         <TheLogotype fill="#052E3E" />
-        <div class="header__burger">
+        <div class="header__burger" @click="openNavbar">
           <span class="header__line"></span>
           <span class="header__line"></span>
           <span class="header__line"></span>
@@ -72,8 +87,8 @@ import TheButton from './TheButton.vue'
     rgba(255, 255, 255, 0) 140.09%
   );
   backdrop-filter: blur(15px);
-  @include adaptive-value('padding-top', 16, 9, 1);
-  @include adaptive-value('padding-bottom', 16, 9, 1);
+  @include adaptive-value('padding-top', 16, 4, 1);
+  @include adaptive-value('padding-bottom', 16, 4, 1);
   @include adaptive-value('padding-left', 38, 24, 1);
   @include adaptive-value('padding-right', 38, 24, 1);
   &__inner {
@@ -113,6 +128,9 @@ import TheButton from './TheButton.vue'
 
 @media (max-width: 750px) {
   .header {
+    &._opened {
+      padding-bottom: 48px;
+    }
     &__burger {
       display: flex;
     }
