@@ -37,7 +37,7 @@ defineProps({
       <div class="how__item-info">
         <p class="how__item-desc wow animate__animated animate__fadeIn">{{ info.desc }}</p>
         <h2 class="how__item-title wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-          {{ info.title }}
+          {{ info.title }}123
         </h2>
       </div>
       <p
