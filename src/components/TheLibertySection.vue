@@ -296,16 +296,19 @@ const items = [
   <section class="liberty">
     <TheContainer>
       <div class="liberty__inner">
-        <TheSectionTitle class="liberty__title" color="#052E3E">
+        <TheSectionTitle
+          class="liberty__title wow animate__animated animate__fadeInUp"
+          color="#052E3E"
+        >
           Your purposeful path to liberty
         </TheSectionTitle>
-        <p class="liberty__desc">
+        <p class="liberty__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
           Our mission is to bring prosperity and independence to ... Lorem ipsum dolor sit amet
           consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper
           tempor egestas diam. Vel placerat eu ullamcorper pellentesque laoreet euismod.
         </p>
         <ul class="liberty__list">
-          <li class="liberty__item" v-for="item in items" :key="item.title">
+          <li class="liberty__item wow animate__animated animate__fadeIn" v-for="(item, idx) in items" :data-wow-delay="parseFloat(`${0.3 * idx}`) + 's'" :key="item.title">
             <div class="liberty__img-wrapper" v-html="item.icon"></div>
             <h3 class="liberty__item-title">
               {{ item.title }}
@@ -315,7 +318,7 @@ const items = [
             </p>
           </li>
         </ul>
-        <div class="liberty__link-wrapper">
+        <div class="liberty__link-wrapper wow animate__animated animate__fadeIn">
           <a class="liberty__main-link" href="#">
             <span class="liberty__main-link-left">
               <img

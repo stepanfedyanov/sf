@@ -16,9 +16,6 @@ app.mount('#app')
 
 // eslint-disable-next-line no-undef
 new WOW().init();
-
-
-import 'swiper/css'
 import { register } from 'swiper/element/bundle'
 register()
 

@@ -92,7 +92,6 @@ onMounted(() => {
         :slidesPerView="1.2"
         :centeredSlides="true"
         :speed="900"
-        :grabCursor="true"
         :initialSlide="1"
         :pagination="{
           clickable: true

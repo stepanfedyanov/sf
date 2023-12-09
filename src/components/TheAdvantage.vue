@@ -17,6 +17,7 @@ const { idx, settings } = toRefs(props);
 gsap.registerPlugin(ScrollTrigger);
 
 const swiper = ref(null)
+
 const advantageElement = ref(null);
 
 onMounted(() => {
@@ -73,7 +74,6 @@ onMounted(() => {
         >
           <swiper-container
             ref="swiper"
-            :grabCursor="true"
             :centeredSlidesBounds="true"
             :breakpoints="{
               381: {

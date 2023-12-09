@@ -43,8 +43,8 @@ onMounted(() => {
           <li
             class="methods__card wow animate__animated animate__fadeIn"
             data-wow-duration="0.5s"
-            data-wow-delay=".6s"
-            v-for="card in cards"
+            :data-wow-delay="parseFloat(`${0.3 * idx}`) + 0.6 + 's'"
+            v-for="(card, idx) in cards"
             :key="card.title"
           >
             <div class="methods__card-img-wrapper">

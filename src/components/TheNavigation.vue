@@ -43,6 +43,12 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     display: flex;
     align-items: center;
   }
+  &__dash {
+    display: none;
+  }
+  &__mobile-btns {
+    display: none;
+  }
   &__nav-list {
     display: flex;
     align-items: center;
@@ -81,7 +87,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     display: flex;
     align-items: center;
   }
-  .btn-wrapper + .btn-wrapper  {
+  .btn-wrapper + .btn-wrapper {
     @include adaptive-value('margin-left', 6, 5, 1);
   }
 }
@@ -93,6 +99,86 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     }
     &__btns {
       display: none;
+    }
+    &__mobile-btns {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+    &__mobile-btn {
+      button {
+        width: calc(100% - 46px);
+        margin: 0 auto;
+        display: block;
+        font-size: 14px !important;
+        line-height: calc(24 / 14) !important;
+        letter-spacing: 0.42px !important;
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
+        position: relative;
+        span {
+          svg {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -20px;
+            left: auto;
+          }
+        }
+      }
+    }
+    &__mobile-btn + &__mobile-btn {
+      margin-left: 0 !important;
+      margin-top: 14px;
+    }
+    &__inner-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    &__nav-item-link {
+      font-size: 14px;
+      line-height: calc(24 / 14);
+      letter-spacing: -0.21px;
+    }
+    &._opened {
+      .header {
+        &__mobile-btns {
+          display: flex;
+        }
+        &__nav-list {
+          margin-top: 48px;
+          margin-bottom: 48px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        &__nav-item-link {
+          padding: 0;
+        }
+        &__dash {
+          display: block;
+          margin-bottom: 40px;
+          width: 100%;
+          height: 0.5px;
+          background-color: #fff;
+        }
+      }
+      .header__nav-item + .header__nav-item {
+        margin-left: 0;
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .header {
+    &__mobile-btn {
+      button {
+        width: 100%;
+      }
     }
   }
 }
