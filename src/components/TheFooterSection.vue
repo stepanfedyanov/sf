@@ -105,20 +105,31 @@ const navList = [
     <TheContainer>
       <div class="footer__inner">
         <div class="footer__top">
-          <h2 class="footer__title">Join the community</h2>
-          <p class="footer__desc">
+          <h2 class="footer__title wow animate__animated animate__fadeInUp">Join the community</h2>
+          <p class="footer__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
             Get access to private community of wealth management professionals, experts and service
             providers to attend special events, share knowledge, network and collaborate globally.
           </p>
-          <TheButton size="big" color="blue">Apply Now</TheButton>
+          <TheButton
+            class="wow animate__animated animate__fadeIn"
+            data-wow-delay="0.1s"
+            size="big"
+            color="blue"
+            >Apply Now</TheButton
+          >
         </div>
         <div class="footer__bottom">
           <div class="footer__bottom-line">
-            <div class="footer__logo-wrapper">
+            <div class="footer__logo-wrapper wow animate__animated animate__fadeIn">
               <TheLogotype fill="#ffffff" />
             </div>
             <ul class="socials__list">
-              <li class="socials__item" v-for="item in socialsList" :key="item.title">
+              <li
+                class="socials__item wow animate__animated animate__fadeIn"
+                :data-wow-delay="parseFloat(`${0.2 * idx}`) + 's'"
+                v-for="(item, idx) in socialsList"
+                :key="item.title"
+              >
                 <a class="socials__link" :href="item.href" v-html="item.icon"></a>
               </li>
             </ul>
@@ -126,14 +137,25 @@ const navList = [
           <div class="footer__bottom-line">
             <nav class="footer__nav">
               <ul class="footer__nav-list">
-                <li class="footer__nav-item" v-for="item in navList" :key="item.title">
+                <li
+                  class="footer__nav-item wow animate__animated animate__fadeIn"
+                  :data-wow-delay="parseFloat(`${0.3 * idx}`) + 's'"
+                  v-for="(item, idx) in navList"
+                  :key="item.title"
+                >
                   <a class="footer__nav-link" :href="item.href">
                     {{ item.title }}
                   </a>
                 </li>
               </ul>
             </nav>
-            <a class="footer__bottom-link" href="#">Skyfort - 2023 - All rights reserved</a>
+            <a
+              class="footer__bottom-link wow animate__animated animate__fadeInRight"
+              data-wow-delay="0.6s"
+              data-wow-duration="1600"
+              href="#"
+              >Skyfort - 2023 - All rights reserved</a
+            >
           </div>
         </div>
       </div>

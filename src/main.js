@@ -14,7 +14,5 @@ app.use(router)
 app.mount('#app')
 
 new WOW().init();
-
-import 'swiper/css'
 import { register } from 'swiper/element/bundle'
 register()

@@ -7,7 +7,7 @@ import TheFAQAccordion from './TheFAQAccordion.vue'
   <section class="faq">
     <TheContainer>
       <div class="faq__inner">
-        <h2 class="faq__title">FAQ</h2>
+        <h2 class="faq__title wow animate__animated animate__fadeInUp">FAQ</h2>
         <TheFAQAccordion />
       </div>
     </TheContainer>
@@ -22,7 +22,7 @@ import TheFAQAccordion from './TheFAQAccordion.vue'
     @include adaptive-value('margin-bottom', 41, 25, 1);
     font-family: 'Atyp Display';
     @include adaptive-value('font-size', 40, 30, 1);
-    line-height: calc(46 / 40);
+    @include adaptive-value('line-height', 40, 48, 1);
   }
 }
 </style>

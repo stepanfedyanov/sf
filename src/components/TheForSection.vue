@@ -76,7 +76,7 @@ const sections = [
       },
       {
         img: './img/TheForSection/2/6.svg',
-        title: 'Wealth planning& assets aggregation',
+        title: 'Wealth planning &&nbsp;assets aggregation',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }
     ],
@@ -87,6 +87,7 @@ const sections = [
     num: 3,
     backgroundColor: '#fff',
     title: 'For product factories, brokers & service providers',
+    bigTitle: true,
     size: 'big',
     items: [
       {
@@ -116,11 +117,14 @@ const sections = [
         :key="section.title"
       >
         <TheContainer>
-          <div class="for__section-top">
+          <div
+            class="for__section-top wow animate__animated animate__fadeInLeft"
+            data-wow-delay="0.3s"
+          >
             <span class="for__section-num">
               {{ section.num }}
             </span>
-            <h2 class="for__section-title">
+            <h2 class="for__section-title" :class="{ _big: section.bigTitle }">
               {{ section.title }}
             </h2>
           </div>
@@ -128,17 +132,25 @@ const sections = [
             class="for__section-list"
             :class="{ small: section.size === 'small', big: section.size === 'big' }"
           >
-            <li class="for__section-item" v-for="item in section.items" :key="item.title">
+            <li
+              class="for__section-item wow animate__animated animate__fadeIn"
+              :data-wow-delay="parseFloat(`${0.2 * idx}`) + 0.2 + 's'"
+              v-for="(item, idx) in section.items"
+              :key="item.title"
+            >
               <img class="for__item-img" :src="item.img" :alt="`Icon ${item.title}`" />
-              <h3 class="for__item-title">
-                {{ item.title }}
-              </h3>
+              <h3 class="for__item-title" v-html="item.title"></h3>
               <p class="for__item-desc">
                 {{ item.desc }}
               </p>
             </li>
           </ul>
-          <TheButton class="for__section-btn" color="black" size="big">
+          <TheButton
+            class="for__section-btn wow animate__animated animate__fadeIn"
+            data-wow-delay="0.3s"
+            color="black"
+            size="big"
+          >
             {{ section.btnText }}
           </TheButton>
         </TheContainer>
@@ -172,6 +184,9 @@ const sections = [
     @include adaptive-value('font-size', 40, 28, 1);
     line-height: calc(46 / 40);
     max-width: 450px;
+    &._big {
+      max-width: 550px;
+    }
   }
   &__section-list {
     @include adaptive-value('margin-bottom', 62, 27, 1);

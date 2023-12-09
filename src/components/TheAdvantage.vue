@@ -10,6 +10,8 @@ defineProps({
 })
 
 const swiper = ref(null)
+
+
 </script>
 
 <template>

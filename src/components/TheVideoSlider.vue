@@ -6,6 +6,8 @@ const sliders = [
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit numquam quisquam unde cumque exercitationem vitae reiciendis vero quia a laborum dicta, excepturi debitis eos sit sequi! Esse distinctio tenetur consequuntur?',
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium qui nulla molestias architecto maiores quia ad quis neque officiis, fugit dolor iure?'
 ]
+
+
 </script>
 
 <template>
@@ -41,8 +43,10 @@ const sliders = [
         }
         `
       ]"
-      :effect="'fade'"
-      :fadeEffect="{ crossFade: true }"
+      effect="fade"
+      :fadeEffect="{
+        crossFade: true
+      }"
       class="swiper video__swiper"
       ref="swiper"
       :speed="900"
@@ -93,6 +97,7 @@ const sliders = [
     right: -64px;
     transform: translateX(100%);
     @include adaptive-value('width', 54, 36, 1);
+    z-index: 14;
   }
   &__swiper-button-prev {
     position: absolute;
@@ -100,6 +105,7 @@ const sliders = [
     left: -64px;
     transform: translateX(-100%);
     @include adaptive-value('width', 54, 36, 1);
+    z-index: 14;
   }
 }
 .video-slide {

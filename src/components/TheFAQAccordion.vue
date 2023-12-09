@@ -1,25 +1,6 @@
 <script setup>
-import { onMounted } from 'vue'
-import Accordion from 'primevue/accordion'
-import AccordionTab from 'primevue/accordiontab'
-
-onMounted(() => {
-  const headers = document.querySelectorAll('.p-accordion-header-link')
-
-  headers.forEach((header) => {
-    // const arrow = header.querySelector('svg')
-    // arrow.style.opacity = '0'
-    // arrow.style.visibility = 'hidden'
-    // arrow.style.width = '0px'
-    // arrow.style.height = '0px'
-    // header.removeChild(arrow)
-
-    const current = document.createElement('span')
-    current.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="p-icon p-accordion-toggle-icon" data-pc-section="headericon" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M2.09608 16.0772L3.01892 17L12.2969 7.72198L11.3741 6.79914L2.09608 16.0772Z" fill="#052E3E"/><path d="M12.2991 7.721L21.5771 16.999L22.5 16.0762L13.222 6.79816L12.2991 7.721Z" fill="#052E3E"/></svg>';
-
-    header.appendChild(current)
-  })
-})
+import TheAccordion from './TheAccordion.vue'
+import TheAccordionItem from './TheAccordionItem.vue'
 
 const items = [
   {
@@ -43,17 +24,35 @@ const items = [
 
 <template>
   <section class="accordion">
-    <Accordion>
-      <AccordionTab :header="item.header" v-for="item in items" :key="item.header">
-        <p class="m-0">
-          {{ item.body }}
-        </p>
-      </AccordionTab>
-    </Accordion>
+    <TheAccordion>
+      <TheAccordionItem class="wow animate__animated animate__fadeIn" v-for="(item, idx) in items" :data-wow-delay="parseFloat(`${0.2 * idx}`) + 's'" :key="item.header">
+        <template v-slot:accordion-trigger>
+          <h3>{{ item.header }}</h3>
+          <button class="accordion__arrow-btn">
+            <img src="/img/global/arrow.svg" class="accordion__arrow" />
+          </button>
+        </template>
+        <template v-slot:accordion-content>
+          <span>
+            {{ item.body }}
+          </span>
+        </template>
+      </TheAccordionItem>
+    </TheAccordion>
   </section>
 </template>
 
 <style lang="scss">
+.accordion__content {
+  span {
+    @include adaptive-value('padding-top', 24, 14, 1);
+    @include adaptive-value('padding-bottom', 24, 14, 1);
+    display: inline-block;
+    @media (max-width: 800px) {
+      padding-bottom: 0;
+    }
+  }
+}
 .accordion {
   @include adaptive-value('padding-top', 42, 32, 1);
   @include adaptive-value('padding-bottom', 42, 32, 1);
@@ -61,41 +60,23 @@ const items = [
   @include adaptive-value('padding-right', 36, 27, 1);
   border-radius: 40px;
   background: #f2f3f5;
-  .p-accordion-tab + .p-accordion-tab {
-    @include adaptive-value('margin-top', 12, 14, 1);
-  }
-  .p-toggleable-content {
-    line-height: calc(21 / 13);
-    max-width: 868px;
-  }
-  .p-accordion-header-link {
-    width: 100%;
+  &__arrow-btn {
+    background: transparent;
     outline: none;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    @include adaptive-value('padding-bottom', 48, 28, 1);
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
   }
-  .p-accordion-header {
-    position: relative;
-    font-family: 'Atyp Display';
-    @include adaptive-value('font-size', 20, 10, 1);
-    line-height: calc(24 / 20);
-    svg {
-      @include adaptive-value('width', 24, 16, 1);
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      background-color: #000;
-      bottom: 24px;
-      left: 0;
-    }
+  &__arrow {
+    transform: rotate(90deg);
+    transition: 0.3s;
+    @include adaptive-value('width', 24, 16, 1);
   }
-  .p-accordion-content {
-    @include adaptive-value('font-size', 13, 10, 1);
+  &__trigger_active {
+    .accordion__arrow {
+      transform: rotate(270deg);
+    }
   }
 }
 

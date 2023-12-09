@@ -42,7 +42,6 @@ const staff = [
       <div class="community__inner">
         <TheSectionTitle
           class="community__title wow animate__animated animate__fadeInUp"
-          color="#052E3E"
           >Founding Community</TheSectionTitle
         >
         <p class="community__desc wow animate__animated animate__fadeIn" data-wow-delay=".3s">
@@ -74,6 +73,7 @@ const staff = [
   overflow: hidden;
   &__title {
     @include adaptive-value('margin-bottom', 50, 81, 1);
+    color: #fff;
     text-align: center;
     letter-spacing: -1.92px;
     line-height: calc(52 / 48);
