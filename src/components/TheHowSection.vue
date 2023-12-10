@@ -83,7 +83,6 @@ onMounted(() => {
       start: 'bottom bottom',
       end: '+=50%',
       scrub: true,
-      pin: true
     }
   })
 

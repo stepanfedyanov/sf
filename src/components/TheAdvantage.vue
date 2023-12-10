@@ -24,14 +24,20 @@ onMounted(() => {
   const sliderTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: advantageElement.value,
-      start: 'top+=20% bottom',
-      scrub: false,
+      start: 'top+=30% bottom',
+      end: 'bottom bottom',
+      scrub: true,
     }
   });
 
-  gsap.set(`.advantage__swiper-slide-${idx.value}`, { yPercent: 50, opacity: 0 });
-  sliderTimeline.from(`.advantage__swiper-slide-${idx.value}`, { yPercent: 50, opacity: 0 });
-  sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0, opacity: 1, duration: 0.5, stagger: 0.3 });
+  const slides = document.querySelectorAll(`.advantage__swiper-slide-${idx.value}`);
+  const upperPosition = 20;
+
+  slides.forEach((slide, index) => {
+    gsap.set(slide, { yPercent: (slides.length - (index + 1)) * upperPosition });
+  });
+
+  sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0 });
 
   const nextBlockTimeline = gsap.timeline({
     scrollTrigger: {
@@ -39,7 +45,6 @@ onMounted(() => {
       start: 'bottom bottom',
       end: '+=50%',
       scrub: true,
-      pin: true,
     }
   });
 
@@ -245,7 +250,7 @@ onMounted(() => {
   align-items: stretch;
 }
 .advantage {
-  padding: 75px 0;
+  padding: 100px 0;
   &__btn {
     display: block;
     text-align: center;

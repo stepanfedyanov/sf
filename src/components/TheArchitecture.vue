@@ -43,6 +43,11 @@ onMounted(() => {
 
 <template>
   <section class="architecture" ref="architecture">
+    <!-- <div class="architecture__clouds">
+      <img src="/img/TheCommunitySection/architecture/cloud-upper-1.png" alt="Town's clouds">
+      <img src="/img/TheCommunitySection/architecture/cloud-upper-2.png" alt="Town's clouds">
+      <img src="/img/TheCommunitySection/architecture/clouds.png" alt="Town's clouds">
+    </div> -->
     <TheContainer>
       <div class="architecture__inner">
         <video
@@ -62,7 +67,6 @@ onMounted(() => {
         </p>
       </div>
     </TheContainer>
-    <TheClouds :buildings="false" :many-clouds="true" class="join__clouds" />
     <TheMethods />
     <!-- <TheContainer>
       <div class="community__scroll">
