@@ -75,7 +75,7 @@ const openNavbar = () => {
   max-width: 1080px;
   width: calc(100% - 64px);
   position: fixed;
-  z-index: 110;
+  z-index: 1000;
   top: 38px;
   left: 50%;
   transform: translateX(-50%);

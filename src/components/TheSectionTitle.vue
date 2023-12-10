@@ -17,5 +17,6 @@ defineProps({
   @include adaptive-value('font-size', 96, 44, 1);
   line-height: normal;
   font-weight: 300;
+  letter-spacing: -1.92px;
 }
 </style>

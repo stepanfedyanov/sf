@@ -82,7 +82,7 @@ onMounted(() => {
       trigger: '.how',
       start: 'bottom bottom',
       end: '+=50%',
-      scrub: true,
+      scrub: true
     }
   })
 
@@ -125,8 +125,8 @@ onMounted(() => {
 
 <style lang="scss">
 .how {
-  background: #f2f3f5;
-  margin: 100px 0;
+  background: linear-gradient(to bottom, #f2f3f5 80%, #fff);
+  padding: 100px 0;
   min-height: 100vh;
   position: relative;
   &__list {
