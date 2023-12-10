@@ -13,7 +13,7 @@ onMounted(() => {
   const opacityTitleTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: upsideContainer.value,
-      start: "top+=40% bottom",
+      start: "top bottom",
       end: "bottom+=50% bottom",
       scrub: true,
     },
@@ -25,7 +25,7 @@ onMounted(() => {
     yPercent: 30
   }, {
     opacity: 1,
-    yPercent: -50,
+    yPercent: -100,
   })
   .fromTo('.join-title__clouds-3', {
     opacity: 0.6,
@@ -33,23 +33,6 @@ onMounted(() => {
     opacity: 0
   });
 
-
-  // opacityTitleTimeline.fromTo('.join-title__clouds-3', {
-  //   opacity: 1,
-  // }, {
-  //   opacity: 0
-  // });
-
-  // ScrollTrigger.create({
-  //   trigger: upsideContainer.value,
-  //   start: "top bottom",
-  //   end: "bottom-=10% bottom",
-  //   onUpdate: (self) => {
-  //     console.log(self.progress.toFixed(3));
-  //     upsideTitle.value.style.opacity = self.progress.toFixed(3);
-  //     upsideTitle.value.style.bottom = `${Math.ceil(heightOfContainer * 0.7 * self.progress.toFixed(3))}px`;
-  //   },
-  // });
 });
 </script>
 

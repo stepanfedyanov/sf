@@ -22,7 +22,10 @@ onMounted(() => {
     }
   });
   // Set to .intro__video scale 0.8 to 1 on 30% of scroll
-  tl.fromTo('.intro__video-wrapper', { scale: 0.8 }, { scale: 1 }, '+=0.5');
+  tl
+    .addLabel('scaleVideo')
+    .fromTo('.intro__video-wrapper', { scale: 0.8 }, { scale: 1 }, 'scaleVideo+=0.5')
+    .fromTo('.intro__title', { yPercent: 200, opacity: 0 }, { yPercent: 0, opacity: 1 }, 'scaleVideo+=0.5');
 
   const nextBlockTimeline = gsap.timeline({
     scrollTrigger: {
@@ -30,7 +33,6 @@ onMounted(() => {
       start: 'bottom bottom',
       end: '+=50%',
       scrub: true,
-      pin: true
     }
   });
 
@@ -46,8 +48,7 @@ onMounted(() => {
     <TheContainer>
         <TheSectionTitle
           color="#052E3E"
-          class="intro__title wow animate__animated animate__fadeInUp"
-          data-wow-duration="1.4s"
+          class="intro__title"
           >Watch intro</TheSectionTitle
         >
     </TheContainer>
