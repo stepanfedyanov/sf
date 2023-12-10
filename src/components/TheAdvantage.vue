@@ -38,20 +38,6 @@ onMounted(() => {
   });
 
   sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0 });
-
-  const nextBlockTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: `#advantage-${idx.value}`,
-      start: 'bottom bottom',
-      end: '+=50%',
-      scrub: true,
-    }
-  });
-
-  gsap.set(`#advantage-${idx.value} .advantage__next-background`, { opacity: 0, visibility: 'hidden', background: gsap.getProperty(idx.value === 1 ? '.community' : `#advantage-${idx.value + 1}`, 'background') });
-
-  nextBlockTimeline
-    .to(`#advantage-${idx.value} .advantage__next-background`, { opacity: 1, visibility: 'visible' })
 });
 </script>
 
@@ -240,8 +226,6 @@ onMounted(() => {
         </TheButton>
       </div>
     </TheContainer>
-
-    <div class="advantage__next-background" />
   </section>
 </template>
 

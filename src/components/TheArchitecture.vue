@@ -1,7 +1,6 @@
 <script setup>
 import TheContainer from './TheContainer.vue'
 import TheMethods from './TheMethods.vue'
-import TheClouds from './TheClouds.vue';
 import { onMounted, ref } from 'vue';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -38,16 +37,38 @@ onMounted(() => {
     yPercent: 0,
     opacity: 1,
   })
+
+  gsap.set('.architecture__clouds_1', {
+    yPercent: -30,
+  });
+
+  gsap.set('.architecture__clouds_2', {
+    yPercent: 20,
+  });
+  
+  gsap.set('.architecture__clouds_3', {
+    yPercent: -15,
+  });
+
+  gsap.to('.architecture__clouds-item', {
+    scrollTrigger: {
+      trigger: architecture.value,
+      start: "top+=5% bottom",
+      end: "center-=15% bottom",
+      scrub: true,
+    },
+    yPercent: 0,
+  })
 });
 </script>
 
 <template>
   <section class="architecture" ref="architecture">
     <div class="architecture__clouds">
-      <img class="architecture__clouds_1" src="/img/TheCommunitySection/architecture/cloud-upper-1.png" alt="Town's clouds">
-      <img class="architecture__clouds_2" src="/img/TheCommunitySection/architecture/cloud-upper-2.png" alt="Town's clouds">
-      <img class="architecture__clouds_3" src="/img/TheCommunitySection/architecture/clouds.png" alt="Town's clouds">
-      <img class="architecture__clouds_4" src="/img/TheCommunitySection/architecture/clouds-sofa.png" alt="Town's clouds">
+      <img class="architecture__clouds-item architecture__clouds_1" src="/img/TheCommunitySection/architecture/cloud-upper-1.png" alt="Town's clouds">
+      <img class="architecture__clouds-item architecture__clouds_2" src="/img/TheCommunitySection/architecture/cloud-upper-2.png" alt="Town's clouds">
+      <img class="architecture__clouds-item architecture__clouds_3" src="/img/TheCommunitySection/architecture/clouds.png" alt="Town's clouds">
+      <img class="architecture__clouds-item architecture__clouds_4" src="/img/TheCommunitySection/architecture/clouds-sofa.png" alt="Town's clouds">
     </div>
     <TheContainer>
       <div class="architecture__inner">
@@ -123,7 +144,7 @@ onMounted(() => {
     &_3 {
       width: 100%;
       position: absolute;
-      top: 10%;
+      top: 5%;
       left: 50%;
       transform: translateX(-50%);
       z-index: 1;
@@ -131,7 +152,7 @@ onMounted(() => {
     &_4 {
       width: 100%;
       position: absolute;
-      top: 10%;
+      top: 8%;
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;
