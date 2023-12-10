@@ -1,6 +1,12 @@
 // Подключение шрифтов
 @font-face {
   font-family: 'Articulat CF';
+  src: local('0'), url('/fonts/ArticulatCF-Normal.otf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Articulat CF';
   src: local('0'), url('/fonts/ArticulatCF-Regular.otf');
   font-weight: 400;
 }

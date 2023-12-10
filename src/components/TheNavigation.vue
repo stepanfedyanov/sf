@@ -18,7 +18,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     </ul>
     <div class="header__btns">
       <TheButton
-        class="animate__animated animate__fadeIn"
+        class="header__btn animate__animated animate__fadeIn"
         data-wow-delay=".2s"
         color="white"
         size="small"
@@ -26,7 +26,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
         Log in
       </TheButton>
       <TheButton
-        class="animate__animated animate__fadeIn"
+        class="header__btn animate__animated animate__fadeIn"
         data-wow-delay=".4s"
         color="black"
         size="small"
@@ -56,13 +56,15 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     top: 2px;
   }
   &__nav-item + &__nav-item {
-    @include adaptive-value('margin-left', 40, 0, 1);
+    @include adaptive-value('margin-left', 43, 0, 1);
   }
   &__nav-item-link {
-    letter-spacing: -0.195px;
+    letter-spacing: -0.12px;
     padding: 5px 0;
     line-height: 1;
     position: relative;
+    font-size: 11.5px;
+    font-weight: 400;
     &::before {
       content: '';
       position: absolute;
@@ -83,9 +85,21 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     }
   }
   &__btns {
-    @include adaptive-value('margin-left', 40, 0, 1);
+    @include adaptive-value('margin-left', 45, 0, 1);
     display: flex;
     align-items: center;
+  }
+  &__btn {
+    .btn {
+      letter-spacing: 0.66px;
+      line-height: calc(24 / 12);
+      font-size: 11.7px;
+      padding: 3px 22px;
+      font-weight: 300;
+      span {
+        transform: translateY(1px)
+      }
+    }
   }
   .btn-wrapper + .btn-wrapper {
     @include adaptive-value('margin-left', 6, 5, 1);

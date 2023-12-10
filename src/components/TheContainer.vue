@@ -6,7 +6,7 @@
 
 <style lang="scss">
 .container {
-  max-width: 1044px;
+  max-width: 1041px;
   margin: 0 auto;
   padding: 0 20px;
 }
