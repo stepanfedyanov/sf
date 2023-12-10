@@ -175,7 +175,7 @@ onMounted(() => {
     @include adaptive-value('font-size', 90, 48, 1);
     line-height: normal;
     font-weight: 300;
-    @include adaptive-value('margin-bottom', 491, 270, 1);
+    @include adaptive-value('margin-bottom', 550, 270, 1);
   }
   &__desc {
     text-align: center;
