@@ -10,9 +10,9 @@ defineProps({
 <template>
   <div class="how__sticky">
     <div v-for="(title, idx) in items" :key="`how-title-${idx}`" :style="idx === 0 ? 'opacity: 1;' : 'opacity: 0;'" :class="`how__item-info how__item-info-${idx}`">
-      <p class="how__item-desc animate__animated animate__fadeIn">{{ title.title }}</p>
+      <p class="how__item-desc animate__animated animate__fadeIn">{{ title.desc }}</p>
       <h2 class="how__item-title animate__animated animate__fadeIn" data-wow-delay=".3s">
-        {{ title.desc }}
+        {{ title.title }}
       </h2>
     </div>
   </div>
