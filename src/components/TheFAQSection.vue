@@ -19,7 +19,7 @@ import TheFAQAccordion from './TheFAQAccordion.vue'
   @include adaptive-value('padding-top', 95, 42, 1);
   @include adaptive-value('padding-bottom', 95, 42, 1);
   &__title {
-    @include adaptive-value('margin-bottom', 41, 25, 1);
+    @include adaptive-value('margin-bottom', 51, 25, 1);
     font-family: 'Atyp Display';
     @include adaptive-value('font-size', 40, 30, 1);
     @include adaptive-value('line-height', 40, 48, 1);
