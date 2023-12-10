@@ -14,7 +14,7 @@ import TheContainer from './TheContainer.vue'
           Global digital wealth management ecosystem, built by professional community
         </p>
         <TheButton
-          class="wow animate__animated animate__fadeIn"
+          class="meet__btn wow animate__animated animate__fadeIn"
           data-wow-delay="1s"
           color="white"
           size="big"
@@ -27,24 +27,38 @@ import TheContainer from './TheContainer.vue'
 
 <style lang="scss">
 .meet {
-  @include adaptive-value('padding-top', 194, 147, 1);
+  @include adaptive-value('padding-top', 186, 147, 1);
   &__inner {
-    * + * {
-      @include adaptive-value('margin-top', 38, 35, 1);
-    }
   }
   &__title {
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 70, 36, 1);
-    line-height: calc(78 / 70);
+    @include adaptive-value('font-size', 71, 36, 1);
+    transform: translateX(-3px);
+    line-height: calc(74 / 70);
     letter-spacing: 0.7px;
     max-width: 580px;
   }
   &__text {
     max-width: 300px;
     @include adaptive-value('font-size', 18, 14, 1);
-    line-height: calc(24 / 18);
-    letter-spacing: -0.27px;
+    line-height: calc(25 / 18);
+    letter-spacing: 0.66px;
+    font-weight: 300;
+    @include adaptive-value('margin-top', 52, 35, 1);
+    @include adaptive-value('margin-bottom', 37, 35, 1);
+  }
+  &__btn {
+    .big {
+      @include adaptive-value('padding-top', 7, 4, 1);
+      @include adaptive-value('padding-bottom', 7, 4, 1);
+    }
+    span {
+      font-weight: 300;
+      font-size: 5px;
+      @include adaptive-value('font-size', 14, 13, 1);
+      letter-spacing: 0.42px;
+      transform: translateY(1px);
+    }
   }
 }
 
