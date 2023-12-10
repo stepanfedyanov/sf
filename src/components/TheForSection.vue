@@ -188,18 +188,18 @@ const sections = [
     align-items: center;
   }
   &__section-num {
-    @include adaptive-value('margin-right', 36, 20, 1);
+    @include adaptive-value('margin-right', 40, 20, 1);
     color: #a5cce0;
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 96, 46, 1);
     line-height: calc(104 / 96);
     font-weight: 300;
-    transform: translateY(-4px);
+    transform: translateY(-5px);
   }
   &__section-title {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 40, 28, 1);
-    line-height: calc(46 / 40);
+    line-height: calc(43 / 40);
     max-width: 450px;
     &._big {
       max-width: 550px;
@@ -264,7 +264,8 @@ const sections = [
   &__item-desc {
     @include adaptive-value('font-size', 14, 11, 1);
     line-height: calc(16 / 14);
-    max-width: 260px;
+    max-width: 250px;
+    color: #8b8886;
   }
   &__section-btn {
     display: block;
