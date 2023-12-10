@@ -15,7 +15,6 @@ onMounted(() => {
       trigger: upsideContainer.value,
       start: "top+=40% bottom",
       end: "bottom+=50% bottom",
-      markers: true,
       scrub: true,
     },
   });
