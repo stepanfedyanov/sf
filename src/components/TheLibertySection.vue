@@ -2029,20 +2029,25 @@ onMounted(() => {
   &__title {
     position: relative;
     z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
     font-feature-settings: 'ss02' on;
-    @include adaptive-value('margin-bottom', 49, 77, 1);
-    line-height: calc(84 / 96);
+    @include adaptive-value('margin-bottom', 64, 77, 1);
+    line-height: calc(88 / 96);
+    letter-spacing: 0.8px;
+    font-size: 88px;
   }
   &__desc {
     position: relative;
     z-index: 1;
     text-align: center;
     @include adaptive-value('font-size', 18, 20, 1);
-    line-height: calc(24 / 18);
+    line-height: calc(25 / 18);
     letter-spacing: 0.36px;
     max-width: 785px;
     margin: 0 auto;
-    @include adaptive-value('margin-bottom', 66, 46, 1);
+    font-weight: 300;
+    @include adaptive-value('margin-bottom', 62, 46, 1);
   }
   &__list {
     position: relative;
@@ -2051,7 +2056,7 @@ onMounted(() => {
     justify-content: center;
     margin: -9px;
     flex-wrap: wrap;
-    @include adaptive-value('margin-bottom', 84, 69, 1);
+    @include adaptive-value('margin-bottom', 76, 69, 1);
   }
   &__item {
     max-width: 322px;
@@ -2062,9 +2067,9 @@ onMounted(() => {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-left: 40px;
-    padding-right: 40px;
-    @include adaptive-value('padding-top', 47, 24, 1);
+    padding-left: 35px;
+    padding-right: 35px;
+    @include adaptive-value('padding-top', 40, 24, 1);
     @include adaptive-value('padding-bottom', 30, 24, 1);
     border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -2075,28 +2080,34 @@ onMounted(() => {
     );
   }
   &__img-wrapper {
-    margin-bottom: 23px;
+    margin-bottom: 15px;
+    svg {
+      width: 85px;
+      height: 85px;
+    }
   }
   &__item-title {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 20, 17, 1);
     line-height: calc(24 / 20);
-    @include adaptive-value('margin-bottom', 18, 9, 1);
+    @include adaptive-value('margin-bottom', 23, 9, 1);
   }
   &__item-desc {
     font-family: 'Articulat CF', sans-serif;
     @include adaptive-value('font-size', 12, 10, 1);
     line-height: calc(15 / 12);
+    letter-spacing: 0.3px;
+    color: #8b8886;
   }
   &__main-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include adaptive-value('padding-top', 32.5, 21, 1);
-    @include adaptive-value('padding-bottom', 32.5, 21, 1);
-    @include adaptive-value('padding-left', 48, 24, 1);
-    @include adaptive-value('padding-right', 48, 24, 1);
-    border-radius: 40px;
+    @include adaptive-value('padding-top', 33, 21, 1);
+    @include adaptive-value('padding-bottom', 33, 21, 1);
+    @include adaptive-value('padding-left', 53, 24, 1);
+    @include adaptive-value('padding-right', 40, 24, 1);
+    border-radius: 45px;
     background: #fff;
   }
   &__main-link-left {
@@ -2104,7 +2115,7 @@ onMounted(() => {
     align-items: center;
   }
   &__link-img {
-    @include adaptive-value('margin-right', 24, 16, 1);
+    @include adaptive-value('margin-right', 20, 16, 1);
     @include adaptive-value('width', 39, 24, 1);
   }
   &__link-text {
@@ -2112,13 +2123,16 @@ onMounted(() => {
     @include adaptive-value('font-size', 20, 10, 1);
     line-height: calc(24 / 20);
     position: relative;
+    font-weight: 700;
+    transform: translateY(-3px);
     &::before {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: 0px;
       left: 0;
       width: 100%;
       height: 1px;
+      border-radius: 2px;
       background-color: #052e3e;
     }
   }

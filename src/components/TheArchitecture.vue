@@ -175,13 +175,13 @@ onMounted(() => {
     @include adaptive-value('font-size', 90, 48, 1);
     line-height: normal;
     font-weight: 300;
-    @include adaptive-value('margin-bottom', 550, 270, 1);
+    @include adaptive-value('margin-bottom', 571, 270, 1);
   }
   &__desc {
     text-align: center;
     font-size: 18px;
-    line-height: calc(24 / 18);
-    letter-spacing: 0.36px;
+    line-height: calc(25 / 18);
+    letter-spacing: 0.26px;
     max-width: 744px;
     margin: 0 auto;
     position: relative;
