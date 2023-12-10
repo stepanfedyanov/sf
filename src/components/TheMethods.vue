@@ -1,50 +1,76 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 import TheContainer from './TheContainer.vue'
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const cards = [
-  {
-    img: './img/TheCommunitySection/methods/main.jpg',
-    title: 'Analytics',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
-  },
-  {
-    img: './img/TheCommunitySection/methods/main.jpg',
-    title: 'Strategy',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
-  }
+  [
+    {
+      img: './img/TheCommunitySection/methods/main.jpg',
+      title: 'Analytics',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    },
+    {
+      img: './img/TheCommunitySection/methods/main.jpg',
+      title: 'Strategy',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    }
+  ],
+  [
+    {
+      img: './img/TheCommunitySection/methods/main.jpg',
+      title: 'Analytics',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    },
+    {
+      img: './img/TheCommunitySection/methods/main.jpg',
+      title: 'Strategy',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    }
+  ],
+  [
+    {
+      img: './img/TheCommunitySection/methods/main.jpg',
+      title: 'Analytics',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    },
+    {
+      img: './img/TheCommunitySection/methods/main.jpg',
+      title: 'Strategy',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    }
+  ]
 ]
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   const sliderTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: '.methods',
       start: 'top+=20% bottom',
-      scrub: false,
+      scrub: false
     }
-  });
+  })
 
-  gsap.set('.methods__card', { yPercent: 50, opacity: 0 });
-  sliderTimeline.from('.methods__card', { yPercent: 50, opacity: 0 });
-  sliderTimeline.to('.methods__card', { yPercent: 0, opacity: 1, duration: 0.5, stagger: 0.3 });
-});
+  gsap.set('.methods__card', { yPercent: 50, opacity: 0 })
+  sliderTimeline.from('.methods__card', { yPercent: 50, opacity: 0 })
+  sliderTimeline.to('.methods__card', { yPercent: 0, opacity: 1, duration: 0.5, stagger: 0.3 })
+})
 </script>
 
 <template>
   <section class="methods">
     <TheContainer>
       <div class="methods__inner">
-        <ul class="methods__cards">
+        <ul class="methods__cards" v-for="block in cards" :key="block[0].title">
           <li
             class="methods__card wow animate__animated animate__fadeIn"
             data-wow-duration="0.5s"
             :data-wow-delay="parseFloat(`${0.3 * idx}`) + 0.6 + 's'"
-            v-for="(card, idx) in cards"
+            v-for="(card, idx) in block"
             :key="card.title"
           >
             <div class="methods__card-img-wrapper">
@@ -65,9 +91,15 @@ onMounted(() => {
 
 <style lang="scss">
 .methods {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 90px;
   @include adaptive-value('margin-top', 78, 12, 1);
   &__cards {
     display: flex;
+  }
+  &__cards + &__cards {
+    margin-top: 50px;
   }
   &__card {
     @include adaptive-value('padding-top', 73, 32, 1);
