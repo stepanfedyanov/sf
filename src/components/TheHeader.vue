@@ -87,8 +87,8 @@ const openNavbar = () => {
     rgba(255, 255, 255, 0) 140.09%
   );
   backdrop-filter: blur(15px);
-  @include adaptive-value('padding-top', 16, 4, 1);
-  @include adaptive-value('padding-bottom', 16, 4, 1);
+  @include adaptive-value('padding-top', 15, 4, 1);
+  @include adaptive-value('padding-bottom', 15, 4, 1);
   @include adaptive-value('padding-left', 38, 24, 1);
   @include adaptive-value('padding-right', 38, 24, 1);
   &__inner {
