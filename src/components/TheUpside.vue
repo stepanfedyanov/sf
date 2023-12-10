@@ -10,17 +10,47 @@ const upsideContainer = ref(null);
 const upsideTitle = ref(null);
 
 onMounted(() => {
-  const heightOfContainer = upsideContainer.value.offsetHeight;
-
-  ScrollTrigger.create({
-    trigger: upsideContainer.value,
-    start: "10% bottom",
-    end: "bottom bottom",
-    onUpdate: (self) => {
-      upsideTitle.value.style.opacity = `${self.progress.toFixed(3) - 0.2}`;
-      upsideTitle.value.style.bottom = `${Math.ceil(heightOfContainer * 0.7 * self.progress.toFixed(3))}px`;
+  const opacityTitleTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: upsideContainer.value,
+      start: "top+=40% bottom",
+      end: "bottom+=50% bottom",
+      markers: true,
+      scrub: true,
     },
   });
+
+  opacityTitleTimeline
+  .fromTo(upsideTitle.value, {
+    opacity: 0,
+    yPercent: 30
+  }, {
+    opacity: 1,
+    yPercent: -50,
+  })
+  .fromTo('.join-title__clouds-3', {
+    opacity: 0.6,
+  }, {
+    opacity: 0
+  });
+
+
+  // opacityTitleTimeline.fromTo('.join-title__clouds-3', {
+  //   opacity: 1,
+  // }, {
+  //   opacity: 0
+  // });
+
+  // ScrollTrigger.create({
+  //   trigger: upsideContainer.value,
+  //   start: "top bottom",
+  //   end: "bottom-=10% bottom",
+  //   onUpdate: (self) => {
+  //     console.log(self.progress.toFixed(3));
+  //     upsideTitle.value.style.opacity = self.progress.toFixed(3);
+  //     upsideTitle.value.style.bottom = `${Math.ceil(heightOfContainer * 0.7 * self.progress.toFixed(3))}px`;
+  //   },
+  // });
 });
 </script>
 
@@ -50,6 +80,7 @@ onMounted(() => {
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
+    z-index: 9;
     // &::before {
     //   content: '';
     //   position: absolute;

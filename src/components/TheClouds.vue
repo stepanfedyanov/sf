@@ -28,7 +28,7 @@ const screenWidth = (screen && typeof screen.width === 'number') ? screen.width 
 const cloudsClass = 'join__upper-clouds';
 const changeSpeedXTime = 1; // ms
 const cloudsImagesPath = (id) => `./img/Clouds/clouds-${id}.png`;
-const cloudsYInitPosition = [-3, -10, 30, 50, 40, 40];
+const cloudsYInitPosition = [-3, -10, 30, 50, 50, 50];
 const cloudsXSpeed = [0.05, 0.07, 0.04, 0.01, 0.037, 0.04];
 const cloudsWidth = [900, 800, 300, 500, screenWidth, screenWidth];
 const defaultCloudsXInitPosition = -(screenWidth * screenAppearPercent);
@@ -179,7 +179,7 @@ onMounted(() => {
     z-index: 1;
     &_clouds {
       position: absolute;
-      bottom: -100px;
+      bottom: -28%;
       left: 336px;
       z-index: 1;
     }
