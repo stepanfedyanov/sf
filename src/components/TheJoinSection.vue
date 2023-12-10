@@ -24,11 +24,11 @@ import TheClouds from './TheClouds.vue'
 .join {
   overflow: hidden;
   position: relative;
-  background: linear-gradient(to bottom, #a5cce0 10%, #fff 90%);
+  background: linear-gradient(to bottom, #a5cce0 50%, #fff 100%);
   padding-bottom: 60px;
   @include adaptive-value('padding-bottom', 60, 0, 1);
   position: relative;
-  min-height: 1024px;
+  min-height: 890px;
   &__inner {
     position: relative;
     padding-bottom: 70px;

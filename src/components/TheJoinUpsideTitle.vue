@@ -17,7 +17,7 @@ import TheJoinTitleClouds from './TheJoinTitleClouds.vue';
 .join-title {
   width: 100%;
   position: relative;
-  height: 60vh;
+  height: 50vh;
   background-color: #fff;
 }
 </style>
