@@ -25,7 +25,12 @@ const items = [
 <template>
   <section class="accordion">
     <TheAccordion>
-      <TheAccordionItem class="wow animate__animated animate__fadeIn" v-for="(item, idx) in items" :data-wow-delay="parseFloat(`${0.2 * idx}`) + 's'" :key="item.header">
+      <TheAccordionItem
+        class="wow animate__animated animate__fadeIn"
+        v-for="(item, idx) in items"
+        :data-wow-delay="parseFloat(`${0.2 * idx}`) + 's'"
+        :key="item.header"
+      >
         <template v-slot:accordion-trigger>
           <h3>{{ item.header }}</h3>
           <button class="accordion__arrow-btn">
@@ -72,6 +77,13 @@ const items = [
     transform: rotate(90deg);
     transition: 0.3s;
     @include adaptive-value('width', 24, 16, 1);
+  }
+  &__trigger {
+    h3 {
+      font-family: 'Atyp Display', sans-serif;
+      font-size: 20px;
+      line-height: calc(24 / 20);
+    }
   }
   &__trigger_active {
     .accordion__arrow {

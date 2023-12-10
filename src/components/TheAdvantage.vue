@@ -273,7 +273,7 @@ onMounted(() => {
     margin-bottom: 65px;
   }
   &__swiper {
-    @include adaptive-value('margin-bottom', 80, 32, 1);
+    @include adaptive-value('margin-bottom', 70, 32, 1);
     overflow: visible !important;
   }
   &__swiper-button-next {
@@ -364,7 +364,7 @@ onMounted(() => {
     @include adaptive-value('font-size', 26, 22, 1);
     line-height: calc(30 / 26);
     @include adaptive-value('margin-bottom', 17, 14, 1);
-    @include adaptive-value('padding-right', 29, 50, 1);
+    @include adaptive-value('padding-right', 69, 50, 1);
   }
   &__columns {
     display: flex;
@@ -386,8 +386,7 @@ onMounted(() => {
       content: '';
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 4px;
       width: 3px;
       height: 3px;
       background-color: #052e3e;

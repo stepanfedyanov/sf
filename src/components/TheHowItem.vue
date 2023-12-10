@@ -9,10 +9,13 @@ defineProps({
   <article class="how__item" :id="id" ref="container">
     <div class="how__item-inner">
       <div class="how__item-img-col">
-        <div class="how__item-img" :style="`
+        <div
+          class="how__item-img"
+          :style="`
           background-image: url(${info.img});
           background-position: ${info.backgroundPosition}
-        `"  ></div>
+        `"
+        ></div>
         <p class="how__item-img-text" v-for="text in info.texts" :key="text">
           {{ text }}
         </p>
@@ -32,7 +35,7 @@ defineProps({
       <div class="how__item-info">
         <p class="how__item-desc wow animate__animated animate__fadeIn">{{ info.desc }}</p>
         <h2 class="how__item-title wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-          {{ info.title }}123
+          {{ info.title }}
         </h2>
       </div>
       <p

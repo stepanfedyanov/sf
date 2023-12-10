@@ -64,12 +64,12 @@ onMounted(() => {
     </TheContainer>
     <TheClouds :buildings="false" :many-clouds="true" class="join__clouds" />
     <TheMethods />
-    <TheContainer>
+    <!-- <TheContainer>
       <div class="community__scroll">
         <span class="community__scroll-text wow animate__animated animate__fadeIn"> Scroll down </span>
         <img class="community__scroll-img wow animate__animated animate__fadeIn" src="/img/global/arrow.svg" alt="Scroll down" />
       </div>
-    </TheContainer>
+    </TheContainer> -->
   </section>
 </template>
 

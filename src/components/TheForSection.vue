@@ -117,17 +117,28 @@ const sections = [
         :key="section.title"
       >
         <TheContainer>
-          <div
-            class="for__section-top wow animate__animated animate__fadeInLeft"
-            data-wow-delay="0.3s"
-          >
-            <span class="for__section-num">
-              {{ section.num }}
-            </span>
-            <h2 class="for__section-title" :class="{ _big: section.bigTitle }">
-              {{ section.title }}
-            </h2>
+          <div class="for__section-top-wrapper">
+            <div
+              class="for__section-top wow animate__animated animate__fadeInUp"
+              data-wow-delay="0.3s"
+            >
+              <span class="for__section-num">
+                {{ section.num }}
+              </span>
+              <h2 class="for__section-title" :class="{ _big: section.bigTitle }">
+                {{ section.title }}
+              </h2>
+            </div>
+            <TheButton
+              class="for__section-btn wow animate__animated animate__fadeIn"
+              data-wow-delay="0.3s"
+              color="black"
+              size="big"
+            >
+              {{ section.btnText }}
+            </TheButton>
           </div>
+
           <ul
             class="for__section-list"
             :class="{ small: section.size === 'small', big: section.size === 'big' }"
@@ -145,14 +156,6 @@ const sections = [
               </p>
             </li>
           </ul>
-          <TheButton
-            class="for__section-btn wow animate__animated animate__fadeIn"
-            data-wow-delay="0.3s"
-            color="black"
-            size="big"
-          >
-            {{ section.btnText }}
-          </TheButton>
         </TheContainer>
       </section>
     </div>
@@ -171,22 +174,27 @@ const sections = [
 
 .for {
   &__section {
-    @include adaptive-value('padding-top', 78, 65, 1);
-    @include adaptive-value('padding-bottom', 78, 65, 1);
+    @include adaptive-value('padding-top', 72, 65, 1);
+    @include adaptive-value('padding-bottom', 72, 65, 1);
+  }
+  &__section-top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include adaptive-value('margin-bottom', 50, 52, 1);
   }
   &__section-top {
-    @include adaptive-value('margin-bottom', 62, 52, 1);
     display: flex;
     align-items: center;
   }
   &__section-num {
-    @include adaptive-value('margin-right', 40, 20, 1);
+    @include adaptive-value('margin-right', 36, 20, 1);
     color: #a5cce0;
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 96, 46, 1);
     line-height: calc(104 / 96);
     font-weight: 300;
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
   &__section-title {
     font-family: 'Atyp Display', sans-serif;
@@ -198,11 +206,11 @@ const sections = [
     }
   }
   &__section-list {
-    @include adaptive-value('margin-bottom', 62, 27, 1);
+    //@include adaptive-value('margin-bottom', 62, 27, 1);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
-    @include adaptive-value('row-gap', 48, 14, 1);
+    @include adaptive-value('row-gap', 40, 14, 1);
     &.big {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -222,11 +230,11 @@ const sections = [
         }
       }
       .for__item-img {
-        @include adaptive-value('margin-bottom', 32, 18, 1);
+        @include adaptive-value('margin-bottom', 30, 18, 1);
         @include adaptive-value('width', 64, 60, 1);
       }
       .for__item-title {
-        margin-bottom: 32px;
+        margin-bottom: 24px;
         max-width: 100%;
       }
       .for__item-desc {
@@ -235,7 +243,7 @@ const sections = [
     }
   }
   &__section-item {
-    padding: 20px 22px;
+    padding: 18px 22px;
     border-left: 1px solid transparent;
     border-image: linear-gradient(to bottom, rgba(#000, 1), rgba(#000, 0));
     animation: gradientAnimation 4s infinite alternate;
@@ -243,14 +251,14 @@ const sections = [
   }
   &__item-img {
     @include adaptive-value('width', 64, 45, 1);
-    @include adaptive-value('margin-bottom', 46, 18, 1);
+    @include adaptive-value('margin-bottom', 30, 18, 1);
   }
   &__item-title {
     font-feature-settings: 'ss06' on;
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 20, 16, 1);
     line-height: calc(24 / 20);
-    @include adaptive-value('margin-bottom', 34, 18, 1);
+    @include adaptive-value('margin-bottom', 24, 18, 1);
     max-width: 200px;
   }
   &__item-desc {
