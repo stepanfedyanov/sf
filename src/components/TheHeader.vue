@@ -90,7 +90,7 @@ const openNavbar = () => {
   @include adaptive-value('padding-top', 15, 4, 1);
   @include adaptive-value('padding-bottom', 15, 4, 1);
   @include adaptive-value('padding-left', 38, 24, 1);
-  @include adaptive-value('padding-right', 38, 24, 1);
+  @include adaptive-value('padding-right', 24, 24, 1);
   &__inner {
     display: flex;
     justify-content: space-between;

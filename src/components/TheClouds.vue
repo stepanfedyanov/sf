@@ -131,7 +131,7 @@ onMounted(() => {
     height: 100%;
     max-width: 1044px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-48.4%);
     padding: 0 20px;
   }
   &__upper-clouds {

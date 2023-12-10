@@ -85,7 +85,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     }
   }
   &__btns {
-    @include adaptive-value('margin-left', 45, 0, 1);
+    @include adaptive-value('margin-left', 41, 0, 1);
     display: flex;
     align-items: center;
   }
@@ -94,15 +94,20 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
       letter-spacing: 0.66px;
       line-height: calc(24 / 12);
       font-size: 11.7px;
-      padding: 3px 22px;
+      padding: 3px 18px;
       font-weight: 300;
       span {
-        transform: translateY(1px)
+        transform: translateY(1px);
+      }
+      &.black {
+        padding: 3px 28px;
+        font-weight: 100;
+        letter-spacing: 1px;
       }
     }
   }
   .btn-wrapper + .btn-wrapper {
-    @include adaptive-value('margin-left', 6, 5, 1);
+    @include adaptive-value('margin-left', 7, 5, 1);
   }
 }
 
