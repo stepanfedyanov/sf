@@ -3,11 +3,9 @@ import TheSliderButton from './TheSliderButton.vue'
 import { ref } from 'vue'
 const swiper = ref(null)
 const sliders = [
-  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit numquam quisquam unde cumque exercitationem vitae reiciendis vero quia a laborum dicta, excepturi debitis eos sit sequi! Esse distinctio tenetur consequuntur?',
+  'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium qui nulla molestias architecto maiores quia ad quis neque officiis, fugit dolor iure?'
 ]
-
-
 </script>
 
 <template>
@@ -50,10 +48,6 @@ const sliders = [
       class="swiper video__swiper"
       ref="swiper"
       :speed="900"
-      :autoplay="{
-        delay: 2500,
-        disableOnInteraction: false
-      }"
       :pagination="{
         clickable: true
       }"
@@ -110,23 +104,23 @@ const sliders = [
 }
 .video-slide {
   &__quote {
-    max-width: 662px;
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
   }
   &__text {
     text-align: center;
     @include adaptive-value('font-size', 18, 14, 1);
-    line-height: calc(24 / 18);
-    letter-spacing: -0.27px;
-    @include adaptive-value('margin-bottom', 17, 22, 1);
+    line-height: calc(25 / 18);
+    letter-spacing: 0.36px;
+    @include adaptive-value('margin-bottom', 22, 22, 1);
   }
   &__author {
     @include adaptive-value('font-size', 14, 15, 1);
     font-style: normal;
     font-weight: 700;
     line-height: calc(24 / 14);
-    letter-spacing: -0.21px;
+    letter-spacing: 0.28px;
   }
 }
 

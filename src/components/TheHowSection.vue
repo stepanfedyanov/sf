@@ -76,6 +76,29 @@ onMounted(() => {
       'second+=0.2'
     )
     .fromTo('#how-item-1 .how__item-img-text', { opacity: 0 }, { opacity: 1 })
+<<<<<<< HEAD
+=======
+
+  const nextBlockTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.how',
+      start: 'bottom bottom',
+      end: '+=50%',
+      scrub: true
+    }
+  })
+
+  gsap.set('.how__next-background', {
+    opacity: 0,
+    visibility: 'hidden',
+    background: gsap.getProperty('.intro', 'background')
+  })
+
+  nextBlockTimeline
+    .addLabel('nextBlockFadeIn')
+    .to('.how__next-background', { opacity: 1, visibility: 'visible' }, 'nextBlockFadeIn')
+    .to('.intro', { opacity: 1 }, 'nextBlockFadeIn')
+>>>>>>> main
 })
 </script>
 
@@ -104,8 +127,8 @@ onMounted(() => {
 
 <style lang="scss">
 .how {
-  background: #f2f3f5;
-  margin: 100px 0;
+  background: linear-gradient(to bottom, #f2f3f5 80%, #fff);
+  padding: 100px 0;
   min-height: 100vh;
   position: relative;
   &__list {

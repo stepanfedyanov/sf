@@ -17,7 +17,7 @@ defineProps({
     <g clip-path="url(#clip0_2_395)">
       <path
         d="M27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27C0 41.9117 12.0883 54 27 54Z"
-        fill="white"
+        fill=""
       />
       <path
         class="hover-path"
@@ -41,6 +41,9 @@ defineProps({
 <style lang="scss">
 .swiper-button-img {
   cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.15s;
   path {
     transition: 0.15s;
   }

@@ -34,17 +34,20 @@ defineProps({
     left: 0;
   }
   &__item-desc {
-    font-size: 24px;
-    line-height: calc(36 / 24);
+    font-size: 25px;
+    line-height: calc(34 / 24);
     max-width: 200px;
     letter-spacing: 0.48px;
-    margin-bottom: 47px;
+    margin-bottom: 30px;
   }
   &__item-title {
     font-family: 'Atyp Display', sans-serif;
     font-size: 64px;
     line-height: calc(58 / 64);
     max-width: 360px;
+    transform: translateX(-3px);
+    font-weight: 400;
+    letter-spacing: -0.6px;
   }
 }
 </style>

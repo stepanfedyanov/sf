@@ -4,21 +4,21 @@ import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 import TheSectionTitle from './TheSectionTitle.vue'
 import TheSliderButton from './TheSliderButton.vue'
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const props = defineProps({
   settings: Object,
-  idx: Number,
-});
+  idx: Number
+})
 
-const { idx, settings } = toRefs(props); 
+const { idx, settings } = toRefs(props)
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 const swiper = ref(null)
 
-const advantageElement = ref(null);
+const advantageElement = ref(null)
 
 onMounted(() => {
   const sliderTimeline = gsap.timeline({
@@ -26,16 +26,16 @@ onMounted(() => {
       trigger: advantageElement.value,
       start: 'top+=30% bottom',
       end: 'bottom bottom',
-      scrub: true,
+      scrub: true
     }
-  });
+  })
 
-  const slides = document.querySelectorAll(`.advantage__swiper-slide-${idx.value}`);
-  const upperPosition = 20;
+  const slides = document.querySelectorAll(`.advantage__swiper-slide-${idx.value}`)
+  const upperPosition = 20
 
   slides.forEach((slide, index) => {
-    gsap.set(slide, { yPercent: (slides.length - (index + 1)) * upperPosition });
-  });
+    gsap.set(slide, { yPercent: (slides.length - (index + 1)) * upperPosition })
+  })
 
   sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0 });
 });
@@ -60,9 +60,7 @@ onMounted(() => {
           {{ settings.desc }}
         </p>
 
-        <div
-          class="swiper-block"
-        >
+        <div class="swiper-block">
           <swiper-container
             ref="swiper"
             :centeredSlidesBounds="true"
@@ -234,10 +232,18 @@ onMounted(() => {
   align-items: stretch;
 }
 .advantage {
-  padding: 100px 0;
+  padding: 50px 0 85px;
   &__btn {
     display: block;
     text-align: center;
+    button.btn {
+      padding: 7px 50px;
+      background: linear-gradient(93deg, #fff 0%, rgba(255, 255, 255, 0.26) 54.33%);
+      span {
+        letter-spacing: 0.6px;
+        font-size: 15.7px;
+      }
+    }
   }
   &.blue {
     background: #a5cce0;
@@ -250,16 +256,17 @@ onMounted(() => {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 96, 48, 1);
     letter-spacing: -1.92px;
-    @include adaptive-value('margin-bottom', 10, 61, 1);
+    @include adaptive-value('margin-bottom', 25, 61, 1);
   }
   &__desc {
     text-align: center;
     @include adaptive-value('font-size', 18, 19, 1);
-    line-height: calc(24 / 18);
-    letter-spacing: 0.36px;
-    max-width: 740px;
+    line-height: calc(25 / 18);
+    letter-spacing: 0.3px;
+    max-width: 730px;
     margin: 0 auto;
     margin-bottom: 65px;
+    font-weight: 300;
   }
   &__swiper {
     @include adaptive-value('margin-bottom', 70, 32, 1);
@@ -270,9 +277,11 @@ onMounted(() => {
     top: 50%;
     right: -64px;
     z-index: 5;
-    transform: translateX(100%) translateY(-50%);
+    transform: translateX(100%) translateY(-90%);
     svg {
-      @include adaptive-value('width', 54, 24, 1);
+      background: linear-gradient(100deg, rgba(#fff, 0.06), #fff);
+      @include adaptive-value('width', 58, 24, 1);
+      @include adaptive-value('height', 58, 24, 1);
     }
   }
   &__swiper-button-prev {
@@ -280,9 +289,11 @@ onMounted(() => {
     top: 50%;
     left: -64px;
     z-index: 5;
-    transform: translateX(-100%) translateY(-50%);
+    transform: translateX(-100%) translateY(-90%);
     svg {
-      @include adaptive-value('width', 54, 24, 1);
+      background: linear-gradient(100deg, rgba(#fff, 0.06), #fff);
+      @include adaptive-value('width', 58, 24, 1);
+      @include adaptive-value('height', 58, 24, 1);
     }
   }
   &__next-background {
@@ -292,6 +303,23 @@ onMounted(() => {
     width: 100vw;
     height: 100vh;
     z-index: 999;
+  }
+
+  &.white {
+    .advantage__title {
+      @include adaptive-value('font-size', 88, 48, 1);
+      letter-spacing: 1px;
+      @include adaptive-value('margin-bottom', 34, 61, 1);
+    }
+    .advantage__desc {
+      @include adaptive-value('font-size', 18, 19, 1);
+      line-height: calc(25 / 18);
+      letter-spacing: 0.32px;
+      max-width: 740px;
+      margin: 0 auto;
+      margin-bottom: 60px;
+      font-weight: 300;
+    }
   }
 }
 
@@ -317,25 +345,26 @@ onMounted(() => {
     @include adaptive-value('border-radius', 53, 45, 1);
     background: #fff;
     span {
-      @include adaptive-value('font-size', 12, 10, 1);
+      @include adaptive-value('font-size', 11.7, 10, 1);
       line-height: calc(16 / 12);
-      letter-spacing: -0.12px;
+      letter-spacing: 0px;
       position: relative;
-      top: 1px;
+      top: 2px;
+      font-weight: 500;
     }
   }
   &__link {
     position: absolute;
     z-index: 2;
-    top: 17px;
-    right: 22px;
-    @include adaptive-value('padding', 20.8, 17.6, 1);
+    top: 20px;
+    right: 20px;
+    @include adaptive-value('padding', 18, 17.6, 1);
     background: #fff;
     border-radius: 50%;
     display: flex;
     cursor: pointer;
     svg {
-      @include adaptive-value('width', 10.3, 8.7, 1);
+      @include adaptive-value('width', 11, 8.7, 1);
     }
     path {
       transition: 0.15s;
@@ -350,35 +379,40 @@ onMounted(() => {
   }
   &__title {
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 26, 22, 1);
-    line-height: calc(30 / 26);
-    @include adaptive-value('margin-bottom', 17, 14, 1);
+    @include adaptive-value('font-size', 26.5, 22, 1);
+    line-height: calc(29 / 26);
+    letter-spacing: 0.2px;
+    @include adaptive-value('margin-bottom', 26, 14, 1);
     @include adaptive-value('padding-right', 69, 50, 1);
+    transform: translateX(-1px);
   }
   &__columns {
     display: flex;
-    @include adaptive-value('margin-bottom', 34, 28, 1);
+    @include adaptive-value('margin-bottom', 26, 28, 1);
   }
   &__column {
     display: flex;
     flex-direction: column;
-    max-width: 123.5px;
+    flex: 1 0 50%;
     width: 100%;
   }
   &__item {
     padding-left: 11px;
-    @include adaptive-value('font-size', 12, 10.2, 1);
+    @include adaptive-value('font-size', 11.8, 10.2, 1);
     line-height: calc(14 / 12);
-    letter-spacing: 0.24px;
+    letter-spacing: 0.44px;
     position: relative;
+    font-weight: 300;
+    max-width: 125px;
     &::before {
       content: '';
       position: absolute;
-      left: 0;
+      left: 1px;
       top: 4px;
       width: 3px;
       height: 3px;
       background-color: #052e3e;
+      border-radius: 50%;
     }
   }
   &__item + &__item {
@@ -399,6 +433,7 @@ onMounted(() => {
     line-height: calc(14.5 / 12);
     letter-spacing: 0.24px;
     max-width: 210px;
+    color: #8b8886;
   }
   &__date {
     line-height: calc(14 / 10);
@@ -407,9 +442,9 @@ onMounted(() => {
   }
   &.blue {
     .adv-slide__inner {
-      @include adaptive-value('padding-top', 60, 50, 1);
-      @include adaptive-value('padding-right', 9, 7.6, 1);
-      @include adaptive-value('padding-left', 38, 32.24, 1);
+      @include adaptive-value('padding-top', 56, 50, 1);
+      @include adaptive-value('padding-right', 20, 7.6, 1);
+      @include adaptive-value('padding-left', 32, 32.24, 1);
     }
     border: 1px solid rgba(255, 255, 255, 0.5);
     @include adaptive-value('border-radius', 46, 37, 1);
@@ -433,12 +468,17 @@ onMounted(() => {
     }
     .adv-slide__title {
       padding: 0;
-      @include adaptive-value('margin-bottom', 12, 10.18, 1);
+      @include adaptive-value('margin-bottom', 16, 10.18, 1);
       @include adaptive-value('font-size', 18, 15.27, 1);
-      line-height: calc(22 / 18);
+      letter-spacing: -0.33px;
+      line-height: calc(21 / 18);
+      font-weight: 400;
+    }
+    .adv-slide__desc {
+      margin-bottom: 21px;
     }
     .adv-slide__inner-wrapper {
-      @include adaptive-value('padding-top', 24, 20, 1);
+      @include adaptive-value('padding-top', 20, 20, 1);
       @include adaptive-value('padding-bottom', 24, 20, 1);
       @include adaptive-value('padding-left', 30, 25, 1);
       @include adaptive-value('padding-right', 30, 25, 1);
