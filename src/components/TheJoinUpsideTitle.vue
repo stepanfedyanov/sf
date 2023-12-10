@@ -1,6 +1,6 @@
 <script setup>
 import TheUpside from './TheUpside.vue'
-import TheJoinTitleClouds from './TheJoinTitleClouds.vue';
+import TheJoinTitleClouds from './TheJoinTitleClouds.vue'
 </script>
 
 <template>
@@ -18,6 +18,6 @@ import TheJoinTitleClouds from './TheJoinTitleClouds.vue';
   width: 100%;
   position: relative;
   height: 60vh;
-  background-color: #fff;
+  background: linear-gradient(to bottom, transparent 80%, #f2f3f5 100%);
 }
 </style>
