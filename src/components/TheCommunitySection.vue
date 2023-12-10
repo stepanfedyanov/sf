@@ -115,18 +115,20 @@ onMounted(() => {
     left: 0;
   }
   &__title {
-    @include adaptive-value('margin-bottom', 50, 81, 1);
+    @include adaptive-value('margin-bottom', 65, 81, 1);
     color: #fff;
     text-align: center;
-    letter-spacing: -1.92px;
+    letter-spacing: 1px;
     line-height: calc(52 / 48);
+    font-size: 88px;
   }
   &__desc {
     @include adaptive-value('font-size', 18, 20, 1);
     line-height: calc(24 / 18);
-    letter-spacing: 0.36px;
+    letter-spacing: 0.25px;
     text-align: center;
     max-width: 794px;
+    font-weight: 400;
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 108, 70, 1);
   }
