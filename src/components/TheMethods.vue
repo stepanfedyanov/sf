@@ -97,6 +97,8 @@ onMounted(() => {
   @include adaptive-value('margin-top', 78, 12, 1);
   &__cards {
     display: flex;
+    max-width: 950px;
+    margin: 0 auto;
   }
   &__cards + &__cards {
     margin-top: 50px;
@@ -106,7 +108,7 @@ onMounted(() => {
     @include adaptive-value('padding-bottom', 73, 32, 1);
     @include adaptive-value('padding-left', 72, 20, 1);
     @include adaptive-value('padding-right', 72, 20, 1);
-    @include adaptive-value('border-radius', 60, 30, 1);
+    @include adaptive-value('border-radius', 50, 30, 1);
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(168deg, #fff -5.86%, rgba(255, 255, 255, 0) 96.08%);
     display: flex;
@@ -121,28 +123,30 @@ onMounted(() => {
   }
   &__card-img-wrapper {
     text-align: center;
-    @include adaptive-value('padding-top', 48, 16, 1);
-    @include adaptive-value('padding-bottom', 48, 16, 1);
-    @include adaptive-value('padding-left', 70, 23, 1);
-    @include adaptive-value('padding-right', 70, 23, 1);
+    @include adaptive-value('padding-top', 42, 16, 1);
+    @include adaptive-value('padding-bottom', 42, 16, 1);
+    @include adaptive-value('padding-left', 64, 23, 1);
+    @include adaptive-value('padding-right', 64, 23, 1);
     @include adaptive-value('border-radius', 130.909, 43.636, 1);
     background: #fff;
     display: inline-block;
     @include adaptive-value('margin-bottom', 42, 16, 1);
   }
   &__card-img {
-    @include adaptive-value('width', 99, 33, 1);
+    @include adaptive-value('width', 106, 33, 1);
   }
   &__title {
-    @include adaptive-value('margin-bottom', 23, 12, 1);
+    @include adaptive-value('margin-bottom', 35, 12, 1);
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 40, 20, 1);
     line-height: normal;
+    letter-spacing: -0.1px
   }
   &__desc {
     @include adaptive-value('font-size', 15, 11, 1);
-    line-height: 1.25;
-    max-width: 284px;
+    line-height: 1.1;
+    max-width: 270px;
+    letter-spacing: -0.2px;
     margin: 0 auto;
   }
 }

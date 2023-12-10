@@ -5,8 +5,8 @@ import TheContainer from './TheContainer.vue'
 import TheSliderButton from './TheSliderButton.vue'
 const swiper = ref(null)
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,19 +15,19 @@ defineProps({
 })
 
 onMounted(() => {
-  const slideSize = swiper.value.swiper.slidesSizesGrid[0];
-  
+  const slideSize = swiper.value.swiper.slidesSizesGrid[0]
+
   gsap.set('.community__swiper', { x: slideSize })
 
- gsap.to('.community__swiper', {
+  gsap.to('.community__swiper', {
     x: 0,
     scrollTrigger: {
       trigger: '.community',
       start: 'top+=20% bottom',
       end: 'center-=10% bottom',
-      scrub: true,
+      scrub: true
     }
-  });
+  })
 })
 </script>
 
@@ -88,7 +88,7 @@ onMounted(() => {
         }"
         class="swiper community__swiper"
         ref="swiper"
-        :spaceBetween="20"
+        :spaceBetween="25"
         :slidesPerView="1.2"
         :centeredSlides="true"
         :speed="900"
@@ -184,7 +184,7 @@ onMounted(() => {
   &__img {
     margin: 0 auto;
     border-radius: 50%;
-    @include adaptive-value('margin-bottom', 24, 19.5, 1);
+    @include adaptive-value('margin-bottom', 20, 19.5, 1);
     @include adaptive-value('width', 148, 83, 1);
   }
   &__name {
@@ -195,19 +195,34 @@ onMounted(() => {
     letter-spacing: -0.48px;
     font-weight: 300;
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('margin-bottom', 6, 0, 1);
+    @include adaptive-value('margin-bottom', 3, 0, 1);
   }
   &__position {
     @include adaptive-value('font-size', 16, 11, 1);
     line-height: calc(24 / 16);
+    letter-spacing: 0.5px;
+    font-weight: 300;
     @include adaptive-value('margin-bottom', 20, 14, 1);
   }
   &__desc {
     font-size: 12px;
-    line-height: calc(16 / 12);
-    max-width: 268px;
+    line-height: calc(15.5 / 12);
+    max-width: 275px;
+    letter-spacing: 0.65px;
     margin: 0 auto;
-    @include adaptive-value('margin-bottom', 37, 27, 1);
+    @include adaptive-value('margin-bottom', 39, 27, 1);
+  }
+  .btn-wrapper {
+    button {
+      padding: 3px 48px;
+      // background: linear-gradient(93deg, #fff 0%, rgba(255, 255, 255, 0.26) 54.33%);
+      span {
+        letter-spacing: 0.5px;
+        font-size: 13.7px;
+        font-weight: 300;
+        transform: translateY(1px);
+      }
+    }
   }
 }
 
