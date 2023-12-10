@@ -9,16 +9,11 @@ defineProps({
   <article class="how__item" :id="id" ref="container">
     <div class="how__item-inner">
       <div class="how__item-img-col">
-        <img
-          class="how__item-img"
-          :src="info.img"
-          :alt="info.title"
-        />
-        <p
-          class="how__item-img-text"
-          v-for="text in info.texts"
-          :key="text"
-        >
+        <div class="how__item-img" :style="`
+          background-image: url(${info.img});
+          background-position: ${info.backgroundPosition}
+        `"  ></div>
+        <p class="how__item-img-text" v-for="text in info.texts" :key="text">
           {{ text }}
         </p>
       </div>
@@ -84,13 +79,10 @@ defineProps({
     justify-content: space-between;
   }
   &__item-img {
-    max-width: 492px;
-    max-height: 492px;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    width: 502px;
+    height: 502px;
+    background-size: 190%;
     border-radius: 44px;
-    object-position: 40%;
     @include adaptive-value('margin-bottom', 77, 9, 1);
   }
   &__item-img-text {
