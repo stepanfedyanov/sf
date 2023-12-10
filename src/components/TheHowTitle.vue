@@ -22,9 +22,10 @@ defineProps({
 .how {
   &__sticky {
     width: 50%;
-    height: 50vh;
+    height: 300px;
     position: sticky;
-    top: 20vh;
+    top: 50%;
+    transform: translateY(-50%);
   }
   &__item-info {
     position: absolute;
