@@ -43,11 +43,12 @@ onMounted(() => {
 
 <template>
   <section class="architecture" ref="architecture">
-    <!-- <div class="architecture__clouds">
-      <img src="/img/TheCommunitySection/architecture/cloud-upper-1.png" alt="Town's clouds">
-      <img src="/img/TheCommunitySection/architecture/cloud-upper-2.png" alt="Town's clouds">
-      <img src="/img/TheCommunitySection/architecture/clouds.png" alt="Town's clouds">
-    </div> -->
+    <div class="architecture__clouds">
+      <img class="architecture__clouds_1" src="/img/TheCommunitySection/architecture/cloud-upper-1.png" alt="Town's clouds">
+      <img class="architecture__clouds_2" src="/img/TheCommunitySection/architecture/cloud-upper-2.png" alt="Town's clouds">
+      <img class="architecture__clouds_3" src="/img/TheCommunitySection/architecture/clouds.png" alt="Town's clouds">
+      <img class="architecture__clouds_4" src="/img/TheCommunitySection/architecture/clouds-sofa.png" alt="Town's clouds">
+    </div>
     <TheContainer>
       <div class="architecture__inner">
         <video
@@ -103,6 +104,39 @@ onMounted(() => {
   z-index: 10;
   background: linear-gradient(to bottom, transparent 70%, #fff 95%);
   padding-bottom: 36px;
+  &__clouds {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &_1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &_2 {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &_3 {
+      width: 100%;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    &_4 {
+      width: 100%;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+  }
   &__img {
     position: absolute;
     @include adaptive-value('width', 1440, 667, 1);
