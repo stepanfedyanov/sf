@@ -1,6 +1,10 @@
 <script setup>
+import { onMounted } from 'vue';
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const sections = [
   {
@@ -105,22 +109,41 @@ const sections = [
     btnLink: '#'
   }
 ]
+
+onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  let sections = gsap.utils.toArray(".for__section");
+
+  gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".for__inner",
+      pin: true,
+      scrub: 1,
+      snap: 1 / (sections.length - 1),
+      // base vertical scrolling on how wide the container is so it feels more natural.
+      end: "+=3500",
+    }
+  });
+});
+
 </script>
 
 <template>
   <section class="for">
     <div class="for__inner">
       <section
-        class="for__section"
+        :class="`for__section for__section-${idx + 1}`"
         :style="`background-color: ${section.backgroundColor}`"
-        v-for="section in sections"
+        v-for="(section, idx) in sections"
         :key="section.title"
       >
         <TheContainer>
           <div class="for__section-top-wrapper">
             <div
-              class="for__section-top wow animate__animated animate__fadeInUp"
-              data-wow-delay="0.3s"
+              class="for__section-top"
             >
               <span class="for__section-num">
                 {{ section.num }}
@@ -130,8 +153,7 @@ const sections = [
               </h2>
             </div>
             <TheButton
-              class="for__section-btn wow animate__animated animate__fadeIn"
-              data-wow-delay="0.3s"
+              class="for__section-btn"
               color="black"
               size="big"
             >
@@ -144,9 +166,8 @@ const sections = [
             :class="{ small: section.size === 'small', big: section.size === 'big' }"
           >
             <li
-              class="for__section-item wow animate__animated animate__fadeIn"
-              :data-wow-delay="parseFloat(`${0.2 * idx}`) + 0.2 + 's'"
-              v-for="(item, idx) in section.items"
+              class="for__section-item"
+              v-for="(item) in section.items"
               :key="item.title"
             >
               <img class="for__item-img" :src="item.img" :alt="`Icon ${item.title}`" />
@@ -173,8 +194,14 @@ const sections = [
 }
 
 .for {
+  &__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 600%;
+  }
   &__section {
-    @include adaptive-value('padding-top', 72, 65, 1);
+    width: 100vw;
+    @include adaptive-value('padding-top', 140, 65, 1);
     @include adaptive-value('padding-bottom', 72, 65, 1);
   }
   &__section-top-wrapper {
@@ -212,6 +239,7 @@ const sections = [
     column-gap: 20px;
     @include adaptive-value('row-gap', 40, 14, 1);
     &.big {
+      margin-top: 15%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       row-gap: 48px;

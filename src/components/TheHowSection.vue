@@ -76,26 +76,6 @@ onMounted(() => {
       'second+=0.2'
     )
     .fromTo('#how-item-1 .how__item-img-text', { opacity: 0 }, { opacity: 1 })
-
-  const nextBlockTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.how',
-      start: 'bottom bottom',
-      end: '+=50%',
-      scrub: true
-    }
-  })
-
-  gsap.set('.how__next-background', {
-    opacity: 0,
-    visibility: 'hidden',
-    background: gsap.getProperty('.intro', 'background')
-  })
-
-  nextBlockTimeline
-    .addLabel('nextBlockFadeIn')
-    .to('.how__next-background', { opacity: 1, visibility: 'visible' }, 'nextBlockFadeIn')
-    .to('.intro', { opacity: 1 }, 'nextBlockFadeIn')
 })
 </script>
 
@@ -119,7 +99,6 @@ onMounted(() => {
       </div>
     </TheContainer>
 
-    <div class="how__next-background" />
   </section>
 </template>
 

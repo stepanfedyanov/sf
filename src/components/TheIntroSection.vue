@@ -16,8 +16,8 @@ onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.intro',
-      start: 'top bottom',
-      end: 'center bottom',
+      start: 'top-=10% bottom',
+      end: 'center-=20% bottom',
       scrub: true,
     }
   });
@@ -26,20 +26,6 @@ onMounted(() => {
     .addLabel('scaleVideo')
     .fromTo('.intro__video-wrapper', { scale: 0.8 }, { scale: 1 }, 'scaleVideo+=0.5')
     .fromTo('.intro__title', { yPercent: 200, opacity: 0 }, { yPercent: 0, opacity: 1 }, 'scaleVideo+=0.5');
-
-  const nextBlockTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.intro',
-      start: 'bottom bottom',
-      end: '+=50%',
-      scrub: true,
-    }
-  });
-
-  gsap.set('.intro__next-background', { opacity: 0, visibility: 'hidden', background: gsap.getProperty('.blue', 'background') });
-
-  nextBlockTimeline
-    .to('.intro__next-background', { opacity: 1, visibility: 'visible' })
 });
 </script>
 

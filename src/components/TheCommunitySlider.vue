@@ -23,9 +23,9 @@ onMounted(() => {
     x: 0,
     scrollTrigger: {
       trigger: '.community',
-      start: 'top+=20% bottom',
-      end: 'center-=10% bottom',
-      scrub: true
+      start: 'top+=5% bottom',
+      end: 'center-=25% bottom',
+      scrub: true,
     }
   })
 })
