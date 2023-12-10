@@ -85,8 +85,12 @@ defineProps({
   }
   &__item-img {
     max-width: 492px;
+    max-height: 492px;
+    height: 100%;
     width: 100%;
+    object-fit: cover;
     border-radius: 44px;
+    object-position: 40%;
     @include adaptive-value('margin-bottom', 77, 9, 1);
   }
   &__item-img-text {

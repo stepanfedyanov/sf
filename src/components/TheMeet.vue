@@ -57,7 +57,6 @@ import TheContainer from './TheContainer.vue'
       font-size: 5px;
       @include adaptive-value('font-size', 14, 13, 1);
       letter-spacing: 0.42px;
-      transform: translateY(1px);
     }
   }
 }
