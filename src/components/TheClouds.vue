@@ -21,16 +21,16 @@ const clouds = ref([]);
 
 // Constants:
 // ======================
-const screenDetectorPercents = [0.9, 0.9, 0.9, 0.9, 0, 0, 0.6]; // if center of active cloud in this position – activate smth
+const screenDetectorPercents = [0.9, 0.9, 0.9, 0.9, 0, 0]; // if center of active cloud in this position – activate smth
 const screenAppearPercent = 0.6;
 const screenWidth = (screen && typeof screen.width === 'number') ? screen.width : null;
 
 const cloudsClass = 'join__upper-clouds';
-const changeSpeedXTime = 10; // seconds
+const changeSpeedXTime = 1; // ms
 const cloudsImagesPath = (id) => `./img/Clouds/clouds-${id}.png`;
-const cloudsYInitPosition = [5, -5, 50, 50, 40, 40, 10];
-const cloudsXSpeed = [0.5, 0.4, 0.3, 0.4, 0.2, 0.2, 0.5];
-const cloudsWidth = [900, 800, 300, 500, screenWidth, screenWidth, 900];
+const cloudsYInitPosition = [-3, -10, 30, 50, 40, 40];
+const cloudsXSpeed = [0.05, 0.07, 0.04, 0.01, 0.037, 0.04];
+const cloudsWidth = [900, 800, 300, 500, screenWidth, screenWidth];
 const defaultCloudsXInitPosition = -(screenWidth * screenAppearPercent);
 const cloudXInitPositions = [defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, -(screenWidth / 2), -(screenWidth / 1.5), defaultCloudsXInitPosition];
 
@@ -86,13 +86,12 @@ const changeCloudPosition = () => {
 
 onMounted(() => {
   // Init clouds animations
-  createCloud({ xInitPosition: screenWidth * 0.6, idx: 1 });
-  createCloud({ xInitPosition: screenWidth * -0.1, idx: 2 });
-  createCloud({ xInitPosition: screenWidth * 0.4, idx: 3 });
+  createCloud({ xInitPosition: screenWidth * 0.9, idx: 1 });
+  createCloud({ xInitPosition: 0, idx: 2 });
+  createCloud({ xInitPosition: screenWidth * 0.55, idx: 3 });
   createCloud({ xInitPosition: screenWidth * 0.3, idx: 4 });
-  if (manyClouds.value) createCloud({ xInitPosition: screenWidth * 0.4, idx: 5 });
-  if (manyClouds.value) createCloud({ xInitPosition: screenWidth * 0.1, idx: 6 });
-  if (manyClouds.value) createCloud({ xInitPosition: screenWidth * 0.2, idx: 7 });
+  createCloud({ xInitPosition: screenWidth * 0.6, idx: 5 });
+  createCloud({ xInitPosition: screenWidth * -0.2, idx: 6 });
 
   setInterval(() => {
     changeCloudPosition();
@@ -152,7 +151,7 @@ onMounted(() => {
       z-index: 0;
     }
     &-3 {
-      max-width: 300px;
+      max-width: 450px;
       z-index: 1;
     }
     &-4 {
