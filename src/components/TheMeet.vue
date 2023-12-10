@@ -53,7 +53,7 @@ import TheContainer from './TheContainer.vue'
       @include adaptive-value('padding-bottom', 7, 4, 1);
     }
     span {
-      font-weight: 300;
+      font-weight: 400;
       font-size: 5px;
       @include adaptive-value('font-size', 14, 13, 1);
       letter-spacing: 0.42px;
