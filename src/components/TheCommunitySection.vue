@@ -95,7 +95,7 @@ onMounted(() => {
 
 <style lang="scss">
 .community {
-  @include adaptive-value('padding-top', 67, 80, 1);
+  @include adaptive-value('padding-top', 100, 80, 1);
   background: #a5cce0;
   overflow: hidden;
   &__stars {
