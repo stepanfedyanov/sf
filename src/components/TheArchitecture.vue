@@ -19,46 +19,48 @@ const pageIsLoaded = () => {
 };
 
 onMounted(() => {
-  townVideo.value.muted = true;
-  townVideo.value.play();
+  if (screen && screen.width >= 1024) {
+    townVideo.value.muted = true;
+    townVideo.value.play();
 
-  gsap.set(architectureTitle.value, {
-    yPercent: 300,
-    opacity: 0
-  });
+    gsap.set(architectureTitle.value, {
+      yPercent: 300,
+      opacity: 0
+    });
 
-  gsap.to(architectureTitle.value, {
-    scrollTrigger: {
-      trigger: architecture.value,
-      start: "top bottom",
-      end: "center bottom",
-      scrub: true,
-    },
-    yPercent: 0,
-    opacity: 1,
-  })
+    gsap.to(architectureTitle.value, {
+      scrollTrigger: {
+        trigger: architecture.value,
+        start: "top bottom",
+        end: "center bottom",
+        scrub: true,
+      },
+      yPercent: 0,
+      opacity: 1,
+    })
 
-  gsap.set('.architecture__clouds_1', {
-    yPercent: -30,
-  });
+    gsap.set('.architecture__clouds_1', {
+      yPercent: -30,
+    });
 
-  gsap.set('.architecture__clouds_2', {
-    yPercent: 20,
-  });
-  
-  gsap.set('.architecture__clouds_3', {
-    yPercent: -15,
-  });
+    gsap.set('.architecture__clouds_2', {
+      yPercent: 20,
+    });
+    
+    gsap.set('.architecture__clouds_3', {
+      yPercent: -15,
+    });
 
-  gsap.to('.architecture__clouds-item', {
-    scrollTrigger: {
-      trigger: architecture.value,
-      start: "top+=5% bottom",
-      end: "center-=15% bottom",
-      scrub: true,
-    },
-    yPercent: 0,
-  })
+    gsap.to('.architecture__clouds-item', {
+      scrollTrigger: {
+        trigger: architecture.value,
+        start: "top+=5% bottom",
+        end: "center-=15% bottom",
+        scrub: true,
+      },
+      yPercent: 0,
+    })
+  }
 });
 </script>
 
