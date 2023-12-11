@@ -126,11 +126,11 @@ onMounted(() => {
 
     <div v-if="buildings" class="join__buildings-wrapper">
       <div class="join__buildings">
-        <img class="join__buildings-item join__buildings-1" src="/img/TheJoinSection/buildings/building-1.png" alt="Building">
-        <img class="join__buildings-item join__buildings join__buildings-2" src="/img/TheJoinSection/buildings/building-2.png" alt="Building">
+        <img class="join__buildings-item join__buildings-1" src="/img/TheJoinSection/buildings/building-1.webp" alt="Building">
+        <img class="join__buildings-item join__buildings join__buildings-2" src="/img/TheJoinSection/buildings/building-2.webp" alt="Building">
         <div class="join__buildings-item join__buildings-shadow-wrapper join__buildings join__buildings-3">
-          <img class="join__buildings-item-building" src="/img/TheJoinSection/buildings/building-3.png" alt="Building">
-          <img class="join__buildings-item-shadow" src="/img/TheJoinSection/buildings/building-2-1.png" alt="Building">
+          <img class="join__buildings-item-building" src="/img/TheJoinSection/buildings/building-3.webp" alt="Building">
+          <img class="join__buildings-item-shadow" src="/img/TheJoinSection/buildings/building-2-1.webp" alt="Building">
         </div>
       </div>
       <img class="join__buildings_clouds" src="/img/TheJoinSection/background-clouds.png" alt="Clouds">
