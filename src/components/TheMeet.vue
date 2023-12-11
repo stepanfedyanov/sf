@@ -32,20 +32,20 @@ import TheContainer from './TheContainer.vue'
   }
   &__title {
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 71, 36, 1);
+    @include adaptive-value('font-size', 71, 34, 1);
     transform: translateX(-3px);
     line-height: calc(74 / 70);
-    letter-spacing: 0.7px;
+    @include adaptive-value('letter-spacing', 0.7, 0, 1);
     max-width: 580px;
   }
   &__text {
-    max-width: 300px;
-    @include adaptive-value('font-size', 18, 14, 1);
-    line-height: calc(25 / 18);
+    @include adaptive-value('max-width', 300, 250, 1);
+    @include adaptive-value('font-size', 18, 14.4, 1);
+    @include adaptive-value('line-height', 25, 21, 1);
     letter-spacing: 0.66px;
     font-weight: 300;
-    @include adaptive-value('margin-top', 52, 35, 1);
-    @include adaptive-value('margin-bottom', 37, 35, 1);
+    @include adaptive-value('margin-top', 52, 37, 1);
+    @include adaptive-value('margin-bottom', 37, 37, 1);
   }
   &__btn {
     .big {
@@ -63,25 +63,46 @@ import TheContainer from './TheContainer.vue'
 
 @media (max-width: 1000px) {
   .meet {
-    @include adaptive-value('padding-top', 194, 147, 1);
+    @include adaptive-value('padding-top', 194, 127, 1);
     &__title {
       text-align: center;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateX(0px);
     }
     &__text {
       text-align: center;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
     &__inner {
-      * + * {
-        @include adaptive-value('margin-top', 38, 35, 1);
-      }
     }
     .btn {
       display: block;
       margin: 0 auto;
       font-size: 14px;
       padding: 3px 28.5px;
+    }
+  }
+}
+
+@media (max-width: 490px) {
+  .meet {
+    &__text {
+      font-weight: 200;
+    }
+    &__btn {
+      .btn {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 26px;
+        padding-right: 26px;
+        span {
+          font-weight: 300;
+          font-size: 14px;
+          letter-spacing: 0.6px;
+        }
+      }
     }
   }
 }

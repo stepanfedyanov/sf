@@ -1,6 +1,6 @@
 <script setup>
-import { onMounted, ref, toRefs } from 'vue';
-import { gsap } from 'gsap';
+import { onMounted, ref, toRefs } from 'vue'
+import { gsap } from 'gsap'
 
 const props = defineProps({
   buildings: {
@@ -13,37 +13,44 @@ const props = defineProps({
     required: false,
     default: false
   }
-});
+})
 
-const { manyClouds } = toRefs(props);
+const { manyClouds } = toRefs(props)
 
 // Clouds array
-const clouds = ref([]);
+const clouds = ref([])
 
 // Constants:
 // ======================
-const screenDetectorPercents = [0.9, 0.9, 0.9, 0.9, 0, 0]; // if center of active cloud in this position – activate smth
-const screenAppearPercent = 0.6;
-const screenWidth = (screen && typeof screen.width === 'number') ? screen.width : null;
+const screenDetectorPercents = [0.9, 0.9, 0.9, 0.9, 0, 0] // if center of active cloud in this position – activate smth
+const screenAppearPercent = 0.6
+const screenWidth = screen && typeof screen.width === 'number' ? screen.width : null
 
-const cloudsClass = 'join__upper-clouds';
-const changeSpeedXTime = 1; // ms
-const cloudsImagesPath = (id) => `./img/Clouds/clouds-${id}.png`;
-const cloudsYInitPosition = [-3, -10, 30, 50, 50, 50];
-const cloudsXSpeed = [0.05, 0.07, 0.04, 0.01, 0.037, 0.04];
-const cloudsWidth = [900, 800, 300, 500, screenWidth, screenWidth];
-const defaultCloudsXInitPosition = -(screenWidth * screenAppearPercent);
-const cloudXInitPositions = [defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, defaultCloudsXInitPosition, -(screenWidth / 2), -(screenWidth / 1.5), defaultCloudsXInitPosition];
+const cloudsClass = 'join__upper-clouds'
+const changeSpeedXTime = 1 // ms
+const cloudsImagesPath = (id) => `./img/Clouds/clouds-${id}.png`
+const cloudsYInitPosition = [-3, -10, 30, 50, 50, 50]
+const cloudsXSpeed = [0.05, 0.07, 0.04, 0.01, 0.037, 0.04]
+const cloudsWidth = [900, 800, 300, 500, screenWidth, screenWidth]
+const defaultCloudsXInitPosition = -(screenWidth * screenAppearPercent)
+const cloudXInitPositions = [
+  defaultCloudsXInitPosition,
+  defaultCloudsXInitPosition,
+  defaultCloudsXInitPosition,
+  defaultCloudsXInitPosition,
+  -(screenWidth / 2),
+  -(screenWidth / 1.5),
+  defaultCloudsXInitPosition
+]
 
 // Functions:
 // ======================
 
 /**
  * Create cloud element and add it to clouds array
- * @param {*} xInitPosition 
+ * @param {*} xInitPosition
  */
-const createCloud = ({xInitPosition = null, idx = 1}) => {
-  
+const createCloud = ({ xInitPosition = null, idx = 1 }) => {
   const cloudElement = {
     idx,
     class: `join__upper-clouds ${cloudsClass}-${idx}`,
@@ -54,54 +61,53 @@ const createCloud = ({xInitPosition = null, idx = 1}) => {
     xPosition: xInitPosition ?? cloudXInitPositions[idx - 1],
     screenDetectorPercent: screenDetectorPercents[idx - 1],
     active: true
-  };
-  
-  clouds.value.push(cloudElement);
-};
+  }
+
+  clouds.value.push(cloudElement)
+}
 
 /**
  * Check clouds on screen border and create new cloud or delete last one
  */
 const checkScreenBorder = () => {
   clouds.value.forEach((cloudItem, idx, cloudsArrayReturned) => {
-    if (cloudItem.active && (cloudItem.xPosition >= screenWidth * cloudItem.screenDetectorPercent)) {
-      cloudItem.active = false;
-      createCloud({idx: cloudItem.idx });
+    if (cloudItem.active && cloudItem.xPosition >= screenWidth * cloudItem.screenDetectorPercent) {
+      cloudItem.active = false
+      createCloud({ idx: cloudItem.idx })
     }
 
-    if (cloudItem.xPosition >= (screenWidth + cloudsWidth[cloudItem.idx - 1] / 2)) {
-      cloudsArrayReturned.splice(idx, 1);
+    if (cloudItem.xPosition >= screenWidth + cloudsWidth[cloudItem.idx - 1] / 2) {
+      cloudsArrayReturned.splice(idx, 1)
     }
-  });
-};
+  })
+}
 
 /**
  * Check screen border and chagne cloud speed
  */
 const changeCloudPosition = () => {
-  checkScreenBorder();
+  checkScreenBorder()
 
-  clouds.value.forEach(cloud => {
-    cloud.xPosition = cloud.xPosition + cloud.speedX;
-  });
-};
+  clouds.value.forEach((cloud) => {
+    cloud.xPosition = cloud.xPosition + cloud.speedX
+  })
+}
 
 onMounted(() => {
   // Init clouds animations
-  createCloud({ xInitPosition: screenWidth * 0.9, idx: 1 });
-  createCloud({ xInitPosition: 0, idx: 2 });
-  createCloud({ xInitPosition: screenWidth * 0.55, idx: 3 });
-  createCloud({ xInitPosition: screenWidth * 0.3, idx: 4 });
-  createCloud({ xInitPosition: screenWidth * 0.6, idx: 5 });
-  createCloud({ xInitPosition: screenWidth * -0.2, idx: 6 });
+  createCloud({ xInitPosition: screenWidth * 0.9, idx: 1 })
+  createCloud({ xInitPosition: 0, idx: 2 })
+  createCloud({ xInitPosition: screenWidth * 0.55, idx: 3 })
+  createCloud({ xInitPosition: screenWidth * 0.3, idx: 4 })
+  createCloud({ xInitPosition: screenWidth * 0.6, idx: 5 })
+  createCloud({ xInitPosition: screenWidth * -0.2, idx: 6 })
 
-  if (screen && screen.width >= 1024) {
-    setInterval(() => {
-      changeCloudPosition();
-    }, changeSpeedXTime);
-  }
-
-});
+  // if (screen && screen.width >= 1024) {
+  //   setInterval(() => {
+  //     changeCloudPosition();
+  //   }, changeSpeedXTime);
+  // }
+})
 </script>
 
 <template>
@@ -117,11 +123,27 @@ onMounted(() => {
 
     <div v-if="buildings" class="join__buildings-wrapper">
       <div class="join__buildings">
-        <img class="join__buildings-item join__buildings-1" src="/img/TheJoinSection/buildings/building-1.png" alt="Building">
-        <img class="join__buildings join__buildings-2" src="/img/TheJoinSection/buildings/building-2.png" alt="Building">
-        <img class="join__buildings join__buildings-3" src="/img/TheJoinSection/buildings/building-3.png" alt="Building">
+        <img
+          class="join__buildings-item join__buildings-1"
+          src="/img/TheJoinSection/buildings/building-1.png"
+          alt="Building"
+        />
+        <img
+          class="join__buildings join__buildings-2"
+          src="/img/TheJoinSection/buildings/building-2.png"
+          alt="Building"
+        />
+        <img
+          class="join__buildings join__buildings-3"
+          src="/img/TheJoinSection/buildings/building-3.png"
+          alt="Building"
+        />
       </div>
-      <img class="join__buildings_clouds" src="/img/TheJoinSection/background-clouds.png" alt="Clouds">
+      <img
+        class="join__buildings_clouds"
+        src="/img/TheJoinSection/background-clouds.png"
+        alt="Clouds"
+      />
     </div>
   </div>
 </template>
@@ -220,10 +242,27 @@ onMounted(() => {
       background: linear-gradient(to bottom, transparent 75%, #fff 90%);
     }
     &__buildings {
-      top: 420px;
       left: 50%;
       transform: translateX(-50%);
       right: auto;
+      &-1 {
+        @include adaptive-value('top', 340, 270, 1);
+        @include adaptive-value('left', -10, 57, 1);
+        @include adaptive-value('max-width', 120, 80, 1);
+        position: absolute;
+      }
+      &-2 {
+        @include adaptive-value('top', 350, 280, 1);
+        @include adaptive-value('left', 179, 179, 1);
+        @include adaptive-value('max-width', 130, 90, 1);
+        position: absolute;
+      }
+      &-3 {
+        @include adaptive-value('top', 349, 277, 1);
+        @include adaptive-value('left', 330, 262, 1);
+        @include adaptive-value('max-width', 120, 80, 1);
+        position: absolute;
+      }
     }
     &__upper-clouds {
       top: 0px;

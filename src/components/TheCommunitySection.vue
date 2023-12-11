@@ -51,18 +51,18 @@ const maxStarsCount = 5;
 let lastHalf = 0;
 
 onMounted(() => {
-  if (screen && screen.width >= 1024) {
-    setInterval(() => {
-      stars.value.push({
-        x: `${lastHalf === 1 ? random(1, 20) : random(80, 100)}%`,
-        y: `${Math.ceil(Math.random() * 100)}%`,
-      });
+  // if (screen && screen.width >= 1024) {
+  //   setInterval(() => {
+  //     stars.value.push({
+  //       x: `${lastHalf === 1 ? random(1, 20) : random(80, 100)}%`,
+  //       y: `${Math.ceil(Math.random() * 100)}%`,
+  //     });
 
-      lastHalf = lastHalf === 1 ? 0 : 1;
+  //     lastHalf = lastHalf === 1 ? 0 : 1;
 
-      if (stars.value.length > maxStarsCount) stars.value.shift()
-    }, startAppearTime);
-  }
+  //     if (stars.value.length > maxStarsCount) stars.value.shift()
+  //   }, startAppearTime);
+  // }
 });
 </script>
 

@@ -47,19 +47,19 @@ const cards = [
 gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
-  if (screen && screen.width >= 1024) {
-    const sliderTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.methods',
-        start: 'top+=20% bottom',
-        scrub: false
-      }
-    })
+  // if (screen && screen.width >= 1024) {
+  //   const sliderTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: '.methods',
+  //       start: 'top+=20% bottom',
+  //       scrub: false
+  //     }
+  //   })
 
-    gsap.set('.methods__card', { yPercent: 50, opacity: 0 })
-    sliderTimeline.from('.methods__card', { yPercent: 50, opacity: 0 })
-    sliderTimeline.to('.methods__card', { yPercent: 0, opacity: 1, duration: 0.5, stagger: 0.3 })
-  }
+  //   gsap.set('.methods__card', { yPercent: 50, opacity: 0 })
+  //   sliderTimeline.from('.methods__card', { yPercent: 50, opacity: 0 })
+  //   sliderTimeline.to('.methods__card', { yPercent: 0, opacity: 1, duration: 0.5, stagger: 0.3 })
+  // }
 })
 </script>
 

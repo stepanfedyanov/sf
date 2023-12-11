@@ -22,25 +22,25 @@ const advantageElement = ref(null)
 
 onMounted(() => {
   // TODO: убрать на этапе мобильной анимации
-  if (screen && screen.width >= 1025) {
-    const sliderTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: advantageElement.value,
-        start: 'top+=30% bottom',
-        end: 'bottom bottom',
-        scrub: true
-      }
-    })
+  // if (screen && screen.width >= 1025) {
+  //   const sliderTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: advantageElement.value,
+  //       start: 'top+=30% bottom',
+  //       end: 'bottom bottom',
+  //       scrub: true
+  //     }
+  //   })
 
-    const slides = document.querySelectorAll(`.advantage__swiper-slide-${idx.value}`)
-    const upperPosition = 20
+  //   const slides = document.querySelectorAll(`.advantage__swiper-slide-${idx.value}`)
+  //   const upperPosition = 20
 
-    slides.forEach((slide, index) => {
-      gsap.set(slide, { yPercent: (slides.length - (index + 1)) * upperPosition })
-    })
+  //   slides.forEach((slide, index) => {
+  //     gsap.set(slide, { yPercent: (slides.length - (index + 1)) * upperPosition })
+  //   })
 
-    sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0 });
-  }
+  //   sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0 });
+  // }
 });
 </script>
 
@@ -383,7 +383,7 @@ onMounted(() => {
   }
   &__columns {
     display: flex;
-    @include adaptive-value('margin-bottom', 26, 28, 1);
+    @include adaptive-value('margin-bottom', 20, 28, 1);
   }
   &__column {
     display: flex;
@@ -394,7 +394,7 @@ onMounted(() => {
   &__item {
     padding-left: 11px;
     @include adaptive-value('font-size', 11.8, 10.2, 1);
-    line-height: calc(14 / 12);
+    line-height: calc(18 / 12);
     letter-spacing: 0.44px;
     position: relative;
     font-weight: 300;
@@ -403,7 +403,7 @@ onMounted(() => {
       content: '';
       position: absolute;
       left: 1px;
-      top: 4px;
+      top: 6px;
       width: 3px;
       height: 3px;
       background-color: #052e3e;
@@ -411,7 +411,7 @@ onMounted(() => {
     }
   }
   &__item + &__item {
-    @include adaptive-value('margin-top', 4, 3.39, 1);
+    @include adaptive-value('margin-top', 1, 3.39, 1);
   }
   &__column + &__column {
     @include adaptive-value('margin-left', 4, 3.39, 1);
@@ -428,7 +428,7 @@ onMounted(() => {
     line-height: calc(14.5 / 12);
     letter-spacing: 0.24px;
     max-width: 210px;
-    color: #8b8886;
+    color: #4E575A;
   }
   &__date {
     line-height: calc(14 / 10);

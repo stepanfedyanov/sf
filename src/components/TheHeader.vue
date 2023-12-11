@@ -23,7 +23,7 @@ const openNavbar = () => {
   >
     <div class="header__inner">
       <div class="header__inner-row">
-        <TheLogotype fill="#052E3E" />
+        <TheLogotype class="header__logo" fill="#052E3E" />
         <div class="header__burger" @click="openNavbar">
           <span class="header__line"></span>
           <span class="header__line"></span>
@@ -89,12 +89,15 @@ const openNavbar = () => {
   backdrop-filter: blur(15px);
   @include adaptive-value('padding-top', 15, 4, 1);
   @include adaptive-value('padding-bottom', 15, 4, 1);
-  @include adaptive-value('padding-left', 38, 24, 1);
-  @include adaptive-value('padding-right', 24, 24, 1);
+  @include adaptive-value('padding-left', 38, 27, 1);
+  @include adaptive-value('padding-right', 24, 23, 1);
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  &__logo {
+    @include adaptive-value('width', 146, 95.28, 1);
   }
   &__burger {
     width: 13px;
