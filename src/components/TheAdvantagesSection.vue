@@ -1,10 +1,6 @@
 <script setup>
 import TheAdvantage from './TheAdvantage.vue'
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { onMounted } from 'vue';
-
 const sections = [
   {
     title: 'Products & Services',
@@ -142,8 +138,6 @@ const sections = [
     ]
   }
 ]
-
-gsap.registerPlugin(ScrollTrigger);
 </script>
 
 <template>

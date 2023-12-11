@@ -93,9 +93,11 @@ onMounted(() => {
   createCloud({ xInitPosition: screenWidth * 0.6, idx: 5 });
   createCloud({ xInitPosition: screenWidth * -0.2, idx: 6 });
 
-  setInterval(() => {
-    changeCloudPosition();
-  }, changeSpeedXTime);
+  if (screen && screen.width >= 1024) {
+    setInterval(() => {
+      changeCloudPosition();
+    }, changeSpeedXTime);
+  }
 });
 </script>
 
