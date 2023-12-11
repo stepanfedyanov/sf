@@ -44,7 +44,6 @@ onMounted(() => {
     <TheContainer>
       <TheVideoSlider class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s" />
     </TheContainer>
-    <div class="intro__next-background" />
   </section>
 </template>
 
@@ -58,14 +57,6 @@ onMounted(() => {
   padding-bottom: 15vh;
   &__title {
     @include adaptive-value('margin-bottom', 40, 49, 1);
-  }
-  &__next-background {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
   }
 }
 
