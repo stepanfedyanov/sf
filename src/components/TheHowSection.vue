@@ -123,14 +123,6 @@ onMounted(() => {
   &__item + &__item {
     margin-top: 94px;
   }
-  &__next-background {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
-  }
 }
 
 @media (max-width: 550px) {

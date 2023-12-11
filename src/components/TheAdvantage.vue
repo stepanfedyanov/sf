@@ -299,14 +299,6 @@ onMounted(() => {
       @include adaptive-value('height', 58, 24, 1);
     }
   }
-  &__next-background {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999;
-  }
 
   &.white {
     .advantage__title {

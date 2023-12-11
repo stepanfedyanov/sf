@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref, toRefs } from 'vue';
+import { gsap } from 'gsap';
 
 const props = defineProps({
   buildings: {
@@ -42,6 +43,7 @@ const cloudXInitPositions = [defaultCloudsXInitPosition, defaultCloudsXInitPosit
  * @param {*} xInitPosition 
  */
 const createCloud = ({xInitPosition = null, idx = 1}) => {
+  
   const cloudElement = {
     idx,
     class: `join__upper-clouds ${cloudsClass}-${idx}`,
@@ -98,6 +100,7 @@ onMounted(() => {
       changeCloudPosition();
     }, changeSpeedXTime);
   }
+
 });
 </script>
 
@@ -113,7 +116,11 @@ onMounted(() => {
     />
 
     <div v-if="buildings" class="join__buildings-wrapper">
-      <img class="join__buildings" src="/img/TheJoinSection/buildings.png" alt="" />
+      <div class="join__buildings">
+        <img class="join__buildings-item join__buildings-1" src="/img/TheJoinSection/buildings/building-1.png" alt="Building">
+        <img class="join__buildings join__buildings-2" src="/img/TheJoinSection/buildings/building-2.png" alt="Building">
+        <img class="join__buildings join__buildings-3" src="/img/TheJoinSection/buildings/building-3.png" alt="Building">
+      </div>
       <img class="join__buildings_clouds" src="/img/TheJoinSection/background-clouds.png" alt="Clouds">
     </div>
   </div>
@@ -179,6 +186,25 @@ onMounted(() => {
     top: 170px;
     right: 35px;
     z-index: 1;
+    width: 377px;
+    &-1 {
+      top: 0;
+      left: 0;
+      max-width: 120px;
+      position: absolute;
+    }
+    &-2 {
+      top: 0;
+      left: 110px;
+      max-width: 140px;
+      position: absolute;
+    }
+    &-3 {
+      top: 0;
+      left: 245px;
+      max-width: 123px;
+      position: absolute;
+    }
     &_clouds {
       position: absolute;
       bottom: -28%;
