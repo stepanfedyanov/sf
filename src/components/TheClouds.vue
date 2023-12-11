@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref, toRefs } from 'vue';
 import { gsap } from 'gsap';
+import { CustomEase } from 'gsap/CustomEase';
 
 const props = defineProps({
   buildings: {
@@ -29,7 +30,7 @@ const screenWidth = (screen && typeof screen.width === 'number') ? screen.width 
 const cloudsClass = 'join__upper-clouds';
 const changeSpeedXTime = 1; // ms
 const cloudsImagesPath = (id) => `./img/Clouds/clouds-${id}.png`;
-const cloudsYInitPosition = [-3, -10, 30, 50, 50, 50];
+const cloudsYInitPosition = [-3, -10, 30, 50, 55, 50];
 const cloudsXSpeed = [0.05, 0.07, 0.04, 0.01, 0.037, 0.04];
 const cloudsWidth = [900, 800, 300, 500, screenWidth, screenWidth];
 const defaultCloudsXInitPosition = -(screenWidth * screenAppearPercent);
@@ -101,6 +102,14 @@ onMounted(() => {
     }, changeSpeedXTime);
   }
 
+  gsap.set('.join__buildings-item', { yPercent: 100 });
+
+  gsap.to('.join__buildings-item', {
+    yPercent: 0,
+    duration: 3,
+    stagger: 1,
+    ease: CustomEase.create("custom", "M0,0 C0.272,0 0.351,0.344 0.371,0.4 0.552,0.91 0.744,1 1,1 "),
+  })
 });
 </script>
 
@@ -117,11 +126,15 @@ onMounted(() => {
 
     <div v-if="buildings" class="join__buildings-wrapper">
       <div class="join__buildings">
-        <img class="join__buildings-item join__buildings-1" src="/img/TheJoinSection/buildings/building-1.png" alt="Building">
-        <img class="join__buildings join__buildings-2" src="/img/TheJoinSection/buildings/building-2.png" alt="Building">
-        <img class="join__buildings join__buildings-3" src="/img/TheJoinSection/buildings/building-3.png" alt="Building">
+        <img class="join__buildings-item join__buildings-1" src="/img/TheJoinSection/buildings/building-1.webp" alt="Building">
+        <img class="join__buildings-item join__buildings join__buildings-2" src="/img/TheJoinSection/buildings/building-2.webp" alt="Building">
+        <div class="join__buildings-item join__buildings-shadow-wrapper join__buildings join__buildings-3">
+          <img class="join__buildings-item-building" src="/img/TheJoinSection/buildings/building-3.webp" alt="Building">
+          <img class="join__buildings-item-shadow" src="/img/TheJoinSection/buildings/building-2-1.webp" alt="Building">
+        </div>
       </div>
       <img class="join__buildings_clouds" src="/img/TheJoinSection/background-clouds.png" alt="Clouds">
+      <img class="join__buildings_clouds join__buildings_clouds-2" src="/img/TheJoinSection/background-clouds.png" alt="Clouds">
     </div>
   </div>
 </template>
@@ -210,6 +223,14 @@ onMounted(() => {
       bottom: -28%;
       left: 336px;
       z-index: 1;
+      &-2 {
+        bottom: -30%;
+      }
+    }
+    &-item-shadow {
+      position: absolute;
+      top: 0;
+      left: -120px;
     }
   }
 }
