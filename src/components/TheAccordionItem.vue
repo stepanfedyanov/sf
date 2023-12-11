@@ -64,7 +64,7 @@ export default {
 
 .accordion {
   &__item + &__item {
-    @include adaptive-value('margin-top', 24, 14, 1);
+    @include adaptive-value('margin-top', 24, 13, 1);
   }
 }
 

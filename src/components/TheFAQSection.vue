@@ -16,13 +16,22 @@ import TheFAQAccordion from './TheFAQAccordion.vue'
 
 <style lang="scss">
 .faq {
-  @include adaptive-value('padding-top', 95, 42, 1);
-  @include adaptive-value('padding-bottom', 95, 42, 1);
+  @include adaptive-value('padding-top', 95, 37, 1);
+  @include adaptive-value('padding-bottom', 95, 85, 1);
   &__title {
-    @include adaptive-value('margin-bottom', 51, 25, 1);
+    @include adaptive-value('margin-bottom', 51, 32, 1);
     font-family: 'Atyp Display';
-    @include adaptive-value('font-size', 40, 30, 1);
+    @include adaptive-value('font-size', 40, 29, 1);
     @include adaptive-value('line-height', 40, 48, 1);
+    @include adaptive-value('letter-spacing', 0, -0.5, 1);
+  }
+}
+
+@media (max-width: 530px) {
+  .faq {
+    &__title {
+      font-weight: 300;
+    }
   }
 }
 </style>

@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const swiper = ref(null)
 const sliders = [
   'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
-  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium qui nulla molestias architecto maiores quia ad quis neque officiis, fugit dolor iure?'
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium qui'
 ]
 </script>
 
@@ -19,11 +19,11 @@ const sliders = [
         .swiper-pagination {
           display: none;
         }
-        @media (max-width: 800px) {
+        @media (max-width: 890px) {
           .swiper-pagination {
             display: block;
             top: auto !important;
-            bottom: -50px !important;
+            bottom: -68px !important;
             transform: translateY(50%) !important;
           }
           .swiper-pagination-bullet {
@@ -78,7 +78,7 @@ const sliders = [
 <style lang="scss">
 .swiper-block {
   position: relative;
-  margin-top: 60px;
+  @include adaptive-value('margin-top', 60, 87, 1);
 }
 .video {
   &__swiper {
@@ -90,7 +90,6 @@ const sliders = [
     top: 0;
     right: -64px;
     transform: translateX(100%);
-    @include adaptive-value('width', 54, 36, 1);
     z-index: 14;
   }
   &__swiper-button-prev {
@@ -98,9 +97,11 @@ const sliders = [
     top: 0;
     left: -64px;
     transform: translateX(-100%);
-    @include adaptive-value('width', 54, 36, 1);
     z-index: 14;
   }
+}
+.swiper-button-img {
+  @include adaptive-value('width', 54, 25, 1);
 }
 .video-slide {
   &__quote {
@@ -110,10 +111,10 @@ const sliders = [
   }
   &__text {
     text-align: center;
-    @include adaptive-value('font-size', 18, 14, 1);
-    line-height: calc(25 / 18);
-    letter-spacing: 0.36px;
-    @include adaptive-value('margin-bottom', 22, 22, 1);
+    @include adaptive-value('font-size', 18, 14.4, 1);
+    @include adaptive-value('line-height', 25, 21, 1);
+    @include adaptive-value('letter-spacing', 0.36, 0.36, 1);
+    @include adaptive-value('margin-bottom', 22, 17, 1);
   }
   &__author {
     @include adaptive-value('font-size', 14, 15, 1);
@@ -127,29 +128,29 @@ const sliders = [
 @media (max-width: 1220px) {
   .video {
     &__swiper-button-next {
-      @include adaptive-value('right', 64, 0, 1);
+      @include adaptive-value('right', 64, 60, 1);
     }
     &__swiper-button-prev {
-      @include adaptive-value('left', 64, 0, 1);
+      @include adaptive-value('left', 64, 60, 1);
     }
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 890px) {
   .video {
     &__swiper-button-next {
-      bottom: -50px;
+      bottom: -68px;
       top: auto;
       transform: translate(100%, 53%);
       right: 100px;
-      @include adaptive-value('right', 100, 50, 1);
+      @include adaptive-value('right', 100, 70, 1);
     }
     &__swiper-button-prev {
-      bottom: -50px;
+      bottom: -68px;
       transform: translate(-100%, 53%);
       top: auto;
       left: 100px;
-      @include adaptive-value('left', 100, 50, 1);
+      @include adaptive-value('left', 100, 70, 1);
     }
   }
 }
@@ -160,6 +161,18 @@ const sliders = [
       max-width: 297px;
       margin-right: auto;
       margin-left: auto;
+    }
+  }
+}
+
+@media (max-width: 490px) {
+  .video-slide {
+    &__text {
+      font-weight: 300;
+      color: #4E575A;
+    }
+    &__author {
+      font-weight: 300;
     }
   }
 }

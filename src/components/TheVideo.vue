@@ -5,7 +5,6 @@
     <video
       class="intro__video"
       src="https://v3.cdnpk.net/videvo_files/video/free/video0465/large_watermarked/_import_6131b9db2c1673.98240360_preview.mp4"
-      poster="/img/TheIntroSection/video-poster.jpg"
     ></video>
     <div class="intro__video-btn-wrapper">
       <svg
@@ -50,18 +49,27 @@
     margin-bottom: 80px;
     @include adaptive-value('border-radius', 40, 30, 1);
     overflow: hidden;
-    min-height: 525px;
+    @include adaptive-value('min-height', 525, 450, 1);
     margin: 0 auto;
     position: relative;
     width: 95vw;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/img/TheIntroSection/video-poster.jpg') center / cover no-repeat;
+    }
   }
   &__video {
     max-width: 100%;
     height: 100%;
     width: 100%;
-    min-height: 525px;
-    object-fit: cover;
-    object-position: center;
+    @include adaptive-value('min-height', 525, 450, 1);
+    display: block;
   }
   &__video-btn-wrapper {
     position: absolute;
@@ -85,5 +93,33 @@
   }
 }
 
+@media (max-width: 600px) {
+  .intro {
+    &__video-wrapper {
+      &::before {
+        background: url('/img/TheIntroSection/video-poster-mobile.jpg') center / cover no-repeat;
+        background-size: 209%;
+        background-position: -200px -68px;
+      }
+    }
+  }
+}
 
+@media (max-width: 490px) {
+  .intro {
+    &__video-wrapper {
+      width: calc(100% - 42px);
+    }
+  }
+}
+@media (max-width: 374px) {
+  .intro {
+    &__video-wrapper {
+      &::before {
+        background: url('/img/TheIntroSection/video-poster-mobile.jpg') center / cover no-repeat;
+        background-size: initial;
+      }
+    }
+  }
+}
 </style>

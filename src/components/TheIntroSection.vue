@@ -1,15 +1,15 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue'
 import TheContainer from './TheContainer.vue'
 import TheSectionTitle from './TheSectionTitle.vue'
 import TheVideo from './TheVideo.vue'
 import TheVideoSlider from './TheVideoSlider.vue'
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
-const introSection = ref(null);
+const introSection = ref(null)
 
 onMounted(() => {
   // if (screen && screen.width >= 1024) {
@@ -28,17 +28,13 @@ onMounted(() => {
   //     .fromTo('.intro__video-wrapper', { scale: 0.8 }, { scale: 1 }, 'scaleVideo+=0.5')
   //     .fromTo('.intro__title', { yPercent: 200, opacity: 0 }, { yPercent: 0, opacity: 1 }, 'scaleVideo+=0.5');
   // }
-});
+})
 </script>
 
 <template>
   <section class="intro" ref="introSection">
     <TheContainer>
-        <TheSectionTitle
-          color="#052E3E"
-          class="intro__title"
-          >Watch intro</TheSectionTitle
-        >
+      <TheSectionTitle color="#052E3E" class="intro__title">Watch intro</TheSectionTitle>
     </TheContainer>
     <TheVideo class="wow animate__animated animate__fadeIn" />
     <TheContainer>
@@ -56,20 +52,22 @@ onMounted(() => {
   @include adaptive-value('padding-bottom', 100, 60, 1);
   padding-bottom: 15vh;
   &__title {
-    @include adaptive-value('margin-bottom', 40, 49, 1);
+    @include adaptive-value('margin-bottom', 40, 53, 1);
+    @include adaptive-value('font-size', 96, 50, 1);
+    @include adaptive-value('letter-spacing', -1.92, 0.6, 1);
   }
 }
 
 @media (max-width: 800px) {
   .intro {
-    padding-bottom: 140px;
+    padding-bottom: 145px;
   }
 }
 
 @media (max-width: 500px) {
   .intro {
     &__title {
-      max-width: 300px;
+      max-width: 250px;
       margin-left: auto;
       margin-right: auto;
       line-height: calc(52 / 48);

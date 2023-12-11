@@ -56,7 +56,7 @@ onMounted(() => {
     text-align: center;
     @include adaptive-value('font-size', 160, 72, 1);
     line-height: calc(140 / 160);
-    letter-spacing: -1.6px;
+    @include adaptive-value('letter-spacing', -1.6, 0, 1);
     font-weight: 300;
     user-select: none;
     pointer-events: none;
@@ -80,10 +80,10 @@ onMounted(() => {
 
 @media (max-width: 1000px) {
   .upside {
-    margin-top: 470px;
     &__title {
-      max-width: 312px;
+      @include adaptive-value('max-width', 650, 312, 1);
       margin: 0 auto;
+      font-weight: 300;
       &::before {
         top: 150px;
         left: 50%;
