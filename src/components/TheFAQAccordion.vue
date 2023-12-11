@@ -50,19 +50,21 @@ const items = [
 <style lang="scss">
 .accordion__content {
   span {
-    @include adaptive-value('padding-top', 24, 14, 1);
-    @include adaptive-value('padding-bottom', 24, 14, 1);
+    @include adaptive-value('padding-top', 25, 14, 1);
+    @include adaptive-value('padding-bottom', 15, 14, 1);
     display: inline-block;
+    letter-spacing: 0.2px;
+    max-width: 880px;
     @media (max-width: 800px) {
       padding-bottom: 0;
     }
   }
 }
 .accordion {
-  @include adaptive-value('padding-top', 42, 32, 1);
-  @include adaptive-value('padding-bottom', 42, 32, 1);
-  @include adaptive-value('padding-left', 36, 27, 1);
-  @include adaptive-value('padding-right', 36, 27, 1);
+  @include adaptive-value('padding-top', 38, 32, 1);
+  @include adaptive-value('padding-bottom', 44, 32, 1);
+  @include adaptive-value('padding-left', 41, 27, 1);
+  @include adaptive-value('padding-right', 48, 27, 1);
   border-radius: 40px;
   background: #f2f3f5;
   &__arrow-btn {
@@ -76,7 +78,7 @@ const items = [
   &__arrow {
     transform: rotate(90deg);
     transition: 0.3s;
-    @include adaptive-value('width', 24, 16, 1);
+    @include adaptive-value('width', 26, 16, 1);
   }
   &__trigger {
     h3 {
@@ -87,7 +89,7 @@ const items = [
   }
   &__trigger_active {
     .accordion__arrow {
-      transform: rotate(270deg);
+      transform: rotate(270deg) translateY(2px) translateX(-3px);
     }
   }
 }

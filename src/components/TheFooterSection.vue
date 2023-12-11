@@ -203,7 +203,7 @@ const navList = [
     display: none;
   }
   &__top {
-    @include adaptive-value('padding-bottom', 85, 66, 1);
+    @include adaptive-value('padding-bottom', 82, 66, 1);
     text-align: center;
     border-bottom: 1px solid #fff;
   }
@@ -211,19 +211,20 @@ const navList = [
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 90, 48, 1);
     font-weight: 300;
-    @include adaptive-value('margin-bottom', 30, 40, 1);
+    @include adaptive-value('margin-bottom', 44, 40, 1);
   }
   &__desc {
     max-width: 788px;
     margin: 0 auto;
-    @include adaptive-value('margin-bottom', 72, 57, 1);
+    @include adaptive-value('margin-bottom', 68, 57, 1);
     @include adaptive-value('font-size', 18, 20, 1);
-    line-height: calc(24 / 18);
-    letter-spacing: 0.36px;
-    font-weight: 400;
+    line-height: calc(25 / 18);
+    letter-spacing: 0.7px;
+    font-weight: 200;
   }
   &__bottom {
-    @include adaptive-value('padding-top', 44, 32, 1);
+    @include adaptive-value('padding-top', 40, 32, 1);
+    padding-left: 6px;
   }
   &__bottom-line {
     display: flex;
@@ -231,35 +232,45 @@ const navList = [
     justify-content: space-between;
   }
   &__bottom-line + &__bottom-line {
-    margin-top: 44px;
+    margin-top: 40px;
   }
   &__nav-list {
     display: flex;
     align-items: center;
   }
   &__nav-item + &__nav-item {
-    @include adaptive-value('margin-left', 43, 19, 1);
+    @include adaptive-value('margin-left', 42, 19, 1);
   }
   &__nav-link,
   &__bottom-link {
     line-height: calc(24 / 13);
-    letter-spacing: -0.195px;
-    @include adaptive-value('font-size', 13, 9, 1);
+    letter-spacing: 0.3px;
+    @include adaptive-value('font-size', 12.8, 9, 1);
+    font-weight: 200;
+  }
+  .btn-wrapper {
+    .btn {
+      padding: 6px 48px 7px;
+      span {
+        letter-spacing: 0.3px;
+      }
+    }
   }
 }
 .socials {
   &__list {
     display: flex;
     align-items: center;
+    transform: translateY(3px)
   }
   &__item {
-    @include adaptive-value('width', 38, 23, 1);
+    @include adaptive-value('width', 36, 23, 1);
     svg {
       width: 100%;
     }
   }
   &__item + &__item {
-    @include adaptive-value('margin-left', 26, 17, 1);
+    @include adaptive-value('margin-left', 27, 17, 1);
   }
 }
 
