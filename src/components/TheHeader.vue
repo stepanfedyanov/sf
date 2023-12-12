@@ -80,7 +80,6 @@ const openNavbar = () => {
   left: 50%;
   transform: translateX(-50%);
   @include adaptive-value('border-radius', 34, 22, 1);
-  border: 1px solid #ececec;
   background: linear-gradient(
     92deg,
     rgba(255, 255, 255, 0.69) -36.65%,

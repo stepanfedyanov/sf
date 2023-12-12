@@ -106,7 +106,7 @@ onMounted(() => {
 
 <style lang="scss">
 .how {
-  background: linear-gradient(to bottom, #f2f3f5 80%, #fff);
+  background: #f2f3f5;
   padding: 100px 0;
   min-height: 100vh;
   position: relative;

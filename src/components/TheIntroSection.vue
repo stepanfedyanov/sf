@@ -49,7 +49,7 @@ onMounted(() => {
 
 <style lang="scss">
 .intro {
-  background-color: #fff;
+  background-color: #f2f3f5;
   max-width: 1920px;
   margin: 0 auto;
   overflow: hidden;
