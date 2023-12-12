@@ -102,11 +102,11 @@ onMounted(() => {
   createCloud({ xInitPosition: screenWidth * 0.6, idx: 5 })
   createCloud({ xInitPosition: screenWidth * -0.2, idx: 6 })
 
-  // if (screen && screen.width >= 1024) {
-  //   setInterval(() => {
-  //     changeCloudPosition();
-  //   }, changeSpeedXTime);
-  // }
+  if (screen && screen.width >= 1024) {
+    setInterval(() => {
+      changeCloudPosition();
+    }, changeSpeedXTime);
+  }
 })
 </script>
 
@@ -152,7 +152,6 @@ onMounted(() => {
 .join {
   &__clouds-container {
     width: 100%;
-    overflow-x: hidden;
   }
   &__buildings-wrapper {
     position: absolute;

@@ -159,7 +159,4 @@ const sections = [
 </template>
 
 <style lang="scss">
-.advantages {
-  overflow-x: hidden;
-}
 </style>

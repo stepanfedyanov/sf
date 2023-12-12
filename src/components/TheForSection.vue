@@ -111,24 +111,24 @@ const sections = [
 ]
 
 onMounted(() => {
-  // if (screen && screen.width >= 1024) {
-  //   gsap.registerPlugin(ScrollTrigger);
+  if (screen && screen.width >= 1024) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  //   let sections = gsap.utils.toArray(".for__section");
+    let sections = gsap.utils.toArray(".for__section");
 
-  //   gsap.to(sections, {
-  //     xPercent: -100 * (sections.length - 1),
-  //     ease: "none",
-  //     scrollTrigger: {
-  //       trigger: ".for__inner",
-  //       pin: true,
-  //       scrub: 1,
-  //       snap: 1 / (sections.length - 1),
-  //       // base vertical scrolling on how wide the container is so it feels more natural.
-  //       end: "+=3500",
-  //     }
-  //   });
-  // }
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".for__inner",
+        pin: true,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=3500",
+      }
+    });
+  }
 });
 
 </script>
@@ -196,7 +196,6 @@ onMounted(() => {
 }
 
 .for {
-  overflow-x: hidden;
   &__inner {
     display: flex;
     flex-wrap: nowrap;
