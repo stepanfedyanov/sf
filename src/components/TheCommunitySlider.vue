@@ -15,21 +15,21 @@ defineProps({
 })
 
 onMounted(() => {
-  if (screen && screen.width >= 1024) {
-    const slideSize = swiper.value.swiper.slidesSizesGrid[0]
+  // if (screen && screen.width >= 1024) {
+  //   const slideSize = swiper.value.swiper.slidesSizesGrid[0]
 
-    gsap.set('.community__swiper', { x: slideSize })
+  //   gsap.set('.community__swiper', { x: slideSize })
 
-    gsap.to('.community__swiper', {
-      x: 0,
-      scrollTrigger: {
-        trigger: '.community',
-        start: 'top+=5% bottom',
-        end: 'center-=25% bottom',
-        scrub: true,
-      }
-    })
-  }
+  //   gsap.to('.community__swiper', {
+  //     x: 0,
+  //     scrollTrigger: {
+  //       trigger: '.community',
+  //       start: 'top+=5% bottom',
+  //       end: 'center-=25% bottom',
+  //       scrub: true,
+  //     }
+  //   })
+  // }
 })
 </script>
 

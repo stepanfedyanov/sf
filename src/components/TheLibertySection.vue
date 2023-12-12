@@ -2009,7 +2009,7 @@ onMounted(() => {
 <style lang="scss">
 .liberty {
   background: #ddd8d5;
-  @include adaptive-value('padding-top', 128, 80, 1);
+  @include adaptive-value('padding-top', 145, 80, 1);
   padding-bottom: 80px;
   &__inner {
     position: relative;

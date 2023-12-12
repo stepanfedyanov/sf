@@ -2,6 +2,7 @@
 import { onMounted, ref, toRefs } from 'vue';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
+gsap.registerPlugin(CustomEase);
 
 const props = defineProps({
   buildings: {

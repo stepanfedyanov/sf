@@ -122,10 +122,13 @@ onMounted(() => {
       scrollTrigger: {
         trigger: ".for__inner",
         pin: true,
-        scrub: 1,
-        snap: 1 / (sections.length - 1),
+        scrub: true,
+        snap: {
+          snapTo: 1 / (sections.length - 1),
+          duration: 0.3,
+        },
         // base vertical scrolling on how wide the container is so it feels more natural.
-        end: "+=3500",
+        end: "+=1500",
       }
     });
   }
