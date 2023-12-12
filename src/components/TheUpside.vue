@@ -10,31 +10,28 @@ const upsideContainer = ref(null);
 const upsideTitle = ref(null);
 
 onMounted(() => {
-  if (screen && screen.width >= 1024) {
-    const opacityTitleTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: upsideContainer.value,
-        start: "top bottom",
-        end: "bottom+=50% bottom",
-        scrub: true,
-      },
-    });
+  const opacityTitleTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: upsideContainer.value,
+      start: () => screen && screen.width >= 1024 ? "top bottom" : "top+=50% bottom",
+      end: "bottom+=50% bottom",
+      scrub: true,
+    },
+  });
 
-    opacityTitleTimeline
-    .fromTo(upsideTitle.value, {
-      opacity: 0,
-      yPercent: 30
-    }, {
-      opacity: 1,
-      yPercent: -100,
-    })
-    .fromTo('.join-title__clouds-3', {
-      opacity: 0.6,
-    }, {
-      opacity: 0
-    });
-
-  }
+  opacityTitleTimeline
+  .fromTo(upsideTitle.value, {
+    opacity: 0,
+    yPercent: 30
+  }, {
+    opacity: 1,
+    yPercent: screen && screen.width <= 500 ? -60 : -100,
+  })
+  .fromTo('.join-title__clouds-3', {
+    opacity: 0.6,
+  }, {
+    opacity: 0
+  });
 });
 </script>
 

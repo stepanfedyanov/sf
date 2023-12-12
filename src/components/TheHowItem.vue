@@ -58,6 +58,11 @@ defineProps({
   &__item-info {
     flex: 0 1 492px;
     margin-right: 20px;
+    @media (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__item-desc {
     @include adaptive-value('font-size', 24, 19, 1);
@@ -85,6 +90,11 @@ defineProps({
   &__item-img {
     width: 502px;
     height: 502px;
+    @media (max-width: 550px) {
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
     background-size: 190%;
     border-radius: 44px;
     @include adaptive-value('margin-bottom', 71, 9, 1);
@@ -124,11 +134,13 @@ defineProps({
 
 @media (max-width: 550px) {
   .how {
+    overflow-x: hidden;
     &__item {
       display: none;
     }
     ._mobile {
       display: block;
+      padding-bottom: 70px;
     }
     &__item-info {
       flex: 0 1 auto;
@@ -147,6 +159,7 @@ defineProps({
     }
     &__item-inner {
       flex-direction: column;
+      align-items: center;
     }
     &__item-img {
       max-width: 100%;
@@ -157,6 +170,9 @@ defineProps({
     &__item-img-text {
       max-width: 321px;
       text-align: center;
+      margin-left: 0px;
+      margin-right: 0px;
+      transform: none;
     }
   }
 }

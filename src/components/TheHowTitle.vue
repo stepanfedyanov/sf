@@ -26,12 +26,17 @@ defineProps({
     position: sticky;
     top: 50%;
     transform: translateY(-50%);
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
   &__item-info {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
+    @media (min-width: 499px) {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
   }
   &__item-desc {
     font-size: 25px;

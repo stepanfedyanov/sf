@@ -37,7 +37,7 @@ const items = [
 const howItemsContainer = ref(null)
 
 onMounted(() => {
-  if (screen && screen.width) {
+  if (screen && screen.width >= 1024) {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.how',
@@ -106,8 +106,11 @@ onMounted(() => {
 
 <style lang="scss">
 .how {
-  background: linear-gradient(to bottom, #f2f3f5 80%, #fff);
+  background: #f2f3f5;
   padding: 100px 0;
+  @media (max-width: 500px) {
+    padding: 0;
+  }
   min-height: 100vh;
   position: relative;
   &__list {
@@ -122,13 +125,8 @@ onMounted(() => {
   }
   &__item + &__item {
     margin-top: 94px;
-  }
-}
-
-@media (max-width: 550px) {
-  .how {
-    &__item + &__item {
-      margin-top: 89px;
+    @media (max-width: 500px) {
+      margin-top: 0;
     }
   }
 }

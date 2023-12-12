@@ -22,7 +22,7 @@ const advantageElement = ref(null)
 
 onMounted(() => {
   // TODO: убрать на этапе мобильной анимации
-  if (screen && screen.width >= 1025) {
+  if (screen && screen.width >= 1024) {
     const sliderTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: advantageElement.value,
@@ -235,7 +235,7 @@ onMounted(() => {
   align-items: stretch;
 }
 .advantage {
-  padding: 50px 0 85px;
+  padding: 145px 0 85px;
   &__btn {
     display: block;
     text-align: center;

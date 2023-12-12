@@ -31,8 +31,8 @@ onMounted(() => {
     gsap.to(architectureTitle.value, {
       scrollTrigger: {
         trigger: architecture.value,
-        start: "top bottom",
-        end: "center bottom",
+        start: "top-=20% bottom",
+        end: "center-=20% bottom",
         scrub: true,
       },
       yPercent: 0,
@@ -76,9 +76,7 @@ onMounted(() => {
       <div class="architecture__inner">
         <video
           ref="townVideo"
-          autoplay
-          muted
-          loop
+          autoplay muted loop playsinline
           class="architecture__img"
           src="/img/TheCommunitySection/architecture/town.webm"
           alt="Town"
@@ -123,9 +121,9 @@ onMounted(() => {
 }
 .architecture {
   position: relative;
-  @include adaptive-value('padding-top', 276, 124, 1);
+  @include adaptive-value('padding-top', 206, 124, 1);
   z-index: 10;
-  background: linear-gradient(to bottom, transparent 70%, #fff 95%);
+  background: linear-gradient(to bottom, transparent 70%, #f2f3f5 95%);
   padding-bottom: 36px;
   &__clouds {
     width: 100%;
@@ -166,7 +164,7 @@ onMounted(() => {
     max-width: initial;
     left: 50%;
     transform: translateX(-50%);
-    top: 182px;
+    top: 112px;
     z-index: 10;
   }
   &__title {

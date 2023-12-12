@@ -28,7 +28,7 @@ onMounted(() => {
       .fromTo('.intro__video-wrapper', { scale: 0.8 }, { scale: 1 }, 'scaleVideo+=0.5')
       .fromTo('.intro__title', { yPercent: 200, opacity: 0 }, { yPercent: 0, opacity: 1 }, 'scaleVideo+=0.5');
   }
-})
+});
 </script>
 
 <template>
@@ -45,7 +45,7 @@ onMounted(() => {
 
 <style lang="scss">
 .intro {
-  background-color: #fff;
+  background-color: #f2f3f5;
   max-width: 1920px;
   margin: 0 auto;
   overflow: hidden;
