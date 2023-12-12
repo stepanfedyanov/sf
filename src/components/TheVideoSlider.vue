@@ -102,6 +102,7 @@ const sliders = [
 }
 .swiper-button-img {
   @include adaptive-value('width', 54, 25, 1);
+  @include adaptive-value('height', 54, 25, 1);
 }
 .video-slide {
   &__quote {

@@ -236,6 +236,7 @@ onMounted(() => {
 }
 .advantage {
   padding: 145px 0 85px;
+  overflow: hidden;
   &__btn {
     display: block;
     text-align: center;

@@ -222,7 +222,7 @@ onMounted(() => {
         letter-spacing: 0.5px;
         font-size: 13.7px;
         font-weight: 300;
-        transform: translateY(1px);
+        // transform: translateY(1px);
       }
     }
   }

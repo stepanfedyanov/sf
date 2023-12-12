@@ -157,13 +157,13 @@ onMounted(() => {
                 {{ section.title }}
               </h2>
             </div>
-            <TheButton
+            <!-- <TheButton
               class="for__section-btn"
               color="black"
               size="big"
             >
               {{ section.btnText }}
-            </TheButton>
+            </TheButton> -->
           </div>
 
           <ul
@@ -199,6 +199,7 @@ onMounted(() => {
 }
 
 .for {
+  overflow: hidden;
   &__inner {
     display: flex;
     flex-wrap: nowrap;
@@ -226,7 +227,7 @@ onMounted(() => {
     @include adaptive-value('font-size', 100, 46, 1);
     line-height: calc(104 / 96);
     font-weight: 300;
-    transform: translateY(3px);
+    // transform: translateY(3px);
   }
   &__section-title {
     font-family: 'Atyp Display', sans-serif;
