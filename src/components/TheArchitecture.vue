@@ -19,6 +19,8 @@ const pageIsLoaded = () => {
 };
 
 onMounted(() => {
+  pageIsLoaded();
+
   if (screen && screen.width >= 1024) {
     townVideo.value.muted = true;
     townVideo.value.play();
@@ -76,13 +78,10 @@ onMounted(() => {
       <div class="architecture__inner">
         <video
           ref="townVideo"
-          autoplay
-          muted
-          loop
+          autoplay muted loop playsinline
           class="architecture__img"
           src="/img/TheCommunitySection/architecture/town.webm"
           alt="Town"
-          @canplay="pageIsLoaded"
         />
         <h2 class="architecture__title" ref="architectureTitle">Ecosystem Architecture</h2>
         <p class="architecture__desc wow animate__animated animate__fadeIn" data-wow-delay="0.3s">

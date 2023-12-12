@@ -22,25 +22,25 @@ const advantageElement = ref(null)
 
 onMounted(() => {
   // TODO: убрать на этапе мобильной анимации
-  // if (screen && screen.width >= 1025) {
-  //   const sliderTimeline = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: advantageElement.value,
-  //       start: 'top+=30% bottom',
-  //       end: 'bottom bottom',
-  //       scrub: true
-  //     }
-  //   })
+  if (screen && screen.width >= 1024) {
+    const sliderTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: advantageElement.value,
+        start: 'top+=30% bottom',
+        end: 'bottom bottom',
+        scrub: true
+      }
+    })
 
-  //   const slides = document.querySelectorAll(`.advantage__swiper-slide-${idx.value}`)
-  //   const upperPosition = 20
+    const slides = document.querySelectorAll(`.advantage__swiper-slide-${idx.value}`)
+    const upperPosition = 20
 
-  //   slides.forEach((slide, index) => {
-  //     gsap.set(slide, { yPercent: (slides.length - (index + 1)) * upperPosition })
-  //   })
+    slides.forEach((slide, index) => {
+      gsap.set(slide, { yPercent: (slides.length - (index + 1)) * upperPosition })
+    })
 
-  //   sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0 });
-  // }
+    sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0 });
+  }
 });
 </script>
 

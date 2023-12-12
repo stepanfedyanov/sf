@@ -29,6 +29,9 @@ import TheClouds from './TheClouds.vue'
   @include adaptive-value('padding-bottom', 60, 0, 1);
   position: relative;
   min-height: 890px;
+  @media (max-width: 500px) {
+    min-height: 800px;
+  }
   &__inner {
     position: relative;
     padding-bottom: 70px;
