@@ -108,6 +108,9 @@ onMounted(() => {
 .how {
   background: #f2f3f5;
   padding: 100px 0;
+  @media (max-width: 500px) {
+    padding: 0;
+  }
   min-height: 100vh;
   position: relative;
   &__list {
@@ -122,13 +125,8 @@ onMounted(() => {
   }
   &__item + &__item {
     margin-top: 94px;
-  }
-}
-
-@media (max-width: 550px) {
-  .how {
-    &__item + &__item {
-      margin-top: 89px;
+    @media (max-width: 500px) {
+      margin-top: 0;
     }
   }
 }
