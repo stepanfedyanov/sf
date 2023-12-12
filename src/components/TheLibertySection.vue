@@ -2009,7 +2009,7 @@ onMounted(() => {
 <style lang="scss">
 .liberty {
   background: #ddd8d5;
-  @include adaptive-value('padding-top', 128, 80, 1);
+  @include adaptive-value('padding-top', 145, 80, 1);
   padding-bottom: 80px;
   overflow-x: hidden;
   &__inner {
@@ -2017,10 +2017,10 @@ onMounted(() => {
   }
   &__bg {
     position: absolute;
-    width: 120%;
+    width: 140%;
     left: 50%;
     transform: translateX(-50%);
-    top: -10%;
+    top: -20%;
     z-index: 0;
     path {
       animation: loader 2s ease-in 1.5s infinite;

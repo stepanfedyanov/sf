@@ -235,7 +235,7 @@ onMounted(() => {
   align-items: stretch;
 }
 .advantage {
-  padding: 50px 0 85px;
+  padding: 145px 0 85px;
   &__btn {
     display: block;
     text-align: center;
