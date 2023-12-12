@@ -10,7 +10,7 @@ const sections = [
   {
     num: 1,
     title: 'For high-net-worth individuals & families',
-    backgroundColor: '#fff',
+    backgroundColor: '#f2f3f5',
     size: 'small',
     items: [
       {
@@ -49,7 +49,7 @@ const sections = [
   },
   {
     num: 2,
-    backgroundColor: '#F2F3F5',
+    backgroundColor: '#eff4ff',
     title: 'For wealth managers and family offices',
     size: 'small',
     items: [
@@ -89,7 +89,7 @@ const sections = [
   },
   {
     num: 3,
-    backgroundColor: '#fff',
+    backgroundColor: '#f2f3f5',
     title: 'For product factories, brokers & service providers',
     bigTitle: true,
     size: 'big',
@@ -223,10 +223,10 @@ onMounted(() => {
     @include adaptive-value('margin-right', 40, 20, 1);
     color: #a5cce0;
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 96, 46, 1);
+    @include adaptive-value('font-size', 100, 46, 1);
     line-height: calc(104 / 96);
     font-weight: 300;
-    transform: translateY(-5px);
+    transform: translateY(3px);
   }
   &__section-title {
     font-family: 'Atyp Display', sans-serif;

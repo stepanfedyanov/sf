@@ -2016,10 +2016,10 @@ onMounted(() => {
   }
   &__bg {
     position: absolute;
-    width: 120%;
+    width: 140%;
     left: 50%;
     transform: translateX(-50%);
-    top: -10%;
+    top: -20%;
     z-index: 0;
     path {
       animation: loader 2s ease-in 1.5s infinite;
