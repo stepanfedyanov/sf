@@ -50,22 +50,31 @@ const items = [
 <style lang="scss">
 .accordion__content {
   span {
-    @include adaptive-value('padding-top', 25, 14, 1);
+    @include adaptive-value('padding-top', 25, 18, 1);
     @include adaptive-value('padding-bottom', 15, 14, 1);
     display: inline-block;
-    letter-spacing: 0.2px;
+    @include adaptive-value('letter-spacing', 0.2, 0.37, 1);
+    @include adaptive-value('line-height', 21, 13, 1);
     max-width: 880px;
     @media (max-width: 800px) {
       padding-bottom: 0;
     }
   }
 }
+
+@media (max-width: 530px) {
+  .accordion__content {
+    span {
+      font-weight: 300;
+    }
+  }
+}
 .accordion {
-  @include adaptive-value('padding-top', 38, 32, 1);
-  @include adaptive-value('padding-bottom', 44, 32, 1);
-  @include adaptive-value('padding-left', 41, 27, 1);
-  @include adaptive-value('padding-right', 48, 27, 1);
-  border-radius: 40px;
+  @include adaptive-value('padding-top', 38, 25, 1);
+  @include adaptive-value('padding-bottom', 44, 25, 1);
+  @include adaptive-value('padding-left', 41, 25, 1);
+  @include adaptive-value('padding-right', 48, 25, 1);
+  @include adaptive-value('border-radius', 40, 27, 1);
   background: #f2f3f5;
   &__arrow-btn {
     background: transparent;
@@ -83,8 +92,9 @@ const items = [
   &__trigger {
     h3 {
       font-family: 'Atyp Display', sans-serif;
-      font-size: 20px;
-      line-height: calc(24 / 20);
+      @include adaptive-value('font-size', 20, 10, 1);
+      @include adaptive-value('line-height', 24, 20, 1);
+      @include adaptive-value('letter-spacing', 0, 0.1, 1);
     }
   }
   &__trigger_active {
@@ -99,6 +109,14 @@ const items = [
     &__title {
       text-align: center;
     }
+  }
+}
+
+@media (max-width: 490px) {
+  .accordion {
+    max-width: 314px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 </style>

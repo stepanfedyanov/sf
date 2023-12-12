@@ -195,31 +195,28 @@ const navList = [
 
 <style lang="scss">
 .footer {
-  @include adaptive-value('padding-top', 100, 80, 1);
-  padding-bottom: 48px;
+  @include adaptive-value('padding-top', 100, 70, 1);
+  @include adaptive-value('padding-bottom', 48, 43, 1);
   background: #052e3e;
   color: #fff;
   ._mobile {
     display: none;
   }
-  &__top {
-    @include adaptive-value('padding-bottom', 82, 66, 1);
-    text-align: center;
-    border-bottom: 1px solid #fff;
-  }
   &__title {
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 90, 48, 1);
+    @include adaptive-value('font-size', 90, 49, 1);
     font-weight: 300;
-    @include adaptive-value('margin-bottom', 44, 40, 1);
+    @include adaptive-value('margin-bottom', 44, 47.1, 1);
+    @include adaptive-value('letter-spacing', 0, 0.6, 1);
+    @include adaptive-value('line-height', 103.5, 52, 1);
   }
   &__desc {
     max-width: 788px;
     margin: 0 auto;
-    @include adaptive-value('margin-bottom', 68, 57, 1);
-    @include adaptive-value('font-size', 18, 20, 1);
-    line-height: calc(25 / 18);
-    letter-spacing: 0.7px;
+    @include adaptive-value('margin-bottom', 68, 55, 1);
+    @include adaptive-value('font-size', 18, 19, 1);
+    @include adaptive-value('line-height', 25, 30, 1);
+    @include adaptive-value('letter-spacing', 0.7, 1, 1);
     font-weight: 200;
   }
   &__bottom {
@@ -239,13 +236,13 @@ const navList = [
     align-items: center;
   }
   &__nav-item + &__nav-item {
-    @include adaptive-value('margin-left', 42, 19, 1);
+    @include adaptive-value('margin-left', 42, 23, 1);
   }
   &__nav-link,
   &__bottom-link {
     line-height: calc(24 / 13);
     letter-spacing: 0.3px;
-    @include adaptive-value('font-size', 12.8, 9, 1);
+    @include adaptive-value('font-size', 12.8, 8, 1);
     font-weight: 200;
   }
   .btn-wrapper {
@@ -256,12 +253,33 @@ const navList = [
       }
     }
   }
+  &__top {
+    @include adaptive-value('padding-bottom', 82, 64, 1);
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    .btn-wrapper {
+      .btn {
+        line-height: 24px;
+        @include adaptive-value('font-size', 16, 14, 1);
+        @include adaptive-value('padding-top', 10, 2, 1);
+        @include adaptive-value('padding-bottom', 10, 2, 1);
+        @include adaptive-value('padding-left', 50, 27, 1);
+        @include adaptive-value('padding-right', 50, 27, 1);
+        span {
+          min-width: 116px;
+        }
+      }
+    }
+  }
+  &__logo-img {
+    @include adaptive-value('width', 165, 103, 1);
+  }
 }
 .socials {
   &__list {
     display: flex;
     align-items: center;
-    transform: translateY(3px)
+    transform: translateY(3px);
   }
   &__item {
     @include adaptive-value('width', 36, 23, 1);
@@ -275,6 +293,11 @@ const navList = [
 }
 
 @media (max-width: 515px) {
+  .socials {
+    &__list {
+      transform: translateY(0);
+    }
+  }
   .footer {
     &__inner {
       display: none;
@@ -287,7 +310,7 @@ const navList = [
       .logo__img {
         margin: 0 auto;
       }
-      @include adaptive-value('margin-bottom', 48, 30, 1);
+      @include adaptive-value('margin-bottom', 48, 24, 1);
     }
     &__nav-list {
       justify-content: center;
@@ -298,10 +321,10 @@ const navList = [
       &::before {
         content: '';
         position: absolute;
-        bottom: 6px;
+        @include adaptive-value('bottom', 6, 9, 1);
         left: 0;
         width: 100%;
-        background-color: #fff;
+        background-color: rgba(#fff, 0.5);
         height: 1px;
       }
     }
@@ -309,13 +332,39 @@ const navList = [
       display: block;
       text-align: center;
       padding: 5px 0;
+      @include adaptive-value('padding-top', 5, 3, 1);
+    }
+  }
+
+  .footer {
+    &__desc {
+      max-width: 269px;
+    }
+    &__top {
+      .btn-wrapper {
+        .btn {
+          font-weight: 300;
+        }
+      }
+    }
+    &__bottom {
+      padding-left: 0;
+    }
+    &__logo-img {
+      margin: 0 auto;
+    }
+    &__bottom-link {
+      font-weight: 200;
+    }
+    &__nav-link {
+      font-weight: 200;
     }
   }
 
   .socials {
     &__list {
       justify-content: center;
-      @include adaptive-value('margin-bottom', 30, 18, 1);
+      @include adaptive-value('margin-bottom', 30, 8, 1);
     }
   }
 }

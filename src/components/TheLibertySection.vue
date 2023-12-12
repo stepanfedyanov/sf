@@ -2011,7 +2011,6 @@ onMounted(() => {
   background: #ddd8d5;
   @include adaptive-value('padding-top', 145, 80, 1);
   padding-bottom: 80px;
-  overflow-x: hidden;
   &__inner {
     position: relative;
   }

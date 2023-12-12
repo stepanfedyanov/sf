@@ -141,7 +141,6 @@ onMounted(() => {
 .join {
   &__clouds-container {
     width: 100%;
-    overflow-x: hidden;
   }
   &__buildings-wrapper {
     position: absolute;

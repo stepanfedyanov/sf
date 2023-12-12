@@ -199,7 +199,6 @@ onMounted(() => {
 }
 
 .for {
-  overflow-x: hidden;
   &__inner {
     display: flex;
     flex-wrap: nowrap;
