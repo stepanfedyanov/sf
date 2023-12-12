@@ -87,6 +87,7 @@ defineProps({
   &.white {
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(93deg, #fff 12%, rgba(255, 255, 255, 0.26) 94.33%);
+    color: #000;
     &::before {
       background: linear-gradient(0deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%),
         linear-gradient(93deg, #fff 12%, rgba(255, 255, 255, 0) 94.33%);

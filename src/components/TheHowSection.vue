@@ -37,7 +37,7 @@ const items = [
 const howItemsContainer = ref(null)
 
 onMounted(() => {
-  if (screen && screen.width) {
+  if (screen && screen.width >= 1024) {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.how',

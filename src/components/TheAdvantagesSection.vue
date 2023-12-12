@@ -18,10 +18,15 @@ const sections = [
         imgSrc: './img/TheAdvantagesSection/1/1.jpg',
         columns: [
           {
-            items: ['financial checkup', 'wealth planning', 'asset aggregation', 'asset management']
+            items: [
+              'financial checkup',
+              'asset aggregation',
+              'macro analysis ',
+              'strategic advisory '
+            ]
           },
           {
-            items: ['macro analysis', 'wealth transfer', 'strategic advisory']
+            items: ['wealth planning', 'asset management', 'wealth transfer']
           }
         ]
       },
@@ -34,10 +39,10 @@ const sections = [
         imgSrc: './img/TheAdvantagesSection/1/2.jpg',
         columns: [
           {
-            items: ['bank accounts', 'daily banking', 'broker accounts']
+            items: ['bank accounts', 'broker accounts ', 'international transfers']
           },
           {
-            items: ['settlements on transactions', 'international transfers']
+            items: ['daily banking', 'settlements on transactions']
           }
         ]
       },
@@ -153,4 +158,8 @@ const sections = [
   </section>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.advantages {
+  overflow-x: hidden;
+}
+</style>

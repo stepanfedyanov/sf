@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 import TheContainer from './TheContainer.vue'
 import TheSectionTitle from './TheSectionTitle.vue'
 
@@ -293,11 +293,11 @@ const items = [
 ]
 
 onMounted(() => {
-  const lbBgPaths = document.querySelectorAll('.liberty__bg path');
-  
+  const lbBgPaths = document.querySelectorAll('.liberty__bg path')
+
   lbBgPaths.forEach((path) => {
-    path.style.animationDelay = `${Math.random()}s`;
-  });
+    path.style.animationDelay = `${Math.random()}s`
+  })
 })
 </script>
 
@@ -2011,6 +2011,7 @@ onMounted(() => {
   background: #ddd8d5;
   @include adaptive-value('padding-top', 145, 80, 1);
   padding-bottom: 80px;
+  overflow-x: hidden;
   &__inner {
     position: relative;
   }
@@ -2097,7 +2098,7 @@ onMounted(() => {
     @include adaptive-value('font-size', 12, 10, 1);
     line-height: calc(15 / 12);
     letter-spacing: 0.3px;
-    color: #8b8886;
+    color: #4E575A;
   }
   &__main-link {
     display: flex;
@@ -2128,12 +2129,13 @@ onMounted(() => {
     &::before {
       content: '';
       position: absolute;
-      bottom: 0px;
+      bottom: -1px;
       left: 0;
       width: 100%;
       height: 1px;
       border-radius: 2px;
       background-color: #052e3e;
+      box-shadow: 0px 0px 0px 0.2px rgba(#052e3e, 1);
     }
   }
   &__link-arrow {

@@ -199,6 +199,7 @@ onMounted(() => {
 }
 
 .for {
+  overflow-x: hidden;
   &__inner {
     display: flex;
     flex-wrap: nowrap;
@@ -298,7 +299,7 @@ onMounted(() => {
     @include adaptive-value('font-size', 14, 11, 1);
     line-height: calc(16 / 14);
     max-width: 250px;
-    color: #8b8886;
+    color: #4E575A;
   }
   &__section-btn {
     display: block;
