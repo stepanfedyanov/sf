@@ -103,11 +103,12 @@ onMounted(() => {
   }
 
   gsap.set('.join__buildings-item', { yPercent: 100 });
+  gsap.set('.join__buildings-1', { yPercent: 40 })
 
   gsap.to('.join__buildings-item', {
     yPercent: 0,
-    duration: 3,
-    stagger: 1,
+    duration: 2,
+    stagger: 0.5,
     ease: CustomEase.create("custom", "M0,0 C0.272,0 0.351,0.344 0.371,0.4 0.552,0.91 0.744,1 1,1 "),
   })
 });
