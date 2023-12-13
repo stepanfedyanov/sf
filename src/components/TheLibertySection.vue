@@ -1965,7 +1965,7 @@ onMounted(() => {
           class="liberty__title wow animate__animated animate__fadeInUp"
           color="#052E3E"
         >
-          Your purposeful path to liberty
+          Your purposeful path to&nbsp;liberty
         </TheSectionTitle>
         <p class="liberty__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
           Our mission is to bring prosperity and independence to ... Lorem ipsum dolor sit amet
@@ -2033,22 +2033,29 @@ onMounted(() => {
     max-width: 900px;
     margin: 0 auto;
     font-feature-settings: 'ss02' on;
-    @include adaptive-value('margin-bottom', 64, 77, 1);
-    line-height: calc(88 / 96);
-    letter-spacing: 0.8px;
-    font-size: 88px;
+    @include adaptive-value('margin-bottom', 64, 70, 1);
+    @include adaptive-value('line-height', 88, 53, 1);
+    @include adaptive-value('letter-spacing', 0.8, 0.96, 1);
+    @include adaptive-value('font-size', 88, 49, 1);
+    @media (max-width: 490px) {
+      font-feature-settings: initial;
+    }
   }
   &__desc {
     position: relative;
     z-index: 1;
     text-align: center;
     @include adaptive-value('font-size', 18, 20, 1);
-    line-height: calc(25 / 18);
-    letter-spacing: 0.36px;
+    @include adaptive-value('line-height', 25, 30, 1);
+    @include adaptive-value('letter-spacing', 0.36, 0.6, 1);
     max-width: 785px;
     margin: 0 auto;
     font-weight: 300;
-    @include adaptive-value('margin-bottom', 62, 46, 1);
+    @include adaptive-value('margin-bottom', 62, 44, 1);
+    @media (max-width: 490px) {
+      font-weight: 200;
+      max-width: 315px;
+    }
   }
   &__list {
     position: relative;
@@ -2057,7 +2064,7 @@ onMounted(() => {
     justify-content: center;
     margin: -9px;
     flex-wrap: wrap;
-    @include adaptive-value('margin-bottom', 76, 69, 1);
+    @include adaptive-value('margin-bottom', 76, 60, 1);
   }
   &__item {
     max-width: 322px;
@@ -2068,11 +2075,11 @@ onMounted(() => {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-left: 35px;
-    padding-right: 35px;
-    @include adaptive-value('padding-top', 40, 24, 1);
-    @include adaptive-value('padding-bottom', 30, 24, 1);
-    border-radius: 40px;
+    @include adaptive-value('padding-left', 35, 25, 1);
+    @include adaptive-value('padding-right', 35, 25, 1);
+    @include adaptive-value('padding-top', 40, 27, 1);
+    @include adaptive-value('padding-bottom', 30, 27, 1);
+    @include adaptive-value('border-radius', 40, 32, 1);
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(
       154deg,
@@ -2091,14 +2098,14 @@ onMounted(() => {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 20, 17, 1);
     line-height: calc(24 / 20);
-    @include adaptive-value('margin-bottom', 23, 9, 1);
+    @include adaptive-value('margin-bottom', 23, 13, 1);
   }
   &__item-desc {
     font-family: 'Articulat CF', sans-serif;
     @include adaptive-value('font-size', 12, 10, 1);
-    line-height: calc(15 / 12);
-    letter-spacing: 0.3px;
-    color: #4E575A;
+    @include adaptive-value('line-height', 15, 15.5, 1);
+    @include adaptive-value('letter-spacing', 0.3, 0.4, 1);
+    color: #4e575a;
   }
   &__main-link {
     display: flex;
@@ -2134,6 +2141,10 @@ onMounted(() => {
       height: 1px;
       border-radius: 2px;
       background-color: #052e3e;
+    }
+    @media (max-width: 490px) {
+      &::before {
+      }
     }
   }
   &__link-arrow {

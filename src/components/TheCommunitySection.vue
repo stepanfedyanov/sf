@@ -122,7 +122,7 @@ onMounted(() => {
     text-align: center;
     letter-spacing: 1px;
     line-height: calc(52 / 48);
-    font-size: 88px;
+    @include adaptive-value('font-size', 88, 48, 1);
   }
   &__desc {
     @include adaptive-value('font-size', 18, 20, 1);
