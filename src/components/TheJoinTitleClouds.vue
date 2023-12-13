@@ -10,6 +10,7 @@
 <style lang="scss">
 .join-title {
   &__clouds {
+    overflow: hidden;
     // background-color: #000;
     position: absolute;
     z-index: 10;

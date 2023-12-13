@@ -63,12 +63,13 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     padding: 5px 0;
     line-height: 1;
     position: relative;
-    font-size: 11.5px;
+    font-size: 13px;
     font-weight: 400;
+    transition: 0.15s;
     &::before {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: 1px;
       left: 50%;
       transform: translateX(-50%);
       width: 0%;
@@ -93,11 +94,11 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
     .btn {
       letter-spacing: 0.66px;
       line-height: calc(24 / 12);
-      font-size: 11.7px;
+      font-size: 13px;
       padding: 3px 18px;
       font-weight: 300;
       span {
-        transform: translateY(1px);
+        // transform: translateY(1px);
       }
       &.black {
         padding: 3px 28px;

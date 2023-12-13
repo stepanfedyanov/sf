@@ -2009,6 +2009,7 @@ onMounted(() => {
 <style lang="scss">
 .liberty {
   background: #ddd8d5;
+  overflow: hidden;
   @include adaptive-value('padding-top', 145, 80, 1);
   padding-bottom: 80px;
   &__inner {
@@ -2123,7 +2124,6 @@ onMounted(() => {
     @include adaptive-value('font-size', 20, 10, 1);
     line-height: calc(24 / 20);
     position: relative;
-    font-weight: 700;
     transform: translateY(-3px);
     &::before {
       content: '';
@@ -2134,7 +2134,6 @@ onMounted(() => {
       height: 1px;
       border-radius: 2px;
       background-color: #052e3e;
-      box-shadow: 0px 0px 0px 0.2px rgba(#052e3e, 1);
     }
   }
   &__link-arrow {

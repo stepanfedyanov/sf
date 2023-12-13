@@ -65,18 +65,19 @@ defineProps({
     }
   }
   &__item-desc {
-    @include adaptive-value('font-size', 24, 19, 1);
-    line-height: calc(36 / 24);
+    @include adaptive-value('font-size', 18, 19, 1);
+    line-height: 25px;
     max-width: 200px;
-    letter-spacing: 0.48px;
+    letter-spacing: 0.36px;
     margin-bottom: 47px;
-    font-weight: 500;
     @include adaptive-value('margin-bottom', 47, 9, 1);
+
+    font-weight: 400;
   }
   &__item-title {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 64, 30, 1);
-    line-height: calc(58 / 64);
+    line-height: calc(60 / 64);
     max-width: 360px;
   }
   &__item {
@@ -100,12 +101,12 @@ defineProps({
     @include adaptive-value('margin-bottom', 71, 9, 1);
   }
   &__item-img-text {
-    max-width: 325px;
+    max-width: 360px;
     margin: 0 auto;
-    line-height: calc(21 / 13);
-    font-weight: 500;
-    letter-spacing: 0.1px;
-    transform: translateX(10px);
+    line-height: 25px;
+    letter-spacing: 0.36px;
+    font-size: 18px;
+    font-weight: 400;
   }
   &__item-img-text + &__item-img-text {
     margin-top: 21px;
@@ -113,17 +114,6 @@ defineProps({
 }
 
 .how__item-info-1 {
-  .how__item-desc {
-    @include adaptive-value('font-size', 18, 19, 1);
-    line-height: calc(34 / 24);
-    max-width: 160px;
-    letter-spacing: 0.48px;
-    font-weight: 500;
-    @include adaptive-value('margin-bottom', 37, 9, 1);
-    letter-spacing: 0.1px;
-    font-weight: 700;
-  }
-
   .how__item-title {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 64, 30, 1);
@@ -140,7 +130,10 @@ defineProps({
     }
     ._mobile {
       display: block;
-      padding-bottom: 70px;
+      padding-bottom: 87px;
+      &:last-child {
+        padding-bottom: 105px;
+      }
     }
     &__item-info {
       flex: 0 1 auto;
@@ -149,13 +142,10 @@ defineProps({
     &__item-desc {
       max-width: 100%;
       text-align: center;
+      @include adaptive-value('font-size', 25, 20, 1);
       @include adaptive-value('margin-bottom', 47, 30, 1);
     }
     &__item-title {
-      max-width: 100%;
-      text-align: center;
-      margin-bottom: 33px;
-      line-height: calc(36 / 34);
     }
     &__item-inner {
       flex-direction: column;
@@ -164,15 +154,23 @@ defineProps({
     &__item-img {
       max-width: 100%;
       width: 100%;
-      border-radius: 44px;
-      @include adaptive-value('margin-bottom', 77, 30, 1);
+      border-radius: 30px;
+      @include adaptive-value('margin-bottom', 77, 37, 1);
     }
     &__item-img-text {
-      max-width: 321px;
+      max-width: 284px;
       text-align: center;
       margin-left: 0px;
       margin-right: 0px;
       transform: none;
+      @include adaptive-value('font-size', 18, 15, 1);
+      @include adaptive-value('line-height', 25, 21, 1);
+      @include adaptive-value('letter-spacing', 0.36, 0.15, 1);
+      letter-spacing: 0.36px;
+      font-weight: 300;
+    }
+    &__item-img-text + &__item-img-text {
+      @include adaptive-value('margin-top', 21, 21.8, 1);
     }
   }
 }
