@@ -296,7 +296,7 @@ onMounted(() => {
   const lbBgPaths = document.querySelectorAll('.liberty__bg path')
 
   lbBgPaths.forEach((path) => {
-    path.style.animationDelay = `${Math.random()}s`
+    path.style.animationDelay = `${Math.random() * 10}s`
   })
 })
 </script>
@@ -2023,7 +2023,7 @@ onMounted(() => {
     top: -20%;
     z-index: 0;
     path {
-      animation: loader 2s ease-in 1.5s infinite;
+      animation: loader 4s ease-in 1.5s infinite;
       opacity: 0;
     }
   }

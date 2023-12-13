@@ -10,7 +10,7 @@ const sections = [
   {
     num: 1,
     title: 'For high-net-worth individuals & families',
-    backgroundColor: '#f2f3f5',
+    backgroundColor: '#f1f3f5',
     size: 'small',
     items: [
       {
@@ -49,7 +49,7 @@ const sections = [
   },
   {
     num: 2,
-    backgroundColor: '#eff4ff',
+    backgroundColor: '#f9f9f9',
     title: 'For wealth managers and family offices',
     size: 'small',
     items: [
@@ -111,27 +111,37 @@ const sections = [
 ]
 
 onMounted(() => {
-  if (screen && screen.width >= 1024) {
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.set('.for__section-item', { opacity: 0 })
 
-    let sections = gsap.utils.toArray(".for__section");
+  const tl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.for__section-1',
+      start: 'top+=15% bottom',
+      scrub: false
+    }
+  });
 
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".for__inner",
-        pin: true,
-        scrub: true,
-        snap: {
-          snapTo: 1 / (sections.length - 1),
-          duration: 0.3,
-        },
-        // base vertical scrolling on how wide the container is so it feels more natural.
-        end: "+=1500",
-      }
-    });
-  }
+  tl1.to('.for__section-item-1', { opacity: 1, duration: 0.5, stagger: 0.3 });
+
+  const tl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.for__section-2',
+      start: 'top+=15% bottom',
+      scrub: false
+    }
+  });
+
+  tl2.to('.for__section-item-2', { opacity: 1, duration: 0.5, stagger: 0.5 });
+
+  const tl3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.for__section-3',
+      start: 'top+=15% bottom',
+      scrub: false
+    }
+  });
+
+  tl3.to('.for__section-item-3', { opacity: 1, duration: 0.5, stagger: 0.5 });
 });
 
 </script>
@@ -148,7 +158,7 @@ onMounted(() => {
         <TheContainer>
           <div class="for__section-top-wrapper">
             <div
-              class="for__section-top"
+              class="for__section-top wow animate__animated animate__fadeIn"
             >
               <span class="for__section-num">
                 {{ section.num }}
@@ -171,7 +181,7 @@ onMounted(() => {
             :class="{ small: section.size === 'small', big: section.size === 'big' }"
           >
             <li
-              class="for__section-item"
+              :class="`for__section-item for__section-item-${idx + 1}`"
               v-for="(item) in section.items"
               :key="item.title"
             >
@@ -200,17 +210,17 @@ onMounted(() => {
 
 .for {
   overflow: hidden;
-  &__inner {
-    display: flex;
-    flex-wrap: nowrap;
-    @media (max-width: 1023px) {
-      flex-direction: column;
-    }
-    width: 600%;
-  }
+  // &__inner {
+  //   display: flex;
+  //   flex-wrap: nowrap;
+  //   @media (max-width: 1023px) {
+  //     flex-direction: column;
+  //   }
+  //   width: 600%;
+  // }
   &__section {
     width: 100vw;
-    @include adaptive-value('padding-top', 140, 65, 1);
+    @include adaptive-value('padding-top', 120, 65, 1);
     @include adaptive-value('padding-bottom', 72, 65, 1);
   }
   &__section-top-wrapper {
@@ -248,7 +258,6 @@ onMounted(() => {
     column-gap: 20px;
     @include adaptive-value('row-gap', 40, 14, 1);
     &.big {
-      margin-top: 15%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       row-gap: 48px;
