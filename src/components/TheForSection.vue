@@ -203,6 +203,9 @@ onMounted(() => {
   &__inner {
     display: flex;
     flex-wrap: nowrap;
+    @media (max-width: 1023px) {
+      flex-direction: column;
+    }
     width: 600%;
   }
   &__section {
