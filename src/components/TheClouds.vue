@@ -1,8 +1,14 @@
 <script setup>
-import { onMounted, ref, toRefs } from 'vue';
+import { onMounted, ref, toRefs, watch } from 'vue';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 gsap.registerPlugin(CustomEase);
+
+import { useGlobalStore } from '../stores/global';
+import { storeToRefs } from 'pinia';
+
+const globalStore = useGlobalStore();
+const { pageIsLoaded } = storeToRefs(globalStore);
 
 const props = defineProps({
   buildings: {
@@ -105,16 +111,20 @@ onMounted(() => {
   setInterval(() => {
     if (observed.value) changeCloudPosition();
   }, changeSpeedXTime);
+});
 
-  gsap.set('.join__buildings-item', { yPercent: 100 });
-  gsap.set('.join__buildings-1', { yPercent: 40 })
+watch(pageIsLoaded, () => {
+  if (pageIsLoaded.value) {
+    gsap.set('.join__buildings-item', { yPercent: 100 });
+    gsap.set('.join__buildings-1', { yPercent: 40 })
 
-  gsap.to('.join__buildings-item', {
-    yPercent: 0,
-    duration: 2,
-    stagger: 0.5,
-    ease: CustomEase.create("custom", "M0,0 C0.272,0 0.351,0.344 0.371,0.4 0.552,0.91 0.744,1 1,1 "),
-  })
+    gsap.to('.join__buildings-item', {
+      yPercent: 0,
+      duration: 2,
+      stagger: 0.5,
+      ease: CustomEase.create("custom", "M0,0 C0.272,0 0.351,0.344 0.371,0.4 0.552,0.91 0.744,1 1,1 "),
+    })
+  }
 });
 </script>
 
