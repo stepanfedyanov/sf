@@ -245,10 +245,14 @@ onMounted(() => {
   &__section-title {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 40, 28, 1);
-    line-height: calc(43 / 40);
+    @include adaptive-value('line-height', 43, 32, 1);
     max-width: 450px;
     &._big {
       max-width: 550px;
+    }
+    @media (max-width: 490px) {
+      font-weight: 300;
+      margin-bottom: 0;
     }
   }
   &__section-list {
@@ -297,14 +301,15 @@ onMounted(() => {
   }
   &__item-img {
     @include adaptive-value('width', 64, 45, 1);
-    @include adaptive-value('margin-bottom', 30, 18, 1);
+    @include adaptive-value('margin-bottom', 30, 9, 1);
   }
   &__item-title {
     font-feature-settings: 'ss06' on;
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 20, 16, 1);
+    @include adaptive-value('font-size', 20, 18, 1);
+    @include adaptive-value('letter-spacing', 0, -0.5, 1);
     line-height: calc(24 / 20);
-    @include adaptive-value('margin-bottom', 24, 18, 1);
+    @include adaptive-value('margin-bottom', 24, 24, 1);
     max-width: 200px;
   }
   &__item-desc {
@@ -312,6 +317,7 @@ onMounted(() => {
     line-height: calc(16 / 14);
     max-width: 250px;
     color: #4E575A;
+    @include adaptive-value('letter-spacing', 0, -0.04, 1);
   }
   &__section-btn {
     display: block;
@@ -324,6 +330,8 @@ onMounted(() => {
     &__section-list {
       grid-template-columns: repeat(2, 1fr);
       column-gap: 0;
+      justify-content: center;
+      justify-items: center;
       &.big {
         column-gap: 0;
         .for__section-item {
@@ -344,7 +352,13 @@ onMounted(() => {
             padding-right: 0;
           }
         }
+        .for__item-title {
+          max-width: 120px;
+        }
       }
+    }
+    &__section-top-wrapper {
+      justify-content: center;
     }
     &__section-num {
       display: none;
@@ -354,7 +368,13 @@ onMounted(() => {
       margin-left: auto;
       margin-right: auto;
       max-width: 325px;
-      @include adaptive-value('margin-bottom', 34, 18, 1);
+      @include adaptive-value('margin-bottom', 34, 7, 1);
+    }
+    &__item-title {
+      font-weight: 200;
+    }
+    &__item-desc {
+      font-weight: 300;
     }
     &__section-item {
       padding-top: 0;
@@ -369,9 +389,11 @@ onMounted(() => {
       &:nth-child(2n + 1) {
         border-left-width: 0px;
         padding-left: 0;
+        margin-left: 8px;
       }
       &:nth-child(2n) {
         padding-right: 0;
+        margin-right: 8px;
       }
     }
   }

@@ -235,7 +235,8 @@ onMounted(() => {
   align-items: stretch;
 }
 .advantage {
-  padding: 145px 0 85px;
+  @include adaptive-value('padding-top', 145, 85, 1);
+  padding-bottom: 85px;
   overflow: hidden;
   &__btn {
     display: block;

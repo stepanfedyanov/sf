@@ -1994,7 +1994,7 @@ onMounted(() => {
               <img
                 class="liberty__link-img"
                 src="/img/TheLibertySection/link-img.svg"
-                alt="Read the Skyfort manifesto"
+                alt="Read the Skyfort Manifesto"
               />
               <span class="liberty__link-text">Read the Skyfort manifesto</span>
             </span>
