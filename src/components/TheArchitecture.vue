@@ -13,10 +13,7 @@ const architectureTitle = ref(null);
 const townVideo = ref(null);
 
 const globalStore = useGlobalStore();
-
-const pageIsLoaded = () => {
-  globalStore.changePageIsLoaded(true);
-};
+globalStore.changePageIsLoaded(true);
 
 onMounted(() => {
   if (screen && screen.width >= 1024) {
