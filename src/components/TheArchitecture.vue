@@ -19,6 +19,8 @@ const pageIsLoaded = () => {
 };
 
 onMounted(() => {
+  pageIsLoaded();
+
   if (screen && screen.width >= 1024) {
     townVideo.value.muted = true;
     townVideo.value.play();
