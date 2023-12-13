@@ -46,21 +46,6 @@ const cards = [
 
 gsap.registerPlugin(ScrollTrigger)
 
-onMounted(() => {
-  if (screen && screen.width >= 1024) {
-    const sliderTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.methods',
-        start: 'top+=20% bottom',
-        scrub: false
-      }
-    })
-
-    gsap.set('.methods__card', { yPercent: 50, opacity: 0 })
-    sliderTimeline.from('.methods__card', { yPercent: 50, opacity: 0 })
-    sliderTimeline.to('.methods__card', { yPercent: 0, opacity: 1, duration: 0.5, stagger: 0.3 })
-  }
-})
 </script>
 
 <template>
@@ -71,7 +56,7 @@ onMounted(() => {
           <li
             class="methods__card wow animate__animated animate__fadeIn"
             data-wow-duration="0.5s"
-            :data-wow-delay="parseFloat(`${0.3 * idx}`) + 0.6 + 's'"
+            :data-wow-delay="parseFloat(`${0.3 * idx}`) + 0.2 + 's'"
             v-for="(card, idx) in block"
             :key="card.title"
           >

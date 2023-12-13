@@ -51,11 +51,12 @@ defineProps({
 
 <style lang="scss">
 .btn {
+  position: relative;
   cursor: pointer;
   outline: none;
   border-radius: 34px;
   border: 0px;
-  backdrop-filter: blur(15px);
+  // p-filter: blur(15px);
   transition: 0.2s;
   display: inline-block;
   text-align: center;

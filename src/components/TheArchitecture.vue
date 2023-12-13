@@ -35,7 +35,7 @@ onMounted(() => {
         end: "center-=20% bottom",
         scrub: true,
       },
-      yPercent: 0,
+      yPercent: 55,
       opacity: 1,
     })
 
@@ -78,10 +78,11 @@ onMounted(() => {
           ref="townVideo"
           autoplay muted loop playsinline
           class="architecture__img"
-          src="/img/TheCommunitySection/architecture/town.webm"
-          alt="Town"
           @canplay="pageIsLoaded"
-        />
+        >
+          <source src="/img/TheCommunitySection/architecture/town.mov">
+          <source src="/img/TheCommunitySection/architecture/town.webm" type="video/webm">
+        </video>
         <h2 class="architecture__title" ref="architectureTitle">Ecosystem Architecture</h2>
         <p class="architecture__desc wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
           We are building a holistic infrastructure for capital owners and independent professionals

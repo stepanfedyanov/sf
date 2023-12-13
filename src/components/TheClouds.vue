@@ -86,7 +86,14 @@ const changeCloudPosition = () => {
   })
 }
 
+const observed = ref(true);
+
 onMounted(() => {
+  const observer = new IntersectionObserver((obs) => {
+    observed.value = obs[0].isIntersecting;
+  });
+  observer.observe(document.querySelector('.join'));
+
   // Init clouds animations
   createCloud({ xInitPosition: screen && screen.width >= 1024 ? screenWidth * 0.9 : screenWidth * 1.2, idx: 1 })
   if (screen && screen.width >= 500) createCloud({ xInitPosition: 0, idx: 2 })
@@ -96,7 +103,7 @@ onMounted(() => {
   if (screen && screen.width >= 1024) createCloud({ xInitPosition: screenWidth * -0.2, idx: 6 })
 
   setInterval(() => {
-    changeCloudPosition();
+    if (observed.value) changeCloudPosition();
   }, changeSpeedXTime);
 
   gsap.set('.join__buildings-item', { yPercent: 100 });
