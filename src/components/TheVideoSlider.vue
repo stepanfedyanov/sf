@@ -76,9 +76,11 @@ const sliders = [
 </template>
 
 <style lang="scss">
-.swiper-block {
-  position: relative;
-  @include adaptive-value('margin-top', 60, 87, 1);
+.intro {
+  .swiper-block {
+    position: relative;
+    @include adaptive-value('margin-top', 60, 87, 1);
+  }
 }
 .video {
   &__swiper {
@@ -170,7 +172,7 @@ const sliders = [
   .video-slide {
     &__text {
       font-weight: 300;
-      color: #4E575A;
+      color: #4e575a;
     }
     &__author {
       font-weight: 300;
