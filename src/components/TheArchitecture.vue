@@ -1,7 +1,7 @@
 <script setup>
 import TheContainer from './TheContainer.vue'
 import TheMethods from './TheMethods.vue'
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGlobalStore } from '../stores/global';
@@ -17,6 +17,12 @@ const globalStore = useGlobalStore();
 const pageIsLoaded = () => {
   globalStore.changePageIsLoaded(true);
 };
+
+
+const isIos = computed(() => {
+  return navigator && navigator.userAgent && navigator.userAgent.includes('Safari');
+});
+
 
 onMounted(() => {
   if (screen && screen.width >= 1024) {
@@ -80,7 +86,7 @@ onMounted(() => {
           class="architecture__img"
           @canplay="pageIsLoaded"
         >
-          <source src="/img/TheCommunitySection/architecture/town.mov">
+          <source v-if="isIos" src="/img/TheCommunitySection/architecture/town.mov">
           <source src="/img/TheCommunitySection/architecture/town.webm" type="video/webm">
         </video>
         <h2 class="architecture__title" ref="architectureTitle">Ecosystem Architecture</h2>
