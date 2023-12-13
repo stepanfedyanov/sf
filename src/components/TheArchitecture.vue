@@ -74,14 +74,14 @@ onMounted(() => {
     </div>
     <TheContainer>
       <div class="architecture__inner">
-        <video
+        <!-- <video
           ref="townVideo"
           autoplay muted loop playsinline
           class="architecture__img"
           src="/img/TheCommunitySection/architecture/town.webm"
           alt="Town"
           @canplay="pageIsLoaded"
-        />
+        /> -->
         <h2 class="architecture__title" ref="architectureTitle">Ecosystem Architecture</h2>
         <p class="architecture__desc wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
           We are building a holistic infrastructure for capital owners and independent professionals
