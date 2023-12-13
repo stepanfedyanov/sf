@@ -28,4 +28,11 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      external: [
+        '/img/TheCommunitySection/architecture/town.mov'
+      ]
+    }
+  }
 })
