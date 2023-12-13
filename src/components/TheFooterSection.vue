@@ -104,7 +104,7 @@ const navList = [
     <TheContainer>
       <div class="footer__inner">
         <div class="footer__top">
-          <h2 class="footer__title wow animate__animated animate__fadeInUp">Join the community</h2>
+          <h2 class="footer__title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s" data-wow-duration="1200">Join the community</h2>
           <p class="footer__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
             Get access to private community of wealth management professionals, experts and service
             providers to attend special events, share knowledge, network and collaborate globally.

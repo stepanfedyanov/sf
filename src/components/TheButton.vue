@@ -59,6 +59,7 @@ defineProps({
   transition: 0.2s;
   display: inline-block;
   text-align: center;
+  position: relative;
   span {
     position: relative;
     display: inline-block;
