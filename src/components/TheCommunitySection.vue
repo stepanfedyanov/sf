@@ -3,11 +3,11 @@ import TheContainer from './TheContainer.vue'
 import TheSectionTitle from './TheSectionTitle.vue'
 import TheCommunitySlider from './TheCommunitySlider.vue'
 import TheArchitecture from './TheArchitecture.vue'
-import { onMounted, ref } from 'vue';
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { onMounted, ref } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 const staff = [
   {
@@ -40,43 +40,48 @@ const staff = [
   }
 ]
 
-const random = (min, max) => { // min and max included 
+const random = (min, max) => {
+  // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min)
-};
+}
 
-const stars = ref([]);
+const stars = ref([])
 
-const startAppearTime = 1000;
-const maxStarsCount = 5;
-let lastHalf = 0;
+const startAppearTime = 1000
+const maxStarsCount = 5
+let lastHalf = 0
 
 onMounted(() => {
   if (screen && screen.width >= 1024) {
     setInterval(() => {
       stars.value.push({
         x: `${lastHalf === 1 ? random(1, 20) : random(80, 100)}%`,
-        y: `${Math.ceil(Math.random() * 100)}%`,
-      });
+        y: `${Math.ceil(Math.random() * 100)}%`
+      })
 
-      lastHalf = lastHalf === 1 ? 0 : 1;
+      lastHalf = lastHalf === 1 ? 0 : 1
 
       if (stars.value.length > maxStarsCount) stars.value.shift()
-    }, startAppearTime);
+    }, startAppearTime)
   }
-});
+})
 </script>
 
 <template>
   <section class="community">
     <div class="community__stars">
       <TransitionGroup name="fade">
-        <span v-for="star in stars" :key="`star-${star.x}-${star.y}`" class="community__star" :style="`left: ${star.x}; top: ${star.y}`" />
+        <span
+          v-for="star in stars"
+          :key="`star-${star.x}-${star.y}`"
+          class="community__star"
+          :style="`left: ${star.x}; top: ${star.y}`"
+        />
       </TransitionGroup>
     </div>
     <TheContainer>
       <div class="community__inner">
-        <TheSectionTitle
-          class="community__title wow animate__animated animate__fadeInUp"
+        <TheSectionTitle class="community__title wow animate__animated animate__fadeInUp"
           >Founding Community</TheSectionTitle
         >
         <p class="community__desc wow animate__animated animate__fadeIn" data-wow-delay=".3s">
@@ -117,22 +122,26 @@ onMounted(() => {
     left: 0;
   }
   &__title {
-    @include adaptive-value('margin-bottom', 65, 81, 1);
+    @include adaptive-value('margin-bottom', 65, 65, 1);
     color: #fff;
     text-align: center;
-    letter-spacing: 1px;
-    line-height: calc(52 / 48);
-    @include adaptive-value('font-size', 88, 48, 1);
+    @include adaptive-value('letter-spacing', 1, 0.75, 1);
+    @include adaptive-value('line-height', 52, 52, 1);
+    @include adaptive-value('font-size', 88, 50, 1);
   }
   &__desc {
     @include adaptive-value('font-size', 18, 20, 1);
-    line-height: calc(24 / 18);
-    letter-spacing: 0.25px;
+    @include adaptive-value('line-height', 24, 30, 1);
+    @include adaptive-value('letter-spacing', 0.25, 0.55, 1);
     text-align: center;
     max-width: 794px;
     font-weight: 400;
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 108, 70, 1);
+    @media (max-width: 490px) {
+      max-width: 270px;
+      font-weight: 200;
+    }
   }
   &__clouds {
     position: absolute;

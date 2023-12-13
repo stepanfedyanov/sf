@@ -123,18 +123,21 @@ gsap.registerPlugin(ScrollTrigger)
     @include adaptive-value('width', 106, 33, 1);
   }
   &__title {
-    @include adaptive-value('margin-bottom', 35, 12, 1);
+    @include adaptive-value('margin-bottom', 35, 10, 1);
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 40, 20, 1);
     line-height: normal;
-    letter-spacing: -0.1px
+    @include adaptive-value('letter-spacing', -0.1, -0.3, 1);
   }
   &__desc {
     @include adaptive-value('font-size', 15, 11, 1);
-    line-height: 1.1;
+    @include adaptive-value('line-height', 16.5, 14.8, 1);
     max-width: 270px;
     letter-spacing: -0.2px;
     margin: 0 auto;
+    @media (max-width: 490px) {
+      font-weight: 300;
+    }
   }
 }
 </style>

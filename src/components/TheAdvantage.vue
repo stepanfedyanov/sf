@@ -39,9 +39,9 @@ onMounted(() => {
       gsap.set(slide, { yPercent: (slides.length - (index + 1)) * upperPosition })
     })
 
-    sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0 });
+    sliderTimeline.to(`.advantage__swiper-slide-${idx.value}`, { yPercent: 0 })
   }
-});
+})
 </script>
 
 <template>
@@ -68,7 +68,7 @@ onMounted(() => {
             ref="swiper"
             :centeredSlidesBounds="true"
             :breakpoints="{
-              381: {
+              361: {
                 slidesPerView: 1.2
               },
               460: {
@@ -90,7 +90,7 @@ onMounted(() => {
               }
            
             
-            @media (min-width: 381px) {
+            @media (min-width: 361px) {
               :host .swiper-slide {
               height: auto;
             }
@@ -235,18 +235,21 @@ onMounted(() => {
   align-items: stretch;
 }
 .advantage {
-  @include adaptive-value('padding-top', 145, 85, 1);
-  padding-bottom: 85px;
+  @include adaptive-value('padding-top', 145, 76, 1);
+  @include adaptive-value('padding-bottom', 85, 65, 1);
   overflow: hidden;
   &__btn {
     display: block;
     text-align: center;
     button.btn {
-      padding: 7px 50px;
+      @include adaptive-value('padding-top', 7, 3, 1);
+      @include adaptive-value('padding-bottom', 7, 3, 1);
+      @include adaptive-value('padding-left', 50, 28, 1);
+      @include adaptive-value('padding-right', 50, 28, 1);
       background: linear-gradient(93deg, #fff 0%, rgba(255, 255, 255, 0.26) 54.33%);
       span {
         letter-spacing: 0.6px;
-        font-size: 15.7px;
+        @include adaptive-value('font-size', 15.7, 14, 1);
       }
     }
   }
@@ -259,19 +262,29 @@ onMounted(() => {
   &__title {
     text-align: center;
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 96, 48, 1);
-    letter-spacing: -1.92px;
-    @include adaptive-value('margin-bottom', 25, 61, 1);
+    @include adaptive-value('font-size', 96, 49.2, 1);
+    @include adaptive-value('letter-spacing', -1.92, 0.96, 1);
+    @include adaptive-value('margin-bottom', 25, 72, 1);
+    line-height: 131px;
+    @include adaptive-value('line-height', 131, 52.8, 1);
+    @media (max-width: 490px) {
+      max-width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   &__desc {
     text-align: center;
     @include adaptive-value('font-size', 18, 19, 1);
-    line-height: calc(25 / 18);
-    letter-spacing: 0.3px;
+    @include adaptive-value('line-height', 25, 29.8, 1);
+    @include adaptive-value('letter-spacing', 0.3, 0.5, 1);
     max-width: 730px;
     margin: 0 auto;
-    margin-bottom: 65px;
     font-weight: 300;
+    margin-bottom: 65px;
+    @media (max-width: 490px) {
+      max-width: 310px;
+    }
   }
   &__swiper {
     @include adaptive-value('margin-bottom', 70, 32, 1);
@@ -303,19 +316,21 @@ onMounted(() => {
   }
 
   &.white {
-    .advantage__title {
-      @include adaptive-value('font-size', 88, 48, 1);
-      letter-spacing: 1px;
-      @include adaptive-value('margin-bottom', 34, 61, 1);
-    }
-    .advantage__desc {
-      @include adaptive-value('font-size', 18, 19, 1);
-      line-height: calc(25 / 18);
-      letter-spacing: 0.32px;
-      max-width: 740px;
-      margin: 0 auto;
-      margin-bottom: 60px;
-      font-weight: 300;
+    @media (min-width: 490px) {
+      .advantage__title {
+        @include adaptive-value('font-size', 88, 48, 1);
+        letter-spacing: 1px;
+        @include adaptive-value('margin-bottom', 34, 61, 1);
+      }
+      .advantage__desc {
+        @include adaptive-value('font-size', 18, 19, 1);
+        line-height: calc(25 / 18);
+        letter-spacing: 0.32px;
+        max-width: 740px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+        font-weight: 300;
+      }
     }
   }
 }
@@ -430,7 +445,7 @@ onMounted(() => {
     line-height: calc(14.5 / 12);
     letter-spacing: 0.24px;
     max-width: 210px;
-    color: #4E575A;
+    color: #4e575a;
   }
   &__date {
     line-height: calc(14 / 10);
@@ -497,7 +512,7 @@ onMounted(() => {
 @media (max-width: 600px) {
   .advantage {
     &__swiper {
-      margin-bottom: 84px;
+      margin-bottom: 92px;
     }
     &__swiper-button-next {
       top: auto;
