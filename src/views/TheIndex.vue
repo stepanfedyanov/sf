@@ -11,12 +11,18 @@ import TheLibertySection from '../components/TheLibertySection.vue'
 import TheForSection from '../components/TheForSection.vue'
 
 import TheMainLoader from '../components/TheMainLoader.vue'
+import { useGlobalStore } from '../stores/global';
+import { storeToRefs } from 'pinia';
+
+const globalStore = useGlobalStore();
+const { pageIsLoaded } = storeToRefs(globalStore);
 </script>
 
 <template>
   <main>
     <TheMainLoader />
-    <TheJoinSection />
+    <TheJoinSection v-if="pageIsLoaded" />
+    <div v-else class="replacer" />
     <TheJoinUpsideTitle />
     <TheHowSection />
     <TheIntroSection />
@@ -28,3 +34,13 @@ import TheMainLoader from '../components/TheMainLoader.vue'
     <TheFooterSection />
   </main>
 </template>
+
+<style lang="scss">
+.replacer {
+  width: 100vw;
+  min-height: 890px;
+  @media (max-width: 500px) {
+    min-height: 800px;
+  }
+}
+</style>
