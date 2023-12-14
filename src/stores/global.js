@@ -7,13 +7,20 @@ import { ref } from 'vue';
 // the first argument is a unique id of the store across your application
 export const useGlobalStore = defineStore('global', () => {
   const pageIsLoaded = ref(false);
+  const popupOpened = ref(false);
 
   const changePageIsLoaded = (state) => {
     pageIsLoaded.value = state;
   };
 
+  const changeModalOpened = (state) => {
+    popupOpened.value = state;
+  }
+
   return {
+    changePageIsLoaded,
+    changeModalOpened,
     pageIsLoaded,
-    changePageIsLoaded
+    popupOpened,
   }
 })

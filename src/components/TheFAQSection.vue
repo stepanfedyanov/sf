@@ -6,7 +6,7 @@ import TheFAQAccordion from './TheFAQAccordion.vue'
 <template>
   <section class="faq">
     <TheContainer>
-      <div class="faq__inner">
+      <div class="faq__inner" @click="log">
         <h2 class="faq__title wow animate__animated animate__fadeInUp">FAQ</h2>
         <TheFAQAccordion />
       </div>

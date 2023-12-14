@@ -1,0 +1,273 @@
+<script setup>
+import { useGlobalStore } from '../stores/global'
+import { storeToRefs } from 'pinia'
+
+const globalStore = useGlobalStore()
+const { popupOpened } = storeToRefs(globalStore)
+
+const closeModal = (event) => {
+  if (event.target.classList.contains('modal__content')) {
+    globalStore.changeModalOpened(false)
+  }
+}
+</script>
+
+<template>
+  <div :class="['modal', { _active: popupOpened }]" id="main-modal">
+    <div class="modal__background"></div>
+    <div class="modal__content" @click="closeModal">
+      <div class="modal__card">
+        <div class="modal__card-inner">
+          <button class="modal__back" @click="globalStore.changeModalOpened(false)">
+            <svg class="modal__back-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.24 6.34">
+              <g id="Layer_1" data-name="Layer 1">
+                <g>
+                  <g>
+                    <rect
+                      class="cls-1"
+                      x="1.19"
+                      y="2.91"
+                      width=".79"
+                      height="3.69"
+                      transform="translate(-2.9 2.51) rotate(-45)"
+                      fill=" #052e3e"
+                      stroke-width="0"
+                    />
+                    <rect
+                      class="cls-1"
+                      x="-.26"
+                      y="1.19"
+                      width="3.69"
+                      height=".79"
+                      transform="translate(-.66 1.58) rotate(-45)"
+                    />
+                  </g>
+                  <rect class="cls-1" x="3.17" y="2.78" width="5.07" height=".79" />
+                </g>
+              </g>
+            </svg>
+            <span class="modal__back-text">Back to home</span>
+          </button>
+          <h2 class="modal__title">Send request</h2>
+          <form class="modal__form" action="#">
+            <label class="modal__label">
+              <span class="modal__label-text">Email</span>
+              <input class="modal__input" type="text" />
+            </label>
+            <label class="modal__label">
+              <span class="modal__label-text">Full Name</span>
+              <input class="modal__input" type="text" />
+            </label>
+            <label class="modal__label">
+              <span class="modal__label-text">Comment</span>
+              <textarea class="modal__textarea" type="text"></textarea>
+            </label>
+
+            <button class="modal__submit-btn" type="submit">Apply now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  &._active {
+    opacity: 1;
+    visibility: visible;
+    .modal__card {
+      transform: translateY(0);
+    }
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1002;
+  transition: 0.3s;
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0a0b13;
+    opacity: 0.8;
+  }
+  &__content {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow-y: auto;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    &::-webkit-scrollbar {
+      width: 10px; /* ширина scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent; /* цвет дорожки */
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #b1b1b1; /* цвет плашки */
+      &:hover {
+        background-color: #777777;
+      }
+      &:active {
+        background-color: #4b4b4b;
+      }
+      border-radius: 5px;
+      border: 0px solid #fff; /* padding вокруг плашки */
+    }
+  }
+  &__card {
+    transform: translateY(40px);
+    background: linear-gradient(315deg, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 102%);
+    backdrop-filter: blur(5px);
+    @include adaptive-value('border-radius', 20, 15, 1);
+    max-width: 872px;
+    width: 100%;
+    position: relative;
+    @include adaptive-value('padding', 15, 12, 1);
+    display: grid;
+    border: 1px solid #fff;
+    transition: 0.3s;
+  }
+  &__card-inner {
+    @include adaptive-value('padding-top', 35, 25, 1);
+    @include adaptive-value('padding-bottom', 35, 25, 1);
+    @include adaptive-value('padding-left', 50, 30, 1);
+    @include adaptive-value('padding-right', 50, 30, 1);
+    @include adaptive-value('border-radius', 10, 8, 1);
+    background-color: #fff;
+  }
+  &__back {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    @include adaptive-value('margin-bottom', 30, 15, 1);
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    @include adaptive-value('left', -22, -17, 1);
+    align-items: center;
+    @media (hover: hover) {
+      &:hover {
+        .modal__back-text {
+          color: #888;
+        }
+        .modal__back-img {
+          svg,
+          rect {
+            fill: #888;
+          }
+        }
+      }
+    }
+  }
+  &__back-img {
+    @include adaptive-value('margin-right', 10, 7, 1);
+    @include adaptive-value('width', 12, 10, 1);
+    svg,
+    rect {
+      transition: 0.15s;
+    }
+  }
+  &__back-text {
+    font-size: 12px;
+    color: #052e3e;
+    line-height: 13.88px;
+    transition: 0.15s;
+  }
+  &__title {
+    font-family: 'Atyp Display', sans-serif;
+    @include adaptive-value('font-size', 29, 24, 1);
+    line-height: 28.75px;
+    @include adaptive-value('margin-bottom', 30, 15, 1);
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__label {
+    display: flex;
+    flex-direction: column;
+  }
+  &__label + &__label {
+    @include adaptive-value('margin-top', 15, 8, 1);
+  }
+  &__label-text {
+    @include adaptive-value('margin-bottom', 15, 8, 1);
+    font-family: 'Atyp Display', sans-serif;
+    @include adaptive-value('font-size', 14, 13, 1);
+    line-height: 15.86px;
+    color: #052e3e;
+  }
+  &__input {
+    border: 2px solid #f1f3f5;
+    @include adaptive-value('padding-top', 10, 8, 1);
+    @include adaptive-value('padding-bottom', 10, 8, 1);
+    @include adaptive-value('padding-left', 15, 10, 1);
+    @include adaptive-value('padding-right', 15, 10, 1);
+    outline: none;
+    @include adaptive-value('border-radius', 8, 6, 1);
+    font-family: 'Atyp Display', sans-serif;
+    font-size: 14px;
+    line-height: 15.86px;
+    color: #586164;
+    transition: 0.15s;
+    &:focus {
+      border-color: #e1e4e6;
+    }
+  }
+  &__textarea {
+    border: 2px solid #f1f3f5;
+    @include adaptive-value('padding-top', 10, 8, 1);
+    @include adaptive-value('padding-bottom', 10, 8, 1);
+    @include adaptive-value('padding-left', 15, 10, 1);
+    @include adaptive-value('padding-right', 15, 10, 1);
+    outline: none;
+    border-radius: 8px;
+    font-family: 'Atyp Display', sans-serif;
+    font-size: 14px;
+    line-height: 15.86px;
+    color: #586164;
+    resize: vertical;
+    max-height: 200px;
+    min-height: 80px;
+  }
+  &__submit-btn {
+    @include adaptive-value('margin-top', 30, 15, 1);
+    font-size: 14px;
+    line-height: 13.81px;
+    border-radius: 20px;
+    @include adaptive-value('padding-top', 14, 10, 1);
+    @include adaptive-value('padding-bottom', 14, 10, 1);
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    outline: none;
+    background: #a5cce0;
+    color: #052e3e;
+    cursor: pointer;
+    transition: 0.15s;
+    @media (hover: hover) {
+      &:hover {
+        background: #86cbee;
+      }
+    }
+  }
+}
+</style>

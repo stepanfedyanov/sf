@@ -30,11 +30,6 @@ defineProps({
         fill="#052E3E"
       />
     </g>
-    <defs>
-      <clipPath id="clip0_2_395">
-        <rect width="54" height="54" fill="white" />
-      </clipPath>
-    </defs>
   </svg>
 </template>
 

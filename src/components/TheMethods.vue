@@ -191,6 +191,7 @@ const cards = [
     @include adaptive-value('font-size', 40, 20, 1);
     line-height: normal;
     @include adaptive-value('letter-spacing', -0.1, -0.3, 1);
+    font-weight: 300;
   }
   &__desc {
     @include adaptive-value('font-size', 15, 11, 1);

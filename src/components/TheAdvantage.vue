@@ -66,10 +66,12 @@ onMounted(() => {
         <div class="swiper-block">
           <swiper-container
             ref="swiper"
-            :centeredSlidesBounds="true"
+            loop="true"
+            loopAdditionalSlides="10"
             :breakpoints="{
               361: {
-                slidesPerView: 1.2
+                slidesPerView: 1.2,
+                centeredSlides: true
               },
               460: {
                 slidesPerView: 1.5
@@ -234,6 +236,9 @@ onMounted(() => {
 .swiper-wrapper {
   align-items: stretch;
 }
+.swiper-block {
+  position: relative;
+}
 .advantage {
   @include adaptive-value('padding-top', 145, 76, 1);
   @include adaptive-value('padding-bottom', 85, 65, 1);
@@ -370,7 +375,7 @@ onMounted(() => {
     z-index: 2;
     top: 20px;
     right: 20px;
-    @include adaptive-value('padding', 18, 17.6, 1);
+    @include adaptive-value('padding', 18, 15, 1);
     background: #fff;
     border-radius: 50%;
     display: flex;
@@ -394,9 +399,10 @@ onMounted(() => {
     @include adaptive-value('font-size', 26.5, 22, 1);
     line-height: calc(29 / 26);
     letter-spacing: 0.2px;
-    @include adaptive-value('margin-bottom', 26, 14, 1);
+    @include adaptive-value('margin-bottom', 26, 22, 1);
     @include adaptive-value('padding-right', 69, 50, 1);
     transform: translateX(-1px);
+    font-weight: 300;
   }
   &__columns {
     display: flex;
@@ -409,7 +415,7 @@ onMounted(() => {
     width: 100%;
   }
   &__item {
-    padding-left: 11px;
+    @include adaptive-value('padding-left', 11, 7, 1);
     @include adaptive-value('font-size', 11.8, 10.2, 1);
     line-height: calc(18 / 12);
     letter-spacing: 0.44px;
@@ -419,8 +425,8 @@ onMounted(() => {
     &::before {
       content: '';
       position: absolute;
-      left: 1px;
-      top: 6px;
+      @include adaptive-value('left', 1, 0, 1);
+      @include adaptive-value('top', 6, 5, 1);
       width: 3px;
       height: 3px;
       background-color: #052e3e;
@@ -428,7 +434,7 @@ onMounted(() => {
     }
   }
   &__item + &__item {
-    @include adaptive-value('margin-top', 1, 3.39, 1);
+    @include adaptive-value('margin-top', 0, 0, 1);
   }
   &__column + &__column {
     @include adaptive-value('margin-left', 4, 3.39, 1);
@@ -451,12 +457,13 @@ onMounted(() => {
     line-height: calc(14 / 10);
     @include adaptive-value('font-size', 10, 8.5, 1);
     letter-spacing: -0.1px;
+    font-weight: 700;
   }
   &.blue {
     .adv-slide__inner {
       @include adaptive-value('padding-top', 56, 50, 1);
       @include adaptive-value('padding-right', 20, 7.6, 1);
-      @include adaptive-value('padding-left', 32, 32.24, 1);
+      @include adaptive-value('padding-left', 32, 30, 1);
     }
     border: 1px solid rgba(255, 255, 255, 0.5);
     @include adaptive-value('border-radius', 46, 37, 1);

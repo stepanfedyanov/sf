@@ -11,9 +11,8 @@
 .join-title {
   &__clouds {
     overflow: hidden;
-    // background-color: #000;
     position: absolute;
-    z-index: 10;
+    z-index: 9;
     top: 0;
     left: 0;
     height: 100%;

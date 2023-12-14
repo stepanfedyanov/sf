@@ -68,11 +68,10 @@ defineProps({
     @include adaptive-value('font-size', 18, 19, 1);
     line-height: 25px;
     max-width: 200px;
-    letter-spacing: 0.36px;
+    letter-spacing: 0.46px;
     margin-bottom: 47px;
     @include adaptive-value('margin-bottom', 47, 9, 1);
-
-    font-weight: 400;
+    font-weight: 300;
   }
   &__item-title {
     font-family: 'Atyp Display', sans-serif;
