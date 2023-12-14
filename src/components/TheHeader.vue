@@ -28,50 +28,60 @@ function animate({ timing, draw, duration }) {
 }
 
 const openNavbar = () => {
-  const heightOfHeader = 466;
-  if (!_opened.value) {
-    _opened.value = !_opened.value;
-    animate({
-      duration: 400,
-      timing(timeFraction) {
-        return timeFraction;
-      },
-      draw(progress) {
-        header.value.style.height = progress * heightOfHeader + 'px';
-      }
-    });
-    header.value.style.height = heightOfHeader + 'px'
-  } else {
+  if (screen && screen.width <= 1100) {
     const heightOfHeader = 466;
-
-    animate({
-      duration: 400,
-      timing(timeFraction) {
-        return timeFraction;
-      },
-      draw(progress) {
-        header.value.style.height = heightOfHeader - progress * (heightOfHeader - 40) + 'px';
-        if (progress === 1) {
-          _opened.value = !_opened.value;
+    if (!_opened.value) {
+      _opened.value = !_opened.value;
+      animate({
+        duration: 400,
+        timing(timeFraction) {
+          return timeFraction;
+        },
+        draw(progress) {
+          header.value.style.height = progress * heightOfHeader + 'px';
         }
-      }
-    });
+      });
+      header.value.style.height = heightOfHeader + 'px'
+    } else {
+      const heightOfHeader = 466;
+
+      animate({
+        duration: 400,
+        timing(timeFraction) {
+          return timeFraction;
+        },
+        draw(progress) {
+          header.value.style.height = heightOfHeader - progress * (heightOfHeader - 40) + 'px';
+          if (progress === 1) {
+            _opened.value = !_opened.value;
+          }
+        }
+      });
+    }
+    
+    if (document && document.documentElement) document.documentElement.classList.toggle('_fixed')
   }
-  
-  if (document && document.documentElement) document.documentElement.classList.toggle('_fixed')
 }
 
 const openSection = (item) => {
   openNavbar();
 
   const getElementToScroll = document.querySelector(`#${item}`);
-
-  setTimeout(() => {
+  
+  if (screen && screen.width <= 1100) {
+    setTimeout(() => {
+      window.scrollTo({
+        top: getElementToScroll.offsetTop - 100,
+        behavior: 'smooth'
+      })
+    }, 500)
+  } else {
     window.scrollTo({
       top: getElementToScroll.offsetTop - 100,
       behavior: 'smooth'
     })
-  }, 500)
+  }
+  
 };
 
 onMounted(() => {

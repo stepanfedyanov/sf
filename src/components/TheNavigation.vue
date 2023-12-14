@@ -61,6 +61,7 @@ defineEmits(['openSection']);
     @include adaptive-value('margin-left', 43, 0, 1);
   }
   &__nav-item-link {
+    cursor: pointer;
     letter-spacing: -0.12px;
     padding: 5px 0;
     line-height: 1;
