@@ -2,13 +2,18 @@
 import TheHeader from './TheHeader.vue'
 import TheMeet from './TheMeet.vue'
 import TheClouds from './TheClouds.vue'
+import { useGlobalStore } from '../stores/global';
+import { storeToRefs } from 'pinia';
+
+const globalStore = useGlobalStore();
+const { pageIsLoaded } = storeToRefs(globalStore);
 </script>
 
 <template>
   <section class="join">
     <div class="join__inner">
       <TheHeader />
-      <TheMeet />
+      <TheMeet v-if="pageIsLoaded" />
     </div>
     <TheClouds class="join__clouds" />
   </section>

@@ -1,7 +1,7 @@
 <script setup>
 import TheContainer from './TheContainer.vue'
 import TheMethods from './TheMethods.vue'
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGlobalStore } from '../stores/global';
@@ -80,7 +80,7 @@ onMounted(() => {
           class="architecture__img"
           @canplay="pageIsLoaded"
         >
-          <source src="/img/TheCommunitySection/architecture/town.mov">
+          <source src="/img/TheCommunitySection/architecture/town.mov" type='video/mp4; codecs="hvc1"'>
           <source src="/img/TheCommunitySection/architecture/town.webm" type="video/webm">
         </video>
         <h2 class="architecture__title" ref="architectureTitle">Ecosystem Architecture</h2>
@@ -146,6 +146,9 @@ onMounted(() => {
       width: 100%;
       position: absolute;
       top: 5%;
+      @media (max-width: 500px) {
+        top: 10%
+      }
       left: 50%;
       transform: translateX(-50%);
       z-index: 1;
@@ -154,6 +157,9 @@ onMounted(() => {
       width: 100%;
       position: absolute;
       top: 8%;
+      @media (max-width: 500px) {
+        top: 16%
+      }
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;

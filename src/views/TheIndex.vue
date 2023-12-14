@@ -11,20 +11,15 @@ import TheLibertySection from '../components/TheLibertySection.vue'
 import TheForSection from '../components/TheForSection.vue'
 
 import TheMainLoader from '../components/TheMainLoader.vue'
-import { useGlobalStore } from '../stores/global'
-import { storeToRefs } from 'pinia'
 import ThePopup from '../components/ThePopup.vue'
 
-const globalStore = useGlobalStore()
-const { pageIsLoaded } = storeToRefs(globalStore)
 </script>
 
 <template>
   <main>
     <ThePopup />
     <TheMainLoader />
-    <TheJoinSection v-if="pageIsLoaded" />
-    <div v-else class="replacer" />
+    <TheJoinSection />
     <TheJoinUpsideTitle />
     <TheHowSection />
     <TheIntroSection />

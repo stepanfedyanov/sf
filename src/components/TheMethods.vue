@@ -1,9 +1,9 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref } from 'vue';
 import TheContainer from './TheContainer.vue'
+import TheSliderButton from './TheSliderButton.vue'
 
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+const swiper = ref(null);
 
 const cards = [
   [
@@ -42,35 +42,72 @@ const cards = [
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
     }
   ]
-]
-
-gsap.registerPlugin(ScrollTrigger)
-
+];
 </script>
 
 <template>
   <section class="methods">
     <TheContainer>
       <div class="methods__inner">
-        <ul class="methods__cards" v-for="block in cards" :key="block[0].title">
-          <li
-            class="methods__card wow animate__animated animate__fadeIn"
-            data-wow-duration="0.5s"
-            :data-wow-delay="parseFloat(`${0.3 * idx}`) + 0.2 + 's'"
-            v-for="(card, idx) in block"
-            :key="card.title"
-          >
-            <div class="methods__card-img-wrapper">
-              <img class="methods__card-img" :src="card.img" :alt="`Icon ${card.title}`" />
-            </div>
-            <h3 class="methods__title">
-              {{ card.title }}
-            </h3>
-            <p class="methods__desc">
-              {{ card.desc }}
-            </p>
-          </li>
-        </ul>
+        <swiper-container
+          :injectStyles="[
+            `
+            :host .swiper {
+              overflow: visible !important;
+            }
+            .swiper-pagination {
+              display: none;
+            }
+            @media (max-width: 890px) {
+              .swiper-pagination {
+                display: block;
+                top: auto !important;
+                bottom: -68px !important;
+                transform: translateY(50%) !important;
+              }
+              .swiper-pagination-bullet {
+                width: 4px !important;
+                height: 4px !important;
+                background-color: #DDD8D5 !important;
+                margin: 0 8px !important;
+                opacity: 1 !important;
+                transition: 0.2s !important;
+              }
+              .swiper-pagination-bullet-active {
+                opacity: 1 !important;
+                background-color: #052E3E !important;
+              }
+            }
+            `
+          ]"
+
+          class="swiper video__swiper"
+          ref="swiper"
+        >
+          <swiper-slide :class="`methods__cards methods__cards-${id + 1}`" v-for="(block, id) in cards" :key="block[0].title">
+            <li
+              class="methods__card"
+              v-for="(card) in block"
+              :key="card.title"
+            >
+              <div class="methods__card-img-wrapper">
+                <img class="methods__card-img" :src="card.img" :alt="`Icon ${card.title}`" />
+              </div>
+              <h3 class="methods__title">
+                {{ card.title }}
+              </h3>
+              <p class="methods__desc">
+                {{ card.desc }}
+              </p>
+            </li>
+          </swiper-slide>
+        </swiper-container>
+        <div class="swiper-button-prev methods__swiper-button-prev" @click="swiper.swiper.slidePrev()">
+          <TheSliderButton direction="prev" />
+        </div>
+        <div class="swiper-button-next methods__swiper-button-next" @click="swiper.swiper.slideNext()">
+          <TheSliderButton direction="next" />
+        </div>
       </div>
     </TheContainer>
   </section>
@@ -82,13 +119,39 @@ gsap.registerPlugin(ScrollTrigger)
   z-index: 100;
   margin-bottom: 90px;
   @include adaptive-value('margin-top', 78, 12, 1);
+  &__inner {
+    position: relative;
+  }
+  &__swiper-button-prev{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -25px;
+    z-index: 2;
+  }
+  &__swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -25px;
+    z-index: 2;
+  }
   &__cards {
     display: flex;
-    max-width: 950px;
     margin: 0 auto;
-  }
-  &__cards + &__cards {
-    margin-top: 50px;
+    &.swiper-slide-active {
+      margin-right: 60px;
+      @media (max-width: 500px) {
+        margin-right: 10px;
+      }
+    }
+    &.swiper-slide-prev {
+      transform: translateX(-50px);
+      @media (max-width: 500px) {
+        transform: translateX(-10px);
+      }
+      opacity: 0.7;
+    }
   }
   &__card {
     @include adaptive-value('padding-top', 73, 32, 1);

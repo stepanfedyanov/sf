@@ -79,6 +79,10 @@ const sliders = [
 </template>
 
 <style lang="scss">
+.swiper-block {
+  position: relative;
+}
+
 .intro {
   .swiper-block {
     position: relative;
