@@ -5,6 +5,8 @@ defineProps({
   href: String,
   target: String
 })
+
+defineEmits(['tap'])
 </script>
 
 <template>
@@ -31,6 +33,7 @@ defineProps({
     <button
       v-else
       class="btn"
+      @click="$emit('tap')"
       :href="href"
       :target="target"
       :class="{
@@ -87,7 +90,7 @@ defineProps({
     }
   }
   &.white {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    // border: 1px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(93deg, #fff 12%, rgba(255, 255, 255, 0.26) 94.33%);
     color: #000;
     &::before {
@@ -105,7 +108,7 @@ defineProps({
   }
   &.blue {
     color: #052e3e;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    // border: 1px solid rgba(255, 255, 255, 0.5);
     background-color: #a5cce0;
     transition: 0.2s;
     @media (hover: hover) {

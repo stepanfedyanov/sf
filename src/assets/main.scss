@@ -11,7 +11,6 @@
 // Swiper
 @import "swiper/css";
 
-
 // Настройка для миксинов
 $maxWidth: 1920;
 $maxWidthContainer: 1200;
@@ -26,6 +25,10 @@ body {
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
+}
+
+img, svg, button {
+  user-select: none;
 }
 
 html {

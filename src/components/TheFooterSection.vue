@@ -1,6 +1,10 @@
 <script setup>
+import { useGlobalStore } from '../stores/global'
+
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
+
+const globalStore = useGlobalStore()
 
 const socialsList = [
   {
@@ -97,6 +101,10 @@ const navList = [
     href: '#'
   }
 ]
+
+const openModal = () => {
+  globalStore.changeModalOpened(true)
+}
 </script>
 
 <template>
@@ -104,12 +112,19 @@ const navList = [
     <TheContainer>
       <div class="footer__inner">
         <div class="footer__top">
-          <h2 class="footer__title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s" data-wow-duration="1200">Join the community</h2>
+          <h2
+            class="footer__title wow animate__animated animate__fadeInUp"
+            data-wow-delay="0.2s"
+            data-wow-duration="1200"
+          >
+            Join the community
+          </h2>
           <p class="footer__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
             Get access to private community of wealth management professionals, experts and service
             providers to attend special events, share knowledge, network and collaborate globally.
           </p>
           <TheButton
+            @tap="openModal"
             class="wow animate__animated animate__fadeIn"
             data-wow-delay="0.1s"
             size="big"
@@ -153,8 +168,9 @@ const navList = [
               data-wow-delay="0.6s"
               data-wow-duration="1600"
               href="#"
-              >Skyfort - 2023 - All rights reserved</a
             >
+              Skyfort - 2023 - All rights reserved
+            </a>
           </div>
         </div>
       </div>
@@ -166,7 +182,7 @@ const navList = [
             Get access to private community of wealth management professionals, experts and service
             providers to attend special events, share knowledge, network and collaborate globally.
           </p>
-          <TheButton size="big" color="blue">Apply Now</TheButton>
+          <TheButton @tap="openModal" size="big" color="blue">Apply Now</TheButton>
         </div>
         <div class="footer__bottom">
           <div class="footer__logo-wrapper">

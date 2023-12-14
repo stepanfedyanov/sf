@@ -18,7 +18,7 @@ import TheContainer from './TheContainer.vue'
           data-wow-delay="1s"
           color="white"
           size="big"
-          >Get early acceses</TheButton
+          >Get early access</TheButton
         >
       </div>
     </TheContainer>

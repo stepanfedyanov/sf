@@ -45,6 +45,9 @@ const sliders = [
       :fadeEffect="{
         crossFade: true
       }"
+      :autoplay="{
+        delay: 3000
+      }"
       class="swiper video__swiper"
       ref="swiper"
       :speed="900"
@@ -79,7 +82,7 @@ const sliders = [
 .intro {
   .swiper-block {
     position: relative;
-    @include adaptive-value('margin-top', 60, 87, 1);
+    @include adaptive-value('margin-top', 80, 87, 1);
   }
 }
 .video {
