@@ -82,7 +82,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="how" ref="howItemsContainer">
+  <section class="how" ref="howItemsContainer" id="About">
     <TheContainer>
       <div class="how__inner">
         <!-- The How Titles: sticky container with 2 title (we will chagne opacity for each item by scrolling) -->

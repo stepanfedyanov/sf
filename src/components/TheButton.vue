@@ -68,7 +68,6 @@ defineEmits(['tap'])
     position: relative;
     display: inline-block;
     z-index: 3;
-    top: 1px;
   }
   &::before {
     content: '';

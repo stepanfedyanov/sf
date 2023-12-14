@@ -2,6 +2,8 @@
 import TheButton from './TheButton.vue'
 
 const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
+
+defineEmits(['openSection']);
 </script>
 
 <template>
@@ -13,7 +15,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
         v-for="(item, idx) in items"
         :key="item"
       >
-        <a class="header__nav-item-link" href="/">{{ item }}</a>
+        <span class="header__nav-item-link" @click="$emit('openSection', item)">{{ item }}</span>
       </li>
     </ul>
     <div class="header__btns">

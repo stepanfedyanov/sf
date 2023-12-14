@@ -1,19 +1,93 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import TheLogotype from './TheLogotype.vue'
 import TheNavigation from './TheNavigation.vue'
 import TheButton from './TheButton.vue'
 
 const _opened = ref(false)
+const header = ref(null)
+
+function animate({ timing, draw, duration }) {
+  let start = performance.now();
+
+  requestAnimationFrame(function animate(time) {
+    // timeFraction изменяется от 0 до 1
+    let timeFraction = (time - start) / duration;
+    if (timeFraction > 1) timeFraction = 1;
+
+    // вычисление текущего состояния анимации
+    let progress = timing(timeFraction);
+
+    draw(progress); // отрисовать её
+
+    if (timeFraction < 1) {
+      requestAnimationFrame(animate);
+    }
+
+  });
+}
 
 const openNavbar = () => {
-  _opened.value = !_opened.value;
+  const heightOfHeader = 466;
+  if (!_opened.value) {
+    _opened.value = !_opened.value;
+    animate({
+      duration: 400,
+      timing(timeFraction) {
+        return timeFraction;
+      },
+      draw(progress) {
+        header.value.style.height = progress * heightOfHeader + 'px';
+      }
+    });
+    header.value.style.height = heightOfHeader + 'px'
+  } else {
+    const heightOfHeader = 466;
+
+    animate({
+      duration: 400,
+      timing(timeFraction) {
+        return timeFraction;
+      },
+      draw(progress) {
+        header.value.style.height = heightOfHeader - progress * (heightOfHeader - 40) + 'px';
+        if (progress === 1) {
+          _opened.value = !_opened.value;
+        }
+      }
+    });
+  }
+  
   if (document && document.documentElement) document.documentElement.classList.toggle('_fixed')
 }
+
+const openSection = (item) => {
+  openNavbar();
+
+  const getElementToScroll = document.querySelector(`#${item}`);
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: getElementToScroll.offsetTop - 100,
+      behavior: 'smooth'
+    })
+  }, 500)
+};
+
+onMounted(() => {
+  if (screen && screen.width <= 1100) {
+    document.body.addEventListener('click', (event) => {
+      if (!event.target.getAttribute('class').includes('header')) {
+        openNavbar();
+      }
+    });
+  }
+});
 </script>
 
 <template>
   <header
+    ref="header"
     :class="[
       'header animate__animated animate__fadeIn',
       {
@@ -30,7 +104,7 @@ const openNavbar = () => {
           <span class="header__line"></span>
         </div>
       </div>
-      <TheNavigation />
+      <TheNavigation @open-section="openSection"/>
       <div class="header__dash"></div>
       <div class="header__mobile-btns">
         <TheButton
@@ -72,6 +146,7 @@ const openNavbar = () => {
 
 <style lang="scss">
 .header {
+  will-change: height;
   max-width: 1080px;
   width: calc(100% - 64px);
   position: fixed;
@@ -79,7 +154,7 @@ const openNavbar = () => {
   top: 38px;
   left: 50%;
   transform: translateX(-50%);
-  @include adaptive-value('border-radius', 34, 22, 1);
+  @include adaptive-value('border-radius', 34, 20, 1);
   background: linear-gradient(
     92deg,
     rgba(255, 255, 255, 0.69) -36.65%,
@@ -90,6 +165,7 @@ const openNavbar = () => {
   @include adaptive-value('padding-bottom', 15, 4, 1);
   @include adaptive-value('padding-left', 38, 27, 1);
   @include adaptive-value('padding-right', 24, 23, 1);
+  overflow: hidden;
   &__inner {
     display: flex;
     justify-content: space-between;
