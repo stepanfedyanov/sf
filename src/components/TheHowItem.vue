@@ -67,7 +67,7 @@ defineProps({
   &__item-desc {
     @include adaptive-value('font-size', 18, 19, 1);
     line-height: 25px;
-    max-width: 200px;
+    max-width: 400px;
     letter-spacing: 0.46px;
     margin-bottom: 47px;
     @include adaptive-value('margin-bottom', 47, 9, 1);
@@ -118,6 +118,9 @@ defineProps({
     @include adaptive-value('font-size', 64, 30, 1);
     line-height: calc(60 / 64);
     max-width: 360px;
+  }
+  .how__item-desc {
+    max-width: 300px;
   }
 }
 

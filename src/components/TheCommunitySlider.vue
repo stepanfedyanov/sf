@@ -145,6 +145,7 @@ onMounted(() => {
 .community-slider {
   position: relative;
   margin-bottom: 20px;
+  z-index: 11;
 }
 .community {
   &__swiper {
@@ -215,6 +216,9 @@ onMounted(() => {
     letter-spacing: 0.65px;
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 39, 27, 1);
+    @media (max-width: 490px) {
+      max-width: 170px;
+    }
   }
   .btn-wrapper {
     button {
@@ -225,6 +229,9 @@ onMounted(() => {
         font-size: 13.7px;
         font-weight: 300;
         // transform: translateY(1px);
+      }
+      @media (max-width: 490px) {
+        padding: 3px 30px;
       }
     }
   }

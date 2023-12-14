@@ -3,8 +3,16 @@ import TheSliderButton from './TheSliderButton.vue'
 import { ref, onMounted } from 'vue'
 const swiperEl = ref(null)
 const sliders = [
-  'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
-  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium'
+  {
+    quote:
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
+    author: 'Илья Опренко, Founder & CEO'
+  },
+  {
+    quote:
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.',
+    author: 'Игорь Денисенков, President & Best'
+  },
 ]
 
 onMounted(() => {
@@ -97,9 +105,9 @@ const prevSlide = () => {
       >
         <blockquote class="video-slide__quote">
           <p class="video-slide__text">
-            {{ slider }}
+            {{ slider.quote }}
           </p>
-          <cite class="video-slide__author">Ilya Oprenko, CEO Skyfort</cite>
+          <cite class="video-slide__author">{{ slider.author }}</cite>
         </blockquote>
       </swiper-slide>
     </swiper-container>
@@ -154,7 +162,7 @@ const prevSlide = () => {
     z-index: 14;
   }
   &__swiper-slide {
-    min-height: 110px;
+    min-height: 128px;
   }
 }
 .swiper-button-img {

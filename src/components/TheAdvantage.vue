@@ -266,7 +266,7 @@ onMounted(() => {
   &__title {
     text-align: center;
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 96, 49.2, 1);
+    @include adaptive-value('font-size', 96, 46, 1);
     @include adaptive-value('letter-spacing', -1.92, 0.96, 1);
     @include adaptive-value('margin-bottom', 25, 72, 1);
     line-height: 131px;

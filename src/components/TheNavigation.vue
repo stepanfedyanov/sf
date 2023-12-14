@@ -1,7 +1,7 @@
 <script setup>
 import TheButton from './TheButton.vue'
 
-const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
+const items = ['Компания', 'Маркетплейс', 'Аналитика', 'FAQ']
 
 defineEmits(['openSection']);
 </script>
@@ -25,7 +25,7 @@ defineEmits(['openSection']);
         color="white"
         size="small"
       >
-        Log in
+        Вход
       </TheButton>
       <TheButton
         class="header__btn animate__animated animate__fadeIn"
@@ -33,7 +33,7 @@ defineEmits(['openSection']);
         color="black"
         size="small"
       >
-        Register
+        Регистрация
       </TheButton>
     </div>
   </nav>

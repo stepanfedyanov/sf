@@ -67,7 +67,7 @@ const items = [
     </clipPath>
   </defs>
 </svg>`,
-    title: 'Global scope',
+    title: 'Глобальный охват',
     desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Vel placerat eu ullamcorper pellentesque laoreet euismod.'
   },
   {
@@ -211,7 +211,7 @@ const items = [
     </clipPath>
   </defs>
 </svg>`,
-    title: 'Financial freedom',
+    title: 'Финансовая свобода',
     desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Vel placerat eu ullamcorper pellentesque laoreet euismod.'
   },
   {
@@ -287,7 +287,7 @@ const items = [
     </clipPath>
   </defs>
 </svg>`,
-    title: 'Self-sovereignty',
+    title: 'Профессионализм',
     desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Vel placerat eu ullamcorper pellentesque laoreet euismod.'
   }
 ]
@@ -1965,7 +1965,7 @@ onMounted(() => {
           class="liberty__title wow animate__animated animate__fadeInUp"
           color="#052E3E"
         >
-          Your purposeful path to&nbsp;liberty
+          Ваш осознанный путь к&nbsp;свободе
         </TheSectionTitle>
         <p class="liberty__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
           Our mission is to bring prosperity and independence to ... Lorem ipsum dolor sit amet
@@ -1996,7 +1996,7 @@ onMounted(() => {
                 src="/img/TheLibertySection/link-img.svg"
                 alt="Read the Skyfort Manifesto"
               />
-              <span class="liberty__link-text">Read the Skyfort manifesto</span>
+              <span class="liberty__link-text">Читать манифест Skyfort</span>
             </span>
             <img class="liberty__link-arrow" src="/img/global/arrow.svg" alt="Arrow" />
           </a>
@@ -2035,8 +2035,8 @@ onMounted(() => {
     font-feature-settings: 'ss02' on;
     @include adaptive-value('margin-bottom', 64, 70, 1);
     @include adaptive-value('line-height', 88, 53, 1);
-    @include adaptive-value('letter-spacing', 0.8, 0.96, 1);
-    @include adaptive-value('font-size', 88, 49, 1);
+    @include adaptive-value('letter-spacing', 0.8, 0, 1);
+    @include adaptive-value('font-size', 88, 42, 1);
     @media (max-width: 490px) {
       font-feature-settings: initial;
     }

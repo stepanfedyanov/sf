@@ -3,18 +3,18 @@ import TheAdvantage from './TheAdvantage.vue'
 
 const sections = [
   {
-    title: 'Products & Services',
-    id: 'Marketplace',
+    title: 'Продукты и сервисы',
+    id: 'Маркетплейс',
     style: 'blue',
     desc: 'Premium curated Skyfort Marketplace offers top quality vetted products and services from our internal WM team, Skyfort Product Lab and third-party providers within our global professional community.',
-    btnText: 'Browse more',
+    btnText: 'Смотреть все',
     cardStyle: 'bottom-image',
     cards: [
       {
         tag: '',
         date: '',
         desc: '',
-        title: 'Wealth Management',
+        title: 'Семейный офис',
         href: '',
         imgSrc: './img/TheAdvantagesSection/1/1.jpg',
         columns: [
@@ -35,7 +35,7 @@ const sections = [
         tag: '',
         date: '',
         desc: '',
-        title: 'Financial Infrastructure',
+        title: 'Финансовая инфраструктура',
         href: '',
         imgSrc: './img/TheAdvantagesSection/1/2.jpg',
         columns: [
@@ -51,7 +51,7 @@ const sections = [
         tag: '',
         date: '',
         desc: '',
-        title: 'Alternative investments',
+        title: 'Эксклюзивные инвестиции',
         href: '',
         imgSrc: './img/TheAdvantagesSection/1/3.jpg',
         columns: [
@@ -67,7 +67,7 @@ const sections = [
         tag: '',
         date: '',
         desc: '',
-        title: 'Corporate Finance',
+        title: 'Корпоративные финансы',
         href: '',
         imgSrc: './img/TheAdvantagesSection/1/4.jpg',
         columns: [
@@ -83,7 +83,7 @@ const sections = [
         tag: '',
         date: '',
         desc: '',
-        title: 'Lifestyle Services',
+        title: 'Lifestyle сервисы',
         href: '',
         imgSrc: './img/TheAdvantagesSection/1/5.jpg',
         columns: [
@@ -99,11 +99,11 @@ const sections = [
   },
 
   {
-    title: 'Analytics & Insights',
-    id: 'Analytics',
+    title: 'Аналитика и инсайты',
+    id: 'Аналитика',
     style: 'white',
     desc: 'Skyfort Analytics is a community-driven think tank and curated media platform that brings together top tier experts from wealth management & private banking industry',
-    btnText: 'Read more',
+    btnText: 'Читать больше',
     cardStyle: 'top-image',
     cards: [
       {

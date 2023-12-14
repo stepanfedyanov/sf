@@ -11,8 +11,8 @@ import { onMounted, ref } from 'vue'
 
 const items = [
   {
-    desc: 'For mindful private investors',
-    title: 'Digital multi-family office',
+    desc: 'Для осознанных частных инвесторов',
+    title: 'Цифровой семейный офис',
     img: './img/TheHowSection/investors.webp',
     backgroundPosition: '30% -80px',
     texts: [
@@ -22,8 +22,8 @@ const items = [
     ]
   },
   {
-    desc: 'For next-gen wealth managers',
-    title: 'Infrastructure as a service',
+    desc: 'Для независимых финансовых советников',
+    title: 'Глобальная экосистема роста',
     img: './img/TheHowSection/managers.webp',
     backgroundPosition: '25% -10px',
     texts: [

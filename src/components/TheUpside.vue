@@ -1,43 +1,51 @@
 <script setup>
-import { onMounted, ref } from 'vue';
-import { gsap } from "gsap";
-    
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { onMounted, ref } from 'vue'
+import { gsap } from 'gsap'
 
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const upsideContainer = ref(null);
-const upsideTitle = ref(null);
+gsap.registerPlugin(ScrollTrigger)
+
+const upsideContainer = ref(null)
+const upsideTitle = ref(null)
 
 onMounted(() => {
   const opacityTitleTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: upsideContainer.value,
-      start: () => screen && screen.width >= 1024 ? "top bottom" : "top+=50% bottom",
-      end: "bottom+=50% bottom",
-      scrub: true,
-    },
-  });
+      start: () => (screen && screen.width >= 1024 ? 'top bottom' : 'top+=50% bottom'),
+      end: 'bottom+=50% bottom',
+      scrub: true
+    }
+  })
 
   opacityTitleTimeline
-  .fromTo(upsideTitle.value, {
-    opacity: 0,
-    yPercent: 30
-  }, {
-    opacity: 1,
-    yPercent: screen && screen.width <= 500 ? -60 : -100,
-  })
-  .fromTo('.join-title__clouds-3', {
-    opacity: 0.6,
-  }, {
-    opacity: 0
-  });
-});
+    .fromTo(
+      upsideTitle.value,
+      {
+        opacity: 0,
+        yPercent: 30
+      },
+      {
+        opacity: 1,
+        yPercent: screen && screen.width <= 500 ? -60 : -100
+      }
+    )
+    .fromTo(
+      '.join-title__clouds-3',
+      {
+        opacity: 0.6
+      },
+      {
+        opacity: 0
+      }
+    )
+})
 </script>
 
 <template>
   <section class="upside" ref="upsideContainer">
-    <h2 class="upside__title" ref="upsideTitle">Join the upside</h2>
+    <h2 class="upside__title" ref="upsideTitle">Набирайте высоту</h2>
   </section>
 </template>
 
@@ -51,7 +59,7 @@ onMounted(() => {
     font-family: 'Atyp Display', sans-serif;
     color: #a5cce0;
     text-align: center;
-    @include adaptive-value('font-size', 160, 72, 1);
+    @include adaptive-value('font-size', 160, 60, 1);
     line-height: calc(140 / 160);
     @include adaptive-value('letter-spacing', -1.6, 0, 1);
     font-weight: 300;

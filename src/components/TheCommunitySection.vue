@@ -12,28 +12,28 @@ gsap.registerPlugin(ScrollTrigger)
 const staff = [
   {
     img: './img/TheCommunitySection/staff/1.jpg',
-    name: 'Ilya Oprenko',
+    name: 'Илья Опренко',
     position: 'Founder / CEO',
     desc: 'Dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam.',
     href: '#'
   },
   {
     img: './img/TheCommunitySection/staff/2.jpg',
-    name: 'Sergey Ishkov',
+    name: 'Сергей Ишков',
     position: 'Co-founder / CFO',
     desc: 'Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Nisl ut ut ut',
     href: '#'
   },
   {
     img: './img/TheCommunitySection/staff/1.jpg',
-    name: 'Ilya Oprenko',
+    name: 'Илья Опренко',
     position: 'Founder / CEO',
     desc: 'Dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam.',
     href: '#'
   },
   {
     img: './img/TheCommunitySection/staff/2.jpg',
-    name: 'Sergey Ishkov',
+    name: 'Сергей Ишков',
     position: 'Co-founder / CFO',
     desc: 'Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Nisl ut ut ut',
     href: '#'
@@ -81,9 +81,9 @@ onMounted(() => {
     </div>
     <TheContainer>
       <div class="community__inner">
-        <TheSectionTitle class="community__title wow animate__animated animate__fadeInUp"
-          >Founding Community</TheSectionTitle
-        >
+        <TheSectionTitle class="community__title wow animate__animated animate__fadeInUp">
+          Сообщество лидеров
+        </TheSectionTitle>
         <p class="community__desc wow animate__animated animate__fadeIn" data-wow-delay=".3s">
           Skyfort is being developed in cooperation with top tier wealth managers, private bankers
           and financial advisors from around the globe
