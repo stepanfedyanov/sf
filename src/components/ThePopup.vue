@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted, ref } from 'vue';
 import { useGlobalStore } from '../stores/global'
 import { storeToRefs } from 'pinia'
 
@@ -10,6 +11,28 @@ const closeModal = (event) => {
     globalStore.changeModalOpened(false)
   }
 }
+
+const sumbitForm = async (e) => {
+  const formData = new FormData(e.target).entries();
+  const body = JSON.stringify({ fields: Object.fromEntries(formData) });
+
+  try {
+    const request = await fetch('API_URL', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer API_TOKEN',
+        'Content-Type': 'application/json', 
+      },
+      body
+    });
+
+    const response = await request.json();
+
+    console.log('response is', response);
+  } catch (error) {
+    console.log('data send error', error);
+  }
+};
 </script>
 
 <template>
@@ -49,21 +72,21 @@ const closeModal = (event) => {
             <span class="modal__back-text">Back to home</span>
           </button>
           <h2 class="modal__title">Send request</h2>
-          <form class="modal__form" action="#">
+          <form class="modal__form" @submit.prevent="sumbitForm">
             <label class="modal__label">
               <span class="modal__label-text">Email</span>
-              <input class="modal__input" type="text" />
+              <input class="modal__input" type="text" name="Email" />
             </label>
             <label class="modal__label">
               <span class="modal__label-text">Full Name</span>
-              <input class="modal__input" type="text" />
+              <input class="modal__input" type="text" name="Client name" />
             </label>
             <label class="modal__label">
               <span class="modal__label-text">Comment</span>
-              <textarea class="modal__textarea" type="text"></textarea>
+              <textarea class="modal__textarea" type="text" name="Comments"></textarea>
             </label>
 
-            <button class="modal__submit-btn" type="submit">Apply now</button>
+            <button class="modal__submit-btn" type="submit">Apply now <div class="modal__loader"></div> </button>
           </form>
         </div>
       </div>
@@ -249,6 +272,7 @@ const closeModal = (event) => {
     min-height: 80px;
   }
   &__submit-btn {
+    position: relative;
     @include adaptive-value('margin-top', 30, 15, 1);
     font-size: 14px;
     line-height: 13.81px;
@@ -269,5 +293,31 @@ const closeModal = (event) => {
       }
     }
   }
+  &__loader {
+    display: none;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: l5 1s infinite linear alternate;
+  }
+}
+
+@keyframes l5 {
+    0% {
+      box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 
+    }
+    33% {
+      box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002
+    }
+    66% {
+      box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002
+    }
+    100% {
+      box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 
+    }
 }
 </style>
