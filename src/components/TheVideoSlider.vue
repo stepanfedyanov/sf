@@ -76,9 +76,12 @@ const sliders = [
 </template>
 
 <style lang="scss">
+.swiper-block {
+  position: relative;
+}
+
 .intro {
   .swiper-block {
-    position: relative;
     @include adaptive-value('margin-top', 60, 87, 1);
   }
 }

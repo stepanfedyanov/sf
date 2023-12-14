@@ -18,12 +18,6 @@ const pageIsLoaded = () => {
   globalStore.changePageIsLoaded(true);
 };
 
-
-const isIos = computed(() => {
-  return navigator && navigator.userAgent && navigator.userAgent.includes('Safari');
-});
-
-
 onMounted(() => {
   if (screen && screen.width >= 1024) {
     townVideo.value.muted = true;
@@ -86,7 +80,7 @@ onMounted(() => {
           class="architecture__img"
           @canplay="pageIsLoaded"
         >
-          <source v-if="isIos" src="/img/TheCommunitySection/architecture/town.mov">
+          <source src="/img/TheCommunitySection/architecture/town.mov" type='video/mp4; codecs="hvc1"'>
           <source src="/img/TheCommunitySection/architecture/town.webm" type="video/webm">
         </video>
         <h2 class="architecture__title" ref="architectureTitle">Ecosystem Architecture</h2>
@@ -152,6 +146,9 @@ onMounted(() => {
       width: 100%;
       position: absolute;
       top: 5%;
+      @media (max-width: 500px) {
+        top: 10%
+      }
       left: 50%;
       transform: translateX(-50%);
       z-index: 1;
@@ -160,6 +157,9 @@ onMounted(() => {
       width: 100%;
       position: absolute;
       top: 8%;
+      @media (max-width: 500px) {
+        top: 16%
+      }
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;
