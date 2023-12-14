@@ -46,7 +46,7 @@ const closeModal = (event) => {
                 </g>
               </g>
             </svg>
-            <span class="modal__back-text">Back to home</span>
+            <span class="modal__back-text">Back home</span>
           </button>
           <h2 class="modal__title">Send request</h2>
           <form class="modal__form" action="#">

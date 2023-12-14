@@ -58,7 +58,7 @@ onMounted(() => {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 890px) {
   .intro {
     padding-bottom: 145px;
   }

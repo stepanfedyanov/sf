@@ -1,20 +1,38 @@
 <script setup>
 import TheSliderButton from './TheSliderButton.vue'
-import { ref } from 'vue'
-const swiper = ref(null)
+import { ref, onMounted } from 'vue'
+const swiperEl = ref(null)
 const sliders = [
   'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
-  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium qui'
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nihil quae nam blanditiis eligendi consectetur non laudantium'
 ]
-</script>
 
-<template>
-  <div class="swiper-block">
-    <swiper-container
-      :injectStyles="[
-        `
-        :host .swiper {
-          overflow: visible !important;
+onMounted(() => {
+  const swiperParams = {
+    slidesPerView: 1,
+    pagination: {
+      clickable: true
+    },
+    loop: true,
+    speed: 0,
+    allowTouchMove: false,
+    on: {
+      init: function () {
+        setInterval(() => {
+          swiperEl.value.classList.add('hidden')
+          setTimeout(() => {
+            for (let i = 0; i < swiperEl.value.swiper.slides.length - 1; i++) {
+              swiperEl.value.swiper.slidePrev()
+            }
+            swiperEl.value.classList.remove('hidden')
+          }, 200)
+        }, 6000)
+      }
+    },
+    injectStyles: [
+      `
+        .swiper {
+          overflow: visible;
         }
         .swiper-pagination {
           display: none;
@@ -40,21 +58,38 @@ const sliders = [
           }
         }
         `
-      ]"
-      effect="fade"
-      :fadeEffect="{
-        crossFade: true
-      }"
-      :autoplay="{
-        delay: 3000
-      }"
-      class="swiper video__swiper"
-      ref="swiper"
-      :speed="900"
-      :pagination="{
-        clickable: true
-      }"
-    >
+    ]
+  }
+
+  // now we need to assign all parameters to Swiper element
+  Object.assign(swiperEl.value, swiperParams)
+
+  // and now initialize it
+  swiperEl.value.initialize()
+})
+
+const nextSlide = () => {
+  swiperEl.value.classList.add('hidden')
+  setTimeout(() => {
+    for (let i = 0; i < swiperEl.value.swiper.slides.length - 1; i++) {
+      swiperEl.value.swiper.slidePrev()
+    }
+    swiperEl.value.classList.remove('hidden')
+  }, 200)
+}
+
+const prevSlide = () => {
+  swiperEl.value.classList.add('hidden')
+  setTimeout(() => {
+    swiperEl.value.swiper.slidePrev()
+    swiperEl.value.classList.remove('hidden')
+  }, 200)
+}
+</script>
+
+<template>
+  <div class="swiper-block">
+    <swiper-container :injectStyles="[]" init="false" class="swiper video__swiper" ref="swiperEl">
       <swiper-slide
         class="swiper-slide video__swiper-slide video-slide"
         v-for="slider in sliders"
@@ -68,10 +103,10 @@ const sliders = [
         </blockquote>
       </swiper-slide>
     </swiper-container>
-    <div class="swiper-button-prev video__swiper-button-prev" @click="swiper.swiper.slidePrev()">
+    <div class="swiper-button-prev video__swiper-button-prev" @click="prevSlide">
       <TheSliderButton direction="prev" />
     </div>
-    <div class="swiper-button-next video__swiper-button-next" @click="swiper.swiper.slideNext()">
+    <div class="swiper-button-next video__swiper-button-next" @click="nextSlide">
       <TheSliderButton direction="next" />
     </div>
     <div class="swiper-pagination video__swiper-pagination"></div>
@@ -89,10 +124,20 @@ const sliders = [
     @include adaptive-value('margin-top', 80, 87, 1);
   }
 }
+.video__swiper.hidden ~ *[class*='swiper-button'] {
+  pointer-events: none;
+}
 .video {
   &__swiper {
     overflow: visible !important;
     position: relative;
+    transition: 0.2s;
+    &.hidden {
+      opacity: 0;
+    }
+  }
+  &__swiper-slide:not(.swiper-slide-active) {
+    display: none;
   }
   &__swiper-button-next {
     position: absolute;
@@ -107,6 +152,9 @@ const sliders = [
     left: -64px;
     transform: translateX(-100%);
     z-index: 14;
+  }
+  &__swiper-slide {
+    min-height: 110px;
   }
 }
 .swiper-button-img {
@@ -135,7 +183,7 @@ const sliders = [
   }
 }
 
-@media (max-width: 1220px) {
+@media (max-width: 1260px) {
   .video {
     &__swiper-button-next {
       @include adaptive-value('right', 64, 60, 1);

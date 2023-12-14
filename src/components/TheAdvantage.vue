@@ -66,8 +66,6 @@ onMounted(() => {
         <div class="swiper-block">
           <swiper-container
             ref="swiper"
-            loop="true"
-            loopAdditionalSlides="10"
             :breakpoints="{
               361: {
                 slidesPerView: 1.2,

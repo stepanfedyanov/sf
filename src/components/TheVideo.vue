@@ -4,7 +4,6 @@
   <div class="intro__video-wrapper">
     <video
       class="intro__video"
-      src="https://v3.cdnpk.net/videvo_files/video/free/video0465/large_watermarked/_import_6131b9db2c1673.98240360_preview.mp4"
     ></video>
     <div class="intro__video-btn-wrapper">
       <svg
