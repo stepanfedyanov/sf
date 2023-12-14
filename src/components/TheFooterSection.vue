@@ -117,7 +117,7 @@ const openModal = () => {
             data-wow-delay="0.2s"
             data-wow-duration="1200"
           >
-            Join the community
+            Присоединяйтесь
           </h2>
           <p class="footer__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
             Get access to private community of wealth management professionals, experts and service
@@ -129,7 +129,7 @@ const openModal = () => {
             data-wow-delay="0.1s"
             size="big"
             color="blue"
-            >Apply Now</TheButton
+            >Подать заявку</TheButton
           >
         </div>
         <div class="footer__bottom">
@@ -177,12 +177,12 @@ const openModal = () => {
 
       <div class="footer__inner _mobile">
         <div class="footer__top">
-          <h2 class="footer__title">Join the community</h2>
+          <h2 class="footer__title">Присоединяйтесь</h2>
           <p class="footer__desc">
             Get access to private community of wealth management professionals, experts and service
             providers to attend special events, share knowledge, network and collaborate globally.
           </p>
-          <TheButton @tap="openModal" size="big" color="blue">Apply Now</TheButton>
+          <TheButton @tap="openModal" size="big" color="blue">Подать заявку</TheButton>
         </div>
         <div class="footer__bottom">
           <div class="footer__logo-wrapper">
@@ -220,7 +220,7 @@ const openModal = () => {
   }
   &__title {
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 90, 49, 1);
+    @include adaptive-value('font-size', 90, 37, 1);
     font-weight: 300;
     @include adaptive-value('margin-bottom', 44, 47.1, 1);
     @include adaptive-value('letter-spacing', 0, 0.6, 1);

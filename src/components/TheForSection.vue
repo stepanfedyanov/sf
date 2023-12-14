@@ -9,103 +9,103 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const sections = [
   {
     num: 1,
-    title: 'For high-net-worth individuals & families',
+    title: 'Для состоятельных и растущих инвесторов',
     backgroundColor: '#f1f3f5',
     size: 'small',
     items: [
       {
         img: './img/TheForSection/1/1.svg',
-        title: 'Personal Wealth Manager 24/7',
+        title: 'Персональный управляющий 24/7',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/1/2.svg',
-        title: 'Financial & Legal Infrastructure',
+        title: 'Финансовая инфраструктура',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/1/3.svg',
-        title: 'Highly Curated Marketplace',
+        title: 'Эксклюзивные инвестиции',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/1/4.svg',
-        title: '360° Assets Overview',
+        title: 'Полная картина всех активов',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/1/5.svg',
-        title: 'Advisory and Wealthcare',
+        title: 'Экспертное сопровождение',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/1/6.svg',
-        title: 'Analytics and Insights',
+        title: 'Аналитика и инсайты',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }
     ],
-    btnText: 'Get Access',
+    btnText: 'Получить доступ',
     btnLink: '#'
   },
   {
     num: 2,
     backgroundColor: '#f9f9f9',
-    title: 'For wealth managers and family offices',
+    title: 'Для независимых финансовых советников',
     size: 'small',
     items: [
       {
         img: './img/TheForSection/2/1.svg',
-        title: 'Full cycle professional CRM',
+        title: 'Профессиональная CRM-система',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/2/2.svg',
-        title: 'Pipeline of new clients',
+        title: 'Постоянный поток клиентов',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/2/3.svg',
-        title: 'Curated marketplace of investments & services',
+        title: 'Доступ к качественным сделкам и сервисам',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/2/4.svg',
-        title: 'Financial and legal infrastructure',
+        title: 'Финансовая инфраструктура',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/2/5.svg',
-        title: 'Analytics, knowledge base & expert network',
+        title: 'Аналитика, обучение и экспертная поддержка',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/2/6.svg',
-        title: 'Wealth planning &&nbsp;assets aggregation',
+        title: 'Платформа управления клиентскими портфелями',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }
     ],
-    btnText: 'Get Access',
+    btnText: 'Получить доступ',
     btnLink: '#'
   },
   {
     num: 3,
     backgroundColor: '#f2f3f5',
-    title: 'For product factories, brokers & service providers',
+    title: 'Для поставщиков продуктов и сервисов',
     bigTitle: true,
     size: 'big',
     items: [
       {
         img: './img/TheForSection/3/1.svg',
-        title: 'Access to new clients',
+        title: 'Глобальная дистрибуция',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
         img: './img/TheForSection/3/2.svg',
-        title: 'Digital deal execution',
+        title: 'Ведение сделок онлайн',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }
     ],
-    btnText: 'Get Access',
+    btnText: 'Стать партнером',
     btnLink: '#'
   }
 ]
@@ -296,7 +296,6 @@ onMounted(() => {
     padding: 18px 22px;
     border-left: 1px solid transparent;
     border-image: linear-gradient(to bottom, rgba(#000, 1), rgba(#000, 0));
-    animation: gradientAnimation 4s infinite alternate;
     border-image-slice: 1;
   }
   &__item-img {
@@ -385,6 +384,7 @@ onMounted(() => {
       flex-direction: column;
       align-items: center;
       text-align: center;
+      justify-content: center;
       padding-bottom: 30px;
       &:nth-child(2n + 1) {
         border-left-width: 0px;
@@ -394,6 +394,26 @@ onMounted(() => {
       &:nth-child(2n) {
         padding-right: 0;
         margin-right: 8px;
+      }
+    }
+  }
+}
+
+// Костыли
+.for {
+  &__section {
+    &-2 {
+      .for__section-title {
+        max-width: 500px;
+      }
+      .for__section-item:nth-child(3) .for__item-title {
+        max-width: 260px;
+      }
+      .for__section-item:nth-child(5) .for__item-title {
+        max-width: 260px;
+      }
+      .for__section-item:nth-child(6) .for__item-title {
+        max-width: 260px;
       }
     }
   }

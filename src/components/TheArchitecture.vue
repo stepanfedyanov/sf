@@ -83,7 +83,7 @@ onMounted(() => {
           <source src="/img/TheCommunitySection/architecture/town.mov" type='video/mp4; codecs="hvc1"'>
           <source src="/img/TheCommunitySection/architecture/town.webm" type="video/webm">
         </video>
-        <h2 class="architecture__title" ref="architectureTitle">Ecosystem Architecture</h2>
+        <h2 class="architecture__title" ref="architectureTitle">Открытая архитектура</h2>
         <p class="architecture__desc wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
           We are building a holistic infrastructure for capital owners and independent professionals
           based on industry’s best practices

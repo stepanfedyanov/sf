@@ -8,37 +8,61 @@ const swiper = ref(null)
 const cards = [
   [
     {
-      img: './img/TheCommunitySection/methods/main.jpg',
-      title: 'Analytics',
+      img: './img/TheCommunitySection/methods/1.png',
+      title: 'Маркетплейс',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
     },
     {
-      img: './img/TheCommunitySection/methods/main.jpg',
-      title: 'Strategy',
+      img: './img/TheCommunitySection/methods/2.png',
+      title: 'Лаборатория',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
     }
   ],
   [
     {
-      img: './img/TheCommunitySection/methods/main.jpg',
-      title: 'Analytics',
+      img: './img/TheCommunitySection/methods/3.png',
+      title: 'Аналитика',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
     },
     {
-      img: './img/TheCommunitySection/methods/main.jpg',
-      title: 'Strategy',
+      img: './img/TheCommunitySection/methods/4.png',
+      title: 'CRM',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
     }
   ],
   [
     {
-      img: './img/TheCommunitySection/methods/main.jpg',
-      title: 'Analytics',
+      img: './img/TheCommunitySection/methods/5.png',
+      title: 'Агрегация',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
     },
     {
-      img: './img/TheCommunitySection/methods/main.jpg',
-      title: 'Strategy',
+      img: './img/TheCommunitySection/methods/6.png',
+      title: 'Сообщество',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    }
+  ],
+  [
+    {
+      img: './img/TheCommunitySection/methods/7.png',
+      title: 'База знаний',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    },
+    {
+      img: './img/TheCommunitySection/methods/8.png',
+      title: 'Академия',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    }
+  ],
+  [
+    {
+      img: './img/TheCommunitySection/methods/9.png',
+      title: 'Медиа',
+      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+    },
+    {
+      img: './img/TheCommunitySection/methods/10.png',
+      title: 'Рейтинги',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
     }
   ]
@@ -155,6 +179,9 @@ const cards = [
       @media (max-width: 1100px) {
         margin-right: 10px;
       }
+      @media (max-width: 374px) {
+        margin-right: 15px;
+      }
     }
     &.swiper-slide-prev {
       transform: translateX(-50px);
@@ -184,17 +211,17 @@ const cards = [
   }
   &__card-img-wrapper {
     text-align: center;
-    @include adaptive-value('padding-top', 42, 16, 1);
-    @include adaptive-value('padding-bottom', 42, 16, 1);
-    @include adaptive-value('padding-left', 64, 23, 1);
-    @include adaptive-value('padding-right', 64, 23, 1);
-    @include adaptive-value('border-radius', 130.909, 43.636, 1);
-    background: #fff;
+    // @include adaptive-value('padding-top', 42, 16, 1);
+    // @include adaptive-value('padding-bottom', 42, 16, 1);
+    // @include adaptive-value('padding-left', 64, 23, 1);
+    // @include adaptive-value('padding-right', 64, 23, 1);
+    // @include adaptive-value('border-radius', 130.909, 43.636, 1);
+    // background: #fff;
     display: inline-block;
     @include adaptive-value('margin-bottom', 42, 16, 1);
   }
   &__card-img {
-    @include adaptive-value('width', 106, 33, 1);
+    @include adaptive-value('width', 243, 70, 1);
   }
   &__title {
     @include adaptive-value('margin-bottom', 35, 10, 1);

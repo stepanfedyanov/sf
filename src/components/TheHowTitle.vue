@@ -46,7 +46,7 @@ defineProps({
   &__item-desc {
     font-size: 25px;
     line-height: calc(34 / 24);
-    max-width: 200px;
+    max-width: 250px;
     letter-spacing: 0.48px;
     margin-bottom: 25px;
     font-size: 25px;
@@ -69,7 +69,7 @@ defineProps({
       font-weight: 300;
       @include adaptive-value('line-height', 34, 23, 1);
       @include adaptive-value('letter-spacing', 0.48, 0.6, 1);
-      max-width: 150px;
+      max-width: 250px !important;
       @include adaptive-value('margin-bottom', 25, 27, 1);
     }
 

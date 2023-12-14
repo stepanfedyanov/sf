@@ -8,17 +8,18 @@ import TheContainer from './TheContainer.vue'
     <TheContainer>
       <div class="meet__inner">
         <h1 class="meet__title wow animate__animated animate__fadeIn" data-wow-delay="0.6s">
-          Meet Wealth Management 3.0
+          Управление капиталом 3.0
         </h1>
         <p class="meet__text wow animate__animated animate__fadeIn" data-wow-delay="0.8s">
-          Global digital wealth management ecosystem, built by professional community
+          Международная цифровая экосистема управления благосостоянием, строящаяся профессиональным
+          сообществом
         </p>
         <TheButton
           class="meet__btn wow animate__animated animate__fadeIn"
           data-wow-delay="1s"
           color="white"
           size="big"
-          >Get early access</TheButton
+          >Получить доступ</TheButton
         >
       </div>
     </TheContainer>
@@ -39,7 +40,7 @@ import TheContainer from './TheContainer.vue'
     max-width: 580px;
   }
   &__text {
-    @include adaptive-value('max-width', 300, 250, 1);
+    @include adaptive-value('max-width', 400, 250, 1);
     @include adaptive-value('font-size', 18, 14.4, 1);
     @include adaptive-value('line-height', 25, 21, 1);
     letter-spacing: 0.66px;

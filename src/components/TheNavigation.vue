@@ -1,7 +1,7 @@
 <script setup>
 import TheButton from './TheButton.vue'
 
-const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
+const items = ['Компания', 'Маркетплейс', 'Аналитика', 'FAQ']
 </script>
 
 <template>
@@ -23,7 +23,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
         color="white"
         size="small"
       >
-        Log in
+        Вход
       </TheButton>
       <TheButton
         class="header__btn animate__animated animate__fadeIn"
@@ -31,7 +31,7 @@ const items = ['About', 'Marketplace', 'Analytics', 'FAQ']
         color="black"
         size="small"
       >
-        Register
+        Регистрация
       </TheButton>
     </div>
   </nav>

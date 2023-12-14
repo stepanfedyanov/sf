@@ -19,22 +19,26 @@ onMounted(() => {
         trigger: '.intro',
         start: 'top-=10% bottom',
         end: 'center-=20% bottom',
-        scrub: true,
+        scrub: true
       }
-    });
+    })
     // Set to .intro__video scale 0.8 to 1 on 30% of scroll
-    tl
-      .addLabel('scaleVideo')
+    tl.addLabel('scaleVideo')
       .fromTo('.intro__video-wrapper', { scale: 0.8 }, { scale: 1 }, 'scaleVideo+=0.5')
-      .fromTo('.intro__title', { yPercent: 200, opacity: 0 }, { yPercent: 0, opacity: 1 }, 'scaleVideo+=0.5');
+      .fromTo(
+        '.intro__title',
+        { yPercent: 200, opacity: 0 },
+        { yPercent: 0, opacity: 1 },
+        'scaleVideo+=0.5'
+      )
   }
-});
+})
 </script>
 
 <template>
   <section class="intro" ref="introSection">
     <TheContainer>
-      <TheSectionTitle color="#052E3E" class="intro__title">Watch intro</TheSectionTitle>
+      <TheSectionTitle color="#052E3E" class="intro__title">Видео о&nbsp;проекте</TheSectionTitle>
     </TheContainer>
     <TheVideo class="wow animate__animated animate__fadeIn" />
     <TheContainer>
