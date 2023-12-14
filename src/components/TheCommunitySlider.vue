@@ -26,7 +26,7 @@ onMounted(() => {
         trigger: '.community',
         start: 'top+=5% bottom',
         end: 'center-=25% bottom',
-        scrub: true,
+        scrub: true
       }
     })
   }
@@ -49,43 +49,45 @@ onMounted(() => {
           height: auto;
         }
 
-              :host .swiper-slide {
-              height: auto;
-            }
-            :host .swiper-wrapper {
-              align-items: stretch;
-            }
-            
-            .swiper-pagination {
-              display: none;
-              top: auto !important;
-              bottom: -44px !important;
-              transform: translateY(50%) !important;
-            }
-            @media (max-width: 600px) {
-              .swiper-pagination {
-                display: block;
-              }
-            }
-            .swiper-pagination-bullet {
-              background: #fff !important;
-              width: 4px !important;
-              height: 4px !important;
-              opacity: 1 !important;
-              transition: .2s !important;
-            }
-            .swiper-pagination-bullet-active {
-              background-color: #052E3E !important;
-            } 
+        :host .swiper-slide {
+          height: auto;
+        }
+        :host .swiper-wrapper {
+          align-items: stretch;
+        }
+        
+        .swiper-pagination {
+          display: none;
+          top: auto !important;
+          bottom: -44px !important;
+          transform: translateY(50%) !important;
+        }
+        @media (max-width: 600px) {
+          .swiper-pagination {
+            display: block;
+          }
+        }
+        .swiper-pagination-bullet {
+          background: #fff !important;
+          width: 4px !important;
+          height: 4px !important;
+          opacity: 1 !important;
+          transition: .2s !important;
+        }
+        .swiper-pagination-bullet-active {
+          background-color: #052E3E !important;
+        } 
         `
         ]"
         :breakpoints="{
           540: {
-            slidesPerView: 1.5
+            slidesPerView: 1.5,
+            initialSlide: 0,
           },
           765: {
             slidesPerView: 2,
-            centeredSlides: false
+            centeredSlides: false,
+            initialSlide: 1,
           }
         }"
         class="swiper community__swiper"
@@ -94,7 +96,7 @@ onMounted(() => {
         :slidesPerView="1.2"
         :centeredSlides="true"
         :speed="900"
-        :initialSlide="1"
+        :initialSlide="0"
         :pagination="{
           clickable: true
         }"

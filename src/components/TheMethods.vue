@@ -1,9 +1,9 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 import TheContainer from './TheContainer.vue'
 import TheSliderButton from './TheSliderButton.vue'
 
-const swiper = ref(null);
+const swiper = ref(null)
 
 const cards = [
   [
@@ -42,7 +42,7 @@ const cards = [
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
     }
   ]
-];
+]
 </script>
 
 <template>
@@ -80,16 +80,15 @@ const cards = [
             }
             `
           ]"
-
           class="swiper video__swiper"
           ref="swiper"
         >
-          <swiper-slide :class="`methods__cards methods__cards-${id + 1}`" v-for="(block, id) in cards" :key="block[0].title">
-            <li
-              class="methods__card"
-              v-for="(card) in block"
-              :key="card.title"
-            >
+          <swiper-slide
+            :class="`methods__cards methods__cards-${id + 1}`"
+            v-for="(block, id) in cards"
+            :key="block[0].title"
+          >
+            <li class="methods__card" v-for="card in block" :key="card.title">
               <div class="methods__card-img-wrapper">
                 <img class="methods__card-img" :src="card.img" :alt="`Icon ${card.title}`" />
               </div>
@@ -102,10 +101,16 @@ const cards = [
             </li>
           </swiper-slide>
         </swiper-container>
-        <div class="swiper-button-prev methods__swiper-button-prev" @click="swiper.swiper.slidePrev()">
+        <div
+          class="swiper-button-prev methods__swiper-button-prev"
+          @click="swiper.swiper.slidePrev()"
+        >
           <TheSliderButton direction="prev" />
         </div>
-        <div class="swiper-button-next methods__swiper-button-next" @click="swiper.swiper.slideNext()">
+        <div
+          class="swiper-button-next methods__swiper-button-next"
+          @click="swiper.swiper.slideNext()"
+        >
           <TheSliderButton direction="next" />
         </div>
       </div>
@@ -122,12 +127,15 @@ const cards = [
   &__inner {
     position: relative;
   }
-  &__swiper-button-prev{
+  &__swiper-button-prev {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: -25px;
     z-index: 2;
+    @media (max-width: 1100px) {
+      display: none;
+    }
   }
   &__swiper-button-next {
     position: absolute;
@@ -135,19 +143,22 @@ const cards = [
     transform: translateY(-50%);
     right: -25px;
     z-index: 2;
+    @media (max-width: 1100px) {
+      display: none;
+    }
   }
   &__cards {
     display: flex;
     margin: 0 auto;
     &.swiper-slide-active {
       margin-right: 60px;
-      @media (max-width: 500px) {
+      @media (max-width: 1100px) {
         margin-right: 10px;
       }
     }
     &.swiper-slide-prev {
       transform: translateX(-50px);
-      @media (max-width: 500px) {
+      @media (max-width: 1100px) {
         transform: translateX(-10px);
       }
       opacity: 0.7;
