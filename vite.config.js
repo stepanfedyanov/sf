@@ -15,7 +15,6 @@ export default defineConfig({
       }
     }),
   ],
-  base: process.env.NODE_ENV === "production" ? "/sf/" : "/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
