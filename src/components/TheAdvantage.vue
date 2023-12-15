@@ -231,9 +231,7 @@ onMounted(() => {
         </div>
 
         <TheButton
-          @click="openModal"
-          class="advantage__btn wow animate__animated animate__fadeIn"
-          data-wow-duration="1.4s"
+          class="advantage__btn"
           color="white"
           size="big"
           @tap="globalStore.changeModalOpened(true)"

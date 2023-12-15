@@ -3,6 +3,14 @@ import { onMounted, ref } from 'vue'
 import TheLogotype from './TheLogotype.vue'
 import TheNavigation from './TheNavigation.vue'
 import TheButton from './TheButton.vue'
+import { useGlobalStore } from '../stores/global'
+
+const globalStore = useGlobalStore();
+
+const openModal = () => {
+  openNavbar();
+  globalStore.changeModalOpened(true);
+};
 
 const _opened = ref(false)
 const header = ref(null)
@@ -131,7 +139,7 @@ onMounted(() => {
           data-wow-delay=".4s"
           color="black"
           size="medium"
-          @click="openModal"
+          @tap="openModal"
         >
           Регистрация
           <svg

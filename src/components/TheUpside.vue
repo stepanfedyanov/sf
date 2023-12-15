@@ -28,7 +28,7 @@ onMounted(() => {
       },
       {
         opacity: 1,
-        yPercent: -100
+        yPercent: screen && screen.width < 1100 ? -60 : -100
       }
     )
     .fromTo(

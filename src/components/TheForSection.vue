@@ -15,7 +15,7 @@ const sections = [
     items: [
       {
         img: './img/TheForSection/1/1.svg',
-        title: 'Персональный управляющий 24/7',
+        title: 'Персональный управляющий',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
@@ -330,11 +330,7 @@ const openModal = () => {
       span {
         font-weight: 300;
       }
-      @media (max-width: 490px) {
-        span {
-          font-weight: 200;
-        }
-      }
+
     }
   }
 }

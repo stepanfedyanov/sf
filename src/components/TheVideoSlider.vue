@@ -23,7 +23,7 @@ onMounted(() => {
     },
     loop: true,
     speed: 0,
-    allowTouchMove: false,
+    allowTouchMove: true,
     on: {
       init: function () {
         setInterval(() => {
@@ -133,9 +133,9 @@ const prevSlide = () => {
     @include adaptive-value('margin-top', 80, 87, 1);
   }
 }
-.video__swiper.hidden ~ *[class*='swiper-button'] {
-  pointer-events: none;
-}
+// .video__swiper.hidden ~ *[class*='swiper-button'] {
+//   pointer-events: none;
+// }
 .video {
   &__swiper {
     overflow: visible !important;

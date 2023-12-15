@@ -19,7 +19,7 @@ import TheJoinTitleClouds from './TheJoinTitleClouds.vue'
   position: relative;
   height: 80vh;
   @media (max-width: 500px) {
-    height: 60vh;
+    height: 30vh;
     min-height: 350px;
   }
   background: linear-gradient(to bottom, transparent 20%, #f2f3f5 100%);

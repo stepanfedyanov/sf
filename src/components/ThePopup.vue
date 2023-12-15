@@ -6,6 +6,9 @@ import { storeToRefs } from 'pinia'
 const globalStore = useGlobalStore()
 const { popupOpened } = storeToRefs(globalStore)
 
+const formLoad = ref(false);
+const formLoadText = ref('Отправить');
+
 const closeModal = (event) => {
   if (event.target.classList.contains('modal__content')) {
     globalStore.changeModalOpened(false)
@@ -13,22 +16,27 @@ const closeModal = (event) => {
 }
 
 const sumbitForm = async (e) => {
+  if (formLoad.value) return;
+
   const formData = new FormData(e.target).entries();
   const body = JSON.stringify({ fields: Object.fromEntries(formData) });
 
   try {
-    const request = await fetch('API_URL', {
+    formLoad.value = true;
+    const request = await fetch('https://api.airtable.com/v0/appyfMQxX3naDC0n2/tbljNCCZ8iR1ihrus', {
       method: 'POST',
       headers: {
-        'Authorization': 'Bearer API_TOKEN',
+        'Authorization': 'Bearer patzgje0utMdruvrX.07a501d0db9be780db488c9399ddb00ba155ff9b0c00fbf76663e0dcb430be3c',
         'Content-Type': 'application/json', 
       },
       body
     });
+    formLoad.value = false;
+    formLoadText.value = 'Данные отправлены'
 
-    const response = await request.json();
-
-    console.log('response is', response);
+    setTimeout(() => {
+      formLoadText.value = 'Отправить'
+    }, 1000)
   } catch (error) {
     console.log('data send error', error);
   }
@@ -69,24 +77,26 @@ const sumbitForm = async (e) => {
                 </g>
               </g>
             </svg>
-            <span class="modal__back-text">Back home</span>
+            <span class="modal__back-text">Назад</span>
           </button>
-          <h2 class="modal__title">Send request</h2>
+          <h2 class="modal__title">Получить доступ</h2>
           <form class="modal__form" @submit.prevent="sumbitForm">
             <label class="modal__label">
-              <span class="modal__label-text">Email</span>
-              <input class="modal__input" type="text" name="Email" />
+              <span class="modal__label-text">Имя*</span>
+              <input class="modal__input" type="text" name="Client name" required />
             </label>
             <label class="modal__label">
-              <span class="modal__label-text">Full Name</span>
-              <input class="modal__input" type="text" name="Client name" />
+              <span class="modal__label-text">Email*</span>
+              <input class="modal__input" type="text" name="Email" required />
             </label>
             <label class="modal__label">
-              <span class="modal__label-text">Comment</span>
+              <span class="modal__label-text">Сообщение</span>
               <textarea class="modal__textarea" type="text" name="Comments"></textarea>
             </label>
-
-            <button class="modal__submit-btn" type="submit">Apply now <div class="modal__loader"></div> </button>
+            <button :class="[
+              'modal__submit-btn',
+              { 'modal__submit-btn-load': formLoad }
+            ]" type="submit">{{ formLoadText }} <div v-if="formLoad" class="modal__loader"></div> </button>
           </form>
         </div>
       </div>
@@ -292,14 +302,16 @@ const sumbitForm = async (e) => {
         background: #86cbee;
       }
     }
+    &-load {
+      color: transparent
+    }
   }
   &__loader {
-    display: none;
     position: absolute;
-    top: 45%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%);
-    width: 15px;
+    width: 8px;
     aspect-ratio: 1;
     border-radius: 50%;
     animation: l5 1s infinite linear alternate;

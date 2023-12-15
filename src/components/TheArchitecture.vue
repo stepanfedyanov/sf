@@ -145,7 +145,7 @@ onMounted(() => {
 }
 .architecture {
   position: relative;
-  @include adaptive-value('padding-top', 115, 27, 1);
+  @include adaptive-value('padding-top', 115, 40, 1);
   z-index: 10;
   background: linear-gradient(to bottom, transparent 20%, #f2f2f2 60%);
   @media (max-width: 490px) {
@@ -207,6 +207,9 @@ onMounted(() => {
     font-size: 90px;
     @include adaptive-value('font-size', 90, 48, 1);
     line-height: normal;
+    @media (max-width: 1100px) {
+      @include adaptive-value('line-height', 90, 48, 1);
+    }
     font-weight: 300;
     @include adaptive-value('margin-bottom', 571, 270, 1);
   }

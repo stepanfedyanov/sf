@@ -2026,6 +2026,11 @@ onMounted(() => {
       animation: loader 4s ease-in 1.5s infinite;
       opacity: 0;
     }
+    @media (max-width: 1100px) {
+      width: 250%;    
+      left: 50%;
+      top: -14%
+    }
   }
   &__title {
     position: relative;

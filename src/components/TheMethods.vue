@@ -69,7 +69,6 @@ const cards = [
           }"
           :spaceBetween="30"
           :slidesPerView="2"
-          :centeredSlides="true"
           :injectStyles="[
             `
             :host .swiper {
@@ -142,6 +141,9 @@ const cards = [
   position: relative;
   z-index: 100;
   margin-bottom: 90px;
+  @media (max-width: 1100px) {
+    margin-bottom: 20px;
+  }
   @include adaptive-value('margin-top', 78, 12, 1);
   &__inner {
     position: relative;

@@ -26,7 +26,6 @@ defineEmits(['openSection']);
     </ul>
     <div class="header__btns">
       <TheButton
-        @tap="globalStore.changeModalOpened(true)"
         class="header__btn animate__animated animate__fadeIn"
         data-wow-delay=".2s"
         color="white"
@@ -36,11 +35,11 @@ defineEmits(['openSection']);
         Вход
       </TheButton>
       <TheButton
+        @tap="openModal"
         class="header__btn animate__animated animate__fadeIn"
         data-wow-delay=".4s"
         color="black"
         size="small"
-        @click="openModal"
       >
         Регистрация
       </TheButton>
