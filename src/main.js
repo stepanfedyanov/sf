@@ -20,13 +20,18 @@ import { register } from 'swiper/element/bundle'
 register()
 
 // Smooth scroller
-const lenis = new Lenis()
-window.lenis = lenis;
+console.log(navigator.userAgent);
 
-function raf(time) {
-  lenis.raf(time)
+if (!(navigator && navigator.userAgent && navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome'))) {
+  const lenis = new Lenis()
+  window.lenis = lenis;
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
   requestAnimationFrame(raf)
 }
 
-requestAnimationFrame(raf)
 
