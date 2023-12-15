@@ -71,13 +71,13 @@ const openSection = (item) => {
   if (screen && screen.width <= 1100) {
     setTimeout(() => {
       window.scrollTo({
-        top: getElementToScroll.offsetTop - 100,
+        top: getElementToScroll.offsetTop,
         behavior: 'smooth'
       })
     }, 500)
   } else {
     window.scrollTo({
-      top: getElementToScroll.offsetTop - 100,
+      top: getElementToScroll.offsetTop,
       behavior: 'smooth'
     })
   }
@@ -87,7 +87,7 @@ const openSection = (item) => {
 onMounted(() => {
   if (screen && screen.width <= 1100) {
     document.body.addEventListener('click', (event) => {
-      if (!event.target.getAttribute('class').includes('header')) {
+      if (event.target && event.target.getAttribute('class') && !event.target.getAttribute('class').includes('header') && _opened.value) {
         openNavbar();
       }
     });

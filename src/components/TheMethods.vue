@@ -6,8 +6,7 @@ import TheSliderButton from './TheSliderButton.vue'
 const swiper = ref(null)
 
 const cards = [
-  [
-    {
+{
       img: './img/TheCommunitySection/methods/1.png',
       title: 'Маркетплейс',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
@@ -16,9 +15,7 @@ const cards = [
       img: './img/TheCommunitySection/methods/2.png',
       title: 'Лаборатория',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
-    }
-  ],
-  [
+    },
     {
       img: './img/TheCommunitySection/methods/3.png',
       title: 'Аналитика',
@@ -28,9 +25,7 @@ const cards = [
       img: './img/TheCommunitySection/methods/4.png',
       title: 'CRM',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
-    }
-  ],
-  [
+    },
     {
       img: './img/TheCommunitySection/methods/5.png',
       title: 'Агрегация',
@@ -40,9 +35,7 @@ const cards = [
       img: './img/TheCommunitySection/methods/6.png',
       title: 'Сообщество',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
-    }
-  ],
-  [
+    },
     {
       img: './img/TheCommunitySection/methods/7.png',
       title: 'База знаний',
@@ -52,9 +45,7 @@ const cards = [
       img: './img/TheCommunitySection/methods/8.png',
       title: 'Академия',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
-    }
-  ],
-  [
+    },
     {
       img: './img/TheCommunitySection/methods/9.png',
       title: 'Медиа',
@@ -64,8 +55,7 @@ const cards = [
       img: './img/TheCommunitySection/methods/10.png',
       title: 'Рейтинги',
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
-    }
-  ]
+    },
 ]
 </script>
 
@@ -74,6 +64,12 @@ const cards = [
     <TheContainer>
       <div class="methods__inner">
         <swiper-container
+          :mousewheel="{
+            forceToAxis: true
+          }"
+          :spaceBetween="30"
+          :slidesPerView="2"
+          :centeredSlides="true"
           :injectStyles="[
             `
             :host .swiper {
@@ -109,21 +105,19 @@ const cards = [
           ref="swiper"
         >
           <swiper-slide
-            :class="`methods__cards methods__cards-${id + 1}`"
-            v-for="(block, id) in cards"
-            :key="block[0].title"
+            :class="`methods__card methods__cards-${id + 1}`"
+            v-for="(card, id) in cards"
+            :key="card.title"
           >
-            <li class="methods__card" v-for="card in block" :key="card.title">
-              <div class="methods__card-img-wrapper">
-                <img class="methods__card-img" :src="card.img" :alt="`Icon ${card.title}`" />
-              </div>
-              <h3 class="methods__title">
-                {{ card.title }}
-              </h3>
-              <p class="methods__desc">
-                {{ card.desc }}
-              </p>
-            </li>
+            <div class="methods__card-img-wrapper">
+              <img class="methods__card-img" :src="card.img" :alt="`Icon ${card.title}`" />
+            </div>
+            <h3 class="methods__title">
+              {{ card.title }}
+            </h3>
+            <p class="methods__desc">
+              {{ card.desc }}
+            </p>
           </swiper-slide>
         </swiper-container>
         <div
@@ -206,9 +200,6 @@ const cards = [
     align-items: center;
     text-align: center;
     width: 100%;
-  }
-  &__card + &__card {
-    @include adaptive-value('margin-left', 40, 6, 1);
   }
   &__card-img-wrapper {
     text-align: center;

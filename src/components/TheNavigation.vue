@@ -1,9 +1,9 @@
 <script setup>
+import { useGlobalStore } from '../stores/global';
 import TheButton from './TheButton.vue'
 
 const items = ['Компания', 'Маркетплейс', 'Аналитика', 'FAQ']
 
-import { useGlobalStore } from '../stores/global'
 const globalStore = useGlobalStore()
 const openModal = () => {
   globalStore.changeModalOpened(true)
@@ -26,6 +26,7 @@ defineEmits(['openSection']);
     </ul>
     <div class="header__btns">
       <TheButton
+        @tap="globalStore.changeModalOpened(true)"
         class="header__btn animate__animated animate__fadeIn"
         data-wow-delay=".2s"
         color="white"

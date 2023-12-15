@@ -114,6 +114,9 @@ onMounted(() => {
         :pagination="{
           clickable: true
         }"
+        :mousewheel="{
+          forceToAxis: true
+        }"
       >
         <swiper-slide
           class="swiper-slide community__swiper-slide community-slide"

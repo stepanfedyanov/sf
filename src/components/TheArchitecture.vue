@@ -122,7 +122,7 @@ onMounted(() => {
 }
 .architecture {
   position: relative;
-  @include adaptive-value('padding-top', 206, 124, 1);
+  @include adaptive-value('padding-top', 115, 27, 1);
   z-index: 10;
   background: linear-gradient(to bottom, transparent 70%, #f2f3f5 95%);
   padding-bottom: 36px;
@@ -171,7 +171,7 @@ onMounted(() => {
     max-width: initial;
     left: 50%;
     transform: translateX(-50%);
-    top: 112px;
+    top: 20px;
     z-index: 10;
   }
   &__title {

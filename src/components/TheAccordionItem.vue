@@ -1,6 +1,12 @@
 <script>
 export default {
-  props: {},
+  props: {
+    preventOpen: {
+      type: Boolean,
+      required: false,
+      default: false,
+    }
+  },
   inject: ['Accordion'],
   data() {
     return {
@@ -29,6 +35,9 @@ export default {
   },
   created() {
     this.index = this.Accordion.count++
+  },
+  mounted() {
+    if (this.preventOpen) this.open()
   }
 }
 </script>

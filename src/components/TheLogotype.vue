@@ -2,10 +2,17 @@
 defineProps({
   fill: String
 })
+
+const scrollToUp = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+};
 </script>
 
 <template>
-  <a class="logo animate__animated animate__fadeIn" data-wow-delay=".4s" href="/">
+  <span class="logo animate__animated animate__fadeIn" data-wow-delay=".4s" @click="scrollToUp">
     <svg
       class="logo__img"
       width="146"
@@ -55,7 +62,7 @@ defineProps({
         </clipPath>
       </defs>
     </svg>
-  </a>
+  </span>
 </template>
 
 <style lang="scss">

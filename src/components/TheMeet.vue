@@ -1,12 +1,9 @@
 <script setup>
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
-
 import { useGlobalStore } from '../stores/global'
+
 const globalStore = useGlobalStore()
-const openModal = () => {
-  globalStore.changeModalOpened(true)
-}
 </script>
 
 <template>
@@ -21,11 +18,11 @@ const openModal = () => {
           сообществом
         </p>
         <TheButton
-          @click="openModal"
           class="meet__btn wow animate__animated animate__fadeIn"
           data-wow-delay="1s"
           color="white"
           size="big"
+          @tap="globalStore.changeModalOpened(true)"
           >Получить доступ</TheButton
         >
       </div>

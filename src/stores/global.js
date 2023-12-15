@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue';
+import Lenis from '@studio-freight/lenis'
 
 // You can name the return value of `defineStore()` anything you want,
 // but it's best to use the name of the store and surround it with `use`
@@ -15,6 +16,9 @@ export const useGlobalStore = defineStore('global', () => {
 
   const changeModalOpened = (state) => {
     popupOpened.value = state;
+
+    if (state) window.lenis.stop();
+    if (!state) window.lenis.start();
   }
 
   return {

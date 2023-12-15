@@ -7,6 +7,10 @@ import TheSliderButton from './TheSliderButton.vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import { useGlobalStore } from '../stores/global'
+
+const globalStore = useGlobalStore()
+
 const props = defineProps({
   settings: Object,
   idx: Number
@@ -20,8 +24,6 @@ const swiper = ref(null)
 
 const advantageElement = ref(null)
 
-import { useGlobalStore } from '../stores/global'
-const globalStore = useGlobalStore()
 const openModal = () => {
   globalStore.changeModalOpened(true)
 }
@@ -73,6 +75,9 @@ onMounted(() => {
         <div class="swiper-block">
           <swiper-container
             ref="swiper"
+            :mousewheel="{
+              forceToAxis: true
+            }"
             :breakpoints="{
               361: {
                 slidesPerView: 1.2,
@@ -231,6 +236,7 @@ onMounted(() => {
           data-wow-duration="1.4s"
           color="white"
           size="big"
+          @tap="globalStore.changeModalOpened(true)"
         >
           {{ settings.btnText }}
         </TheButton>

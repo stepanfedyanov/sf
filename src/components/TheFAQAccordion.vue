@@ -30,6 +30,7 @@ const items = [
         v-for="(item, idx) in items"
         :data-wow-delay="parseFloat(`${0.2 * idx}`) + 's'"
         :key="item.header"
+        :prevent-open="idx === 0"
       >
         <template v-slot:accordion-trigger>
           <h3>{{ item.header }}</h3>
