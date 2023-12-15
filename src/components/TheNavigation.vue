@@ -138,7 +138,7 @@ defineEmits(['openSection']);
       width: 100%;
     }
     &__mobile-btn {
-      button {
+      button, a {
         width: calc(100% - 46px);
         margin: 0 auto;
         display: block;
