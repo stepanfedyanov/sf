@@ -16,7 +16,7 @@ import TheFAQAccordion from './TheFAQAccordion.vue'
 
 <style lang="scss">
 .faq {
-  @include adaptive-value('padding-top', 95, 37, 1);
+  @include adaptive-value('padding-top', 95, 34, 1);
   @include adaptive-value('padding-bottom', 95, 85, 1);
   &__title {
     @include adaptive-value('margin-bottom', 51, 32, 1);

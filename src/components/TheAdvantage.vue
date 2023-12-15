@@ -20,6 +20,12 @@ const swiper = ref(null)
 
 const advantageElement = ref(null)
 
+import { useGlobalStore } from '../stores/global'
+const globalStore = useGlobalStore()
+const openModal = () => {
+  globalStore.changeModalOpened(true)
+}
+
 onMounted(() => {
   // TODO: убрать на этапе мобильной анимации
   if (screen && screen.width >= 1024) {
@@ -116,6 +122,7 @@ onMounted(() => {
               height: 4px !important;
               opacity: 1 !important;
               transition: .2s !important;
+              margin: 0px 6px !important;
             }
             .swiper-pagination-bullet-active {
               background-color: #052E3E !important;
@@ -141,7 +148,7 @@ onMounted(() => {
               :key="card.imgSrc"
             >
               <div class="adv-slide__inner">
-                <a class="adv-slide__link" :href="href">
+                <a class="adv-slide__link" :href="href" @click="openModal">
                   <svg
                     class="adv-slide__link-img"
                     xmlns="http://www.w3.org/2000/svg"
@@ -218,6 +225,7 @@ onMounted(() => {
         </div>
 
         <TheButton
+          @click="openModal"
           class="advantage__btn wow animate__animated animate__fadeIn"
           data-wow-duration="1.4s"
           color="white"
@@ -298,11 +306,14 @@ onMounted(() => {
     top: 50%;
     right: -64px;
     z-index: 5;
-    transform: translateX(100%) translateY(-90%);
+    transform: translateX(100%) translateY(-50%);
     svg {
       background: linear-gradient(100deg, rgba(#fff, 0.06), #fff);
       @include adaptive-value('width', 58, 24, 1);
       @include adaptive-value('height', 58, 24, 1);
+      @media (max-width: 490px) {
+        background: #fff;
+      }
     }
   }
   &__swiper-button-prev {
@@ -315,6 +326,9 @@ onMounted(() => {
       background: linear-gradient(100deg, rgba(#fff, 0.06), #fff);
       @include adaptive-value('width', 58, 24, 1);
       @include adaptive-value('height', 58, 24, 1);
+      @media (max-width: 490px) {
+        background: #fff;
+      }
     }
   }
 
@@ -397,14 +411,14 @@ onMounted(() => {
     @include adaptive-value('font-size', 26.5, 22, 1);
     line-height: calc(29 / 26);
     letter-spacing: 0.2px;
-    @include adaptive-value('margin-bottom', 26, 22, 1);
+    @include adaptive-value('margin-bottom', 22, 22, 1);
     @include adaptive-value('padding-right', 69, 50, 1);
     transform: translateX(-1px);
     font-weight: 300;
   }
   &__columns {
     display: flex;
-    @include adaptive-value('margin-bottom', 20, 28, 1);
+    @include adaptive-value('margin-bottom', 24, 28, 1);
   }
   &__column {
     display: flex;
@@ -492,7 +506,7 @@ onMounted(() => {
       font-weight: 400;
     }
     .adv-slide__desc {
-      margin-bottom: 21px;
+      @include adaptive-value('margin-bottom', 21, 10.18, 1);
     }
     .adv-slide__inner-wrapper {
       @include adaptive-value('padding-top', 20, 20, 1);

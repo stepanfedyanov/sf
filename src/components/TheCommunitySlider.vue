@@ -14,6 +14,12 @@ defineProps({
   staff: Object
 })
 
+import { useGlobalStore } from '../stores/global'
+const globalStore = useGlobalStore()
+const openModal = () => {
+  globalStore.changeModalOpened(true)
+}
+
 onMounted(() => {
   if (screen && screen.width >= 1024) {
     const slideSize = swiper.value.swiper.slidesSizesGrid[0]
@@ -73,6 +79,7 @@ onMounted(() => {
           height: 4px !important;
           opacity: 1 !important;
           transition: .2s !important;
+          margin: 0px 6px !important;
         }
         .swiper-pagination-bullet-active {
           background-color: #052E3E !important;
@@ -82,17 +89,24 @@ onMounted(() => {
         :breakpoints="{
           540: {
             slidesPerView: 1.5,
-            initialSlide: 0,
+            initialSlide: 0
           },
           765: {
             slidesPerView: 2,
             centeredSlides: false,
+            initialSlide: 0,
+            spaceBetween: 25
+          },
+          1900: {
+            slidesPerView: 2,
+            centeredSlides: false,
             initialSlide: 1,
+            spaceBetween: 25
           }
         }"
         class="swiper community__swiper"
         ref="swiper"
-        :spaceBetween="25"
+        :spaceBetween="15"
         :slidesPerView="1.2"
         :centeredSlides="true"
         :speed="900"
@@ -117,7 +131,7 @@ onMounted(() => {
             <p class="community-slide__desc">
               {{ person.desc }}
             </p>
-            <TheButton color="white" size="medium">Linkedin</TheButton>
+            <TheButton color="white" size="medium" @click="openModal">Linkedin</TheButton>
           </div>
         </swiper-slide>
       </swiper-container>
@@ -175,11 +189,11 @@ onMounted(() => {
 .community-slide {
   height: auto !important;
   @include adaptive-value('border-radius', 40, 33, 1);
-  @include adaptive-value('padding-top', 50, 30, 1);
-  @include adaptive-value('padding-bottom', 50, 30, 1);
+  @include adaptive-value('padding-top', 50, 33, 1);
+  @include adaptive-value('padding-bottom', 50, 33, 1);
   @include adaptive-value('padding-left', 72, 28, 1);
   @include adaptive-value('padding-right', 72, 28, 1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   background: linear-gradient(
     154deg,
     rgba(255, 255, 255, 0.8) 5.42%,
@@ -200,7 +214,7 @@ onMounted(() => {
     letter-spacing: -0.48px;
     font-weight: 300;
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('margin-bottom', 3, 0, 1);
+    @include adaptive-value('margin-bottom', 3, 1, 1);
   }
   &__position {
     @include adaptive-value('font-size', 16, 11, 1);
@@ -223,6 +237,8 @@ onMounted(() => {
   .btn-wrapper {
     button {
       padding: 3px 48px;
+      @include adaptive-value('padding-top', 4, 5, 1);
+      @include adaptive-value('padding-bottom', 4, 5, 1);
       // background: linear-gradient(93deg, #fff 0%, rgba(255, 255, 255, 0.26) 54.33%);
       span {
         letter-spacing: 0.5px;

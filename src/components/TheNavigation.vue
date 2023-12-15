@@ -2,6 +2,12 @@
 import TheButton from './TheButton.vue'
 
 const items = ['Компания', 'Маркетплейс', 'Аналитика', 'FAQ']
+
+import { useGlobalStore } from '../stores/global'
+const globalStore = useGlobalStore()
+const openModal = () => {
+  globalStore.changeModalOpened(true)
+}
 </script>
 
 <template>
@@ -22,6 +28,7 @@ const items = ['Компания', 'Маркетплейс', 'Аналитика
         data-wow-delay=".2s"
         color="white"
         size="small"
+        href="https://app.skyfort.capital"
       >
         Вход
       </TheButton>
@@ -30,6 +37,7 @@ const items = ['Компания', 'Маркетплейс', 'Аналитика
         data-wow-delay=".4s"
         color="black"
         size="small"
+        @click="openModal"
       >
         Регистрация
       </TheButton>

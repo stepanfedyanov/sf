@@ -70,7 +70,7 @@ defineProps({
       @include adaptive-value('line-height', 34, 23, 1);
       @include adaptive-value('letter-spacing', 0.48, 0.6, 1);
       max-width: 250px !important;
-      @include adaptive-value('margin-bottom', 25, 27, 1);
+      @include adaptive-value('margin-bottom', 25, 28, 1);
     }
 
     &__item {
@@ -94,7 +94,7 @@ defineProps({
       @include adaptive-value('letter-spacing', -0.6, 0.28, 1);
       text-align: center;
       max-width: 100%;
-      @include adaptive-value('margin-bottom', 50, 40, 1);
+      @include adaptive-value('margin-bottom', 50, 36, 1);
     }
   }
 }

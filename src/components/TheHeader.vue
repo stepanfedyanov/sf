@@ -7,8 +7,13 @@ import TheButton from './TheButton.vue'
 const _opened = ref(false)
 
 const openNavbar = () => {
-  _opened.value = !_opened.value;
+  _opened.value = !_opened.value
   if (document && document.documentElement) document.documentElement.classList.toggle('_fixed')
+}
+import { useGlobalStore } from '../stores/global'
+const globalStore = useGlobalStore()
+const openModal = () => {
+  globalStore.changeModalOpened(true)
 }
 </script>
 
@@ -38,16 +43,18 @@ const openNavbar = () => {
           data-wow-delay=".2s"
           color="white"
           size="medium"
+          href="https://app.skyfort.capital"
         >
-          Log in
+          Вход
         </TheButton>
         <TheButton
           class="header__mobile-btn animate__animated animate__fadeIn"
           data-wow-delay=".4s"
           color="black"
           size="medium"
+          @click="openModal"
         >
-          Become a member
+          Регистрация
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="10"
@@ -143,9 +150,10 @@ const openNavbar = () => {
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 490px) {
   .header {
-    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    width: 100%;
   }
 }
 </style>

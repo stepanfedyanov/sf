@@ -1,10 +1,10 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const sections = [
   {
@@ -40,7 +40,7 @@ const sections = [
       },
       {
         img: './img/TheForSection/1/6.svg',
-        title: 'Аналитика и инсайты',
+        title: 'Аналитика и&nbsp;инсайты',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }
     ],
@@ -60,7 +60,7 @@ const sections = [
       },
       {
         img: './img/TheForSection/2/2.svg',
-        title: 'Постоянный поток клиентов',
+        title: 'Постоянный поток&nbsp;клиентов',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       },
       {
@@ -119,9 +119,9 @@ onMounted(() => {
       start: 'top+=15% bottom',
       scrub: false
     }
-  });
+  })
 
-  tl1.to('.for__section-item-1', { opacity: 1, duration: 0.5, stagger: 0.3 });
+  tl1.to('.for__section-item-1', { opacity: 1, duration: 0.5, stagger: 0.3 })
 
   const tl2 = gsap.timeline({
     scrollTrigger: {
@@ -129,9 +129,9 @@ onMounted(() => {
       start: 'top+=15% bottom',
       scrub: false
     }
-  });
+  })
 
-  tl2.to('.for__section-item-2', { opacity: 1, duration: 0.5, stagger: 0.5 });
+  tl2.to('.for__section-item-2', { opacity: 1, duration: 0.5, stagger: 0.5 })
 
   const tl3 = gsap.timeline({
     scrollTrigger: {
@@ -139,11 +139,16 @@ onMounted(() => {
       start: 'top+=15% bottom',
       scrub: false
     }
-  });
+  })
 
-  tl3.to('.for__section-item-3', { opacity: 1, duration: 0.5, stagger: 0.5 });
-});
+  tl3.to('.for__section-item-3', { opacity: 1, duration: 0.5, stagger: 0.5 })
+})
 
+import { useGlobalStore } from '../stores/global'
+const globalStore = useGlobalStore()
+const openModal = () => {
+  globalStore.changeModalOpened(true)
+}
 </script>
 
 <template>
@@ -157,9 +162,7 @@ onMounted(() => {
       >
         <TheContainer>
           <div class="for__section-top-wrapper">
-            <div
-              class="for__section-top wow animate__animated animate__fadeIn"
-            >
+            <div class="for__section-top wow animate__animated animate__fadeIn">
               <span class="for__section-num">
                 {{ section.num }}
               </span>
@@ -167,13 +170,6 @@ onMounted(() => {
                 {{ section.title }}
               </h2>
             </div>
-            <!-- <TheButton
-              class="for__section-btn"
-              color="black"
-              size="big"
-            >
-              {{ section.btnText }}
-            </TheButton> -->
           </div>
 
           <ul
@@ -182,7 +178,7 @@ onMounted(() => {
           >
             <li
               :class="`for__section-item for__section-item-${idx + 1}`"
-              v-for="(item) in section.items"
+              v-for="item in section.items"
               :key="item.title"
             >
               <img class="for__item-img" :src="item.img" :alt="`Icon ${item.title}`" />
@@ -192,6 +188,9 @@ onMounted(() => {
               </p>
             </li>
           </ul>
+          <TheButton class="for__section-btn" color="black" size="big" @click="openModal">
+            {{ section.btnText }}
+          </TheButton>
         </TheContainer>
       </section>
     </div>
@@ -220,7 +219,7 @@ onMounted(() => {
   // }
   &__section {
     width: 100vw;
-    @include adaptive-value('padding-top', 120, 65, 1);
+    @include adaptive-value('padding-top', 120, 70, 1);
     @include adaptive-value('padding-bottom', 72, 65, 1);
   }
   &__section-top-wrapper {
@@ -315,12 +314,28 @@ onMounted(() => {
     @include adaptive-value('font-size', 14, 11, 1);
     line-height: calc(16 / 14);
     max-width: 250px;
-    color: #4E575A;
+    color: #4e575a;
     @include adaptive-value('letter-spacing', 0, -0.04, 1);
   }
   &__section-btn {
     display: block;
     text-align: center;
+    @include adaptive-value('margin-top', 68, 28, 1);
+    .btn {
+      @include adaptive-value('padding-top', 8, 4, 1);
+      @include adaptive-value('padding-bottom', 8, 4, 1);
+      @include adaptive-value('padding-right', 45, 28, 1);
+      @include adaptive-value('padding-left', 45, 28, 1);
+      font-weight: 300;
+      span {
+        font-weight: 300;
+      }
+      @media (max-width: 490px) {
+        span {
+          font-weight: 200;
+        }
+      }
+    }
   }
 }
 
@@ -414,6 +429,11 @@ onMounted(() => {
       }
       .for__section-item:nth-child(6) .for__item-title {
         max-width: 260px;
+      }
+    }
+    &-3 {
+      .for__section-top-wrapper {
+        @include adaptive-value('margin-bottom', 50, 40, 1);
       }
     }
   }

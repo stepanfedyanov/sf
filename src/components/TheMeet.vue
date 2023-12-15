@@ -1,6 +1,12 @@
 <script setup>
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
+
+import { useGlobalStore } from '../stores/global'
+const globalStore = useGlobalStore()
+const openModal = () => {
+  globalStore.changeModalOpened(true)
+}
 </script>
 
 <template>
@@ -15,6 +21,7 @@ import TheContainer from './TheContainer.vue'
           сообществом
         </p>
         <TheButton
+          @click="openModal"
           class="meet__btn wow animate__animated animate__fadeIn"
           data-wow-delay="1s"
           color="white"
@@ -90,7 +97,7 @@ import TheContainer from './TheContainer.vue'
 @media (max-width: 490px) {
   .meet {
     &__text {
-      font-weight: 200;
+      font-weight: 300;
     }
     &__btn {
       .btn {

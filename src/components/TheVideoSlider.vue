@@ -12,7 +12,7 @@ const sliders = [
     quote:
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.',
     author: 'Игорь Денисенков, President & Best'
-  },
+  }
 ]
 
 onMounted(() => {
@@ -34,7 +34,7 @@ onMounted(() => {
             }
             swiperEl.value.classList.remove('hidden')
           }, 200)
-        }, 6000)
+        }, 4000)
       }
     },
     injectStyles: [
@@ -59,6 +59,7 @@ onMounted(() => {
             margin: 0 8px !important;
             opacity: 1 !important;
             transition: 0.2s !important;
+            margin: 0px 6px !important;
           }
           .swiper-pagination-bullet-active {
             opacity: 1 !important;

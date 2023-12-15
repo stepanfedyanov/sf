@@ -45,7 +45,7 @@ onMounted(() => {
 
 <template>
   <section class="upside" ref="upsideContainer">
-    <h2 class="upside__title" ref="upsideTitle">Набирайте высоту</h2>
+    <h2 class="upside__title" ref="upsideTitle">Join the upside</h2>
   </section>
 </template>
 
@@ -59,7 +59,7 @@ onMounted(() => {
     font-family: 'Atyp Display', sans-serif;
     color: #a5cce0;
     text-align: center;
-    @include adaptive-value('font-size', 160, 60, 1);
+    @include adaptive-value('font-size', 160, 72, 1);
     line-height: calc(140 / 160);
     @include adaptive-value('letter-spacing', -1.6, 0, 1);
     font-weight: 300;

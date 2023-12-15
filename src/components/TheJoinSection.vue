@@ -29,6 +29,7 @@ const { pageIsLoaded } = storeToRefs(globalStore);
 .join {
   overflow: hidden;
   position: relative;
+  z-index: 100;
   background: linear-gradient(to bottom, #a5cce0 50%, #fff 100%);
   padding-bottom: 60px;
   @include adaptive-value('padding-bottom', 60, 0, 1);
