@@ -1,87 +1,109 @@
 <script setup>
 import TheContainer from './TheContainer.vue'
 import TheMethods from './TheMethods.vue'
-import { onMounted, ref, computed } from 'vue';
-import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGlobalStore } from '../stores/global';
+import { onMounted, ref, computed } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGlobalStore } from '../stores/global'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
-const architecture = ref(null);
-const architectureTitle = ref(null);
-const townVideo = ref(null);
+const architecture = ref(null)
+const architectureTitle = ref(null)
+const townVideo = ref(null)
 
-const globalStore = useGlobalStore();
+const globalStore = useGlobalStore()
 
 const pageIsLoaded = () => {
-  globalStore.changePageIsLoaded(true);
-};
+  globalStore.changePageIsLoaded(true)
+}
 
 onMounted(() => {
   if (screen && screen.width >= 1024) {
-    townVideo.value.muted = true;
-    townVideo.value.play();
+    townVideo.value.muted = true
+    townVideo.value.play()
 
     gsap.set(architectureTitle.value, {
       yPercent: 300,
       opacity: 0
-    });
+    })
 
     gsap.to(architectureTitle.value, {
       scrollTrigger: {
         trigger: architecture.value,
-        start: "top-=20% bottom",
-        end: "center-=20% bottom",
-        scrub: true,
+        start: 'top-=20% bottom',
+        end: 'center-=20% bottom',
+        scrub: true
       },
       yPercent: 55,
-      opacity: 1,
+      opacity: 1
     })
 
     gsap.set('.architecture__clouds_1', {
-      yPercent: -30,
-    });
+      yPercent: -30
+    })
 
     gsap.set('.architecture__clouds_2', {
-      yPercent: 20,
-    });
-    
+      yPercent: 20
+    })
+
     gsap.set('.architecture__clouds_3', {
-      yPercent: -15,
-    });
+      yPercent: -15
+    })
 
     gsap.to('.architecture__clouds-item', {
       scrollTrigger: {
         trigger: architecture.value,
-        start: "top+=5% bottom",
-        end: "center-=15% bottom",
-        scrub: true,
+        start: 'top+=5% bottom',
+        end: 'center-=15% bottom',
+        scrub: true
       },
-      yPercent: 0,
+      yPercent: 0
     })
   }
-});
+})
 </script>
 
 <template>
   <section class="architecture" ref="architecture">
     <div class="architecture__clouds">
-      <img class="architecture__clouds-item architecture__clouds_1" src="/img/TheCommunitySection/architecture/cloud-upper-1.png" alt="Town's clouds">
-      <img class="architecture__clouds-item architecture__clouds_2" src="/img/TheCommunitySection/architecture/cloud-upper-2.png" alt="Town's clouds">
-      <img class="architecture__clouds-item architecture__clouds_3" src="/img/TheCommunitySection/architecture/clouds.png" alt="Town's clouds">
-      <img class="architecture__clouds-item architecture__clouds_4" src="/img/TheCommunitySection/architecture/clouds-sofa.png" alt="Town's clouds">
+      <img
+        class="architecture__clouds-item architecture__clouds_1"
+        src="/img/TheCommunitySection/architecture/cloud-upper-1.png"
+        alt="Town's clouds"
+      />
+      <img
+        class="architecture__clouds-item architecture__clouds_2"
+        src="/img/TheCommunitySection/architecture/cloud-upper-2.png"
+        alt="Town's clouds"
+      />
+      <img
+        class="architecture__clouds-item architecture__clouds_3"
+        src="/img/TheCommunitySection/architecture/clouds.png"
+        alt="Town's clouds"
+      />
+      <img
+        class="architecture__clouds-item architecture__clouds_4"
+        src="/img/TheCommunitySection/architecture/clouds-sofa.png"
+        alt="Town's clouds"
+      />
     </div>
     <TheContainer>
       <div class="architecture__inner">
         <video
           ref="townVideo"
-          autoplay muted loop playsinline
+          autoplay
+          muted
+          loop
+          playsinline
           class="architecture__img"
           @canplay="pageIsLoaded"
         >
-          <source src="/img/TheCommunitySection/architecture/town.mov" type='video/mp4; codecs="hvc1"'>
-          <source src="/img/TheCommunitySection/architecture/town.webm" type="video/webm">
+          <source
+            src="/img/TheCommunitySection/architecture/town.mov"
+            type='video/mp4; codecs="hvc1"'
+          />
+          <source src="/img/TheCommunitySection/architecture/town.webm" type="video/webm" />
         </video>
         <h2 class="architecture__title" ref="architectureTitle">Открытая архитектура</h2>
         <p class="architecture__desc wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
@@ -103,6 +125,7 @@ onMounted(() => {
 <style lang="scss">
 .community {
   position: relative;
+
   z-index: 4;
   &__scroll {
     text-align: center;
@@ -124,7 +147,10 @@ onMounted(() => {
   position: relative;
   @include adaptive-value('padding-top', 115, 27, 1);
   z-index: 10;
-  background: linear-gradient(to bottom, transparent 70%, #f2f3f5 95%);
+  background: linear-gradient(to bottom, transparent 20%, #f2f2f2 60%);
+  @media (max-width: 490px) {
+    background: linear-gradient(to bottom, transparent 10%, #f2f2f2 50%);
+  }
   padding-bottom: 36px;
   &__clouds {
     width: 100%;
@@ -147,7 +173,7 @@ onMounted(() => {
       position: absolute;
       top: 5%;
       @media (max-width: 500px) {
-        top: 10%
+        top: 10%;
       }
       left: 50%;
       transform: translateX(-50%);
@@ -158,7 +184,7 @@ onMounted(() => {
       position: absolute;
       top: 8%;
       @media (max-width: 500px) {
-        top: 16%
+        top: 16%;
       }
       left: 50%;
       transform: translateX(-50%);
