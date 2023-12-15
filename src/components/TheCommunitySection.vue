@@ -11,31 +11,66 @@ gsap.registerPlugin(ScrollTrigger)
 
 const staff = [
   {
-    img: './img/TheCommunitySection/staff/1.jpg',
+    img: './img/TheCommunitySection/staff/1.png',
     name: 'Илья Опренко',
-    position: 'Founder / CEO',
-    desc: 'Dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam.',
+    position: 'Co-founder, CEO',
+    desc: '16+&nbsp;лет в&nbsp;индустрии инвестиций и&nbsp;управления капиталом (UBS, Tinkoff Private, Deloitte, Sber). Топ-3&nbsp;в рейтинге профессионалов&nbsp;WM &amp;&nbsp;PB',
     href: '#'
   },
   {
-    img: './img/TheCommunitySection/staff/2.jpg',
+    img: './img/TheCommunitySection/staff/2.png',
     name: 'Сергей Ишков',
-    position: 'Co-founder / CFO',
-    desc: 'Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Nisl ut ut ut',
+    position: 'Co-founder, COO/CFO',
+    desc: '17+&nbsp;лет в&nbsp;международном консалтинге и&nbsp;финансах (ex&nbsp;управляющий директор BCG в&nbsp;России и&nbsp;Латинской Америке, Oliver Wyman)',
     href: '#'
   },
   {
-    img: './img/TheCommunitySection/staff/1.jpg',
-    name: 'Илья Опренко',
-    position: 'Founder / CEO',
-    desc: 'Dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam.',
+    img: './img/TheCommunitySection/staff/3.png',
+    name: 'Игорь Смирнов',
+    position: 'Co-founder, CPO/CMO',
+    desc: '20+&nbsp;лет в&nbsp;маркетинге, цифровом продакшене и&nbsp;развитии бизнеса, Венчурный билдер, выпускник Singularity University',
     href: '#'
   },
   {
-    img: './img/TheCommunitySection/staff/2.jpg',
-    name: 'Сергей Ишков',
-    position: 'Co-founder / CFO',
-    desc: 'Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Nisl ut ut ut',
+    img: './img/TheCommunitySection/staff/4.png',
+    name: 'Николай Буров',
+    position: 'Head of partner Family office',
+    desc: '13+&nbsp;лет в&nbsp;индустрии управления капиталом и&nbsp;private banking (UBS, Tinkoff Private). Руководитель семейного офиса',
+    href: '#'
+  },
+  {
+    img: './img/TheCommunitySection/staff/5.png',
+    name: 'Павел Бережной, CFA',
+    position: 'Director of client relations',
+    desc: '20+&nbsp;лет опыта работы в&nbsp;сфере управления частным капиталом (Nuveen, Тройка-диалог, ING, Ренессанс Капитал)',
+    href: '#'
+  },
+  {
+    img: './img/TheCommunitySection/staff/6.png',
+    name: 'Анастасия Воропаева',
+    position: 'Senior Investment Advisor',
+    desc: '15+&nbsp;лет опыта в&nbsp;качестве частного банкира в&nbsp;Швейцарии по&nbsp;вопросам wealth management, опыт работы в&nbsp;Harbor и&nbsp;UBS Moscow',
+    href: '#'
+  },
+  {
+    img: './img/TheCommunitySection/staff/7.png',
+    name: 'Дмитрий Золотков',
+    position: 'Director of Strategy',
+    desc: '12+&nbsp;лет опыта консультирования по&nbsp;вопросам M&amp;A в&nbsp;Big4. финансового структурирования, создания крупных&nbsp;PE фондов (до&nbsp;$2bln)',
+    href: '#'
+  },
+  {
+    img: './img/TheCommunitySection/staff/8.png',
+    name: 'Максим Вежевич',
+    position: 'Director of Strategy',
+    desc: '14+&nbsp;лет опыта работы на&nbsp;финансовых рынках, руководства отделом аналитики в&nbsp;Multi-family office, создания инвестиционных стратегий',
+    href: '#'
+  },
+  {
+    img: './img/TheCommunitySection/staff/9.png',
+    name: 'Тимур Аманов',
+    position: 'Director of Client Relations',
+    desc: '6+&nbsp;лет опыта работы в&nbsp;сфере управления частным капиталом (UBS, Tinkoff Private, лондонский офис UniCredit)',
     href: '#'
   }
 ]
@@ -85,8 +120,7 @@ onMounted(() => {
           Сообщество лидеров
         </TheSectionTitle>
         <p class="community__desc wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-          Skyfort is being developed in cooperation with top tier wealth managers, private bankers
-          and financial advisors from around the globe
+          Экосистема Skyfort строится на&nbsp;базе профессионального сообщества и&nbsp;создается совместно с&nbsp;ведущими профессионалами рынка управления капиталом
         </p>
       </div>
     </TheContainer>

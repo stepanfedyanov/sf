@@ -9,52 +9,52 @@ const cards = [
 {
       img: './img/TheCommunitySection/methods/1.png',
       title: 'Маркетплейс',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Качественные инвестиционные продукты и&nbsp;сервисы от&nbsp;проверенных поставщиков со&nbsp;всего мира'
     },
     {
       img: './img/TheCommunitySection/methods/2.png',
       title: 'Лаборатория',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Собственная продуктовая фабрика, специализирующаяся на&nbsp;инвестициях в&nbsp;private markets (PE/VC, Private Credit)'
     },
     {
       img: './img/TheCommunitySection/methods/3.png',
       title: 'Аналитика',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Community-driven think tank&nbsp;&mdash; аналитический центр на&nbsp;базе профессионального сообщества'
     },
     {
       img: './img/TheCommunitySection/methods/4.png',
       title: 'CRM',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Цифровая платформа для финансовых советников, обеспечивающая полный цикл ведения клиентов'
     },
     {
       img: './img/TheCommunitySection/methods/5.png',
       title: 'Агрегация',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Цифровая платформа управления благосостоянием: полная картина всех активов с&nbsp;автоматической агрегацией'
     },
     {
       img: './img/TheCommunitySection/methods/6.png',
       title: 'Сообщество',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Профессиональное международное сообщество управляющих капиталом и&nbsp;финансовых советников'
     },
     {
       img: './img/TheCommunitySection/methods/7.png',
       title: 'База знаний',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Community-based Wiki для управляющих капиталом и&nbsp;финансовых советников, агрегация лучших практик'
     },
     {
       img: './img/TheCommunitySection/methods/8.png',
       title: 'Академия',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Собственная система подготовки независимых управляющих капиталом и&nbsp;финансовых советников'
     },
     {
       img: './img/TheCommunitySection/methods/9.png',
       title: 'Медиа',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Центр создания и&nbsp;дистрибуции качественного контента, генерируемого резидентами сообщества Skyfort'
     },
     {
       img: './img/TheCommunitySection/methods/10.png',
       title: 'Рейтинги',
-      desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
+      desc: 'Сертификация и&nbsp;оценка независимых управляющих и&nbsp;финансовых советников, ежегодный глобальный рейтинг'
     },
 ]
 
@@ -116,9 +116,7 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
             <h3 class="methods__title">
               {{ card.title }}
             </h3>
-            <p class="methods__desc">
-              {{ card.desc }}
-            </p>
+            <p class="methods__desc" v-html="card.desc" />
           </swiper-slide>
         </swiper-container>
         <div
@@ -209,6 +207,9 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
     align-items: center;
     text-align: center;
     width: 100%;
+    @media (max-width: 1100px) {
+      min-height: 300px;
+    }
   }
   &__card-img-wrapper {
     text-align: center;

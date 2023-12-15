@@ -117,19 +117,21 @@ const openModal = () => {
             data-wow-delay="0.2s"
             data-wow-duration="1200"
           >
-            Присоединяйтесь
+          Включайтесь в&nbsp;сообщество
           </h2>
           <p class="footer__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
-            Get access to private community of wealth management professionals, experts and service
-            providers to attend special events, share knowledge, network and collaborate globally.
+            Присоединяйтесь к&nbsp;растущему международному сообществу профессиональных управляющих капиталом, финансовых советников, экспертов и&nbsp;частных инвесторов
           </p>
           <TheButton
-            @tap="openModal"
-            class="wow animate__animated animate__fadeIn"
+            href="#"
+            class="flex wow animate__animated animate__fadeIn"
             data-wow-delay="0.1s"
             size="big"
             color="blue"
-            >Подать заявку</TheButton
+            flex="flex"
+            ><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
+<path d="M5.83,23.616c12.568-5.529,28.832-12.27,31.077-13.203c5.889-2.442,7.696-1.974,6.795,3.434 c-0.647,3.887-2.514,16.756-4.002,24.766c-0.883,4.75-2.864,5.313-5.979,3.258c-1.498-0.989-9.059-5.989-10.7-7.163 c-1.498-1.07-3.564-2.357-0.973-4.892c0.922-0.903,6.966-6.674,11.675-11.166c0.617-0.59-0.158-1.559-0.87-1.086 c-6.347,4.209-15.147,10.051-16.267,10.812c-1.692,1.149-3.317,1.676-6.234,0.838c-2.204-0.633-4.357-1.388-5.195-1.676 C1.93,26.43,2.696,24.995,5.83,23.616z"></path>
+</svg>Telegram</TheButton
           >
         </div>
         <div class="footer__bottom">
@@ -177,12 +179,11 @@ const openModal = () => {
 
       <div class="footer__inner _mobile">
         <div class="footer__top">
-          <h2 class="footer__title">Присоединяйтесь</h2>
+          <h2 class="footer__title">Включайтесь в&nbsp;сообщество</h2>
           <p class="footer__desc">
-            Get access to private community of wealth management professionals, experts and service
-            providers to attend special events, share knowledge, network and collaborate globally.
+            Присоединяйтесь к&nbsp;растущему международному сообществу профессиональных управляющих капиталом, финансовых советников, экспертов и&nbsp;частных инвесторов
           </p>
-          <TheButton @tap="openModal" size="big" color="blue">Подать заявку</TheButton>
+          <TheButton href="#" size="big" color="blue">Telegram</TheButton>
         </div>
         <div class="footer__bottom">
           <div class="footer__logo-wrapper">
@@ -224,7 +225,7 @@ const openModal = () => {
     font-weight: 300;
     @include adaptive-value('margin-bottom', 44, 47.1, 1);
     @include adaptive-value('letter-spacing', 0, 0.6, 1);
-    @include adaptive-value('line-height', 103.5, 52, 1);
+    @include adaptive-value('line-height', 81, 47, 1);
   }
   &__desc {
     max-width: 788px;
