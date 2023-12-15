@@ -38,7 +38,7 @@ onMounted(() => {
 <template>
   <section class="intro" ref="introSection">
     <TheContainer>
-      <TheSectionTitle color="#052E3E" class="intro__title">Видео о&nbsp;проекте</TheSectionTitle>
+      <TheSectionTitle color="#052E3E" class="intro__title">О проекте</TheSectionTitle>
     </TheContainer>
     <TheVideo class="wow animate__animated animate__fadeIn" />
     <TheContainer>
@@ -56,7 +56,7 @@ onMounted(() => {
   @include adaptive-value('padding-bottom', 100, 60, 1);
   padding-bottom: 15vh;
   &__title {
-    @include adaptive-value('margin-bottom', 40, 53, 1);
+    @include adaptive-value('margin-bottom', 40, 43, 1);
     @include adaptive-value('font-size', 96, 50, 1);
     @include adaptive-value('letter-spacing', -1.92, 0.6, 1);
   }

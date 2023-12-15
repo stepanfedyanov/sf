@@ -2033,7 +2033,7 @@ onMounted(() => {
     max-width: 900px;
     margin: 0 auto;
     font-feature-settings: 'ss02' on;
-    @include adaptive-value('margin-bottom', 64, 70, 1);
+    @include adaptive-value('margin-bottom', 48, 70, 1);
     @include adaptive-value('line-height', 88, 53, 1);
     @include adaptive-value('letter-spacing', 0.8, 0, 1);
     @include adaptive-value('font-size', 88, 42, 1);
@@ -2055,6 +2055,7 @@ onMounted(() => {
     @media (max-width: 490px) {
       font-weight: 200;
       max-width: 315px;
+      font-weight: 300;
     }
   }
   &__list {
@@ -2131,7 +2132,6 @@ onMounted(() => {
     @include adaptive-value('font-size', 20, 10, 1);
     line-height: calc(24 / 20);
     position: relative;
-    transform: translateY(-3px);
     &::before {
       content: '';
       position: absolute;
@@ -2141,6 +2141,9 @@ onMounted(() => {
       height: 1px;
       border-radius: 2px;
       background-color: #052e3e;
+      @media (max-width: 490px) {
+        display: none;
+      }
     }
     @media (max-width: 490px) {
       &::before {

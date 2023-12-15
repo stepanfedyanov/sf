@@ -39,6 +39,7 @@ defineProps({
   background-color: #fff;
   border-radius: 50%;
   transition: 0.15s;
+  display: block;
   path {
     transition: 0.15s;
   }

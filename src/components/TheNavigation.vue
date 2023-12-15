@@ -3,6 +3,12 @@ import TheButton from './TheButton.vue'
 
 const items = ['Компания', 'Маркетплейс', 'Аналитика', 'FAQ']
 
+import { useGlobalStore } from '../stores/global'
+const globalStore = useGlobalStore()
+const openModal = () => {
+  globalStore.changeModalOpened(true)
+}
+
 defineEmits(['openSection']);
 </script>
 
@@ -24,6 +30,7 @@ defineEmits(['openSection']);
         data-wow-delay=".2s"
         color="white"
         size="small"
+        href="https://app.skyfort.capital"
       >
         Вход
       </TheButton>
@@ -32,6 +39,7 @@ defineEmits(['openSection']);
         data-wow-delay=".4s"
         color="black"
         size="small"
+        @click="openModal"
       >
         Регистрация
       </TheButton>

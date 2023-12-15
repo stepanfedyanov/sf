@@ -155,7 +155,7 @@ const sumbitForm = async (e) => {
     }
   }
   &__card {
-    transform: translateY(40px);
+    transform: translateY(80px);
     background: linear-gradient(315deg, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 102%);
     backdrop-filter: blur(5px);
     @include adaptive-value('border-radius', 20, 15, 1);
@@ -165,7 +165,7 @@ const sumbitForm = async (e) => {
     @include adaptive-value('padding', 15, 12, 1);
     display: grid;
     border: 1px solid #fff;
-    transition: 0.3s;
+    transition: 0.6s;
   }
   &__card-inner {
     @include adaptive-value('padding-top', 35, 25, 1);

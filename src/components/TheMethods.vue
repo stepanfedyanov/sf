@@ -96,6 +96,7 @@ const cards = [
                 margin: 0 8px !important;
                 opacity: 1 !important;
                 transition: 0.2s !important;
+                margin: 0px 6px !important;
               }
               .swiper-pagination-bullet-active {
                 opacity: 1 !important;

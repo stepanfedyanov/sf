@@ -139,8 +139,8 @@ onMounted(() => {
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 108, 70, 1);
     @media (max-width: 490px) {
-      max-width: 270px;
-      font-weight: 200;
+      max-width: 280px;
+      font-weight: 300;
     }
   }
   &__clouds {

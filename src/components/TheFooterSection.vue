@@ -234,6 +234,9 @@ const openModal = () => {
     @include adaptive-value('line-height', 25, 30, 1);
     @include adaptive-value('letter-spacing', 0.7, 1, 1);
     font-weight: 200;
+    @media (max-width: 490px) {
+      font-weight: 300;
+    }
   }
   &__bottom {
     @include adaptive-value('padding-top', 40, 32, 1);
@@ -277,8 +280,8 @@ const openModal = () => {
       .btn {
         line-height: 24px;
         @include adaptive-value('font-size', 16, 14, 1);
-        @include adaptive-value('padding-top', 10, 2, 1);
-        @include adaptive-value('padding-bottom', 10, 2, 1);
+        @include adaptive-value('padding-top', 10, 4, 1);
+        @include adaptive-value('padding-bottom', 10, 4, 1);
         @include adaptive-value('padding-left', 50, 27, 1);
         @include adaptive-value('padding-right', 50, 27, 1);
         span {
@@ -354,7 +357,7 @@ const openModal = () => {
 
   .footer {
     &__desc {
-      max-width: 269px;
+      max-width: 299px;
     }
     &__top {
       .btn-wrapper {
