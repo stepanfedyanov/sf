@@ -5,14 +5,24 @@ const swiperEl = ref(null)
 const sliders = [
   {
     quote:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
-    author: 'Илья Опренко, Founder & CEO'
+      'Для управляющих и их клиентов мы открываем доступ к глобальной инфраструктуре, ранее доступной лишь крупным институционалам и ультрабогатым семьям',
+    author: 'Илья Опренко, co-founder & CEO'
   },
   {
     quote:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.',
-    author: 'Игорь Денисенков, President & Best'
-  }
+      'Платформа Skyfort объединяет управляющих капиталом, инвесторов и поставщиков качественных инвестиционных продуктов и сервисов по всему миру',
+    author: 'Сергей Ишков, co-founder & COO/CFO'
+  },
+  {
+    quote:
+      'Мы стремимся занять позицию выше хаоса, предугадывая и диверсифицируя риски, чтобы стать надежной безопасной гаванью для владельцев капитала',
+    author: 'Илья Опренко, co-founder & CEO'
+  },
+  {
+    quote:
+      'Наша задача - агрегировать лучшие мировые практики управления крупным капиталом и сделать их доступными более широкому кругу состоятельных людей',
+    author: 'Игорь Смирнов, co-founder & CPO/CMO'
+  },
 ]
 
 onMounted(() => {
