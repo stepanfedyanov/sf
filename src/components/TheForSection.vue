@@ -84,7 +84,7 @@ const sections = [
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }
     ],
-    btnText: 'Получить доступ',
+    btnText: 'Подключиться',
     btnLink: '#'
   },
   {
