@@ -286,7 +286,7 @@ onMounted(() => {
     line-height: 131px;
     @include adaptive-value('line-height', 131, 52.8, 1);
     @media (max-width: 490px) {
-      max-width: 250px;
+      max-width: 260px;
       margin-left: auto;
       margin-right: auto;
     }
