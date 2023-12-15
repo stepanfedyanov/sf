@@ -412,7 +412,7 @@ onMounted(() => {
     line-height: calc(29 / 26);
     letter-spacing: 0.2px;
     @include adaptive-value('margin-bottom', 22, 22, 1);
-    @include adaptive-value('padding-right', 69, 50, 1);
+    @include adaptive-value('padding-right', 69, 80, 1);
     transform: translateX(-1px);
     font-weight: 300;
   }
@@ -433,11 +433,11 @@ onMounted(() => {
     letter-spacing: 0.44px;
     position: relative;
     font-weight: 300;
-    max-width: 125px;
+    max-width: 115px;
     &::before {
       content: '';
       position: absolute;
-      @include adaptive-value('left', 1, 0, 1);
+      @include adaptive-value('left', 1, -1, 1);
       @include adaptive-value('top', 6, 5, 1);
       width: 3px;
       height: 3px;

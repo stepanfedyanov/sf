@@ -10,7 +10,7 @@ const sections = [
   {
     num: 1,
     title: 'Для состоятельных и растущих инвесторов',
-    backgroundColor: '#f1f3f5',
+    backgroundColor: '#f9f9f9',
     size: 'small',
     items: [
       {
@@ -49,7 +49,7 @@ const sections = [
   },
   {
     num: 2,
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#f1f3f5',
     title: 'Для независимых финансовых советников',
     size: 'small',
     items: [
@@ -89,7 +89,7 @@ const sections = [
   },
   {
     num: 3,
-    backgroundColor: '#f2f3f5',
+    backgroundColor: '#f9f9f9',
     title: 'Для поставщиков продуктов и сервисов',
     bigTitle: true,
     size: 'big',
