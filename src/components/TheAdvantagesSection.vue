@@ -4,6 +4,7 @@ import TheAdvantage from './TheAdvantage.vue'
 const sections = [
   {
     title: 'Продукты и сервисы',
+    id: 'Маркетплейс',
     style: 'blue',
     desc: 'Premium curated Skyfort Marketplace offers top quality vetted products and services from our internal WM team, Skyfort Product Lab and third-party providers within our global professional community.',
     btnText: 'Смотреть все',
@@ -99,6 +100,7 @@ const sections = [
 
   {
     title: 'Аналитика и инсайты',
+    id: 'Аналитика',
     style: 'white',
     desc: 'Skyfort Analytics is a community-driven think tank and curated media platform that brings together top tier experts from wealth management & private banking industry',
     btnText: 'Читать больше',
@@ -150,7 +152,7 @@ const sections = [
     <TheAdvantage
       class="advantage"
       v-for="(section, idx) in sections"
-      :id="`advantage-${idx}`"
+      :id="section.id"
       :idx="idx"
       :key="section.title"
       :settings="section"

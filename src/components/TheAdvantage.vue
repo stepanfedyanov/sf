@@ -55,6 +55,7 @@ onMounted(() => {
     class="advantage"
     ref="advantageElement"
     :class="{ blue: settings.style === 'blue', white: settings.style === 'white' }"
+    :id="idx === '0' ? 'Marketplace' : 'Analytics'"
   >
     <TheContainer>
       <div class="advantage__inner">

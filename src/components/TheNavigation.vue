@@ -8,6 +8,8 @@ const globalStore = useGlobalStore()
 const openModal = () => {
   globalStore.changeModalOpened(true)
 }
+
+defineEmits(['openSection']);
 </script>
 
 <template>
@@ -19,7 +21,7 @@ const openModal = () => {
         v-for="(item, idx) in items"
         :key="item"
       >
-        <a class="header__nav-item-link" href="/">{{ item }}</a>
+        <span class="header__nav-item-link" @click="$emit('openSection', item)">{{ item }}</span>
       </li>
     </ul>
     <div class="header__btns">
@@ -67,6 +69,7 @@ const openModal = () => {
     @include adaptive-value('margin-left', 43, 0, 1);
   }
   &__nav-item-link {
+    cursor: pointer;
     letter-spacing: -0.12px;
     padding: 5px 0;
     line-height: 1;
