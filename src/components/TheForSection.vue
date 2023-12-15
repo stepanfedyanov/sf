@@ -163,7 +163,10 @@ const openModal = () => {
         <TheContainer>
           <div class="for__section-top-wrapper">
             <div class="for__section-top wow animate__animated animate__fadeIn">
-              <span class="for__section-num">
+              <span :class="[
+                'for__section-num',
+                { 'for__section-num-2': section.num === 2 }
+              ]">
                 {{ section.num }}
               </span>
               <h2 class="for__section-title" :class="{ _big: section.bigTitle }">
@@ -237,9 +240,13 @@ const openModal = () => {
     color: #a5cce0;
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 100, 46, 1);
-    line-height: calc(104 / 96);
+    @include adaptive-value('line-height', 100, 46, 1);
+    @include adaptive-value('height', 100, 46, 1);
     font-weight: 300;
-    // transform: translateY(3px);
+    transform: translateY(4px);
+    &-2 {
+      transform: translateY(3px);
+    }
   }
   &__section-title {
     font-family: 'Atyp Display', sans-serif;

@@ -383,7 +383,6 @@ onMounted(() => {
       line-height: calc(16 / 12);
       letter-spacing: 0px;
       position: relative;
-      top: 2px;
       font-weight: 500;
     }
   }

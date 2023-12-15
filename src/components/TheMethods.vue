@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import TheContainer from './TheContainer.vue'
 import TheSliderButton from './TheSliderButton.vue'
 
@@ -57,6 +57,8 @@ const cards = [
       desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat'
     },
 ]
+
+const isMobile = computed(() => window && window.screen && window.screen.width <= 1100);
 </script>
 
 <template>
@@ -67,7 +69,7 @@ const cards = [
           :mousewheel="{
             forceToAxis: true
           }"
-          :spaceBetween="30"
+          :spaceBetween="isMobile ? 10 : 30"
           :slidesPerView="2"
           :injectStyles="[
             `
@@ -147,6 +149,11 @@ const cards = [
   @include adaptive-value('margin-top', 78, 12, 1);
   &__inner {
     position: relative;
+    .swiper {
+      @media (min-width: 1100px) {
+        width: 80%;
+      }
+    }
   }
   &__swiper-button-prev {
     position: absolute;

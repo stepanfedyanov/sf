@@ -305,6 +305,9 @@ const sumbitForm = async (e) => {
     &-load {
       color: transparent
     }
+    @media (max-width: 1100px) {
+      font-weight: 300;
+    }
   }
   &__loader {
     position: absolute;

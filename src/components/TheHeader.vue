@@ -84,7 +84,7 @@ const openSection = (item) => {
       })
     }, 500)
   } else {
-    const added = item === 'Компания' ? 150 : 0;
+    const added = item === 'Компания' ? 120 : 0;
     window.scrollTo({
       top: getElementToScroll.offsetTop - added,
       behavior: 'smooth'

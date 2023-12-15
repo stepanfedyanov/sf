@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import { gsap } from 'gsap'
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -9,43 +9,50 @@ gsap.registerPlugin(ScrollTrigger)
 const upsideContainer = ref(null)
 const upsideTitle = ref(null)
 
-onMounted(() => {
-  const opacityTitleTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: upsideContainer.value,
-      start: () => (screen && screen.width >= 1024 ? 'top bottom' : 'top+=50% bottom'),
-      end: 'bottom+=50% bottom',
-      scrub: true
-    }
-  })
+const isMobile = computed(() => window && window.screen && window.screen.width <= 1100);
 
-  opacityTitleTimeline
-    .fromTo(
-      upsideTitle.value,
-      {
-        opacity: 0,
-        yPercent: 30
-      },
-      {
-        opacity: 1,
-        yPercent: screen && screen.width < 1100 ? -60 : -100
+onMounted(() => {
+  if (window && window.screen && window.screen.width >= 1100) {
+    const opacityTitleTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: upsideContainer.value,
+        start: () => (screen && screen.width >= 1024 ? 'top bottom' : 'top+=50% bottom'),
+        end: 'bottom+=50% bottom',
+        scrub: true
       }
-    )
-    .fromTo(
-      '.join-title__clouds-3',
-      {
-        opacity: 0.6
-      },
-      {
-        opacity: 0
-      }
-    )
+    })
+
+    opacityTitleTimeline
+      .fromTo(
+        upsideTitle.value,
+        {
+          opacity: 0,
+          yPercent: 30
+        },
+        {
+          opacity: 1,
+          yPercent: -100
+        }
+      )
+      .fromTo(
+        '.join-title__clouds-3',
+        {
+          opacity: 0.6
+        },
+        {
+          opacity: 0
+        }
+      )
+  }
 })
 </script>
 
 <template>
   <section class="upside" ref="upsideContainer">
-    <h2 class="upside__title" ref="upsideTitle">Join the upside</h2>
+    <h2 data-wow-duration="1.4s" :class="[
+      'upside__title',
+      { 'wow animate__animated animate__fadeIn': isMobile }
+    ]" ref="upsideTitle">Join the upside</h2>
   </section>
 </template>
 
@@ -70,6 +77,9 @@ onMounted(() => {
     transform: translateX(-50%);
     bottom: 0;
     z-index: 9;
+    @media (max-width: 1100px) {
+      transform: translate(-50%, -50%);
+    }
     // &::before {
     //   content: '';
     //   position: absolute;
