@@ -69,7 +69,7 @@ const staff = [
   {
     img: './img/TheCommunitySection/staff/9.png',
     name: 'Тимур Аманов',
-    position: 'Director of Client Relations',
+    position: 'External Advisor',
     desc: '6+&nbsp;лет опыта работы в&nbsp;сфере управления частным капиталом (UBS, Tinkoff Private, лондонский офис UniCredit)',
     href: '#'
   }
