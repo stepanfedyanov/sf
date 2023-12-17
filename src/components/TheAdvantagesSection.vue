@@ -107,41 +107,41 @@ const sections = [
     cardStyle: 'top-image',
     cards: [
       {
-        tag: 'Real Estate',
-        date: 'October 20, 2023',
-        desc: 'Manulife Investment Management co-strategists Macan Nia and Kevin Headland explain why co-strategists Macan Nia and Kevin Headland...',
-        title: 'Economy dodges recession, but warning signs remain',
+        tag: 'Report',
+        date: 'Январь 2024',
+        desc: 'Управление капиталом и инвестиции в условиях глобальной турбулентности. Макротренды, взгляды ведущих инвестдомов',
+        title: 'Skyfort Outlook 2024: финансы и геополитика',
         href: '',
         imgSrc: './img/TheAdvantagesSection/2/1.jpg',
         columns: []
       },
       {
-        tag: 'Real Estate',
-        date: 'October 20, 2023',
-        desc: 'Manulife Investment Management co-strategists Macan Nia and Kevin Headland explain why co-strategists Macan Nia and Kevin Headland...',
-        title: 'Economy dodges recession, but warning signs remain',
+        tag: 'Alternatives',
+        date: 'Январь 2024',
+        desc: 'Анализ возможностей инвестирования в private markets - демократизация и портфельный подход для affluent сегмента',
+        title: 'Альтернативные инвестиции: тренды и демократизация',
         href: '',
         imgSrc: './img/TheAdvantagesSection/2/2.jpg',
         columns: []
       },
       {
         tag: 'Real Estate',
-        date: 'October 20, 2023',
-        desc: 'Manulife Investment Management co-strategists Macan Nia and Kevin Headland explain why co-strategists Macan Nia and Kevin Headland...',
-        title: 'Economy dodges recession, but warning signs remain',
+        date: 'Февраль 2024',
+        desc: 'Исследование рынка доходной недвижимости в дружественных географиях: Тайланд, Индонезия, ОАЭ, Катар, Латинская Америка',
+        title: 'Зарубежная недвижимость для российских инвесторов',
         href: '',
         imgSrc: './img/TheAdvantagesSection/2/3.jpg',
         columns: []
       },
       {
-        tag: 'Real Estate',
-        date: 'October 20, 2023',
-        desc: 'Manulife Investment Management co-strategists Macan Nia and Kevin Headland explain why co-strategists Macan Nia and Kevin Headland...',
-        title: 'Economy dodges recession, but warning signs remain',
+        tag: 'Lifestyle',
+        date: 'Январь 2024',
+        desc: 'Сравнительный анализ возможностей по релокации. Интервью с Дмитрием Халиным, основателем компании Intermark',
+        title: 'Второе гражданство и ВНЖ: лучшие решения в 2024 г.',
         href: '',
         imgSrc: './img/TheAdvantagesSection/2/4.jpg',
         columns: []
-      }
+      },
     ]
   }
 ]

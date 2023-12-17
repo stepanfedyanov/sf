@@ -131,9 +131,7 @@ onMounted(() => {
             <p class="community-slide__position">
               {{ person.position }}
             </p>
-            <p class="community-slide__desc">
-              {{ person.desc }}
-            </p>
+            <p class="community-slide__desc" v-html="person.desc" />
             <TheButton color="white" size="medium" @click="openModal">Linkedin</TheButton>
           </div>
         </swiper-slide>

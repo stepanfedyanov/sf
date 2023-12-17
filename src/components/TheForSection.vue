@@ -101,7 +101,7 @@ const sections = [
       },
       {
         img: './img/TheForSection/3/2.svg',
-        title: 'Ведение сделок онлайн',
+        title: 'Ведение сделок',
         desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
       }
     ],

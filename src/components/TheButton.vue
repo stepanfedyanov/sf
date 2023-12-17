@@ -3,7 +3,8 @@ defineProps({
   color: String,
   size: String,
   href: String,
-  target: String
+  target: String,
+  flex: String
 })
 
 defineEmits(['tap'])
@@ -22,7 +23,8 @@ defineEmits(['tap'])
         blue: color === 'blue',
         small: size === 'small',
         medium: size === 'medium',
-        big: size === 'big'
+        big: size === 'big',
+        flex: flex === 'flex',
       }"
     >
       <span>
@@ -42,7 +44,8 @@ defineEmits(['tap'])
         blue: color === 'blue',
         small: size === 'small',
         medium: size === 'medium',
-        big: size === 'big'
+        big: size === 'big',
+        flex: flex === 'flex',
       }"
     >
       <span>
@@ -53,6 +56,12 @@ defineEmits(['tap'])
 </template>
 
 <style lang="scss">
+.btn-wrapper.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn {
   position: relative;
   cursor: pointer;
@@ -64,6 +73,16 @@ defineEmits(['tap'])
   display: inline-block;
   text-align: center;
   position: relative;
+  &.flex {
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  svg {
+    margin-right: 7px;
+  }
   span {
     position: relative;
     display: inline-block;
