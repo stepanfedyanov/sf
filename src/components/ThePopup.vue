@@ -81,18 +81,22 @@ const sumbitForm = async (e) => {
           </button>
           <h2 class="modal__title">Получить доступ</h2>
           <form class="modal__form" @submit.prevent="sumbitForm">
-            <label class="modal__label">
-              <span class="modal__label-text">Имя*</span>
-              <input class="modal__input" type="text" name="Client name" required />
-            </label>
-            <label class="modal__label">
-              <span class="modal__label-text">Email*</span>
-              <input class="modal__input" type="text" name="Email" required />
-            </label>
+            <div class="modal__container">
+              <label class="modal__label">
+                <span class="modal__label-text">Имя*</span>
+                <input class="modal__input" type="text" name="Client name" required />
+              </label>
+              <label class="modal__label">
+                <span class="modal__label-text">Email*</span>
+                <input class="modal__input" type="text" name="Email" required />
+              </label>
+            </div>
+
             <label class="modal__label">
               <span class="modal__label-text">Сообщение</span>
               <textarea class="modal__textarea" type="text" name="Comments"></textarea>
             </label>
+            <span class="modal__span">Нажимая Отправить, вы&nbsp;соглашаетесь с&nbsp;<a href="#">политикой обработки персональных данных</a>.</span>
             <button :class="[
               'modal__submit-btn',
               { 'modal__submit-btn-load': formLoad }
@@ -130,6 +134,34 @@ const sumbitForm = async (e) => {
     bottom: 0;
     background-color: #0a0b13;
     opacity: 0.8;
+  }
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 15px;
+    .modal__label {
+      width: 50%;
+    }
+    .modal__label + .modal__label {
+      margin-top: 0;
+    }
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      .modal__label {
+        width: 100%;
+      }
+    }
+  }
+  &__span {
+    margin-top: 15px;
+    font-size: 14px;
+    @media (max-width: 1100px) {
+      font-size: 12px;
+    }
+    a {
+      border-bottom: 1px solid #000;
+    }
   }
   &__content {
     position: absolute;
