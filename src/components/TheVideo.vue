@@ -101,7 +101,7 @@ const pause = () => {
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('/img/TheIntroSection/video-poster.jpg') center / cover no-repeat;
+      background: url('/img/TheIntroSection/video-poster.png') center / cover no-repeat;
     }
     &._played {
       &::before {
@@ -159,17 +159,17 @@ const pause = () => {
   }
 }
 
-@media (max-width: 600px) {
-  .intro {
-    &__video-wrapper {
-      &::before {
-        background: url('/img/TheIntroSection/video-poster-mobile.jpg') center / cover no-repeat;
-        background-size: 209%;
-        background-position: -200px -68px;
-      }
-    }
-  }
-}
+// @media (max-width: 600px) {
+//   .intro {
+//     &__video-wrapper {
+//       &::before {
+//         background: url('/img/TheIntroSection/video-poster.png') center / cover no-repeat;
+//         background-size: 209%;
+//         background-position: -200px -68px;
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: 490px) {
   .intro {
@@ -178,14 +178,14 @@ const pause = () => {
     }
   }
 }
-@media (max-width: 374px) {
-  .intro {
-    &__video-wrapper {
-      &::before {
-        background: url('/img/TheIntroSection/video-poster-mobile.jpg') center / cover no-repeat;
-        background-size: initial;
-      }
-    }
-  }
-}
+// @media (max-width: 374px) {
+//   .intro {
+//     &__video-wrapper {
+//       &::before {
+//         background: url('/img/TheIntroSection/video-poster.png') center / cover no-repeat;
+//         background-size: initial;
+//       }
+//     }
+//   }
+// }
 </style>
