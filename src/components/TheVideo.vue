@@ -25,17 +25,18 @@ const pause = () => {
     { '_paused': pausedVideo }
   ]">
     <div class="intro__video">
-      <div class="intro__video-pause" @click="pause" />
+      <!-- <div class="intro__video-pause" @click="pause" /> -->
       <vue-vimeo-player
         class="vimeo-video"
         ref="vimeo"
-        :video-id="894770774"
+        :video-id="896479554"
         player-width="100%"
         player-height="100%"
         :options="{
           width: '100%',
           height: '100%',
-          controls: false
+          byline: false,
+          title: false
         }"
       />
     </div>
@@ -82,6 +83,7 @@ const pause = () => {
 <style lang="scss">
 .intro {
   &__video-wrapper {
+    pointer-events: all;
     margin-bottom: 80px;
     @include adaptive-value('border-radius', 40, 30, 1);
     overflow: hidden;

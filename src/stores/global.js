@@ -43,8 +43,10 @@ export const useGlobalStore = defineStore('global', () => {
 
     if (state) {
       const header = document.querySelector('.header');
+      const popup = document.querySelector('.modal__card');
 
       window.lenis.stop()
+      popup.style.left = '';
       header.style.left = `${Number(window.getComputedStyle(header).left.replace('px', '')) - getScrollbarWidth() / 2}px`;
       document.documentElement.style.paddingRight = `${getScrollbarWidth()}px`;
 
@@ -52,11 +54,14 @@ export const useGlobalStore = defineStore('global', () => {
     };
     if (!state) {
       const header = document.querySelector('.header');
+      const popup = document.querySelector('.modal__card');
 
       window.lenis.start();
       
       document.documentElement.style.paddingRight = '';
       header.style.left = '';
+      popup.style.left = `${getScrollbarWidth() / 2}px`;
+      console.log(popup);
 
       document.documentElement.removeEventListener('keydown', escape);
     };
