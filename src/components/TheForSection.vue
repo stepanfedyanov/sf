@@ -9,39 +9,39 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const sections = [
   {
     num: 1,
-    title: 'Для состоятельных и растущих инвесторов',
+    title: 'Для частных инвесторов и состоятельных семей',
     backgroundColor: '#f9f9f9',
     size: 'small',
     items: [
       {
         img: './img/TheForSection/1/1.svg',
         title: 'Персональный управляющий',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Комплексное сопровождение и&nbsp;помощь по&nbsp;любым вопросам, связанным с&nbsp;управлением капиталом и&nbsp;инвестициями'
       },
       {
         img: './img/TheForSection/1/2.svg',
         title: 'Финансовая инфраструктура',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Открытие банковских и&nbsp;брокерских счетов в&nbsp;разных географиях, переводы средств, структурирование активов, гражданство и&nbsp;ВНЖ'
       },
       {
         img: './img/TheForSection/1/3.svg',
         title: 'Эксклюзивные инвестиции',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Доступ к&nbsp;сделкам и&nbsp;закрытым фондам в&nbsp;сфере альтернативных инвестиций (private equity, кредитование бизнеса, недвижимость, фонды и&nbsp;др.)'
       },
       {
         img: './img/TheForSection/1/4.svg',
         title: 'Полная картина всех активов',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Агрегация всех видов активов (ценные бумаги, ликвидность, альтернативные инвестиции, недвижимость, доли в&nbsp;бизнесе и&nbsp;др) в&nbsp;единую картину'
       },
       {
         img: './img/TheForSection/1/5.svg',
         title: 'Экспертное сопровождение',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Разовые и&nbsp;регулярные консультации от&nbsp;резидентов профессионального сообщества Skyfort (финансовые, юридические и&nbsp;налоговые вопросы)'
       },
       {
         img: './img/TheForSection/1/6.svg',
         title: 'Аналитика и&nbsp;инсайты',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Исследования, инсайты и&nbsp;экспертные комментарии по&nbsp;вопросам управления капиталом и&nbsp;инвестиций. Образование для инвесторов и&nbsp;членов семьи'
       }
     ],
     btnText: 'Получить доступ',
@@ -56,32 +56,32 @@ const sections = [
       {
         img: './img/TheForSection/2/1.svg',
         title: 'Профессиональная CRM-система',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Специализированная платформа для ведения клиентов и&nbsp;сделок полного цикла: контакты, задачи, сделки, платежи, отчетность'
       },
       {
         img: './img/TheForSection/2/2.svg',
         title: 'Постоянный поток&nbsp;клиентов',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Собственная система маркетинга и&nbsp;продаж с&nbsp;передачей клиентов сертифицированным управляющим&nbsp;&mdash; резидентам сообщества Skyfort'
       },
       {
         img: './img/TheForSection/2/3.svg',
         title: 'Доступ к качественным сделкам и сервисам',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Эксклюзивные инвестиционные продукты и&nbsp;сервисы от&nbsp;Skyfort Product Lab и&nbsp;проверенных поставщиков со&nbsp;всего мира'
       },
       {
         img: './img/TheForSection/2/4.svg',
         title: 'Финансовая инфраструктура',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Развитая юридическая и&nbsp;финансовая инфраструктура для независимых управляющих в&nbsp;ключевых локациях (EU, MENA, ASIA, LATAM)'
       },
       {
         img: './img/TheForSection/2/5.svg',
         title: 'Аналитика, обучение и экспертная поддержка',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Исследования, инсайты и&nbsp;экспертная поддержка. Образовательные программы для управляющих и&nbsp;финансовых советников'
       },
       {
         img: './img/TheForSection/2/6.svg',
         title: 'Платформа управления клиентскими портфелями',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Цифровая платформа с&nbsp;агрегацией всех видов активов клиента. Планирование, управление, отчетность, рекомендации'
       }
     ],
     btnText: 'Подключиться',
@@ -97,12 +97,12 @@ const sections = [
       {
         img: './img/TheForSection/3/1.svg',
         title: 'Глобальная дистрибуция',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Представьте ваш продукт десяткам тысяч потенциальных инвесторов и&nbsp;клиентов по&nbsp;всему миру через развитую партнерскую сеть Skyfort'
       },
       {
         img: './img/TheForSection/3/2.svg',
         title: 'Ведение сделок',
-        desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam'
+        desc: 'Отслеживайте, оформляйте и&nbsp;исполняйте сделки онлайн с&nbsp;помощью цифровой платформы и&nbsp;бесшовной финансовой инфраструктуры'
       }
     ],
     btnText: 'Стать партнером',
@@ -186,9 +186,7 @@ const openModal = () => {
             >
               <img class="for__item-img" :src="item.img" :alt="`Icon ${item.title}`" />
               <h3 class="for__item-title" v-html="item.title"></h3>
-              <p class="for__item-desc">
-                {{ item.desc }}
-              </p>
+              <p class="for__item-desc" v-html="item.desc" />
             </li>
           </ul>
           <TheButton class="for__section-btn" color="black" size="big" @click="openModal">
@@ -252,7 +250,7 @@ const openModal = () => {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 40, 28, 1);
     @include adaptive-value('line-height', 43, 32, 1);
-    max-width: 450px;
+    max-width: 490px;
     &._big {
       max-width: 550px;
     }

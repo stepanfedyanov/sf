@@ -31,19 +31,16 @@ defineProps({
         :alt="info.title"
       />
       <div class="how__item-info">
-        <p class="how__item-desc wow animate__animated animate__fadeIn">{{ info.desc }}</p>
-        <h2 class="how__item-title wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-          {{ info.title }}
-        </h2>
+        <p class="how__item-desc wow animate__animated animate__fadeIn" v-html="info.desc" />
+        <h2 class="how__item-title wow animate__animated animate__fadeIn" data-wow-delay=".3s" v-html="info.title" />
       </div>
       <p
         class="how__item-img-text wow animate__animated animate__fadeIn"
         :data-wow-delay="`${0.2 * idx}s`"
         v-for="(text, idx) in info.texts"
         :key="text"
-      >
-        {{ text }}
-      </p>
+        v-html="text"
+      />
     </div>
   </article>
 </template>
