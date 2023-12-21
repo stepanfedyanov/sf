@@ -11,25 +11,25 @@ import { onMounted, ref } from 'vue'
 
 const items = [
   {
-    desc: 'Для осознанных частных инвесторов',
-    title: 'Цифровой семейный офис',
+    desc: 'Для финансовых советников и&nbsp;частных инвесторов',
+    title: 'Маркетплейс инвестиций и&nbsp;сервисов',
     img: './img/TheHowSection/investors.webp',
     backgroundPosition: '30% -80px',
     texts: [
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
-      'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla',
-      'Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Lorem ipsum dolor sit amet, cons ectetuer adipisc'
+      'Широкий выбор качественных инвестиционных продуктов и&nbsp;сервисов со&nbsp;всего мира: эксклюзивные сделки, доступ в&nbsp;закрытые фонды, премиальные услуги.',
+      'Демократизация альтернативных инвестиций за&nbsp;счет дробления (прямые инвестиции и&nbsp;частное кредитование бизнеса, доходная недвижимость, фонды): входной чек от&nbsp;500&nbsp;тыс. руб.',
+      'Полный цикл ведения сделок на&nbsp;платформе: удобный подбор и&nbsp;исполнение за&nbsp;счет развитой финансовой и&nbsp;юридической инфраструктуры в&nbsp;дружественных географиях.'
     ]
   },
   {
-    desc: 'Для независимых финансовых советников',
-    title: 'Глобальная экосистема роста',
+    desc: 'Для осознанных владельцев капитала',
+    title: 'Цифровой семейный офис',
     img: './img/TheHowSection/managers.webp',
     backgroundPosition: '25% -10px',
     texts: [
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.',
-      'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla',
-      'Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Lorem ipsum dolor sit amet, cons ectetuer adipisc'
+      'Единое окно управления благосостоянием: полная картина всех активов, финансовое планирование и&nbsp;ведение портфеля на&nbsp;базе лучших практик глобальных лидеров индустрии.',
+      'Персональный управляющий и&nbsp;экспертная поддержка: Skyfort объединяет ведущих управляющих капиталом, финансовых советников и&nbsp;экспертов по&nbsp;всему миру.',
+      'Доступность за&nbsp;счет цифровизации: управляйте капиталом так, как это делают ультрабогатые семьи. Без необходимости создавать свой семейный офис, от&nbsp;30&nbsp;тыс. руб.&nbsp;в&nbsp;месяц.'
     ]
   }
 ]

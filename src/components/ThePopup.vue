@@ -23,7 +23,7 @@ const sumbitForm = async (e) => {
 
   try {
     formLoad.value = true;
-    const request = await fetch('https://api.airtable.com/v0/appyfMQxX3naDC0n2/tbljNCCZ8iR1ihrus', {
+    const request = await fetch('https://api.airtable.com/v0/appyfMQxX3naDC0n2/tblE44oemChAawDsX', {
       method: 'POST',
       headers: {
         'Authorization': 'Bearer patzgje0utMdruvrX.07a501d0db9be780db488c9399ddb00ba155ff9b0c00fbf76663e0dcb430be3c',
@@ -84,7 +84,7 @@ const sumbitForm = async (e) => {
             <div class="modal__container">
               <label class="modal__label">
                 <span class="modal__label-text">Имя*</span>
-                <input class="modal__input" type="text" name="Client name" required />
+                <input class="modal__input" type="text" name="Name" required />
               </label>
               <label class="modal__label">
                 <span class="modal__label-text">Email*</span>

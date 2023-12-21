@@ -16,9 +16,7 @@ defineProps({
           background-position: ${info.backgroundPosition}
         `"
         ></div>
-        <p class="how__item-img-text" v-for="text in info.texts" :key="text">
-          {{ text }}
-        </p>
+        <p class="how__item-img-text" v-for="text in info.texts" :key="text" v-html="text" />
       </div>
     </div>
   </article>

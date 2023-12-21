@@ -14,8 +14,7 @@ const globalStore = useGlobalStore()
           Управление капиталом 3.0
         </h1>
         <p class="meet__text wow animate__animated animate__fadeIn" data-wow-delay="0.8s">
-          Международная цифровая экосистема управления благосостоянием, строящаяся профессиональным
-          сообществом
+          Первый цифровой семейный офис и&nbsp;маркетплейс инвестиционных продуктов для состоятельных людей
         </p>
         <TheButton
           class="meet__btn wow animate__animated animate__fadeIn"

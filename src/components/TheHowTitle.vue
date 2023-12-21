@@ -15,10 +15,8 @@ defineProps({
       :style="idx === 0 ? 'opacity: 1;' : 'opacity: 0;'"
       :class="`how__item-info how__item-info-${idx}`"
     >
-      <p class="how__item-desc animate__animated animate__fadeIn">{{ title.desc }}</p>
-      <h2 class="how__item-title animate__animated animate__fadeIn" data-wow-delay=".3s">
-        {{ title.title }}
-      </h2>
+      <p class="how__item-desc animate__animated animate__fadeIn" v-html="title.desc" />
+      <h2 class="how__item-title animate__animated animate__fadeIn" data-wow-delay=".3s" v-html="title.title" />
     </div>
   </div>
 </template>
@@ -46,7 +44,6 @@ defineProps({
   &__item-desc {
     font-size: 25px;
     line-height: calc(34 / 24);
-    max-width: 250px;
     letter-spacing: 0.48px;
     margin-bottom: 25px;
     font-size: 25px;

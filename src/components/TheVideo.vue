@@ -36,7 +36,8 @@ const pause = () => {
           width: '100%',
           height: '100%',
           byline: false,
-          title: false
+          title: false,
+          pip: false,
         }"
       />
     </div>
