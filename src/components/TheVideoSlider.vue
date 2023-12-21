@@ -22,9 +22,19 @@ const sliders = [
     quote:
       'Наша задача - агрегировать лучшие мировые практики управления крупным капиталом и сделать их доступными более широкому кругу состоятельных людей',
     author: 'Игорь Смирнов, Co-founder & CPO/CMO'
-  },
+  }
 ]
 
+let windowInterval
+const initEvent = () => {
+  swiperEl.value.classList.add('hidden')
+  setTimeout(() => {
+    for (let i = 0; i < swiperEl.value.swiper.slides.length - 1; i++) {
+      swiperEl.value.swiper.slidePrev()
+    }
+    swiperEl.value.classList.remove('hidden')
+  }, 400)
+}
 onMounted(() => {
   const swiperParams = {
     slidesPerView: 1,
@@ -36,15 +46,7 @@ onMounted(() => {
     allowTouchMove: true,
     on: {
       init: function () {
-        setInterval(() => {
-          swiperEl.value.classList.add('hidden')
-          setTimeout(() => {
-            for (let i = 0; i < swiperEl.value.swiper.slides.length - 1; i++) {
-              swiperEl.value.swiper.slidePrev()
-            }
-            swiperEl.value.classList.remove('hidden')
-          }, 200)
-        }, 4000)
+        windowInterval = window.setInterval(initEvent, 4000)
       }
     },
     injectStyles: [
@@ -87,22 +89,29 @@ onMounted(() => {
   swiperEl.value.initialize()
 })
 
+const slideChanged = () => {
+  window.clearInterval(windowInterval)
+  windowInterval = window.setInterval(initEvent, 4000)
+}
+
 const nextSlide = () => {
   swiperEl.value.classList.add('hidden')
+  slideChanged()
   setTimeout(() => {
     for (let i = 0; i < swiperEl.value.swiper.slides.length - 1; i++) {
       swiperEl.value.swiper.slidePrev()
     }
     swiperEl.value.classList.remove('hidden')
-  }, 200)
+  }, 400)
 }
 
 const prevSlide = () => {
   swiperEl.value.classList.add('hidden')
+  slideChanged()
   setTimeout(() => {
     swiperEl.value.swiper.slidePrev()
     swiperEl.value.classList.remove('hidden')
-  }, 200)
+  }, 400)
 }
 </script>
 
@@ -150,7 +159,7 @@ const prevSlide = () => {
   &__swiper {
     overflow: visible !important;
     position: relative;
-    transition: 0.2s;
+    transition: 0.4s;
     &.hidden {
       opacity: 0;
     }
