@@ -68,7 +68,7 @@ const items = [
   </defs>
 </svg>`,
     title: 'Глобальный охват',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Vel placerat eu ullamcorper pellentesque laoreet euismod.'
+    desc: 'В условиях глобальной турбулентности  международная инфраструктура и инвестиционные продукты Skyfort - это ваш путь к созданию безопасной гавани для себя, своей семьи и капитала'
   },
   {
     icon: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -212,7 +212,7 @@ const items = [
   </defs>
 </svg>`,
     title: 'Финансовая свобода',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Vel placerat eu ullamcorper pellentesque laoreet euismod.'
+    desc: 'С помощью цифровых и финансовых технологий Skyfort агрегирует лучшие мировые практики управления крупным капиталом и делает их доступными более широкому кругу лиц'
   },
   {
     icon: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -288,7 +288,7 @@ const items = [
   </defs>
 </svg>`,
     title: 'Профессионализм',
-    desc: 'Lorem ipsum dolor sit amet consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper tempor egestas diam. Vel placerat eu ullamcorper pellentesque laoreet euismod.'
+    desc: 'Сочетание экспертизы и безупречной личной честности - это истинный профессионализм и фундамент сообщества Skyfort, основа для доверия и достижения превосходных результатов'
   }
 ]
 
@@ -1968,9 +1968,7 @@ onMounted(() => {
           Ваш осознанный путь к&nbsp;свободе
         </TheSectionTitle>
         <p class="liberty__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
-          Our mission is to bring prosperity and independence to ... Lorem ipsum dolor sit amet
-          consectetur. Quam ultricies orci tortor phasellus. Nisl ut ut ut volutpat. Fusce semper
-          tempor egestas diam. Vel placerat eu ullamcorper pellentesque laoreet euismod.
+          Skyfort объединяет новые технологии и&nbsp;лучших профессионалов индустрии для того, чтобы процветание, свобода и&nbsp;безопасность стали доступны миллионам людей по&nbsp;всему миру: от&nbsp;начинающих инвесторов до&nbsp;опытных экспертов и&nbsp;управляющих
         </p>
         <ul class="liberty__list">
           <li
