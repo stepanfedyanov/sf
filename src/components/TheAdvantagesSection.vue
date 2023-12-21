@@ -102,7 +102,7 @@ const sections = [
     title: 'Аналитика и инсайты',
     id: 'Аналитика',
     style: 'white',
-    desc: 'Skyfort Analytics is a community-driven think tank and curated media platform that brings together top tier experts from wealth management & private banking industry',
+    desc: 'Исследования, инсайты и экспертные комментарии по инвестициям и управлению капиталом от сообщества ведущих профессионалов-практиков',
     btnText: 'Читать больше',
     cardStyle: 'top-image',
     cards: [

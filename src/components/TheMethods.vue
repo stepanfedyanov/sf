@@ -12,6 +12,11 @@ const cards = [
       desc: 'Качественные инвестиционные продукты и&nbsp;сервисы от&nbsp;проверенных поставщиков со&nbsp;всего мира'
     },
     {
+      img: './img/TheCommunitySection/methods/7.png',
+      title: 'Семейный офис',
+      desc: 'Облачный мультисемейный офис на базе цифровой платформы и сообщества управляющих'
+    },
+    {
       img: './img/TheCommunitySection/methods/2.png',
       title: 'Лаборатория',
       desc: 'Собственная продуктовая фабрика, специализирующаяся на&nbsp;инвестициях в&nbsp;private markets (PE/VC, Private Credit)'
@@ -35,11 +40,6 @@ const cards = [
       img: './img/TheCommunitySection/methods/6.png',
       title: 'Сообщество',
       desc: 'Профессиональное международное сообщество управляющих капиталом и&nbsp;финансовых советников'
-    },
-    {
-      img: './img/TheCommunitySection/methods/7.png',
-      title: 'База знаний',
-      desc: 'Community-based Wiki для управляющих капиталом и&nbsp;финансовых советников, агрегация лучших практик'
     },
     {
       img: './img/TheCommunitySection/methods/8.png',
@@ -196,8 +196,8 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
   &__card {
     @include adaptive-value('padding-top', 73, 32, 1);
     @include adaptive-value('padding-bottom', 73, 32, 1);
-    @include adaptive-value('padding-left', 72, 20, 1);
-    @include adaptive-value('padding-right', 72, 20, 1);
+    @include adaptive-value('padding-left', 36, 20, 1);
+    @include adaptive-value('padding-right', 36, 20, 1);
     @include adaptive-value('border-radius', 50, 30, 1);
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(168deg, #fff -5.86%, rgba(255, 255, 255, 0) 96.08%);

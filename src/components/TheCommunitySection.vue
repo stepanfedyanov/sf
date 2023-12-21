@@ -120,7 +120,7 @@ onMounted(() => {
           Сообщество лидеров
         </TheSectionTitle>
         <p class="community__desc wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-          Экосистема Skyfort строится на&nbsp;базе профессионального сообщества и&nbsp;создается совместно с&nbsp;ведущими профессионалами рынка управления капиталом
+          Экосистема Skyfort строится на&nbsp;базе профессионального сообщества и&nbsp;создается совместно с&nbsp;ведущими экспертами рынка управления капиталом
         </p>
       </div>
     </TheContainer>
