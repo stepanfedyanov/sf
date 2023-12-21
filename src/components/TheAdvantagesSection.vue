@@ -6,7 +6,7 @@ const sections = [
     title: 'Продукты и сервисы',
     id: 'Маркетплейс',
     style: 'blue',
-    desc: 'Premium curated Skyfort Marketplace offers top quality vetted products and services from our internal WM team, Skyfort Product Lab and third-party providers within our global professional community.',
+    desc: 'Качественные инвестиционные продукты и&nbsp;сервисы от&nbsp;собственной продуктовой фабрики Skyfort Product Lab и&nbsp;проверенных поставщиков&nbsp;&mdash; резидентов международного сообщества Skyfort',
     btnText: 'Смотреть все',
     cardStyle: 'bottom-image',
     cards: [
@@ -20,14 +20,14 @@ const sections = [
         columns: [
           {
             items: [
-              'financial checkup',
-              'asset aggregation',
-              'macro analysis ',
-              'strategic advisory '
+              'диагностика',
+              'агрегация активов',
+              'аналитика',
+              'сопровождение'
             ]
           },
           {
-            items: ['wealth planning', 'asset management', 'wealth transfer']
+            items: ['планирование', 'портфельное управление', 'наследование']
           }
         ]
       },
@@ -40,10 +40,10 @@ const sections = [
         imgSrc: './img/TheAdvantagesSection/1/2.jpg',
         columns: [
           {
-            items: ['bank accounts', 'broker accounts ', 'international transfers']
+            items: ['открытие счетов', 'структурирование активов', 'международные платежи']
           },
           {
-            items: ['daily banking', 'settlements on transactions']
+            items: ['операционный банкинг', 'расчеты по&nbsp;сделкам']
           }
         ]
       },
@@ -56,10 +56,10 @@ const sections = [
         imgSrc: './img/TheAdvantagesSection/1/3.jpg',
         columns: [
           {
-            items: ['PE & VC deals', 'real estate', 'private debt', 'commodities']
+            items: ['PE & VC сделки', 'частный кредит', 'структурные продукты']
           },
           {
-            items: ['hedge funds', 'digital assets', 'structured products']
+            items: ['недвижимость', 'хедж-фонды', 'цифровые активы']
           }
         ]
       },
@@ -72,10 +72,10 @@ const sections = [
         imgSrc: './img/TheAdvantagesSection/1/4.jpg',
         columns: [
           {
-            items: ['reporting consolidation', 'management optimisation']
+            items: ['управленческая отчетность', 'независимый совет директоров']
           },
           {
-            items: ['independent board of directors', 'M&A, project financing']
+            items: ['tax & legal сопровождение', 'M&A, проектное финансирование']
           }
         ]
       },
@@ -88,10 +88,10 @@ const sections = [
         imgSrc: './img/TheAdvantagesSection/1/5.jpg',
         columns: [
           {
-            items: ['citizenship & visas', 'education', 'personal security']
+            items: ['ВНЖ и&nbsp;гражданство', 'безопасность и GR', 'консьерж-сервис']
           },
           {
-            items: ['healthcare', 'events', 'forensic & GR']
+            items: ['образование', 'медицина']
           }
         ]
       }
