@@ -14,7 +14,7 @@ const cards = [
     {
       img: './img/TheCommunitySection/methods/7.png',
       title: 'Семейный офис',
-      desc: 'Облачный мультисемейный офис на базе цифровой платформы и сообщества управляющих'
+      desc: 'Облачный семейный офис на базе цифровой платформы и сообщества управляющих'
     },
     {
       img: './img/TheCommunitySection/methods/2.png',
