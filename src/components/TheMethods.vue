@@ -228,7 +228,7 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
   &__title {
     @include adaptive-value('margin-bottom', 35, 10, 1);
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 40, 20, 1);
+    @include adaptive-value('font-size', 40, 15, 1);
     line-height: normal;
     @include adaptive-value('letter-spacing', -0.1, -0.3, 1);
     font-weight: 300;
