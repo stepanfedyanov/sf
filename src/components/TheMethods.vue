@@ -19,7 +19,7 @@ const cards = [
   {
     img: './img/TheCommunitySection/methods/2.png',
     title: 'Лаборатория',
-    desc: 'Собственная продуктовая фабрика, специализирующаяся на&nbsp;инвестициях в&nbsp;private markets (PE/VC, Private Credit)'
+    desc: 'Продуктовая фабрика с фокусом на инвестиции в private markets (PE/VC, Private Credit) '
   },
   {
     img: './img/TheCommunitySection/methods/3.png',
@@ -34,22 +34,22 @@ const cards = [
   {
     img: './img/TheCommunitySection/methods/5.png',
     title: 'Агрегация',
-    desc: 'Цифровая платформа управления благосостоянием: полная картина всех активов с&nbsp;автоматической агрегацией'
+    desc: 'Цифровая платформа управления капиталом: полная картина всех видов активов'
   },
   {
     img: './img/TheCommunitySection/methods/6.png',
     title: 'Сообщество',
-    desc: 'Профессиональное международное сообщество управляющих капиталом и&nbsp;финансовых советников'
+    desc: 'Профессиональное сообщество управляющих капиталом и финансовых советников'
   },
   {
     img: './img/TheCommunitySection/methods/8.png',
     title: 'Академия',
-    desc: 'Собственная система подготовки независимых управляющих капиталом и&nbsp;финансовых советников'
+    desc: 'Собственная система подготовки независимых управляющих  и финансовых советников'
   },
   {
     img: './img/TheCommunitySection/methods/9.png',
     title: 'Медиа',
-    desc: 'Центр создания и&nbsp;дистрибуции качественного контента, генерируемого резидентами сообщества Skyfort'
+    desc: 'Центр создания и дистрибуции  контента, генерируемого резидентами сообщества Skyfort'
   },
   {
     img: './img/TheCommunitySection/methods/10.png',
@@ -204,7 +204,7 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
     background: linear-gradient(168deg, #fff -5.86%, rgba(255, 255, 255, 0) 96.08%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     text-align: center;
     width: 100%;

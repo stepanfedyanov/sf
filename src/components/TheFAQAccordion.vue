@@ -8,11 +8,11 @@ const items = [
     body: 'Платформа Skyfort находится в процессе разработки. Проект стартовал осенью 2023 года, первый релиз запланирован на 1 квартал 2024 года. Если вы хотите присоединиться к команде Skyfort, стать ранним клиентом или партнером - оставьте заявку на сайте и напишите кратко о себе.'
   },
   {
-    header: 'С каким капиталом можно стать клиентом?',
+    header: 'Каков минимальный чек входа?',
     body: 'Миссия Skyfort - сделать качественные продукты и сервисы, ориентированные на ультрабогатых людей, доступными максимально широкому кругу инвесторов. На первом этапе мы стремимся снизить минимальный чек входа до 1 млн руб. для инвестиций и до 100 тыс. руб. для сервисов. Большая часть инвестиционных продуктов, согласно законодательству РФ, пока доступна только для квалифицированных инвесторов.'
   },
   {
-    header: 'Как выставить свой продукт на полку?',
+    header: 'Как выставить продукт на полку?',
     body: 'Ассортимент маркетплейса Skyfort формируется из трех источников: собственная продуктовая фабрика Skyfort Product Lab, внешние продуктовые фабрики и резиденты профессионального сообщества. Приоритет отдается эксклюзивным сделкам и фондам в сфере Private Equity, Private Credit и Real Estate в России и дружественных географиях. Предложения о сотрудничестве направляйте на <a href="mailto:igor.smirnov@skyfort.capital">igor.smirnov@skyfort.capital</a> или в Telegram <a href="https://t.me/harrybright" target="_blank">@harrybright</a>.'
   },
   {
@@ -110,14 +110,14 @@ const items = [
   &__trigger {
     h3 {
       font-family: 'Atyp Display', sans-serif;
-      @include adaptive-value('font-size', 20, 10, 1);
+      @include adaptive-value('font-size', 20, 12, 1);
       @include adaptive-value('line-height', 24, 20, 1);
       @include adaptive-value('letter-spacing', 0, 0.1, 1);
     }
   }
   &__trigger_active {
     .accordion__arrow {
-      transform: rotate(270deg) translateY(2px) translateX(-3px);
+      transform: rotate(270deg) translateY(2px) translateX(0px);
     }
   }
 }
