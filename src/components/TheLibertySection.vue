@@ -1986,19 +1986,9 @@ onMounted(() => {
             </p>
           </li>
         </ul>
-        <div class="liberty__link-wrapper wow animate__animated animate__fadeIn">
-          <a class="liberty__main-link" href="#" target="_blank">
-            <span class="liberty__main-link-left">
-              <img
-                class="liberty__link-img"
-                src="/img/TheLibertySection/link-img.svg"
-                alt="Read the Skyfort Manifesto"
-              />
-              <span class="liberty__link-text">Читать манифест Skyfort</span>
-            </span>
-            <img class="liberty__link-arrow" src="/img/global/arrow.svg" alt="Arrow" />
-          </a>
-        </div>
+
+      
+
       </div>
     </TheContainer>
   </section>
@@ -2068,7 +2058,7 @@ onMounted(() => {
     justify-content: center;
     margin: -9px;
     flex-wrap: wrap;
-    @include adaptive-value('margin-bottom', 76, 60, 1);
+    // @include adaptive-value('margin-bottom', 76, 60, 1); 
   }
   &__item {
     max-width: 322px;
