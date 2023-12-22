@@ -48,7 +48,7 @@ const globalStore = useGlobalStore()
     @include adaptive-value('line-height', 25, 21, 1);
     letter-spacing: 0.66px;
     font-weight: 300;
-    @include adaptive-value('margin-top', 52, 37, 1);
+    @include adaptive-value('margin-top', 52, 33, 1);
     @include adaptive-value('margin-bottom', 37, 37, 1);
   }
   &__btn {
