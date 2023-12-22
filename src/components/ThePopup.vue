@@ -133,7 +133,7 @@ const sumbitForm = async (e) => {
   right: 0;
   bottom: 0;
   z-index: 1002;
-  transition: 0.3s;
+  transition: 0.5s;
   &__background {
     position: absolute;
     top: 0;

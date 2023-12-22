@@ -33,7 +33,7 @@ const initEvent = () => {
       swiperEl.value.swiper.slidePrev()
     }
     swiperEl.value.classList.remove('hidden')
-  }, 400)
+  }, 600)
 }
 onMounted(() => {
   const swiperParams = {
@@ -102,7 +102,7 @@ const nextSlide = () => {
       swiperEl.value.swiper.slidePrev()
     }
     swiperEl.value.classList.remove('hidden')
-  }, 400)
+  }, 600)
 }
 
 const prevSlide = () => {
@@ -111,7 +111,7 @@ const prevSlide = () => {
   setTimeout(() => {
     swiperEl.value.swiper.slidePrev()
     swiperEl.value.classList.remove('hidden')
-  }, 400)
+  }, 600)
 }
 </script>
 
@@ -159,7 +159,7 @@ const prevSlide = () => {
   &__swiper {
     overflow: visible !important;
     position: relative;
-    transition: 0.4s;
+    transition: 0.6s;
     &.hidden {
       opacity: 0;
     }
