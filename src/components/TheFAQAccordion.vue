@@ -80,6 +80,14 @@ const items = [
   }
 }
 
+.accordion__item {
+  &:last-child {
+    span {
+      @include adaptive-value('padding-top', 24, 14, 1);
+    }
+  }
+}
+
 @media (max-width: 530px) {
   .accordion__content {
     span {

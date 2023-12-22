@@ -59,7 +59,7 @@ const sections = [
             items: ['PE & VC сделки', 'private credit', '<p>прямые</p> <p>инвестиции</p> в бизнес']
           },
           {
-            items: ['недвижимость', 'mutual & hedge funds', 'цифровые активы']
+            items: ['недвижимость', 'mutual &<br>hedge funds', 'цифровые активы']
           }
         ]
       },
@@ -72,7 +72,7 @@ const sections = [
         imgSrc: './img/TheAdvantagesSection/1/4.jpg',
         columns: [
           {
-            items: ['M&A, аудит<br> и оценка бизнеса, due diligence', 'независимый совет директоров']
+            items: ['M&A, аудит<br> и оценка бизнеса,<br>due diligence', 'независимый<br> совет директоров']
           },
           {
             items: ['tax & legal', 'акционерные соглашения<br> и отчетность']

@@ -94,7 +94,7 @@ const sumbitForm = async (e) => {
             </div>
 
             <label class="modal__label">
-              <span class="modal__label-text">Сообщение</span>
+              <span class="modal__label-text">Напишите о себе</span>
               <textarea class="modal__textarea" type="text" name="Comments"></textarea>
             </label>
             <span class="modal__span"
