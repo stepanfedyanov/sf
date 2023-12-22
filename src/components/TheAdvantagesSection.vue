@@ -51,7 +51,7 @@ const sections = [
         tag: '',
         date: '',
         desc: '',
-        title: 'Эксклюзивные инвестиции',
+        title: 'Альтернативные инвестиции',
         href: '',
         imgSrc: './img/TheAdvantagesSection/1/3.jpg',
         columns: [
