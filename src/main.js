@@ -20,7 +20,7 @@ import { register } from 'swiper/element/bundle'
 register()
 
 // Smooth scroller
-console.log(navigator.userAgent);
+// console.log(navigator.userAgent);
 
 if (!(navigator && navigator.userAgent && navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome'))) {
   const lenis = new Lenis()
