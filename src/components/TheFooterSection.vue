@@ -125,6 +125,7 @@ const openModal = () => {
           </p>
           <TheButton
             href="https://t.me/skyfortrussia"
+            target="_blank"
             class="flex wow animate__animated animate__fadeIn"
             data-wow-delay="0.1s"
             size="big"
@@ -147,7 +148,7 @@ const openModal = () => {
                 v-for="(item, idx) in socialsList"
                 :key="item.title"
               >
-                <a class="socials__link" :href="item.href" v-html="item.icon"></a>
+                <a class="socials__link" :href="item.href" target="_blank" v-html="item.icon"></a>
               </li>
             </ul>
           </div>
@@ -160,7 +161,7 @@ const openModal = () => {
                   v-for="(item, idx) in navList"
                   :key="item.title"
                 >
-                  <a class="footer__nav-link" :href="item.href">
+                  <a class="footer__nav-link" :href="item.href" target="_blank">
                     {{ item.title }}
                   </a>
                 </li>
@@ -184,7 +185,7 @@ const openModal = () => {
           <p class="footer__desc">
             Присоединяйтесь к&nbsp;растущему сообществу профессиональных управляющих капиталом, финансовых советников, экспертов и&nbsp;частных инвесторов
           </p>
-          <TheButton href="https://t.me/skyfortrussia" size="big" color="blue"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
+          <TheButton target="_blank" href="https://t.me/skyfortrussia" size="big" color="blue"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
 <path d="M5.83,23.616c12.568-5.529,28.832-12.27,31.077-13.203c5.889-2.442,7.696-1.974,6.795,3.434 c-0.647,3.887-2.514,16.756-4.002,24.766c-0.883,4.75-2.864,5.313-5.979,3.258c-1.498-0.989-9.059-5.989-10.7-7.163 c-1.498-1.07-3.564-2.357-0.973-4.892c0.922-0.903,6.966-6.674,11.675-11.166c0.617-0.59-0.158-1.559-0.87-1.086 c-6.347,4.209-15.147,10.051-16.267,10.812c-1.692,1.149-3.317,1.676-6.234,0.838c-2.204-0.633-4.357-1.388-5.195-1.676 C1.93,26.43,2.696,24.995,5.83,23.616z"></path>
 </svg>Telegram</TheButton>
         </div>
@@ -194,13 +195,13 @@ const openModal = () => {
           </div>
           <ul class="socials__list">
             <li class="socials__item" v-for="item in socialsList" :key="item.title">
-              <a class="socials__link" :href="item.href" v-html="item.icon"></a>
+              <a class="socials__link" :href="item.href" v-html="item.icon" target="_blank"></a>
             </li>
           </ul>
           <nav class="footer__nav">
             <ul class="footer__nav-list">
               <li class="footer__nav-item" v-for="item in navList" :key="item.title">
-                <a class="footer__nav-link" :href="item.href">
+                <a class="footer__nav-link" :href="item.href" target="_blank">
                   {{ item.title }}
                 </a>
               </li>

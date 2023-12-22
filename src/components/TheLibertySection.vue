@@ -1987,7 +1987,7 @@ onMounted(() => {
           </li>
         </ul>
         <div class="liberty__link-wrapper wow animate__animated animate__fadeIn">
-          <a class="liberty__main-link" href="#">
+          <a class="liberty__main-link" href="#" target="_blank">
             <span class="liberty__main-link-left">
               <img
                 class="liberty__link-img"

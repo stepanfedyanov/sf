@@ -98,7 +98,7 @@ const sumbitForm = async (e) => {
               <textarea class="modal__textarea" type="text" name="Comments"></textarea>
             </label>
             <span class="modal__span"
-              >Нажимая Отправить, вы&nbsp;соглашаетесь с&nbsp;<a href="#"
+              >Нажимая Отправить, вы&nbsp;соглашаетесь с&nbsp;<a target="_blank" href="#"
                 >политикой обработки персональных данных</a
               >.</span
             >
