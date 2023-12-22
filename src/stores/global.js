@@ -61,7 +61,7 @@ export const useGlobalStore = defineStore('global', () => {
       document.documentElement.style.paddingRight = '';
       header.style.left = '';
       popup.style.left = `${getScrollbarWidth() / 2}px`;
-      console.log(popup);
+      // console.log(popup);
 
       document.documentElement.removeEventListener('keydown', escape);
     };

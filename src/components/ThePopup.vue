@@ -1,13 +1,13 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue'
 import { useGlobalStore } from '../stores/global'
 import { storeToRefs } from 'pinia'
 
 const globalStore = useGlobalStore()
 const { popupOpened } = storeToRefs(globalStore)
 
-const formLoad = ref(false);
-const formLoadText = ref('Отправить');
+const formLoad = ref(false)
+const formLoadText = ref('Отправить')
 
 const closeModal = (event) => {
   if (event.target.classList.contains('modal__content')) {
@@ -16,31 +16,32 @@ const closeModal = (event) => {
 }
 
 const sumbitForm = async (e) => {
-  if (formLoad.value) return;
+  if (formLoad.value) return
 
-  const formData = new FormData(e.target).entries();
-  const body = JSON.stringify({ fields: Object.fromEntries(formData) });
+  const formData = new FormData(e.target).entries()
+  const body = JSON.stringify({ fields: Object.fromEntries(formData) })
 
   try {
-    formLoad.value = true;
+    formLoad.value = true
     const request = await fetch('https://api.airtable.com/v0/appyfMQxX3naDC0n2/tblE44oemChAawDsX', {
       method: 'POST',
       headers: {
-        'Authorization': 'Bearer patzgje0utMdruvrX.07a501d0db9be780db488c9399ddb00ba155ff9b0c00fbf76663e0dcb430be3c',
-        'Content-Type': 'application/json', 
+        Authorization:
+          'Bearer patzgje0utMdruvrX.07a501d0db9be780db488c9399ddb00ba155ff9b0c00fbf76663e0dcb430be3c',
+        'Content-Type': 'application/json'
       },
       body
-    });
-    formLoad.value = false;
+    })
+    formLoad.value = false
     formLoadText.value = 'Данные отправлены'
 
     setTimeout(() => {
       formLoadText.value = 'Отправить'
     }, 1000)
   } catch (error) {
-    console.log('data send error', error);
+    console.log('data send error', error)
   }
-};
+}
 </script>
 
 <template>
@@ -96,11 +97,18 @@ const sumbitForm = async (e) => {
               <span class="modal__label-text">Сообщение</span>
               <textarea class="modal__textarea" type="text" name="Comments"></textarea>
             </label>
-            <span class="modal__span">Нажимая Отправить, вы&nbsp;соглашаетесь с&nbsp;<a href="#">политикой обработки персональных данных</a>.</span>
-            <button :class="[
-              'modal__submit-btn',
-              { 'modal__submit-btn-load': formLoad }
-            ]" type="submit">{{ formLoadText }} <div v-if="formLoad" class="modal__loader"></div> </button>
+            <span class="modal__span"
+              >Нажимая Отправить, вы&nbsp;соглашаетесь с&nbsp;<a href="#"
+                >политикой обработки персональных данных</a
+              >.</span
+            >
+            <button
+              :class="['modal__submit-btn', { 'modal__submit-btn-load': formLoad }]"
+              type="submit"
+            >
+              {{ formLoadText }}
+              <div v-if="formLoad" class="modal__loader"></div>
+            </button>
           </form>
         </div>
       </div>
@@ -161,6 +169,11 @@ const sumbitForm = async (e) => {
     }
     a {
       border-bottom: 1px solid #000;
+      transition: 0.2s;
+      &:hover {
+        color: #00488b;
+        border-color: #00488b;
+      }
     }
   }
   &__content {
@@ -312,6 +325,10 @@ const sumbitForm = async (e) => {
     resize: vertical;
     max-height: 200px;
     min-height: 80px;
+    transition: 0.15s;
+    &:focus {
+      border-color: #e1e4e6;
+    }
   }
   &__submit-btn {
     position: relative;
@@ -335,7 +352,7 @@ const sumbitForm = async (e) => {
       }
     }
     &-load {
-      color: transparent
+      color: transparent;
     }
     @media (max-width: 1100px) {
       font-weight: 300;
@@ -354,17 +371,29 @@ const sumbitForm = async (e) => {
 }
 
 @keyframes l5 {
-    0% {
-      box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 
-    }
-    33% {
-      box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002
-    }
-    66% {
-      box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002
-    }
-    100% {
-      box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 
-    }
+  0% {
+    box-shadow:
+      20px 0 #000,
+      -20px 0 #0002;
+    background: #000;
+  }
+  33% {
+    box-shadow:
+      20px 0 #000,
+      -20px 0 #0002;
+    background: #0002;
+  }
+  66% {
+    box-shadow:
+      20px 0 #0002,
+      -20px 0 #000;
+    background: #0002;
+  }
+  100% {
+    box-shadow:
+      20px 0 #0002,
+      -20px 0 #000;
+    background: #000;
+  }
 }
 </style>
