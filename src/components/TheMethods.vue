@@ -68,7 +68,9 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
         <swiper-container
           :mousewheel="{
             forceToAxis: true,
-            sensitivity: 0.6
+            sensitivity: 0.6,
+            thresholdTime: 400,
+            thresholdDelta: 20
           }"
           :spaceBetween="isMobile ? 10 : 30"
           :slidesPerView="2"
