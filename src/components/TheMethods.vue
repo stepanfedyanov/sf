@@ -6,59 +6,59 @@ import TheSliderButton from './TheSliderButton.vue'
 const swiper = ref(null)
 
 const cards = [
-{
-      img: './img/TheCommunitySection/methods/1.png',
-      title: 'Маркетплейс',
-      desc: 'Качественные инвестиционные продукты и&nbsp;сервисы от&nbsp;проверенных поставщиков со&nbsp;всего мира'
-    },
-    {
-      img: './img/TheCommunitySection/methods/7.png',
-      title: 'Семейный офис',
-      desc: 'Облачный семейный офис на базе цифровой платформы и сообщества управляющих'
-    },
-    {
-      img: './img/TheCommunitySection/methods/2.png',
-      title: 'Лаборатория',
-      desc: 'Собственная продуктовая фабрика, специализирующаяся на&nbsp;инвестициях в&nbsp;private markets (PE/VC, Private Credit)'
-    },
-    {
-      img: './img/TheCommunitySection/methods/3.png',
-      title: 'Аналитика',
-      desc: 'Community-driven think tank&nbsp;&mdash; аналитический центр на&nbsp;базе профессионального сообщества'
-    },
-    {
-      img: './img/TheCommunitySection/methods/4.png',
-      title: 'CRM',
-      desc: 'Цифровая платформа для финансовых советников, обеспечивающая полный цикл ведения клиентов'
-    },
-    {
-      img: './img/TheCommunitySection/methods/5.png',
-      title: 'Агрегация',
-      desc: 'Цифровая платформа управления благосостоянием: полная картина всех активов с&nbsp;автоматической агрегацией'
-    },
-    {
-      img: './img/TheCommunitySection/methods/6.png',
-      title: 'Сообщество',
-      desc: 'Профессиональное международное сообщество управляющих капиталом и&nbsp;финансовых советников'
-    },
-    {
-      img: './img/TheCommunitySection/methods/8.png',
-      title: 'Академия',
-      desc: 'Собственная система подготовки независимых управляющих капиталом и&nbsp;финансовых советников'
-    },
-    {
-      img: './img/TheCommunitySection/methods/9.png',
-      title: 'Медиа',
-      desc: 'Центр создания и&nbsp;дистрибуции качественного контента, генерируемого резидентами сообщества Skyfort'
-    },
-    {
-      img: './img/TheCommunitySection/methods/10.png',
-      title: 'Рейтинги',
-      desc: 'Сертификация и&nbsp;оценка независимых управляющих и&nbsp;финансовых советников, ежегодный глобальный рейтинг'
-    },
+  {
+    img: './img/TheCommunitySection/methods/1.png',
+    title: 'Маркетплейс',
+    desc: 'Качественные инвестиционные продукты и&nbsp;сервисы от&nbsp;проверенных поставщиков со&nbsp;всего мира'
+  },
+  {
+    img: './img/TheCommunitySection/methods/7.png',
+    title: 'Семейный офис',
+    desc: 'Облачный семейный офис на базе цифровой платформы и сообщества управляющих'
+  },
+  {
+    img: './img/TheCommunitySection/methods/2.png',
+    title: 'Лаборатория',
+    desc: 'Собственная продуктовая фабрика, специализирующаяся на&nbsp;инвестициях в&nbsp;private markets (PE/VC, Private Credit)'
+  },
+  {
+    img: './img/TheCommunitySection/methods/3.png',
+    title: 'Аналитика',
+    desc: 'Community-driven think tank&nbsp;&mdash; аналитический центр на&nbsp;базе профессионального сообщества'
+  },
+  {
+    img: './img/TheCommunitySection/methods/4.png',
+    title: 'CRM',
+    desc: 'Цифровая платформа для финансовых советников, обеспечивающая полный цикл ведения клиентов'
+  },
+  {
+    img: './img/TheCommunitySection/methods/5.png',
+    title: 'Агрегация',
+    desc: 'Цифровая платформа управления благосостоянием: полная картина всех активов с&nbsp;автоматической агрегацией'
+  },
+  {
+    img: './img/TheCommunitySection/methods/6.png',
+    title: 'Сообщество',
+    desc: 'Профессиональное международное сообщество управляющих капиталом и&nbsp;финансовых советников'
+  },
+  {
+    img: './img/TheCommunitySection/methods/8.png',
+    title: 'Академия',
+    desc: 'Собственная система подготовки независимых управляющих капиталом и&nbsp;финансовых советников'
+  },
+  {
+    img: './img/TheCommunitySection/methods/9.png',
+    title: 'Медиа',
+    desc: 'Центр создания и&nbsp;дистрибуции качественного контента, генерируемого резидентами сообщества Skyfort'
+  },
+  {
+    img: './img/TheCommunitySection/methods/10.png',
+    title: 'Рейтинги',
+    desc: 'Сертификация и&nbsp;оценка независимых управляющих и&nbsp;финансовых советников, ежегодный глобальный рейтинг'
+  }
 ]
 
-const isMobile = computed(() => window && window.screen && window.screen.width <= 1100);
+const isMobile = computed(() => window && window.screen && window.screen.width <= 1100)
 </script>
 
 <template>
@@ -67,7 +67,8 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
       <div class="methods__inner">
         <swiper-container
           :mousewheel="{
-            forceToAxis: true
+            forceToAxis: true,
+            sensitivity: 0.6
           }"
           :spaceBetween="isMobile ? 10 : 30"
           :slidesPerView="2"
