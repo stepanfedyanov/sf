@@ -1968,7 +1968,9 @@ onMounted(() => {
           Ваш осознанный путь к&nbsp;свободе
         </TheSectionTitle>
         <p class="liberty__desc wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
-          Skyfort объединяет новые технологии и&nbsp;лучших профессионалов индустрии для того, чтобы процветание, свобода и&nbsp;безопасность стали доступны миллионам людей по&nbsp;всему миру: от&nbsp;начинающих инвесторов до&nbsp;опытных экспертов и&nbsp;управляющих
+          Skyfort объединяет новые технологии и&nbsp;лучших профессионалов индустрии для того, чтобы
+          процветание, свобода и&nbsp;безопасность стали доступны миллионам людей по&nbsp;всему
+          миру: от&nbsp;начинающих инвесторов до&nbsp;опытных экспертов и&nbsp;управляющих
         </p>
         <ul class="liberty__list">
           <li
@@ -1986,9 +1988,6 @@ onMounted(() => {
             </p>
           </li>
         </ul>
-
-      
-
       </div>
     </TheContainer>
   </section>
@@ -2015,9 +2014,9 @@ onMounted(() => {
       opacity: 0;
     }
     @media (max-width: 1100px) {
-      width: 250%;    
+      width: 250%;
       left: 50%;
-      top: -14%
+      top: -14%;
     }
   }
   &__title {
@@ -2030,6 +2029,24 @@ onMounted(() => {
     @include adaptive-value('line-height', 88, 53, 1);
     @include adaptive-value('letter-spacing', 0.8, 0, 1);
     @include adaptive-value('font-size', 88, 42, 1);
+    @media (max-width: 550px) {
+      font-family: 'Atyp Display', sans-serif;
+      font-size: 64px;
+      line-height: calc(58 / 64);
+      max-width: 350px;
+      transform: translateX(-3px);
+      font-weight: 300;
+      letter-spacing: -0.6px;
+
+      @include adaptive-value('font-size', 64, 34, 1);
+      @include adaptive-value('line-height', 58, 36, 1);
+      max-width: 350px;
+      transform: translateX(0);
+      @include adaptive-value('letter-spacing', -0.6, 0.28, 1);
+      text-align: center;
+      max-width: 100%;
+      @include adaptive-value('margin-bottom', 50, 36, 1);
+    }
     @media (max-width: 490px) {
       font-feature-settings: initial;
     }
@@ -2058,7 +2075,7 @@ onMounted(() => {
     justify-content: center;
     margin: -9px;
     flex-wrap: wrap;
-    // @include adaptive-value('margin-bottom', 76, 60, 1); 
+    // @include adaptive-value('margin-bottom', 76, 60, 1);
   }
   &__item {
     max-width: 322px;

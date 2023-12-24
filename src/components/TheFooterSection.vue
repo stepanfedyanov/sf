@@ -349,14 +349,16 @@ const openModal = () => {
     &__nav-item {
       padding: 5px 0;
       position: relative;
-      &::before {
-        content: '';
-        position: absolute;
-        @include adaptive-value('bottom', 6, 9, 1);
-        left: 0;
-        width: 100%;
-        background-color: rgba(#fff, 0.5);
-        height: 1px;
+      @media (min-width: 490px) {
+        &::before {
+          content: '';
+          position: absolute;
+          @include adaptive-value('bottom', 6, 9, 1);
+          left: 0;
+          width: 100%;
+          background-color: rgba(#fff, 0.5);
+          height: 1px;
+        }
       }
     }
     &__bottom-link {

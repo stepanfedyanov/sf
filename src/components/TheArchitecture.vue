@@ -151,6 +151,9 @@ onMounted(() => {
     background: linear-gradient(to bottom, transparent 10%, #f2f2f2 50%);
   }
   padding-bottom: 36px;
+  @media (max-width: 890px) {
+    @include adaptive-value('padding-bottom', 160, 120, 1);
+  }
   &__clouds {
     width: 100%;
     height: 100%;
