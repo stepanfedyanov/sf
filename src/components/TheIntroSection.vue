@@ -71,7 +71,6 @@ onMounted(() => {
 @media (max-width: 500px) {
   .intro {
     &__title {
-      max-width: 277px;
       margin-left: auto;
       margin-right: auto;
       line-height: calc(52 / 48);

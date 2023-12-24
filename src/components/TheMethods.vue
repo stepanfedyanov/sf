@@ -72,6 +72,9 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
             thresholdTime: 400,
             thresholdDelta: 20
           }"
+          :pagination="{
+            clickable: true
+          }"
           :spaceBetween="isMobile ? 10 : 30"
           :slidesPerView="2"
           :injectStyles="[
@@ -134,6 +137,7 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
         >
           <TheSliderButton direction="next" />
         </div>
+        <div class="swiper-pagination methods__swiper-pagination"></div>
       </div>
     </TheContainer>
   </section>
@@ -162,9 +166,6 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
     transform: translateY(-50%);
     left: -25px;
     z-index: 2;
-    @media (max-width: 1100px) {
-      display: none;
-    }
   }
   &__swiper-button-next {
     position: absolute;
@@ -172,9 +173,6 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
     transform: translateY(-50%);
     right: -25px;
     z-index: 2;
-    @media (max-width: 1100px) {
-      display: none;
-    }
   }
   &__cards {
     display: flex;
@@ -244,6 +242,36 @@ const isMobile = computed(() => window && window.screen && window.screen.width <
     margin: 0 auto;
     @media (max-width: 490px) {
       font-weight: 300;
+    }
+  }
+}
+
+@media (max-width: 1260px) {
+  .methods {
+    &__swiper-button-next {
+      @include adaptive-value('right', 64, 60, 1);
+    }
+    &__swiper-button-prev {
+      @include adaptive-value('left', 64, 60, 1);
+    }
+  }
+}
+
+@media (max-width: 890px) {
+  .methods {
+    &__swiper-button-next {
+      bottom: -68px;
+      top: auto;
+      transform: translate(100%, 53%);
+      right: 100px;
+      @include adaptive-value('right', 100, 70, 1);
+    }
+    &__swiper-button-prev {
+      bottom: -68px;
+      transform: translate(-100%, 53%);
+      top: auto;
+      left: 100px;
+      @include adaptive-value('left', 100, 70, 1);
     }
   }
 }

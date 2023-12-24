@@ -43,7 +43,7 @@ const globalStore = useGlobalStore()
     max-width: 580px;
   }
   &__text {
-    @include adaptive-value('max-width', 400, 250, 1);
+    @include adaptive-value('max-width', 400, 270, 1);
     @include adaptive-value('font-size', 18, 14.4, 1);
     @include adaptive-value('line-height', 25, 21, 1);
     letter-spacing: 0.66px;
