@@ -6,11 +6,23 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import Lenis from '@studio-freight/lenis'
+import VueYandexMetrika from 'vue3-yandex-metrika'                               
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(VueYandexMetrika, {
+	id: 95988158,
+	router: router,
+	env: process.env.NODE_ENV,
+  options: {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true
+  }
+})
 
 app.mount('#app')
 
