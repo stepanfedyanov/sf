@@ -2,6 +2,8 @@
 import { onMounted, ref } from 'vue'
 import { useGlobalStore } from '../stores/global'
 import { storeToRefs } from 'pinia'
+import vSelect from 'vue-select'
+import 'vue-select/dist/vue-select.css'
 
 const globalStore = useGlobalStore()
 const { popupOpened } = storeToRefs(globalStore)
@@ -92,11 +94,32 @@ const sumbitForm = async (e) => {
                 <input class="modal__input" type="text" name="Email" required />
               </label>
             </div>
+            <div class="modal__container">
+              <label class="modal__label">
+                <span class="modal__label-text">Телефон*</span>
+                <input class="modal__input" type="text" name="phone" required />
+              </label>
+              <label class="modal__label">
+                <span class="modal__label-text">Категория</span>
+                <v-select
+                  className="modal__select"
+                  :options="['Инвестор', 'Управляющий', 'Поставщик', 'Другое']"
+                  placeholder="Выбрать категорию"
+                  :searchable="false"
+                >
+                  <template #open-indicator="{ attributes }">
+                    <span v-bind="attributes">
+                      <img class="select-arrow" src="/img/global/arrow.svg" alt="Open Select" />
+                    </span>
+                  </template>
+                </v-select>
+              </label>
+            </div>
 
-            <label class="modal__label">
+            <!-- <label class="modal__label">
               <span class="modal__label-text">Напишите о себе</span>
               <textarea class="modal__textarea" type="text" name="Comments"></textarea>
-            </label>
+            </label> -->
             <span class="modal__span"
               >Нажимая Отправить, вы&nbsp;соглашаетесь с&nbsp;<a target="_blank" href="#"
                 >политикой обработки персональных данных</a
@@ -117,6 +140,10 @@ const sumbitForm = async (e) => {
 </template>
 
 <style lang="scss">
+.select-arrow {
+  max-width: 11.7px;
+  transform: rotate(90deg);
+}
 .modal {
   opacity: 0;
   visibility: hidden;
@@ -134,6 +161,84 @@ const sumbitForm = async (e) => {
   bottom: 0;
   z-index: 1002;
   transition: 0.5s;
+  &__select,
+  .v-select {
+    color: #052e3e;
+    font-family: 'Atyp Display', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    * {
+      cursor: pointer;
+      font-size: 14px !important;
+    }
+    .vs__selected {
+      position: static !important;
+      color: #586164 !important;
+      opacity: 1 !important;
+      border: none !important;
+    }
+    .vs__clear {
+      display: none;
+    }
+    & > div {
+      margin: 0;
+      padding: 0;
+      border: 2px solid #f1f3f5;
+      @include adaptive-value('padding-top', 10, 8, 1);
+      @include adaptive-value('padding-bottom', 10, 8, 1);
+      @include adaptive-value('padding-left', 15, 10, 1);
+      @include adaptive-value('padding-right', 15, 10, 1);
+      outline: none;
+      @include adaptive-value('border-radius', 8, 6, 1);
+      font-family: 'Atyp Display', sans-serif;
+      font-size: 14px;
+      line-height: 15.86px;
+      color: #586164;
+      transition: 0.15s;
+      &:focus {
+        border-color: #e1e4e6;
+      }
+    }
+    .vs__selected-options {
+      padding: 0;
+    }
+    input {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      line-height: 17px;
+    }
+    .vs__selected {
+      margin: 0;
+      padding: 0;
+      font-family: 'Atyp Display', sans-serif;
+      font-size: 14px;
+      line-height: 15.86px;
+      color: #586164;
+    }
+    ul {
+      border: 2px solid #f1f3f5;
+      box-shadow: none;
+      @include adaptive-value('border-radius', 8, 6, 1);
+      border-top-width: 0px;
+      border-top-left-radius: 0px !important;
+      border-top-right-radius: 0px !important;
+      padding-top: 0;
+      li {
+        @include adaptive-value('padding-left', 15, 10, 1);
+      }
+    }
+  }
+  .vs--open {
+    & > div {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+  .vs__dropdown-menu {
+    top: calc(100% - 2px);
+  }
   &__background {
     position: absolute;
     top: 0;
