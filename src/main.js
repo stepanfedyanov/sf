@@ -6,12 +6,14 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import Lenis from '@studio-freight/lenis'
-import VueYandexMetrika from 'vue3-yandex-metrika'                               
+import VueYandexMetrika from 'vue3-yandex-metrika'      
 
+import VueTelInput from 'vue-tel-input';
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(VueTelInput);
 app.use(VueYandexMetrika, {
 	id: 95988158,
 	router: router,

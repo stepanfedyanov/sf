@@ -11,6 +11,28 @@ const { popupOpened } = storeToRefs(globalStore)
 const formLoad = ref(false)
 const formLoadText = ref('Отправить')
 
+const phone = ref(null);
+const validPhone = ref(null);
+const showValidatePhoneMark = ref(false);
+
+const type = ref(null);
+const showTypeMark = ref(false);
+
+const inputPhone = () => {
+  const clearPhone = phone.value.replace('+', '');
+  phone.value = clearPhone.length === 0 ? clearPhone : `+${clearPhone}`;
+};
+
+const validatePhone = (type) => {
+  validPhone.value = type;
+
+  if (showValidatePhoneMark.value) showValidatePhoneMark.value = type;
+};
+
+const validateType = () => {
+  showTypeMark.value = false;
+};
+
 const closeModal = (event) => {
   if (event.target.classList.contains('modal__content')) {
     globalStore.changeModalOpened(false)
@@ -20,8 +42,20 @@ const closeModal = (event) => {
 const sumbitForm = async (e) => {
   if (formLoad.value) return
 
-  const formData = new FormData(e.target).entries()
-  const body = JSON.stringify({ fields: Object.fromEntries(formData) })
+  if (!validPhone.value) {
+    showValidatePhoneMark.value = true;
+    return;
+  }
+
+  if (!type.value) {
+    showTypeMark.value = true;
+    return;
+  }
+
+  const formData = new FormData(e.target)
+  formData.append('Phone', phone.value);
+  formData.append('Client type', type.value.code);
+  const body = JSON.stringify({ fields: Object.fromEntries(formData.entries()) })
 
   try {
     formLoad.value = true
@@ -95,17 +129,55 @@ const sumbitForm = async (e) => {
               </label>
             </div>
             <div class="modal__container">
-              <label class="modal__label">
+              <label :class="[
+                'modal__label',
+                { 'modal__label_required': showValidatePhoneMark }
+              ]">
                 <span class="modal__label-text">Телефон*</span>
-                <input class="modal__input" type="text" name="phone" required />
+                <vue-tel-input 
+                  :dropdownOptions="{
+                    disabled: true,
+                  }"
+                  :inputOptions="{
+                    required: true,
+                    styleClasses: 'modal__input'
+                  }" 
+                  :validCharactersOnly="true"
+                  @on-input="inputPhone"
+                  v-model="phone" 
+                  @validate="validatePhone"
+                />
+                <!-- <input class="modal__input" type="text" name="phone" required /> -->
               </label>
-              <label class="modal__label">
-                <span class="modal__label-text">Категория</span>
+              <label :class="[
+                'modal__label',
+                { 'modal__label_required': showTypeMark }
+              ]">
+                <span class="modal__label-text">Категория*</span>
                 <v-select
                   className="modal__select"
-                  :options="['Инвестор', 'Управляющий', 'Поставщик', 'Другое']"
+                  v-model="type"
+                  :options="[
+                    {
+                      label: 'Инвестор',
+                      code: 'HNWI'
+                    },
+                    {
+                      label: 'Управляющий',
+                      code: 'External WM (agent)'
+                    },
+                    {
+                      label: 'Поставщик',
+                      code: 'Product Provider'
+                    },
+                    {
+                      label: 'Другое',
+                      code: 'Other'
+                    }
+                  ]"
                   placeholder="Выбрать категорию"
                   :searchable="false"
+                  @open="validateType"
                 >
                   <template #open-indicator="{ attributes }">
                     <span v-bind="attributes">
@@ -238,6 +310,14 @@ const sumbitForm = async (e) => {
   }
   .vs__dropdown-menu {
     top: calc(100% - 2px);
+  }
+  .vue-tel-input {
+    .vti__dropdown {
+      display: none;
+    }
+    input {
+      width: 100%
+    }
   }
   &__background {
     position: absolute;
@@ -387,6 +467,11 @@ const sumbitForm = async (e) => {
   &__label {
     display: flex;
     flex-direction: column;
+    &_required {
+      input, .vs__dropdown-toggle {
+        border-color: rgba(255, 0, 0, 0.221) !important;
+      }
+    }
   }
   &__label + &__label {
     @include adaptive-value('margin-top', 15, 8, 1);
