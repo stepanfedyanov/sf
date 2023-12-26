@@ -15,8 +15,12 @@ const phone = ref(null);
 const validPhone = ref(null);
 const showValidatePhoneMark = ref(false);
 
+const customSelect = ref(null);
+
 const type = ref(null);
 const showTypeMark = ref(false);
+
+const selectIsOpened = ref(false);
 
 const inputPhone = () => {
   const clearPhone = phone.value.replace('+', '');
@@ -31,6 +35,12 @@ const validatePhone = (type) => {
 
 const validateType = () => {
   showTypeMark.value = false;
+  if (selectIsOpened.value) {
+    customSelect.value.select()
+    selectIsOpened.value = false;
+  } else {
+    selectIsOpened.value = true;
+  }
 };
 
 const closeModal = (event) => {
@@ -158,6 +168,8 @@ const sumbitForm = async (e) => {
                 <span class="modal__label-text">Категория*</span>
                 <v-select
                   className="modal__select"
+                  :deselectFromDropdown="true"
+                  ref="customSelect"
                   v-model="type"
                   :options="[
                     {
@@ -371,7 +383,7 @@ const sumbitForm = async (e) => {
     right: 0;
     bottom: 0;
     height: 100%;
-    overflow-y: auto;
+    overflow: hidden;
     display: grid;
     justify-content: center;
     justify-items: center;

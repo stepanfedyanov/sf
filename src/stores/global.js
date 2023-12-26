@@ -45,25 +45,33 @@ export const useGlobalStore = defineStore('global', () => {
       const header = document.querySelector('.header');
       const popup = document.querySelector('.modal__card');
 
-      window.lenis.stop()
-      popup.style.left = '';
-      header.style.left = `${Number(window.getComputedStyle(header).left.replace('px', '')) - getScrollbarWidth() / 2}px`;
-      document.documentElement.style.paddingRight = `${getScrollbarWidth()}px`;
+      document.documentElement.style.overflow = 'hidden';
 
-      document.documentElement.addEventListener('keydown', escape);
+      if (window && window.lenis) window.lenis.stop()
+      if (window && window.screen && window.screen.width >= 1100) {
+        popup.style.left = '';
+        header.style.left = `${Number(window.getComputedStyle(header).left.replace('px', '')) - getScrollbarWidth() / 2}px`;
+        document.documentElement.style.paddingRight = `${getScrollbarWidth()}px`;
+  
+        document.documentElement.addEventListener('keydown', escape);
+      }
     };
     if (!state) {
       const header = document.querySelector('.header');
       const popup = document.querySelector('.modal__card');
+      document.documentElement.style.overflow = '';
 
-      window.lenis.start();
+      if (window && window.lenis) window.lenis.start();
       
-      document.documentElement.style.paddingRight = '';
-      header.style.left = '';
-      popup.style.left = `${getScrollbarWidth() / 2}px`;
-      // console.log(popup);
-
-      document.documentElement.removeEventListener('keydown', escape);
+      if (window && window.screen && window.screen.width >= 1100) {
+        document.documentElement.style.paddingRight = '';
+        header.style.left = '';
+        popup.style.left = `${getScrollbarWidth() / 2}px`;
+        // console.log(popup);
+  
+        document.documentElement.removeEventListener('keydown', escape);
+      }
+      
     };
   }
 
