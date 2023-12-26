@@ -70,10 +70,12 @@ const sumbitForm = async (e) => {
     })
     formLoad.value = false
     formLoadText.value = 'Данные отправлены'
+    e.target.reset();
 
     setTimeout(() => {
       formLoadText.value = 'Отправить'
-    }, 1000)
+      globalStore.changeModalOpened(false)
+    }, 2000)
   } catch (error) {
     console.log('data send error', error)
   }
