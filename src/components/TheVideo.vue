@@ -1,29 +1,25 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue'
 import { vueVimeoPlayer } from 'vue-vimeo-player'
 
-const playVideo = ref(false);
-const pauseVideo = ref(false);
-const vimeo = ref(null);
+const playVideo = ref(false)
+const pauseVideo = ref(false)
+const vimeo = ref(null)
 
 const play = () => {
-  playVideo.value = true;
-  pauseVideo.value = true;
-  vimeo.value.play();
-};
+  playVideo.value = true
+  pauseVideo.value = true
+  vimeo.value.play()
+}
 
 const pause = () => {
-  pauseVideo.value = false;
-  vimeo.value.pause();
-};
+  pauseVideo.value = false
+  vimeo.value.pause()
+}
 </script>
 
 <template>
-  <div :class="[
-    'intro__video-wrapper',
-    { '_played': playVideo },
-    { '_paused': pausedVideo }
-  ]">
+  <div :class="['intro__video-wrapper', { _played: playVideo }, { _paused: pausedVideo }]">
     <div class="intro__video">
       <!-- <div class="intro__video-pause" @click="pause" /> -->
       <vue-vimeo-player
@@ -37,7 +33,7 @@ const pause = () => {
           height: '100%',
           byline: false,
           title: false,
-          pip: false,
+          pip: false
         }"
       />
     </div>
@@ -92,7 +88,8 @@ const pause = () => {
     aspect-ratio: 16 / 9;
     margin: 0 auto;
     position: relative;
-    width: 95vw;
+    max-width: 95vw;
+    width: 100%;
     position: relative;
     &::before {
       content: '';
@@ -116,7 +113,7 @@ const pause = () => {
     }
   }
   &__video {
-  position: relative;
+    position: relative;
     max-width: 100%;
     width: 100%;
     height: 100%;

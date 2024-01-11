@@ -11,37 +11,37 @@ const { popupOpened } = storeToRefs(globalStore)
 const formLoad = ref(false)
 const formLoadText = ref('Отправить')
 
-const phone = ref(null);
-const validPhone = ref(null);
-const showValidatePhoneMark = ref(false);
+const phone = ref(null)
+const validPhone = ref(null)
+const showValidatePhoneMark = ref(false)
 
-const customSelect = ref(null);
+const customSelect = ref(null)
 
-const type = ref(null);
-const showTypeMark = ref(false);
+const type = ref(null)
+const showTypeMark = ref(false)
 
-const selectIsOpened = ref(false);
+const selectIsOpened = ref(false)
 
 const inputPhone = () => {
-  const clearPhone = phone.value.replace('+', '');
-  phone.value = clearPhone.length === 0 ? clearPhone : `+${clearPhone}`;
-};
+  const clearPhone = phone.value.replace('+', '')
+  phone.value = clearPhone.length === 0 ? clearPhone : `+${clearPhone}`
+}
 
 const validatePhone = (type) => {
-  validPhone.value = type;
+  validPhone.value = type
 
-  if (showValidatePhoneMark.value) showValidatePhoneMark.value = type;
-};
+  if (showValidatePhoneMark.value) showValidatePhoneMark.value = type
+}
 
 const validateType = () => {
-  showTypeMark.value = false;
+  showTypeMark.value = false
   if (selectIsOpened.value) {
     customSelect.value.select()
-    selectIsOpened.value = false;
+    selectIsOpened.value = false
   } else {
-    selectIsOpened.value = true;
+    selectIsOpened.value = true
   }
-};
+}
 
 const closeModal = (event) => {
   if (event.target.classList.contains('modal__content')) {
@@ -53,18 +53,18 @@ const sumbitForm = async (e) => {
   if (formLoad.value) return
 
   if (!validPhone.value) {
-    showValidatePhoneMark.value = true;
-    return;
+    showValidatePhoneMark.value = true
+    return
   }
 
   if (!type.value) {
-    showTypeMark.value = true;
-    return;
+    showTypeMark.value = true
+    return
   }
 
   const formData = new FormData(e.target)
-  formData.append('Phone', phone.value);
-  formData.append('Client type', type.value.code);
+  formData.append('Phone', phone.value)
+  formData.append('Client type', type.value.code)
   const body = JSON.stringify({ fields: Object.fromEntries(formData.entries()) })
 
   try {
@@ -80,7 +80,7 @@ const sumbitForm = async (e) => {
     })
     formLoad.value = false
     formLoadText.value = 'Данные отправлены'
-    e.target.reset();
+    e.target.reset()
 
     setTimeout(() => {
       formLoadText.value = 'Отправить'
@@ -141,31 +141,25 @@ const sumbitForm = async (e) => {
               </label>
             </div>
             <div class="modal__container">
-              <label :class="[
-                'modal__label',
-                { 'modal__label_required': showValidatePhoneMark }
-              ]">
+              <label :class="['modal__label', { modal__label_required: showValidatePhoneMark }]">
                 <span class="modal__label-text">Телефон*</span>
-                <vue-tel-input 
+                <vue-tel-input
                   :dropdownOptions="{
-                    disabled: true,
+                    disabled: true
                   }"
                   :inputOptions="{
                     required: true,
                     styleClasses: 'modal__input'
-                  }" 
+                  }"
                   :validCharactersOnly="true"
                   @on-input="inputPhone"
-                  v-model="phone" 
+                  v-model="phone"
                   @validate="validatePhone"
                 />
                 <!-- <input class="modal__input" type="text" name="phone" required /> -->
               </label>
-              <label :class="[
-                'modal__label',
-                { 'modal__label_required': showTypeMark }
-              ]">
-                <span class="modal__label-text">Категория*</span>
+              <label :class="['modal__label', { modal__label_required: showTypeMark }]">
+                <span class="modal__label-text">Кто вы*</span>
                 <v-select
                   className="modal__select"
                   :deselectFromDropdown="true"
@@ -202,10 +196,13 @@ const sumbitForm = async (e) => {
               </label>
             </div>
 
-            <!-- <label class="modal__label">
-              <span class="modal__label-text">Напишите о себе</span>
+            <label class="modal__label">
+              <span class="modal__label-text"
+                >Напишите несколько слов о себе — и мы предоставим вам доступ в приоритетном
+                порядке.</span
+              >
               <textarea class="modal__textarea" type="text" name="Comments"></textarea>
-            </label> -->
+            </label>
             <span class="modal__span"
               >Нажимая Отправить, вы&nbsp;соглашаетесь с&nbsp;<a target="_blank" href="#"
                 >политикой обработки персональных данных</a
@@ -330,7 +327,7 @@ const sumbitForm = async (e) => {
       display: none;
     }
     input {
-      width: 100%
+      width: 100%;
     }
   }
   &__background {
@@ -482,7 +479,8 @@ const sumbitForm = async (e) => {
     display: flex;
     flex-direction: column;
     &_required {
-      input, .vs__dropdown-toggle {
+      input,
+      .vs__dropdown-toggle {
         border-color: rgba(255, 0, 0, 0.221) !important;
       }
     }

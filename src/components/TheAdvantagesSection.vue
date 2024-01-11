@@ -19,12 +19,7 @@ const sections = [
         imgSrc: './img/TheAdvantagesSection/1/1.jpg',
         columns: [
           {
-            items: [
-              'диагностика',
-              'агрегация активов',
-              'аналитика',
-              'сопровождение'
-            ]
+            items: ['wealth check', 'агрегация активов', 'аналитика', 'сопровождение']
           },
           {
             items: ['планирование', 'портфельное управление', 'наследование']
@@ -72,7 +67,10 @@ const sections = [
         imgSrc: './img/TheAdvantagesSection/1/4.jpg',
         columns: [
           {
-            items: ['M&A, аудит<br> и оценка бизнеса,<br>due diligence', 'независимый<br> совет директоров']
+            items: [
+              'M&A, аудит<br> и оценка бизнеса,<br>due diligence',
+              'независимый<br> совет директоров'
+            ]
           },
           {
             items: ['tax & legal', 'акционерные соглашения<br> и отчетность']
@@ -91,7 +89,7 @@ const sections = [
             items: ['паспорта и ВНЖ', 'безопасность и GR', 'консьерж-сервис']
           },
           {
-          items: ['образование', 'медицина и&nbsp;страхование']
+            items: ['образование', 'медицина и&nbsp;страхование']
           }
         ]
       }
@@ -141,7 +139,7 @@ const sections = [
         href: '',
         imgSrc: './img/TheAdvantagesSection/2/4.jpg',
         columns: []
-      },
+      }
     ]
   }
 ]
@@ -160,5 +158,4 @@ const sections = [
   </section>
 </template>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

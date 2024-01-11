@@ -37,24 +37,30 @@ onMounted(() => {
 
 <template>
   <section class="intro" ref="introSection">
-    <TheContainer>
-      <TheSectionTitle color="#052E3E" class="intro__title">О проекте</TheSectionTitle>
-    </TheContainer>
-    <TheVideo class="wow animate__animated animate__fadeIn" />
-    <TheContainer>
-      <TheVideoSlider class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s" />
-    </TheContainer>
+    <div class="intro__inner">
+      <TheContainer>
+        <TheSectionTitle color="#052E3E" class="intro__title">О проекте</TheSectionTitle>
+      </TheContainer>
+      <TheVideo class="wow animate__animated animate__fadeIn" />
+      <TheContainer>
+        <TheVideoSlider class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s" />
+      </TheContainer>
+    </div>
   </section>
 </template>
 
 <style lang="scss">
 .intro {
   background-color: #f2f3f5;
-  max-width: 1920px;
+  // max-width: 1920px;
   margin: 0 auto;
   overflow: hidden;
   @include adaptive-value('padding-bottom', 100, 60, 1);
   padding-bottom: 15vh;
+  &__inner {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
   &__title {
     @include adaptive-value('margin-bottom', 40, 43, 1);
     @include adaptive-value('font-size', 96, 50, 1);

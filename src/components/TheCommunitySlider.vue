@@ -132,7 +132,9 @@ onMounted(() => {
               {{ person.position }}
             </p>
             <p class="community-slide__desc" v-html="person.desc" />
-            <TheButton color="white" size="medium" @click="openModal">Linkedin</TheButton>
+            <TheButton color="white" size="medium" :href="person.href" target="_blank"
+              >Linkedin</TheButton
+            >
           </div>
         </swiper-slide>
       </swiper-container>
@@ -201,6 +203,11 @@ onMounted(() => {
     rgba(255, 255, 255, 0) 36.35%
   );
   text-align: center;
+  &__card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
   &__img {
     margin: 0 auto;
     border-radius: 50%;
@@ -231,6 +238,7 @@ onMounted(() => {
     letter-spacing: 0.65px;
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 39, 27, 1);
+    flex: 1 0 auto;
     @media (max-width: 490px) {
       max-width: 170px;
     }
