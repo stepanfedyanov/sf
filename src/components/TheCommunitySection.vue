@@ -15,63 +15,63 @@ const staff = [
     name: 'Илья Опренко',
     position: 'Co-founder, CEO',
     desc: '16+&nbsp;лет в&nbsp;индустрии инвестиций и&nbsp;управления капиталом (UBS, Tinkoff Private, Deloitte, Sber). Топ-3&nbsp;в рейтинге профессионалов&nbsp;WM &amp;&nbsp;PB',
-    href: '#'
+    href: 'https://ru.linkedin.com/in/ilya-oprenko-b6215237'
   },
   {
     img: './img/TheCommunitySection/staff/2.png',
     name: 'Сергей Ишков',
     position: 'Co-founder, COO/CFO',
     desc: '17+&nbsp;лет в&nbsp;международном консалтинге и&nbsp;финансах (ex&nbsp;управляющий директор BCG в&nbsp;России и&nbsp;Латинской Америке, Oliver Wyman)',
-    href: '#'
+    href: 'https://pa.linkedin.com/in/sergeyishkov'
   },
   {
     img: './img/TheCommunitySection/staff/3.png',
     name: 'Игорь Смирнов',
     position: 'Co-founder, CPO/CMO',
     desc: '20+&nbsp;лет в&nbsp;маркетинге, цифровом продакшене и&nbsp;развитии бизнеса, Венчурный билдер, выпускник Singularity University',
-    href: '#'
+    href: 'https://uk.linkedin.com/in/insmirnov'
   },
   {
     img: './img/TheCommunitySection/staff/4.png',
     name: 'Николай Буров',
     position: 'Head of partner Family office',
     desc: '13+&nbsp;лет в&nbsp;индустрии управления капиталом и&nbsp;private banking (UBS, Tinkoff Private). Руководитель семейного офиса',
-    href: '#'
+    href: 'https://ru.linkedin.com/in/николай-буров-339a066b'
   },
   {
     img: './img/TheCommunitySection/staff/5.png',
     name: 'Павел Бережной, CFA',
     position: 'Director of client relations',
     desc: '20+&nbsp;лет опыта работы в&nbsp;сфере управления частным капиталом (Nuveen, Тройка-диалог, ING, Ренессанс Капитал)',
-    href: '#'
+    href: 'https://ru.linkedin.com/in/павел-бережной-04059088'
   },
   {
     img: './img/TheCommunitySection/staff/6.png',
     name: 'Анастасия Воропаева',
     position: 'Senior Investment Advisor',
     desc: '15+&nbsp;лет опыта в&nbsp;качестве частного банкира в&nbsp;Швейцарии по&nbsp;вопросам wealth management, опыт работы в&nbsp;Harbor и&nbsp;UBS Moscow',
-    href: '#'
+    href: 'https://www.linkedin.com/in/anastasia-voropaeva-57366846?trk=contact-info'
   },
   {
     img: './img/TheCommunitySection/staff/7.png',
     name: 'Дмитрий Золотков',
     position: 'Director of Strategy',
     desc: '12+&nbsp;лет опыта консультирования по&nbsp;вопросам M&amp;A в&nbsp;Big4. финансового структурирования, создания крупных&nbsp;PE фондов (до&nbsp;$2bln)',
-    href: '#'
+    href: 'https://ru.linkedin.com/in/zolotkov'
   },
   {
     img: './img/TheCommunitySection/staff/8.png',
     name: 'Максим Вежевич',
-    position: 'Director of Strategy',
+    position: 'Head of research',
     desc: '14+&nbsp;лет опыта работы на&nbsp;финансовых рынках, руководства отделом аналитики в&nbsp;Multi-family office, создания инвестиционных стратегий',
-    href: '#'
+    href: 'https://www.linkedin.com/in/vezhevich/'
   },
   {
     img: './img/TheCommunitySection/staff/9.png',
     name: 'Тимур Аманов',
     position: 'External Advisor',
     desc: '6+&nbsp;лет опыта работы в&nbsp;сфере управления частным капиталом (UBS, Tinkoff Private, лондонский офис UniCredit)',
-    href: '#'
+    href: 'https://www.linkedin.com/in/timur-amanov-9a72abba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"'
   }
 ]
 
@@ -120,7 +120,8 @@ onMounted(() => {
           Сообщество лидеров
         </TheSectionTitle>
         <p class="community__desc wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-          Экосистема Skyfort строится на&nbsp;базе профессионального сообщества и&nbsp;создается совместно с&nbsp;ведущими экспертами индустрии wealth management
+          Экосистема Skyfort строится на&nbsp;базе профессионального сообщества и&nbsp;создается
+          совместно с&nbsp;ведущими экспертами индустрии wealth management
         </p>
       </div>
     </TheContainer>
