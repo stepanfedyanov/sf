@@ -2,7 +2,6 @@
 import TheContainer from './TheContainer.vue'
 import TheFooterSection from './TheFooterSection.vue'
 import TheHeader from './TheHeader.vue'
-
 const items = [
   {
     titles: {
@@ -138,6 +137,21 @@ const items = [
     </ul>
     <div class="documents">
       <h2 class="documents__title">Документы, относящиеся к деятельности компании</h2>
+      <div class="liberty__link-wrapper wow animate__animated animate__fadeIn">
+        <a class="liberty__main-link" href="/files/policy_KI.pdf" target="_blank">
+          <span class="liberty__main-link-left">
+            <img
+              class="liberty__link-img"
+              src="/img/TheLibertySection/link-img.svg"
+              alt="Политика по выявлению и контролю конфликта интересов"
+            />
+            <span class="liberty__link-text"
+              >Политика по выявлению и контролю конфликта интересов</span
+            >
+          </span>
+          <img class="liberty__link-arrow" src="/img/global/arrow.svg" alt="Arrow" />
+        </a>
+      </div>
     </div>
   </TheContainer>
   <TheFooterSection />
@@ -175,24 +189,25 @@ const items = [
   @include adaptive-value('padding-top', 186, 147, 1);
   &__title {
     text-align: center;
-    font-size: 96px;
-    line-height: calc(78 / 96);
+    @include adaptive-value('font-size', 96, 50, 1);
+    line-height: 1;
     letter-spacing: 0.96px;
     color: #fff;
-    margin-bottom: 56px;
+    @include adaptive-value('margin-bottom', 56, 36, 1);
   }
   &__list {
-    padding: 39px;
-    border-radius: 40px;
+    @include adaptive-value('padding', 39, 24, 1);
+    @include adaptive-value('border-radius', 40, 20, 1);
     background-color: #fff;
     margin-left: -39px;
     margin-right: -39px;
+    @include adaptive-value('margin-bottom', 89, 64, 1);
   }
   &__item {
     display: flex;
   }
   &__item + &__item {
-    margin-top: 40px;
+    @include adaptive-value('margin-top', 40, 20, 1);
   }
   &__item-column {
     display: flex;
@@ -206,20 +221,37 @@ const items = [
     }
   }
   &__item-column + &__item-column {
-    margin-left: 20px;
+    @include adaptive-value('margin-left', 20, 10, 1);
   }
   &__item-column-title {
-    font-size: 13px;
+    @include adaptive-value('font-size', 13, 12, 1);
     line-height: calc(24 / 13);
-    letter-spacing: 0.26px;
+    @include adaptive-value('letter-spacing', 0.26, 0.26, 1);
     opacity: 0.5;
-    margin-bottom: 8px;
+    @include adaptive-value('margin-bottom', 8, 4, 1);
   }
   &__item-column-info {
-    font-size: 18px;
+    @include adaptive-value('font-size', 18, 14, 1);
     line-height: calc(24 / 18);
-    letter-spacing: 0.36px;
+    @include adaptive-value('letter-spacing', 0.36, 0.36, 1);
     max-width: 430px;
+  }
+}
+.documents {
+  &__title {
+    @include adaptive-value('font-size', 40, 26, 1);
+    line-height: calc(46 / 40);
+    letter-spacing: -0.4px;
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+  }
+  .liberty__link-wrapper {
+    @include adaptive-value('margin-bottom', 128, 78, 1);
+    .liberty__main-link {
+      background: #f2f3f5;
+    }
+  }
+  .liberty__link-img {
+    @include adaptive-value('margin-right', 20, 12, 1);
   }
 }
 .footer {
@@ -230,6 +262,52 @@ const items = [
   }
   &__bottom {
     padding: 0;
+  }
+}
+
+@media (max-width: 1120px) {
+  .information {
+    &__list {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .information {
+    &__item {
+      flex-direction: column;
+    }
+    &__list {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__item + &__item {
+      @include adaptive-value('margin-top', 40, 20, 1);
+    }
+    &__item-column {
+      &:nth-child(2) {
+        max-width: 100%;
+      }
+      &:nth-child(3) {
+        max-width: 100%;
+      }
+    }
+    &__item-column + &__item-column {
+      @include adaptive-value('margin-left', 0, 0, 1);
+      margin-top: 9px;
+    }
+    &__item-column-title {
+      @include adaptive-value('margin-bottom', 0, 0, 1);
+    }
+    &__item-column-info {
+      @include adaptive-value('font-size', 18, 14, 1);
+      line-height: calc(24 / 18);
+      @include adaptive-value('letter-spacing', 0.36, 0.36, 1);
+      max-width: 430px;
+    }
   }
 }
 </style>

@@ -95,7 +95,7 @@ const navList = [
   },
   {
     title: 'Privacy & Cookies Policy',
-    href: '#'
+    href: 'https://docs.google.com/document/d/1-AbWs435fRX7lXHVPxySFSZ4kVpAV9tYIu2REd0m3Ns/edit#heading=h.3znysh7#'
   }
 ]
 
