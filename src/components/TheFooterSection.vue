@@ -4,6 +4,8 @@ import { useGlobalStore } from '../stores/global'
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 
+import { RouterLink } from 'vue-router'
+
 const globalStore = useGlobalStore()
 
 const socialsList = [
@@ -91,7 +93,8 @@ const socialsList = [
 const navList = [
   {
     title: 'Раскрытие информации',
-    href: 'information'
+    href: 'information',
+    router: true
   },
   {
     title: 'Privacy & Cookies Policy',
@@ -167,7 +170,21 @@ const openModal = () => {
                   v-for="(item, idx) in navList"
                   :key="item.title"
                 >
-                  <a class="footer__nav-link" :href="item.href" target="_blank">
+                  <router-link
+                    v-if="item.router"
+                    class="footer__nav-link"
+                    :to="item.href"
+                    target="_blank"
+                  >
+                    {{ item.title }}
+                  </router-link>
+
+                  <a
+                    v-else
+                    class="footer__nav-link"
+                    :href="item.href"
+                    target="_blank"
+                  >
                     {{ item.title }}
                   </a>
                 </li>
