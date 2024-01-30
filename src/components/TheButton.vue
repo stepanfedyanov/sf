@@ -4,7 +4,7 @@ defineProps({
   size: String,
   href: String,
   target: String,
-  flex: String
+  flex: String,
 })
 
 defineEmits(['tap'])
@@ -67,17 +67,18 @@ defineEmits(['tap'])
   cursor: pointer;
   outline: none;
   border-radius: 34px;
-  border: 0px;
-  // p-filter: blur(15px);
+  border: 0;
   transition: 0.2s;
   display: inline-block;
   text-align: center;
-  position: relative;
   &.flex {
     span {
       display: flex;
       align-items: center;
       justify-content: center;
+      img{
+        margin-right: 14px;
+      }
     }
   }
   svg {
@@ -108,7 +109,6 @@ defineEmits(['tap'])
     }
   }
   &.white {
-    // border: 1px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(93deg, #fff 12%, rgba(255, 255, 255, 0.26) 94.33%);
     color: #000;
     &::before {
@@ -126,7 +126,6 @@ defineEmits(['tap'])
   }
   &.blue {
     color: #052e3e;
-    // border: 1px solid rgba(255, 255, 255, 0.5);
     background-color: #a5cce0;
     transition: 0.2s;
     @media (hover: hover) {

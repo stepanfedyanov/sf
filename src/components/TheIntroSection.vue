@@ -38,9 +38,9 @@ onMounted(() => {
 <template>
   <section class="intro" ref="introSection">
     <div class="intro__inner">
-      <TheContainer>
-        <TheSectionTitle color="#052E3E" class="intro__title">О проекте</TheSectionTitle>
-      </TheContainer>
+<!--      <TheContainer>-->
+<!--        <TheSectionTitle color="#052E3E" class="intro__title">О проекте</TheSectionTitle>-->
+<!--      </TheContainer>-->
       <TheVideo class="wow animate__animated animate__fadeIn" />
       <TheContainer>
         <TheVideoSlider class="wow animate__animated animate__fadeIn" data-wow-delay="0.3s" />

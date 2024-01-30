@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 import TheSliderButton from './TheSliderButton.vue'
 const swiper = ref(null)
@@ -132,9 +131,6 @@ onMounted(() => {
               {{ person.position }}
             </p>
             <p class="community-slide__desc" v-html="person.desc" />
-            <TheButton color="white" size="medium" :href="person.href" target="_blank"
-              >Linkedin</TheButton
-            >
           </div>
         </swiper-slide>
       </swiper-container>
@@ -234,7 +230,7 @@ onMounted(() => {
   &__desc {
     font-size: 12px;
     line-height: calc(15.5 / 12);
-    max-width: 275px;
+    max-width: 336px;
     letter-spacing: 0.65px;
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 39, 27, 1);

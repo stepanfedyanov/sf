@@ -2,7 +2,7 @@
 import { useGlobalStore } from '../stores/global';
 import TheButton from './TheButton.vue'
 
-const items = ['Компания', 'Маркетплейс', 'Аналитика', 'FAQ']
+const items = ['Компания', 'Маркетплейс', 'Команда', 'Аналитика']
 
 const globalStore = useGlobalStore()
 const openModal = () => {

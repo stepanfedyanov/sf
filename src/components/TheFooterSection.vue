@@ -1,10 +1,10 @@
 <script setup>
-import { useGlobalStore } from '../stores/global'
+import {useGlobalStore} from '../stores/global'
 
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 
-import { RouterLink } from 'vue-router'
+import {RouterLink} from 'vue-router'
 
 const globalStore = useGlobalStore()
 
@@ -92,14 +92,29 @@ const socialsList = [
 
 const navList = [
   {
+    title: 'Главная',
+    href: '#',
+    router: true
+  },
+  {
+    title: 'Условия обслуживания',
+    href: 'conditions',
+    router: true
+  },
+  {
+    title: 'Маркетплейс',
+    href: 'https://app.skyfort.capital/',
+  },
+  {
+    title: 'Политика конфиденциальности',
+    href: 'policy',
+    router: true
+  },
+  {
     title: 'Раскрытие информации',
     href: 'information',
     router: true
   },
-  {
-    title: 'Privacy & Cookies Policy',
-    href: 'https://docs.google.com/document/d/1-AbWs435fRX7lXHVPxySFSZ4kVpAV9tYIu2REd0m3Ns/edit#heading=h.3znysh7#'
-  }
 ]
 
 const openModal = () => {
@@ -113,9 +128,9 @@ const openModal = () => {
       <div class="footer__inner">
         <div class="footer__top">
           <h2
-            class="footer__title wow animate__animated animate__fadeInUp"
-            data-wow-delay="0.2s"
-            data-wow-duration="1200"
+              class="footer__title wow animate__animated animate__fadeInUp"
+              data-wow-delay="0.2s"
+              data-wow-duration="1200"
           >
             Включайтесь в&nbsp;сообщество
           </h2>
@@ -124,66 +139,73 @@ const openModal = () => {
             финансовых советников, экспертов и&nbsp;частных инвесторов
           </p>
           <TheButton
-            href="https://t.me/skyfortrussia"
-            target="_blank"
-            class="flex wow animate__animated animate__fadeIn"
-            data-wow-delay="0.1s"
-            size="big"
-            color="blue"
-            flex="flex"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="20"
-              height="20"
-              viewBox="0 0 48 48"
+              href="https://t.me/skyfortrussia"
+              target="_blank"
+              class="flex wow animate__animated animate__fadeIn"
+              data-wow-delay="0.1s"
+              size="big"
+              color="blue"
+              flex="flex"
+          >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="20"
+                height="20"
+                viewBox="0 0 48 48"
             >
               <path
-                d="M5.83,23.616c12.568-5.529,28.832-12.27,31.077-13.203c5.889-2.442,7.696-1.974,6.795,3.434 c-0.647,3.887-2.514,16.756-4.002,24.766c-0.883,4.75-2.864,5.313-5.979,3.258c-1.498-0.989-9.059-5.989-10.7-7.163 c-1.498-1.07-3.564-2.357-0.973-4.892c0.922-0.903,6.966-6.674,11.675-11.166c0.617-0.59-0.158-1.559-0.87-1.086 c-6.347,4.209-15.147,10.051-16.267,10.812c-1.692,1.149-3.317,1.676-6.234,0.838c-2.204-0.633-4.357-1.388-5.195-1.676 C1.93,26.43,2.696,24.995,5.83,23.616z"
-              ></path></svg
-            >Telegram</TheButton
+                  d="M5.83,23.616c12.568-5.529,28.832-12.27,31.077-13.203c5.889-2.442,7.696-1.974,6.795,3.434 c-0.647,3.887-2.514,16.756-4.002,24.766c-0.883,4.75-2.864,5.313-5.979,3.258c-1.498-0.989-9.059-5.989-10.7-7.163 c-1.498-1.07-3.564-2.357-0.973-4.892c0.922-0.903,6.966-6.674,11.675-11.166c0.617-0.59-0.158-1.559-0.87-1.086 c-6.347,4.209-15.147,10.051-16.267,10.812c-1.692,1.149-3.317,1.676-6.234,0.838c-2.204-0.633-4.357-1.388-5.195-1.676 C1.93,26.43,2.696,24.995,5.83,23.616z"
+              ></path>
+            </svg
+            >
+            Telegram
+          </TheButton
           >
         </div>
         <div class="footer__bottom">
           <div class="footer__bottom-line">
             <div class="footer__logo-wrapper wow animate__animated animate__fadeIn">
-              <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип" />
+              <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип"/>
             </div>
             <ul class="socials__list">
               <li
-                class="socials__item wow animate__animated animate__fadeIn"
-                :data-wow-delay="parseFloat(`${0.2 * idx}`) + 's'"
-                v-for="(item, idx) in socialsList"
-                :key="item.title"
+                  class="socials__item wow animate__animated animate__fadeIn"
+                  :data-wow-delay="parseFloat(`${0.2 * idx}`) + 's'"
+                  v-for="(item, idx) in socialsList"
+                  :key="item.title"
               >
                 <a class="socials__link" :href="item.href" target="_blank" v-html="item.icon"></a>
               </li>
             </ul>
           </div>
           <div class="footer__bottom-line">
+            <span>Связаться с нами: <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital</a></span>
+          </div>
+          <div class="footer__bottom-line">
             <nav class="footer__nav">
               <ul class="footer__nav-list">
                 <li
-                  class="footer__nav-item wow animate__animated animate__fadeIn"
-                  :data-wow-delay="parseFloat(`${0.3 * idx}`) + 's'"
-                  v-for="(item, idx) in navList"
-                  :key="item.title"
+                    class="footer__nav-item wow animate__animated animate__fadeIn"
+                    :data-wow-delay="parseFloat(`${0.3 * idx}`) + 's'"
+                    v-for="(item, idx) in navList"
+                    :key="item.title"
                 >
                   <router-link
-                    v-if="item.router"
-                    class="footer__nav-link"
-                    :to="item.href"
-                    target="_blank"
+                      v-if="item.router"
+                      class="footer__nav-link"
+                      :to="item.href"
+                      target="_blank"
                   >
                     {{ item.title }}
                   </router-link>
 
                   <a
-                    v-else
-                    class="footer__nav-link"
-                    :href="item.href"
-                    target="_blank"
+                      v-else
+                      class="footer__nav-link"
+                      :href="item.href"
+                      target="_blank"
                   >
                     {{ item.title }}
                   </a>
@@ -191,43 +213,34 @@ const openModal = () => {
               </ul>
             </nav>
             <a
-              class="footer__bottom-link wow animate__animated animate__fadeIn"
-              data-wow-delay="0.6s"
-              data-wow-duration="1600"
-              href="#"
-            >
-              Skyfort - 2023 - All rights reserved
+                class="footer__bottom-link wow animate__animated animate__fadeIn"
+                data-wow-delay="0.6s"
+                data-wow-duration="1600">
+              &#169; 2024 Skyfort
             </a>
+          </div>
+        </div>
+        <div class="disclaimer">
+          <div>
+            <span>Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br/>ИНН 9704220707; Зарегистрировано: 13.09.2023</span>
+            <span>Информация, размещённая на данном веб-сайте, не является индивидуальной инвестиционной рекомендацией, и финансовые инструменты либо операции, упомянутые в ней, могут не соответствовать вашему инвестиционному профилю и инвестиционным целям (ожиданиям). Определение соответствия финансового инструмента либо операции вашим интересам, инвестиционным целям, инвестиционному горизонту и уровню допустимого риска является вашей задачей.</span>
+          </div>
+          <div>
+            <span>Фактический адрес: 127055, город Москва, ул. Бутырский Вал, 10, БЦ «Белая площадь», 5 этаж<br/> Юридический адрес: 125047, город Москва, вн. тер. г. муниципальный округ Тверской, ул. Бутырский вал, д. 10</span>
+            <span>ООО «КЭПИТАЛ БОРД» (ОГРН 1237700608309, ИНН 9704220707), действующее под брендом Skyfort, не несёт ответственности за возможные убытки в случае совершения операций либо инвестирования в финансовые инструменты, упомянутые в данной информации, и не рекомендует использовать указанную информацию в качестве единственного источника информации при принятии инвестиционного решения.</span>
           </div>
         </div>
       </div>
 
       <div class="footer__inner _mobile">
-        <div class="footer__top">
-          <h2 class="footer__title">Включайтесь в&nbsp;сообщество</h2>
-          <p class="footer__desc">
-            Присоединяйтесь к&nbsp;растущему сообществу профессиональных управляющих капиталом,
-            финансовых советников, экспертов и&nbsp;частных инвесторов
-          </p>
-          <TheButton target="_blank" href="https://t.me/skyfortrussia" size="big" color="blue"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="20"
-              height="20"
-              viewBox="0 0 48 48"
-            >
-              <path
-                d="M5.83,23.616c12.568-5.529,28.832-12.27,31.077-13.203c5.889-2.442,7.696-1.974,6.795,3.434 c-0.647,3.887-2.514,16.756-4.002,24.766c-0.883,4.75-2.864,5.313-5.979,3.258c-1.498-0.989-9.059-5.989-10.7-7.163 c-1.498-1.07-3.564-2.357-0.973-4.892c0.922-0.903,6.966-6.674,11.675-11.166c0.617-0.59-0.158-1.559-0.87-1.086 c-6.347,4.209-15.147,10.051-16.267,10.812c-1.692,1.149-3.317,1.676-6.234,0.838c-2.204-0.633-4.357-1.388-5.195-1.676 C1.93,26.43,2.696,24.995,5.83,23.616z"
-              ></path></svg
-            >Telegram</TheButton
-          >
-        </div>
         <div class="footer__bottom">
           <div class="footer__logo-wrapper">
-            <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип" />
+            <div>
+              <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип"/>
+            </div>
+            <a class="footer__bottom-link">&#169; 2024 Skyfort</a>
           </div>
+          <span class="one_link_wrapper">Связаться с нами: <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital</a></span>
           <ul class="socials__list">
             <li class="socials__item" v-for="item in socialsList" :key="item.title">
               <a class="socials__link" :href="item.href" v-html="item.icon" target="_blank"></a>
@@ -242,7 +255,16 @@ const openModal = () => {
               </li>
             </ul>
           </nav>
-          <a class="footer__bottom-link" href="#">Skyfort - 2023 - All rights reserved</a>
+        </div>
+        <div class="disclaimer">
+          <div>
+            <span>Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br/>ИНН 9704220707; Зарегистрировано: 13.09.2023</span>
+            <span>Фактический адрес: 127055, город Москва, ул. Бутырский Вал, 10, БЦ «Белая площадь», 5 этаж<br/> Юридический адрес: 125047, город Москва, вн. тер. г. муниципальный округ Тверской, ул. Бутырский вал, д. 10</span>
+          </div>
+          <div>
+            <span>Информация, размещённая на данном веб-сайте, не является индивидуальной инвестиционной рекомендацией, и финансовые инструменты либо операции, упомянутые в ней, могут не соответствовать вашему инвестиционному профилю и инвестиционным целям (ожиданиям). Определение соответствия финансового инструмента либо операции вашим интересам, инвестиционным целям, инвестиционному горизонту и уровню допустимого риска является вашей задачей.</span>
+            <span>ООО «КЭПИТАЛ БОРД» (ОГРН 1237700608309, ИНН 9704220707), действующее под брендом Skyfort, не несёт ответственности за возможные убытки в случае совершения операций либо инвестирования в финансовые инструменты, упомянутые в данной информации, и не рекомендует использовать указанную информацию в качестве единственного источника информации при принятии инвестиционного решения.</span>
+          </div>
         </div>
       </div>
     </TheContainer>
@@ -255,9 +277,36 @@ const openModal = () => {
   @include adaptive-value('padding-bottom', 48, 43, 1);
   background: #052e3e;
   color: #fff;
+
   ._mobile {
     display: none;
   }
+
+  .disclaimer{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 31px;
+    div{
+      display: flex;
+      flex-direction: column;
+      min-height: 199px;
+      height: 199px;
+      justify-content: space-between;
+      span{
+        opacity: 0.5;
+        color: white;
+        font-family: "Articulat CF", sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px; /* 138.462% */
+        letter-spacing: -0.195px;
+      }
+    }
+  }
+
   &__title {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 90, 37, 1);
@@ -266,6 +315,7 @@ const openModal = () => {
     @include adaptive-value('letter-spacing', 0, 0.6, 1);
     @include adaptive-value('line-height', 81, 47, 1);
   }
+
   &__desc {
     max-width: 788px;
     margin: 0 auto;
@@ -278,44 +328,67 @@ const openModal = () => {
       font-weight: 300;
     }
   }
+
   &__bottom {
     @include adaptive-value('padding-top', 40, 32, 1);
     padding-left: 6px;
   }
+
   &__bottom-line {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .one_link{
+      color: #99C2D6;
+    }
   }
+
   &__bottom-line + &__bottom-line {
     margin-top: 40px;
   }
+
+  &__bottom-line:first-child {
+    border-top: 1px rgba(255, 255, 255, 0.3) solid;
+    padding-top: 40px;
+    margin-bottom: -30px;
+  }
+
+  &__bottom-line:last-child {
+    border-bottom: 1px rgba(255, 255, 255, 0.3) solid;
+    padding-bottom: 40px;
+  }
+
   &__nav-list {
     display: flex;
     align-items: center;
   }
+
   &__nav-item + &__nav-item {
     @include adaptive-value('margin-left', 42, 23, 1);
   }
-  &__nav-link,
+
   &__bottom-link {
     line-height: calc(24 / 13);
     letter-spacing: 0.3px;
     @include adaptive-value('font-size', 12.8, 8, 1);
     font-weight: 200;
   }
+
   .btn-wrapper {
     .btn {
       padding: 6px 48px 7px;
+
       span {
         letter-spacing: 0.3px;
       }
     }
   }
+
   &__top {
     @include adaptive-value('padding-bottom', 82, 64, 1);
     text-align: center;
     border-bottom: 1px solid #fff;
+
     .btn-wrapper {
       .btn {
         line-height: 24px;
@@ -324,11 +397,13 @@ const openModal = () => {
         @include adaptive-value('padding-bottom', 10, 4, 1);
         @include adaptive-value('padding-left', 50, 27, 1);
         @include adaptive-value('padding-right', 50, 27, 1);
+
         span {
           display: flex;
           align-items: center;
           justify-content: center;
           min-width: 116px;
+
           svg {
             height: 15px;
             width: 15px;
@@ -337,22 +412,27 @@ const openModal = () => {
       }
     }
   }
+
   &__logo-img {
     @include adaptive-value('width', 165, 103, 1);
   }
 }
+
 .socials {
   &__list {
     display: flex;
     align-items: center;
     transform: translateY(3px);
   }
+
   &__item {
     @include adaptive-value('width', 36, 23, 1);
+
     svg {
       width: 100%;
     }
   }
+
   &__item + &__item {
     @include adaptive-value('margin-left', 27, 17, 1);
   }
@@ -368,34 +448,28 @@ const openModal = () => {
     &__inner {
       display: none;
     }
+
     ._mobile {
       display: block;
     }
+
     &__logo-wrapper {
-      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
       .logo__img {
         margin: 0 auto;
       }
+
       @include adaptive-value('margin-bottom', 48, 24, 1);
     }
+
     &__nav-list {
       justify-content: center;
     }
-    &__nav-item {
-      padding: 5px 0;
-      position: relative;
-      @media (min-width: 490px) {
-        &::before {
-          content: '';
-          position: absolute;
-          @include adaptive-value('bottom', 6, 9, 1);
-          left: 0;
-          width: 100%;
-          background-color: rgba(#fff, 0.5);
-          height: 1px;
-        }
-      }
-    }
+
+
     &__bottom-link {
       display: block;
       text-align: center;
@@ -408,6 +482,7 @@ const openModal = () => {
     &__desc {
       max-width: 299px;
     }
+
     &__top {
       .btn-wrapper {
         .btn {
@@ -415,16 +490,16 @@ const openModal = () => {
         }
       }
     }
+
     &__bottom {
       padding-left: 0;
     }
+
     &__logo-img {
       margin: 0 auto;
     }
+
     &__bottom-link {
-      font-weight: 200;
-    }
-    &__nav-link {
       font-weight: 200;
     }
   }
@@ -433,6 +508,76 @@ const openModal = () => {
     &__list {
       justify-content: center;
       @include adaptive-value('margin-bottom', 30, 8, 1);
+    }
+  }
+}
+@media (max-width: 430px) {
+  ._mobile{
+    padding: 0 32px;
+    .footer__logo-wrapper{
+      margin-bottom: 10px;
+      a{
+        color: #FFF;
+        text-align: center;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px;
+      }
+    }
+    .one_link_wrapper{
+      color: #FFF;
+      text-align: center;
+      font-size: 10px;
+      line-height: 24px;
+      .one_link{
+        color: #99C2D6;
+      }
+    }
+    .socials__list{
+      justify-content: space-between;
+      margin-top: 10px;
+      .socials__item{
+        width: 33px;
+      }
+    }
+    .footer__nav{
+      .footer__nav-list{
+        justify-content: start;
+        flex-wrap: wrap;
+        .footer__nav-item{
+          margin-right: 19px;
+          margin-left: 0;
+          color: #FFF;
+          text-align: center;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px; /* 200% */
+          letter-spacing: -0.15px;
+        }
+      }
+    }
+    .disclaimer{
+      margin: 24px 0;
+      padding-top: 24px;
+      border-top: 1px rgba(255, 255, 255, 0.3) solid;
+      flex-direction: column;
+      gap:5px;
+      div{
+        justify-content: start;
+        align-items: start;
+        min-height: 0;
+        height: auto;
+        gap: 5px;
+        span{
+          color: #FFF;
+          text-align: start;
+          font-size: 10px;
+          line-height: 20px;
+          letter-spacing: -0.15px;
+        }
+      }
     }
   }
 }

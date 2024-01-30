@@ -2063,7 +2063,6 @@ onMounted(() => {
     font-weight: 300;
     @include adaptive-value('margin-bottom', 62, 44, 1);
     @media (max-width: 490px) {
-      font-weight: 200;
       max-width: 315px;
       font-weight: 300;
     }
@@ -2075,7 +2074,6 @@ onMounted(() => {
     justify-content: center;
     margin: -9px;
     flex-wrap: wrap;
-    // @include adaptive-value('margin-bottom', 76, 60, 1);
   }
   &__item {
     max-width: 322px;
@@ -2124,8 +2122,6 @@ onMounted(() => {
     justify-content: space-between;
     @include adaptive-value('padding-top', 33, 21, 1);
     @include adaptive-value('padding-bottom', 33, 21, 1);
-    @include adaptive-value('padding-left', 53, 24, 1);
-    @include adaptive-value('padding-right', 40, 24, 1);
     border-radius: 45px;
     background: #fff;
   }
@@ -2134,34 +2130,22 @@ onMounted(() => {
     align-items: center;
   }
   &__link-img {
-    @include adaptive-value('margin-right', 20, 16, 1);
+    align-self: center;
+    @include adaptive-value('margin-right', 16, 16, 1);
     @include adaptive-value('width', 39, 24, 1);
+    margin-bottom: -6px;
+    @media (max-width: 490px) {
+      display: none;
+    }
   }
   &__link-text {
     font-family: 'Atyp Display', sans-serif;
-    @include adaptive-value('font-size', 20, 10, 1);
+    @include adaptive-value('font-size', 18, 14, 1);
     line-height: calc(24 / 20);
     position: relative;
+    text-decoration: underline;
     &::before {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      border-radius: 2px;
-      background-color: #052e3e;
-      @media (max-width: 490px) {
-        display: none;
-      }
     }
-    @media (max-width: 490px) {
-      &::before {
-      }
-    }
-  }
-  &__link-arrow {
-    @include adaptive-value('width', 24, 18, 1);
   }
 }
 </style>
