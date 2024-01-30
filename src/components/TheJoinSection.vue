@@ -12,7 +12,7 @@ const { pageIsLoaded } = storeToRefs(globalStore);
 <template>
   <section class="join">
     <div class="join__inner">
-      <TheHeader />
+      <TheHeader/>
       <TheMeet v-if="pageIsLoaded" />
     </div>
     <TheClouds class="join__clouds" />

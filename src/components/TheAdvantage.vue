@@ -225,15 +225,26 @@ onMounted(() => {
           </div>
           <div class="swiper-pagination advantage__swiper-pagination"></div>
         </div>
-
         <TheButton
+            v-if="idx===0"
           class="advantage__btn"
           color="white"
           size="big"
           @tap="globalStore.changeModalOpened(true)"
-        >
+          >
           {{ settings.btnText }}
         </TheButton>
+        <TheButton
+            v-else
+            class="advantage__btn"
+            color="white"
+            size="big"
+            href="https://t.me/skyfortrussia"
+            flex="flex"
+        >
+          <img src="../../public/icons/tg.svg" alt=""><span>{{ settings.btnText }}</span>
+        </TheButton>
+
       </div>
     </TheContainer>
   </section>

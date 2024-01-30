@@ -4,6 +4,7 @@ import TheLogotype from './TheLogotype.vue'
 import TheNavigation from './TheNavigation.vue'
 import TheButton from './TheButton.vue'
 import { useGlobalStore } from '../stores/global'
+import {createRouter as $router} from "vue-router";
 
 const globalStore = useGlobalStore();
 
@@ -72,8 +73,10 @@ const openNavbar = () => {
 }
 
 const openSection = (item) => {
+  if (window.location.pathname !== '/'){
+    window.location.replace('/');
+  }
   openNavbar();
-
   const getElementToScroll = document.querySelector(`#${item}`);
   
   if (screen && screen.width <= 1100) {

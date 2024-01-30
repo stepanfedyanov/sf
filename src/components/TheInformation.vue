@@ -1,6 +1,5 @@
 <script setup>
 import TheContainer from './TheContainer.vue'
-import TheFooterSection from './TheFooterSection.vue'
 import TheHeader from './TheHeader.vue'
 const items = [
   {
@@ -17,97 +16,146 @@ const items = [
   },
   {
     titles: {
-      name: 'Полное наименование',
+      name: 'Краткое наименование',
       date: 'Дата раскрытия',
       period: 'Период актуальности'
     },
     main: {
-      name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ “КЭПИТАЛ БОРД”',
+      name: 'ООО “КЭПИТАЛ БОРД”',
       date: '13.09.2023',
       period: 'По настоящее время'
     }
   },
   {
     titles: {
-      name: 'Полное наименование',
+      name: 'Полное наименование на английском языке',
       date: 'Дата раскрытия',
       period: 'Период актуальности'
     },
     main: {
-      name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ “КЭПИТАЛ БОРД”',
+      name: 'LIMITED LIABILITY COMPANY "CAPITAL BORD”',
       date: '13.09.2023',
       period: 'По настоящее время'
     }
   },
   {
     titles: {
-      name: 'Полное наименование',
+      name: 'Краткое наименование на английском языке',
       date: 'Дата раскрытия',
       period: 'Период актуальности'
     },
     main: {
-      name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ “КЭПИТАЛ БОРД”',
+      name: 'LLC "CAPITAL BORD”',
       date: '13.09.2023',
       period: 'По настоящее время'
     }
   },
   {
     titles: {
-      name: 'Полное наименование',
+      name: 'Юридический адрес',
       date: 'Дата раскрытия',
       period: 'Период актуальности'
     },
     main: {
-      name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ “КЭПИТАЛ БОРД”',
+      name: '125047, город Москва, вн. тер. г. муниципальный округ Тверской, ул. Бутырский вал, д. 10',
+      date: '26.01.2024',
+      period: 'По настоящее время'
+    }
+  },
+  {
+    titles: {
+      name: 'Фактический адрес',
+      date: 'Дата раскрытия',
+      period: 'Период актуальности'
+    },
+    main: {
+      name: '125047, город Москва, вн. тер. г. муниципальный округ Тверской, ул. Бутырский вал, д. 10',
       date: '13.09.2023',
       period: 'По настоящее время'
     }
   },
   {
     titles: {
-      name: 'Полное наименование',
+      name: 'Телефон',
       date: 'Дата раскрытия',
       period: 'Период актуальности'
     },
     main: {
-      name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ “КЭПИТАЛ БОРД”',
+      name: '+7 929 6969 418',
       date: '13.09.2023',
       period: 'По настоящее время'
     }
   },
   {
     titles: {
-      name: 'Полное наименование',
+      name: 'Сайт в сети интернет',
       date: 'Дата раскрытия',
       period: 'Период актуальности'
     },
     main: {
-      name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ “КЭПИТАЛ БОРД”',
+      name: 'https://skyfort.capital',
       date: '13.09.2023',
       period: 'По настоящее время'
     }
   },
   {
     titles: {
-      name: 'Полное наименование',
+      name: 'ИНН',
       date: 'Дата раскрытия',
       period: 'Период актуальности'
     },
     main: {
-      name: 'ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ “КЭПИТАЛ БОРД”',
+      name: '9704220707',
       date: '13.09.2023',
       period: 'По настоящее время'
     }
-  }
+  },
+  {
+    titles: {
+      name: 'КПП',
+      date: 'Дата раскрытия',
+      period: 'Период актуальности'
+    },
+    main: {
+      name: '770401001',
+      date: '13.09.2023',
+      period: 'По настоящее время'
+    }
+  },
+  {
+    titles: {
+      name: 'ОКПО',
+      date: 'Дата раскрытия',
+      period: 'Период актуальности'
+    },
+    main: {
+      name: '96460806',
+      date: '13.09.2023',
+      period: 'По настоящее время'
+    }
+  },
+  {
+    titles: {
+      name: 'Адрес электронной почты',
+      date: 'Дата раскрытия',
+      period: 'Период актуальности'
+    },
+    main: {
+      name: 'info@skyfort.capital',
+      date: '13.09.2023',
+      period: 'По настоящее время'
+    }
+  },
 ]
 </script>
 
 <template>
-  <TheHeader />
+  <TheHeader/>
   <div class="information-bg"></div>
   <TheContainer class="information">
-    <h1 class="information__title">Общая информация</h1>
+    <h1 class="information__title">Раскрытие информации</h1>
     <ul class="information__list">
+      <div class="information__subTitle">Юридическая информация</div>
       <li class="information__item" v-for="item in items" :key="item.main.name">
         <div class="information__item-column">
           <div class="information__item-column-title">
@@ -145,16 +193,28 @@ const items = [
               src="/img/TheLibertySection/link-img.svg"
               alt="Политика по выявлению и контролю конфликта интересов"
             />
-            <span class="liberty__link-text"
-              >Политика по выявлению и контролю конфликта интересов</span
-            >
+            <a class="liberty__link-text" href="/files/policy_KI.pdf" target="_blank">
+              Политика по выявлению и контролю конфликта интересов
+            </a>
           </span>
-          <img class="liberty__link-arrow" src="/img/global/arrow.svg" alt="Arrow" />
         </a>
+        <div class="liberty__link-info">
+          <div>
+            <span>Название</span>
+            <span>Политика по выявлению и контролю конфликта интересов</span>
+          </div>
+          <div>
+            <span>Дата раскрытия</span>
+            <span>13.09.2023</span>
+          </div>
+          <div>
+            <span>Период актуальности</span>
+            <span>По настоящее время</span>
+          </div>
+        </div>
       </div>
     </div>
   </TheContainer>
-  <TheFooterSection />
 </template>
 
 <style lang="scss">
@@ -195,9 +255,18 @@ const items = [
     color: #fff;
     @include adaptive-value('margin-bottom', 56, 36, 1);
   }
+
+  &__subTitle {
+    @include adaptive-value('font-size', 32, 24, 1);
+    line-height: 46px;
+    letter-spacing: -0.32px;
+    color: #052E3E;
+    @include adaptive-value('margin-bottom', 15, 10, 1);
+  }
+
   &__list {
     @include adaptive-value('padding', 39, 24, 1);
-    @include adaptive-value('border-radius', 40, 20, 1);
+    @include adaptive-value('border-radius', 40, 32, 1);
     background-color: #fff;
     margin-left: -39px;
     margin-right: -39px;
@@ -239,19 +308,53 @@ const items = [
 }
 .documents {
   &__title {
-    @include adaptive-value('font-size', 40, 26, 1);
+    @include adaptive-value('font-size', 32, 24, 1);
     line-height: calc(46 / 40);
     letter-spacing: -0.4px;
     @include adaptive-value('margin-bottom', 32, 24, 1);
   }
   .liberty__link-wrapper {
     @include adaptive-value('margin-bottom', 128, 78, 1);
+    background: #f2f3f5;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //justify-content: space-between;
+    gap:100px;
+    padding: 0 32px;
+    .liberty__link-info {
+      display: flex;
+      flex-direction: row;
+      gap:80px;
+      div{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        span:first-child{
+          @include adaptive-value('font-size', 18, 14, 1);
+          color: #052E3E;
+          font-size: 13px;
+          line-height: 24px;
+          letter-spacing: 0.26px;
+          opacity: 0.5;
+        }
+        span:last-child{
+          @include adaptive-value('font-size', 18, 14, 1);
+          color: #052E3E;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: 0.36px;
+        }
+      }
+      div:first-child{
+        display: none;
+      }
+    }
     .liberty__main-link {
+      width: 50%;
       background: #f2f3f5;
     }
-  }
-  .liberty__link-img {
-    @include adaptive-value('margin-right', 20, 12, 1);
   }
 }
 .footer {
@@ -268,8 +371,8 @@ const items = [
 @media (max-width: 1120px) {
   .information {
     &__list {
-      margin-right: 0px;
-      margin-left: 0px;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
 }
@@ -278,6 +381,8 @@ const items = [
   .information {
     &__item {
       flex-direction: column;
+      border-top: 1px rgba(5, 46, 62, 0.1) solid;
+      padding-top: 16px;
     }
     &__list {
       max-width: 600px;
@@ -285,7 +390,7 @@ const items = [
       margin-right: auto;
     }
     &__item + &__item {
-      @include adaptive-value('margin-top', 40, 20, 1);
+      @include adaptive-value('margin-top', 40, 26, 1);
     }
     &__item-column {
       &:nth-child(2) {
@@ -308,6 +413,34 @@ const items = [
       @include adaptive-value('letter-spacing', 0.36, 0.36, 1);
       max-width: 430px;
     }
+  }
+}
+
+
+@media (max-width: 380px){
+  .information__list{
+    margin-bottom: 32px;
+  }
+  .documents{
+    padding: calc(24px + 15 * (100vw - 375px) / 669);
+    &__title{
+      width: 85%;
+    }
+    .liberty__link-wrapper{
+      a{
+        display: none;
+      }
+      .liberty__link-info{
+        padding: 20px 0;
+        flex-direction: column;
+        gap:16px;
+        div:first-child{
+          display: flex;
+        }
+      }
+    }
+
+
   }
 }
 </style>

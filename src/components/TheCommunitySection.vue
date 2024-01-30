@@ -13,64 +13,64 @@ const staff = [
   {
     img: './img/TheCommunitySection/staff/1.png',
     name: 'Илья Опренко',
-    position: 'Co-founder, CEO',
-    desc: '16+&nbsp;лет в&nbsp;индустрии инвестиций и&nbsp;управления капиталом (UBS, Tinkoff Private, Deloitte, Sber). Топ-3&nbsp;в рейтинге профессионалов&nbsp;WM &amp;&nbsp;PB',
+    position: 'Ко-фаундер и СЕО',
+    desc: '17+ лет в индустрии управления капиталом и инвестиционно-банковских услуг в России, Юго-Восточной Азии, Швейцарии и ОАЭ (Tinkoff Private, UBS, Sberbank Private Banking и Deloitte)',
     href: 'https://ru.linkedin.com/in/ilya-oprenko-b6215237'
   },
   {
     img: './img/TheCommunitySection/staff/2.png',
     name: 'Сергей Ишков',
-    position: 'Co-founder, COO/CFO',
-    desc: '17+&nbsp;лет в&nbsp;международном консалтинге и&nbsp;финансах (ex&nbsp;управляющий директор BCG в&nbsp;России и&nbsp;Латинской Америке, Oliver Wyman)',
+    position: 'Ко-фаундер, СОО & СFO',
+    desc: '17+ лет в управленческом консалтинге для банков и финтех компаний в России, СНГ, Европе и Латинской Америке (BCG, Oliver Wyman)',
     href: 'https://pa.linkedin.com/in/sergeyishkov'
   },
   {
     img: './img/TheCommunitySection/staff/3.png',
     name: 'Игорь Смирнов',
-    position: 'Co-founder, CPO/CMO',
-    desc: '20+&nbsp;лет в&nbsp;маркетинге, цифровом продакшене и&nbsp;развитии бизнеса, Венчурный билдер, выпускник Singularity University',
+    position: 'Ко-фаундер, CPO & CMO',
+    desc: '20+ лет в маркетинге, цифровом продайшене и развитии бизнеса. Венчурный билдер и выпускник Singularity University. ',
     href: 'https://uk.linkedin.com/in/insmirnov'
   },
   {
     img: './img/TheCommunitySection/staff/4.png',
     name: 'Николай Буров',
-    position: 'Head of partner Family office',
-    desc: '13+&nbsp;лет в&nbsp;индустрии управления капиталом и&nbsp;private banking (UBS, Tinkoff Private). Руководитель семейного офиса',
+    position: 'Старший банкир, CFA',
+    desc: 'Многолетний опыт в индустрии Wealth Managemet, включая ведение клиентских портфелей и разработку сложных инвестиционных инструментов (Tinkoff Private, UBS)',
     href: 'https://ru.linkedin.com/in/николай-буров-339a066b'
   },
   {
     img: './img/TheCommunitySection/staff/5.png',
     name: 'Павел Бережной, CFA',
-    position: 'Director of client relations',
-    desc: '20+&nbsp;лет опыта работы в&nbsp;сфере управления частным капиталом (Nuveen, Тройка-диалог, ING, Ренессанс Капитал)',
+    position: 'Старший банкир, CFA',
+    desc: '20+ лет опыта в планировании и управлении благосостоянием клиентов в ведущих финансовых организациях РФ и США (Nuveen, Тройка-Диалог, ING,  Ренессанс Капитал)',
     href: 'https://ru.linkedin.com/in/павел-бережной-04059088'
   },
   {
     img: './img/TheCommunitySection/staff/6.png',
     name: 'Анастасия Воропаева',
-    position: 'Senior Investment Advisor',
-    desc: '15+&nbsp;лет опыта в&nbsp;качестве частного банкира в&nbsp;Швейцарии по&nbsp;вопросам wealth management, опыт работы в&nbsp;Harbor и&nbsp;UBS Moscow',
+    position: 'Старший инвестиционный советник ',
+    desc: 'Частный банкир с 15+ лет опыта в области управления частным капиталом, разработке и ведению инвестиционных портфелей в России и ОАЭ (UBS, Harbor)',
     href: 'https://www.linkedin.com/in/anastasia-voropaeva-57366846?trk=contact-info'
   },
   {
     img: './img/TheCommunitySection/staff/7.png',
     name: 'Дмитрий Золотков',
-    position: 'Director of Strategy',
-    desc: '12+&nbsp;лет опыта консультирования по&nbsp;вопросам M&amp;A в&nbsp;Big4. финансового структурирования, создания крупных&nbsp;PE фондов (до&nbsp;$2bln)',
+    position: 'Директор продуктовой лаборатории',
+    desc: '12+ лет опыта консультирования по вопросам M&A, финансового структурирования и создания крупных PE фондов в Big 4 и в крупных российских банках. ',
     href: 'https://ru.linkedin.com/in/zolotkov'
   },
   {
     img: './img/TheCommunitySection/staff/8.png',
     name: 'Максим Вежевич',
-    position: 'Head of research',
-    desc: '14+&nbsp;лет опыта работы на&nbsp;финансовых рынках, руководства отделом аналитики в&nbsp;Multi-family office, создания инвестиционных стратегий',
+    position: 'Главный инвестиционный аналитик ',
+    desc: '14+ лет опыта инвестиционного консультирования и анализа в международных банках и брокерах, а также мультисемейном офисе и венчурном фонде. Глубокое понимание "традиционных” рынков капитала, торговых алгоритмов, робоадвайзинга и цифровых активов. ',
     href: 'https://www.linkedin.com/in/vezhevich/'
   },
   {
     img: './img/TheCommunitySection/staff/9.png',
     name: 'Тимур Аманов',
-    position: 'External Advisor',
-    desc: '6+&nbsp;лет опыта работы в&nbsp;сфере управления частным капиталом (UBS, Tinkoff Private, лондонский офис UniCredit)',
+    position: 'Личный банкир',
+    desc: '6+ лет опыта работы в сфере управления частным капиталом (UBS, Tinkoff Private, лондонский офис UniCredit)',
     href: 'https://www.linkedin.com/in/timur-amanov-9a72abba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"'
   }
 ]
@@ -103,7 +103,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="community">
+  <section class="community" id="Команда">
     <div class="community__stars">
       <TransitionGroup name="fade">
         <span
@@ -117,7 +117,7 @@ onMounted(() => {
     <TheContainer>
       <div class="community__inner">
         <TheSectionTitle class="community__title wow animate__animated animate__fadeInUp">
-          Сообщество лидеров
+          Команда
         </TheSectionTitle>
         <p class="community__desc wow animate__animated animate__fadeIn" data-wow-delay=".3s">
           Экосистема Skyfort строится на&nbsp;базе профессионального сообщества и&nbsp;создается

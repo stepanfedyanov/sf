@@ -105,7 +105,7 @@ onMounted(() => {
 <style lang="scss">
 .how {
   background: #f2f3f5;
-  padding: 100px 0;
+  padding: 100px 0 0 0;
   @media (max-width: 500px) {
     padding: 0;
   }
