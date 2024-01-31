@@ -13,12 +13,6 @@ defineProps({
   staff: Object
 })
 
-import { useGlobalStore } from '../stores/global'
-const globalStore = useGlobalStore()
-const openModal = () => {
-  globalStore.changeModalOpened(true)
-}
-
 onMounted(() => {
   if (screen && screen.width >= 1024) {
     const slideSize = swiper.value.swiper.slidesSizesGrid[0]
@@ -233,7 +227,7 @@ onMounted(() => {
     max-width: 336px;
     letter-spacing: 0.65px;
     margin: 0 auto;
-    @include adaptive-value('margin-bottom', 39, 27, 1);
+    @include adaptive-value('margin-bottom', 10, 0, 1);
     flex: 1 0 auto;
     @media (max-width: 490px) {
       max-width: 170px;

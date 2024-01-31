@@ -1,7 +1,7 @@
 <script setup>
 import TheContainer from './TheContainer.vue'
 import TheMethods from './TheMethods.vue'
-import { onMounted, ref, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGlobalStore } from '../stores/global'

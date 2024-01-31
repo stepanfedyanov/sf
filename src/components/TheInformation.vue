@@ -417,7 +417,7 @@ const items = [
 }
 
 
-@media (max-width: 380px){
+@media (max-width: 1000px){
   .information__list{
     margin-bottom: 32px;
   }

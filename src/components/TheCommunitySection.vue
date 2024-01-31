@@ -103,7 +103,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="community" id="Команда">
+  <section class="community" id="team">
     <div class="community__stars">
       <TransitionGroup name="fade">
         <span

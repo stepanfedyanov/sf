@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, toRefs, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 gsap.registerPlugin(CustomEase);
@@ -9,21 +9,6 @@ import { storeToRefs } from 'pinia';
 
 const globalStore = useGlobalStore();
 const { pageIsLoaded } = storeToRefs(globalStore);
-
-const props = defineProps({
-  buildings: {
-    type: Boolean,
-    required: false,
-    default: true
-  },
-  manyClouds: {
-    type: Boolean,
-    required: false,
-    default: false
-  }
-})
-
-const { manyClouds } = toRefs(props)
 
 // Clouds array
 const clouds = ref([])

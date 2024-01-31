@@ -4,7 +4,7 @@ import TheAdvantage from './TheAdvantage.vue'
 const sections = [
   {
     title: 'Продукты и сервисы',
-    id: 'Маркетплейс',
+    id: 'products',
     style: 'blue',
     desc: 'Качественные инвестиционные продукты и&nbsp;сервисы от&nbsp;собственной продуктовой фабрики Skyfort Product Lab и&nbsp;проверенных поставщиков&nbsp;&mdash; резидентов международного сообщества Skyfort',
     btnText: 'Смотреть все',
@@ -98,7 +98,7 @@ const sections = [
 
   {
     title: 'Аналитика и инсайты',
-    id: 'Аналитика',
+    id: 'analytics',
     style: 'white',
     desc: 'Исследования, инсайты и экспертные комментарии по инвестициям и управлению капиталом от сообщества ведущих профессионалов-практиков',
     btnText: 'Читать больше',
