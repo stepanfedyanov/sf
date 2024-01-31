@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import TheContainer from './TheContainer.vue'
-import TheSectionTitle from './TheSectionTitle.vue'
 import TheVideo from './TheVideo.vue'
 import TheVideoSlider from './TheVideoSlider.vue'
 import { gsap } from 'gsap'

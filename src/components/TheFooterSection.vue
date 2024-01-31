@@ -1,12 +1,8 @@
 <script setup>
-import {useGlobalStore} from '../stores/global'
-
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 
 import {RouterLink} from 'vue-router'
-
-const globalStore = useGlobalStore()
 
 const socialsList = [
   {
@@ -117,9 +113,6 @@ const navList = [
   },
 ]
 
-const openModal = () => {
-  globalStore.changeModalOpened(true)
-}
 </script>
 
 <template>

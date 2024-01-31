@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue';
-import Lenis from '@studio-freight/lenis'
+
 
 
 function getScrollbarWidth() {

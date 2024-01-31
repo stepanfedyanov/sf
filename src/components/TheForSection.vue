@@ -4,7 +4,6 @@ import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const sections = [
   {

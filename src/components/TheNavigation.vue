@@ -1,8 +1,25 @@
 <script setup>
-import { useGlobalStore } from '../stores/global';
+import {useGlobalStore} from '../stores/global';
 import TheButton from './TheButton.vue'
 
-const items = ['Компания', 'Маркетплейс', 'Команда', 'Аналитика']
+const items = [
+  {
+    id: 'project',
+    title: 'О проекте',
+  },
+  {
+    id: 'products',
+    title: 'Продукты',
+  },
+  {
+    id: 'team',
+    title: 'Команда',
+  },
+  {
+    id: 'analytics',
+    title: 'Аналитика',
+  },
+]
 
 const globalStore = useGlobalStore()
 const openModal = () => {
@@ -16,30 +33,30 @@ defineEmits(['openSection']);
   <nav class="header__nav">
     <ul class="header__nav-list">
       <li
-        class="header__nav-item animate__animated animate__fadeIn"
-        :data-wow-delay="`${0.2 * idx}s`"
-        v-for="(item, idx) in items"
-        :key="item"
+          class="header__nav-item animate__animated animate__fadeIn"
+          :data-wow-delay="`${0.2 * idx}s`"
+          v-for="(item, idx) in items"
+          :key="item"
       >
-        <span class="header__nav-item-link" @click="$emit('openSection', item)">{{ item }}</span>
+        <span class="header__nav-item-link" @click="$emit('openSection', item.id)">{{ item.title }}</span>
       </li>
     </ul>
     <div class="header__btns">
       <TheButton
-        class="header__btn animate__animated animate__fadeIn"
-        data-wow-delay=".2s"
-        color="white"
-        size="small"
-        href="https://app.skyfort.capital"
+          class="header__btn animate__animated animate__fadeIn"
+          data-wow-delay=".2s"
+          color="white"
+          size="small"
+          href="https://app.skyfort.capital"
       >
         Вход
       </TheButton>
       <TheButton
-        @tap="openModal"
-        class="header__btn animate__animated animate__fadeIn"
-        data-wow-delay=".4s"
-        color="black"
-        size="small"
+          @tap="openModal"
+          class="header__btn animate__animated animate__fadeIn"
+          data-wow-delay=".4s"
+          color="black"
+          size="small"
       >
         Регистрация
       </TheButton>
@@ -53,21 +70,26 @@ defineEmits(['openSection']);
     display: flex;
     align-items: center;
   }
+
   &__dash {
     display: none;
   }
+
   &__mobile-btns {
     display: none;
   }
+
   &__nav-list {
     display: flex;
     align-items: center;
     position: relative;
     top: 2px;
   }
+
   &__nav-item + &__nav-item {
     @include adaptive-value('margin-left', 43, 0, 1);
   }
+
   &__nav-item-link {
     cursor: pointer;
     letter-spacing: -0.12px;
@@ -77,6 +99,7 @@ defineEmits(['openSection']);
     font-size: 13px;
     font-weight: 400;
     transition: 0.15s;
+
     &::before {
       content: '';
       position: absolute;
@@ -88,6 +111,7 @@ defineEmits(['openSection']);
       background-color: #052e3e;
       transition: 0.2s;
     }
+
     @media (hover: hover) {
       &:hover {
         &::before {
@@ -96,11 +120,13 @@ defineEmits(['openSection']);
       }
     }
   }
+
   &__btns {
     @include adaptive-value('margin-left', 41, 0, 1);
     display: flex;
     align-items: center;
   }
+
   &__btn {
     .btn {
       letter-spacing: 0.66px;
@@ -108,9 +134,11 @@ defineEmits(['openSection']);
       font-size: 13px;
       padding: 3px 18px;
       font-weight: 300;
+
       span {
         // transform: translateY(1px);
       }
+
       &.black {
         padding: 3px 28px;
         font-weight: 100;
@@ -118,6 +146,7 @@ defineEmits(['openSection']);
       }
     }
   }
+
   .btn-wrapper + .btn-wrapper {
     @include adaptive-value('margin-left', 7, 5, 1);
   }
@@ -128,14 +157,17 @@ defineEmits(['openSection']);
     &__nav-list {
       display: none;
     }
+
     &__btns {
       display: none;
     }
+
     &__mobile-btns {
       display: none;
       flex-direction: column;
       width: 100%;
     }
+
     &__mobile-btn {
       button, a {
         width: calc(100% - 46px);
@@ -147,6 +179,7 @@ defineEmits(['openSection']);
         padding-top: 4px !important;
         padding-bottom: 4px !important;
         position: relative;
+
         span {
           svg {
             position: absolute;
@@ -158,26 +191,31 @@ defineEmits(['openSection']);
         }
       }
     }
+
     &__mobile-btn + &__mobile-btn {
       margin-left: 0 !important;
       margin-top: 14px;
     }
+
     &__inner-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
     }
+
     &__nav-item-link {
       font-size: 14px;
       line-height: calc(24 / 14);
       letter-spacing: -0.21px;
     }
+
     &._opened {
       .header {
         &__mobile-btns {
           display: flex;
         }
+
         &__nav-list {
           margin-top: 48px;
           margin-bottom: 48px;
@@ -185,9 +223,11 @@ defineEmits(['openSection']);
           flex-direction: column;
           align-items: flex-start;
         }
+
         &__nav-item-link {
           padding: 0;
         }
+
         &__dash {
           display: block;
           margin-bottom: 40px;
@@ -196,6 +236,7 @@ defineEmits(['openSection']);
           background-color: #fff;
         }
       }
+
       .header__nav-item + .header__nav-item {
         margin-left: 0;
         margin-top: 24px;
@@ -213,4 +254,15 @@ defineEmits(['openSection']);
     }
   }
 }
+
+@media (max-width: 810px) {
+  .header__inner-row{
+    margin-left: -10px;
+  }
+  .header__nav-item + .header__nav-item{
+    margin-left: 10px;
+  }
+}
+
+
 </style>
