@@ -55,7 +55,7 @@ const staff = [
   {
     img: './img/TheCommunitySection/staff/7.png',
     name: 'Дмитрий Золотков',
-    position: 'Директор продуктовой лаборатории',
+    position: 'Директор продуктовой фабрики',
     desc: '12+ лет опыта консультирования по вопросам M&A, финансового структурирования и создания крупных PE фондов в Big 4 и в крупных российских банках. ',
     href: 'https://ru.linkedin.com/in/zolotkov'
   },
@@ -69,7 +69,7 @@ const staff = [
   {
     img: './img/TheCommunitySection/staff/9.png',
     name: 'Тимур Аманов',
-    position: 'Личный банкир',
+    position: 'Персональный банкир',
     desc: '6+ лет опыта работы в сфере управления частным капиталом (UBS, Tinkoff Private, лондонский офис UniCredit)',
     href: 'https://www.linkedin.com/in/timur-amanov-9a72abba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"'
   }
