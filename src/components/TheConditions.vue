@@ -9,7 +9,7 @@ import TheHeader from './TheHeader.vue'
   <TheContainer class="information">
     <h1 class="information__title">Условия обслуживания</h1>
     <div class="cap">
-      <span>Раздел находиться в процессе разработки</span>
+      <span>Раздел находится в процессе разработки</span>
     </div>
   </TheContainer>
 </template>
