@@ -20,27 +20,27 @@ const staff = [
   {
     img: './img/TheCommunitySection/staff/2.png',
     name: 'Сергей Ишков',
-    position: 'Ко-фаундер, СОО & СFO',
+    position: 'Ко-фаундер и исполнительный директор',
     desc: '17+ лет в управленческом консалтинге для банков и финтех компаний в России, СНГ, Европе и Латинской Америке (BCG, Oliver Wyman)',
     href: 'https://pa.linkedin.com/in/sergeyishkov'
   },
   {
     img: './img/TheCommunitySection/staff/3.png',
     name: 'Игорь Смирнов',
-    position: 'Ко-фаундер, CPO & CMO',
+    position: 'Ко-фаундер, CMO & CBDO',
     desc: '20+ лет в маркетинге, цифровом продайшене и развитии бизнеса. Венчурный билдер и выпускник Singularity University. ',
     href: 'https://uk.linkedin.com/in/insmirnov'
   },
   {
     img: './img/TheCommunitySection/staff/4.png',
     name: 'Николай Буров',
-    position: 'Старший банкир, CFA',
+    position: 'Старший банкир',
     desc: 'Многолетний опыт в индустрии Wealth Managemet, включая ведение клиентских портфелей и разработку сложных инвестиционных инструментов (Tinkoff Private, UBS)',
     href: 'https://ru.linkedin.com/in/николай-буров-339a066b'
   },
   {
     img: './img/TheCommunitySection/staff/5.png',
-    name: 'Павел Бережной, CFA',
+    name: 'Павел Бережной',
     position: 'Старший банкир, CFA',
     desc: '20+ лет опыта в планировании и управлении благосостоянием клиентов в ведущих финансовых организациях РФ и США (Nuveen, Тройка-Диалог, ING,  Ренессанс Капитал)',
     href: 'https://ru.linkedin.com/in/павел-бережной-04059088'
@@ -48,14 +48,14 @@ const staff = [
   {
     img: './img/TheCommunitySection/staff/6.png',
     name: 'Анастасия Воропаева',
-    position: 'Старший инвестиционный советник ',
+    position: 'Старший инвестиционный советник',
     desc: 'Частный банкир с 15+ лет опыта в области управления частным капиталом, разработке и ведению инвестиционных портфелей в России и ОАЭ (UBS, Harbor)',
     href: 'https://www.linkedin.com/in/anastasia-voropaeva-57366846?trk=contact-info'
   },
   {
     img: './img/TheCommunitySection/staff/7.png',
     name: 'Дмитрий Золотков',
-    position: 'Директор продуктовой фабрики',
+    position: 'Директор Skyfort Product Lab',
     desc: '12+ лет опыта консультирования по вопросам M&A, финансового структурирования и создания крупных PE фондов в Big 4 и в крупных российских банках. ',
     href: 'https://ru.linkedin.com/in/zolotkov'
   },

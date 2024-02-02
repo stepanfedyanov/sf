@@ -94,6 +94,8 @@ const navList = [
   },
   {
     title: 'Условия обслуживания',
+    href: 'conditions',
+    router: true
   },
   {
     title: 'Маркетплейс',

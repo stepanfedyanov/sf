@@ -426,6 +426,8 @@ onMounted(() => {
     @include adaptive-value('padding-right', 69, 80, 1);
     transform: translateX(-1px);
     font-weight: 300;
+    @include adaptive-value('padding-right', 69, 80, 1);
+    @include adaptive-value('height', 50, 40, 1);
   }
   &__columns {
     display: flex;

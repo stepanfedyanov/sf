@@ -43,7 +43,7 @@ defineProps({
       line-height: 24px;
       ul{
         list-style-type: disc;
-        margin-left: 20px;
+        margin-left: 30px;
         margin-top: -20px;
         margin-bottom: -15px;
         li{
@@ -54,7 +54,7 @@ defineProps({
     }
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 426px) {
   .policyBlock:nth-child(5) {
     .subTitles{
       gap: 2px;

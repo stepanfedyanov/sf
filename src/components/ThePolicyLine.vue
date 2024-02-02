@@ -60,8 +60,11 @@ defineProps({
         line-height: 24px;
       }
     }
+    .term > .under{
+      font-weight: 500;
+    }
   }
-  @media (max-width: 380px) {
+  @media (max-width: 520px) {
     .policyLine:not(:first-child){
       .top{
         display: flex;

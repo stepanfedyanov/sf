@@ -64,18 +64,6 @@ const items = [
   },
   {
     titles: {
-      name: 'Фактический адрес',
-      date: 'Дата раскрытия',
-      period: 'Период актуальности'
-    },
-    main: {
-      name: '125047, город Москва, вн. тер. г. муниципальный округ Тверской, ул. Бутырский вал, д. 10',
-      date: '26.01.2024',
-      period: 'По настоящее время'
-    }
-  },
-  {
-    titles: {
       name: 'Телефон',
       date: 'Дата раскрытия',
       period: 'Период актуальности'
@@ -93,6 +81,7 @@ const items = [
       period: 'Период актуальности'
     },
     main: {
+      href: 'https://skyfort.capital',
       name: 'https://skyfort.capital',
       date: '13.09.2023',
       period: 'По настоящее время'
@@ -141,6 +130,7 @@ const items = [
       period: 'Период актуальности'
     },
     main: {
+      href: 'mailto:info@skyfort.capital',
       name: 'info@skyfort.capital',
       date: '13.09.2023',
       period: 'По настоящее время'
@@ -161,7 +151,10 @@ const items = [
           <div class="information__item-column-title">
             {{ item.titles.name }}
           </div>
-          <div class="information__item-column-info">
+          <a class="information__item-column-info" v-if="item.main.href" :href="item.main.href">
+            {{item.main.name}}
+          </a>
+          <div class="information__item-column-info" v-else>
             {{ item.main.name }}
           </div>
         </div>
@@ -205,7 +198,7 @@ const items = [
           </div>
           <div>
             <span>Дата раскрытия</span>
-            <span>1.10.23</span>
+            <span>1.10.2023</span>
           </div>
           <div>
             <span>Период актуальности</span>

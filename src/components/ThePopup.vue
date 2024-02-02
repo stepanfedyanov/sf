@@ -127,7 +127,7 @@ const sumbitForm = async (e) => {
             </svg>
             <span class="modal__back-text">Назад</span>
           </button>
-          <h2 class="modal__title">Получить доступ</h2>
+          <h2 class="modal__title">Зарегистрироваться на Skyfort</h2>
           <form class="modal__form" @submit.prevent="sumbitForm">
             <div class="modal__container">
               <label class="modal__label">
@@ -202,11 +202,10 @@ const sumbitForm = async (e) => {
               >
               <textarea class="modal__textarea" type="text" name="Comments"></textarea>
             </label>
-            <span class="modal__span"
-              >Нажимая Отправить, вы&nbsp;соглашаетесь с&nbsp;<a target="_blank" href="#"
-                >политикой обработки персональных данных</a
-              >.</span
-            >
+            <span class="modal__span">
+              Нажимая кнопку "Отправить", вы соглашаетесь с нашей
+              <a target="_blank" href="/policy">политикой конфиденциальности</a>.
+            </span>
             <button
               :class="['modal__submit-btn', { 'modal__submit-btn-load': formLoad }]"
               type="submit"
@@ -314,8 +313,8 @@ const sumbitForm = async (e) => {
   }
   .vs--open {
     & > div {
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
   }
   .vs__dropdown-menu {
@@ -386,6 +385,9 @@ const sumbitForm = async (e) => {
     align-items: center;
     grid-template-columns: 1fr;
     padding: 20px;
+    @media (max-width: 1050px){
+      overflow-y: auto;
+    }
     &::-webkit-scrollbar {
       width: 10px; /* ширина scrollbar */
     }
