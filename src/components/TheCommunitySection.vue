@@ -72,6 +72,13 @@ const staff = [
     position: 'Персональный банкир',
     desc: '6+ лет опыта работы в сфере управления частным капиталом (UBS, Tinkoff Private, лондонский офис UniCredit)',
     href: 'https://www.linkedin.com/in/timur-amanov-9a72abba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"'
+  },
+  {
+    img: './img/TheCommunitySection/staff/10.webp',
+    name: 'Андрей Тынков',
+    position: 'Старший банкир',
+    desc: '15+ лет опыта в индустрии управления капиталом и инвестиционно-банковских услуг. Более более 12 лет руководил отделениями Ситибанка по управлению частным капиталом. Ведет клиентов мультисемейного офиса как личный банкир.',
+    href: '',
   }
 ]
 
