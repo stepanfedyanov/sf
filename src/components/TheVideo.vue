@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { vueVimeoPlayer } from 'vue-vimeo-player'
 
 const playVideo = ref(false)
 const pauseVideo = ref(false)
@@ -9,6 +10,11 @@ const play = () => {
   playVideo.value = true
   pauseVideo.value = true
   vimeo.value.play()
+}
+
+const pause = () => {
+  pauseVideo.value = false
+  vimeo.value.pause()
 }
 
 </script>
