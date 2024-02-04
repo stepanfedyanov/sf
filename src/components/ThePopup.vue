@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useGlobalStore } from '../stores/global'
 import { storeToRefs } from 'pinia'
+import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css'
 
 const globalStore = useGlobalStore()
