@@ -22,7 +22,7 @@ const globalStore = useGlobalStore()
           color="white"
           size="big"
           @tap="globalStore.changeModalOpened(true)"
-          >Получить доступ</TheButton
+          >Зарегистрироваться</TheButton
         >
       </div>
     </TheContainer>
