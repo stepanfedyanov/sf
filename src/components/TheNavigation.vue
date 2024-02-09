@@ -51,6 +51,7 @@ defineEmits(['openSection']);
       >
         Вход
       </TheButton>
+      <a href="https://integration.skyfort.capital/api/auth/signup" target="_blank">
       <TheButton
           @tap="openModal"
           class="header__btn animate__animated animate__fadeIn"
@@ -60,6 +61,7 @@ defineEmits(['openSection']);
       >
         Регистрация
       </TheButton>
+    </a>
     </div>
   </nav>
 </template>
