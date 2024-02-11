@@ -53,7 +53,6 @@ defineEmits(['openSection']);
       </TheButton>
       <a href="https://integration.skyfort.capital/api/auth/signup" target="_blank">
       <TheButton
-          @tap="openModal"
           class="header__btn animate__animated animate__fadeIn"
           data-wow-delay=".4s"
           color="black"
