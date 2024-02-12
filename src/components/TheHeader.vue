@@ -137,7 +137,7 @@ onMounted(() => {
         >
           Вход
         </TheButton>
-        <a href="https://integration.skyfort.capital/api/auth/signup" target="_blank">
+        <a href="https://app.skyfort.capital/api/auth/signup" target="_blank">
         <TheButton
           class="header__mobile-btn animate__animated animate__fadeIn"
           data-wow-delay=".4s"
