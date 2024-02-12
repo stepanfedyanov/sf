@@ -188,7 +188,7 @@ const openModal = () => {
               <p class="for__item-desc" v-html="item.desc" />
             </li>
           </ul>
-          <a href="https://app.skyfort.capital/api/auth/signup" class="meet__link">
+          <a href="https://app.skyfort.capital/api/auth/signup" target="_blank" class="for__signup-link">
             <TheButton class="for__section-btn" color="black" size="big">
               {{ section.btnText }}
             </TheButton>
@@ -220,7 +220,7 @@ const openModal = () => {
   //   width: 600%;
   // }
 
-  .meet__link {
+  &__signup-link {
     width: 100%;
     display: flex;
     justify-content: center;

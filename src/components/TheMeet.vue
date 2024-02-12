@@ -16,7 +16,7 @@ const globalStore = useGlobalStore()
         <p class="meet__text wow animate__animated animate__fadeIn" data-wow-delay="0.8s">
           Первый цифровой семейный офис и&nbsp;маркетплейс инвестиционных продуктов для состоятельных людей
         </p>
-        <a href="https://app.skyfort.capital/api/auth/signup" class="meet__link">
+        <a href="https://app.skyfort.capital/api/auth/signup" target="_blank" class="meet__signup-link">
           <TheButton
               class="meet__btn wow animate__animated animate__fadeIn"
               data-wow-delay="1s"
@@ -35,12 +35,6 @@ const globalStore = useGlobalStore()
 <style lang="scss">
 .meet {
   @include adaptive-value('padding-top', 186, 147, 1);
-
-  .meet__link {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
 
   &__inner {
   }
@@ -83,7 +77,7 @@ const globalStore = useGlobalStore()
   .meet {
     @include adaptive-value('padding-top', 194, 127, 1);
 
-    .meet__link {
+    &__signup-link {
       width: 100%;
       display: flex;
       justify-content: center;
