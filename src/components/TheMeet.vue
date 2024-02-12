@@ -1,7 +1,7 @@
 <script setup>
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
-import { useGlobalStore } from '../stores/global'
+import {useGlobalStore} from '../stores/global'
 
 const globalStore = useGlobalStore()
 </script>
@@ -16,14 +16,17 @@ const globalStore = useGlobalStore()
         <p class="meet__text wow animate__animated animate__fadeIn" data-wow-delay="0.8s">
           Первый цифровой семейный офис и&nbsp;маркетплейс инвестиционных продуктов для состоятельных людей
         </p>
-        <TheButton
-          class="meet__btn wow animate__animated animate__fadeIn"
-          data-wow-delay="1s"
-          color="white"
-          size="big"
-          @tap="globalStore.changeModalOpened(true)"
-          >Зарегистрироваться</TheButton
-        >
+        <a href="https://app.skyfort.capital/api/auth/signup" class="meet__link">
+          <TheButton
+              class="meet__btn wow animate__animated animate__fadeIn"
+              data-wow-delay="1s"
+              color="white"
+              size="big"
+              @tap="globalStore.changeModalOpened(false)"
+          >Зарегистрироваться
+          </TheButton
+          >
+        </a>
       </div>
     </TheContainer>
   </section>
@@ -32,8 +35,16 @@ const globalStore = useGlobalStore()
 <style lang="scss">
 .meet {
   @include adaptive-value('padding-top', 186, 147, 1);
+
+  .meet__link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   &__inner {
   }
+
   &__title {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 71, 34, 1);
@@ -42,6 +53,7 @@ const globalStore = useGlobalStore()
     @include adaptive-value('letter-spacing', 0.7, 0, 1);
     max-width: 580px;
   }
+
   &__text {
     @include adaptive-value('max-width', 400, 270, 1);
     @include adaptive-value('font-size', 18, 14.4, 1);
@@ -51,11 +63,13 @@ const globalStore = useGlobalStore()
     @include adaptive-value('margin-top', 52, 33, 1);
     @include adaptive-value('margin-bottom', 37, 37, 1);
   }
+
   &__btn {
     .big {
       @include adaptive-value('padding-top', 7, 4, 1);
       @include adaptive-value('padding-bottom', 7, 4, 1);
     }
+
     span {
       font-weight: 400;
       font-size: 5px;
@@ -68,19 +82,29 @@ const globalStore = useGlobalStore()
 @media (max-width: 1000px) {
   .meet {
     @include adaptive-value('padding-top', 194, 127, 1);
+
+    .meet__link {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
     &__title {
       text-align: center;
       margin-left: auto;
       margin-right: auto;
       transform: translateX(0px);
     }
+
     &__text {
       text-align: center;
       margin-left: auto;
       margin-right: auto;
     }
+
     &__inner {
     }
+
     .btn {
       display: block;
       margin: 0 auto;
@@ -95,12 +119,14 @@ const globalStore = useGlobalStore()
     &__text {
       font-weight: 300;
     }
+
     &__btn {
       .btn {
         padding-top: 2px;
         padding-bottom: 2px;
         padding-left: 26px;
         padding-right: 26px;
+
         span {
           font-weight: 300;
           font-size: 14px;

@@ -188,9 +188,11 @@ const openModal = () => {
               <p class="for__item-desc" v-html="item.desc" />
             </li>
           </ul>
-          <TheButton class="for__section-btn" color="black" size="big" @click="openModal">
-            {{ section.btnText }}
-          </TheButton>
+          <a href="https://app.skyfort.capital/api/auth/signup" class="meet__link">
+            <TheButton class="for__section-btn" color="black" size="big">
+              {{ section.btnText }}
+            </TheButton>
+          </a>
         </TheContainer>
       </section>
     </div>
@@ -217,6 +219,13 @@ const openModal = () => {
   //   }
   //   width: 600%;
   // }
+
+  .meet__link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   &__section {
     width: 100vw;
     @include adaptive-value('padding-top', 120, 70, 1);
