@@ -137,7 +137,7 @@ onMounted(() => {
         >
           Вход
         </TheButton>
-        <a href="https://app.skyfort.capital/api/auth/signup" target="_blank">
+        <a href="https://app.skyfort.capital/api/auth/signup" target="_blank" class="header__signup-btn">
         <TheButton
           class="header__mobile-btn animate__animated animate__fadeIn"
           data-wow-delay=".4s"
@@ -225,6 +225,10 @@ onMounted(() => {
         transform: rotate(47deg);
       }
     }
+  }
+
+  &__btns {
+    gap: 6px;
   }
 }
 
