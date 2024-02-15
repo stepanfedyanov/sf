@@ -76,7 +76,7 @@ const staff = [
   {
     img: './img/TheCommunitySection/staff/9.png',
     name: 'Тимур Аманов',
-    position: 'Персональный банкир',
+    position: 'Директор по развитию клиентов',
     desc: '6+ лет опыта работы в сфере управления частным капиталом (UBS, Tinkoff Private, лондонский офис UniCredit)',
     href: 'https://www.linkedin.com/in/timur-amanov-9a72abba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"'
   },
