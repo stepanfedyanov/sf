@@ -152,7 +152,7 @@ onMounted(() => {
               :key="card.imgSrc"
             >
               <div class="adv-slide__inner">
-                <a class="adv-slide__link" :href="href" @click="openModal">
+                <a class="adv-slide__link" href="https://app.skyfort.capital/api/auth/signup" target="_blank">
                   <svg
                     class="adv-slide__link-img"
                     xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +230,8 @@ onMounted(() => {
           class="advantage__btn"
           color="white"
           size="big"
-          @tap="globalStore.changeModalOpened(true)"
+          target="_blank"
+            href="https://app.skyfort.capital/api/auth/signup"
           >
           {{ settings.btnText }}
         </TheButton>
@@ -240,6 +241,7 @@ onMounted(() => {
             color="white"
             size="big"
             href="https://t.me/skyfortrussia"
+            target="_blank"
             flex="flex"
         >
           <img src="../../public/icons/tg.svg" alt=""><span>{{ settings.btnText }}</span>

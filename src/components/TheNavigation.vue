@@ -12,12 +12,12 @@ const items = [
     title: 'Продукты',
   },
   {
-    id: 'team',
-    title: 'Команда',
-  },
-  {
     id: 'analytics',
     title: 'Аналитика',
+  },
+  {
+    id: 'team',
+    title: 'Команда',
   },
 ]
 
@@ -167,6 +167,7 @@ defineEmits(['openSection']);
       display: none;
       flex-direction: column;
       width: 100%;
+      gap: 10px;
     }
 
     &__mobile-btn {
