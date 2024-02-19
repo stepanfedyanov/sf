@@ -412,14 +412,14 @@ onMounted(() => {
   &__tagLink {
     position: absolute;
     z-index: 5;
-    top: 26px;
-    right: 19px;
+    @include adaptive-value('left', 27, 24, 1);
+    bottom: 20px;
     @include adaptive-value('padding-top', 8, 6.79, 1);
     @include adaptive-value('padding-bottom', 8, 6.79, 1);
     @include adaptive-value('padding-left', 19, 16.12, 1);
     @include adaptive-value('padding-right', 19, 16.12, 1);
     @include adaptive-value('border-radius', 53, 45, 1);
-    background: #fff;
+    background: #F2F3F5;
 
     span {
       @include adaptive-value('font-size', 11.7, 10, 1);
@@ -476,7 +476,7 @@ onMounted(() => {
     transform: translateX(-1px);
     font-weight: 300;
     @include adaptive-value('padding-right', 69, 80, 1);
-    @include adaptive-value('height', 75, 50, 1);
+    @include adaptive-value('height', 70, 50, 1);
   }
 
   &__columns {
@@ -527,14 +527,14 @@ onMounted(() => {
   }
 
   &__desc {
-    @include adaptive-value('height', 55, 50, 1);
+    @include adaptive-value('height', 80, 75, 1);
     margin-bottom: 12px;
     @include adaptive-value('margin-bottom', 12, 10.18, 1);
     @include adaptive-value('font-size', 12, 10.18, 1);
     line-height: calc(14.5 / 12);
     letter-spacing: 0.24px;
     max-width: 210px;
-    color: #4e575a;
+    color: #052E3E;
   }
 
   &__date {
