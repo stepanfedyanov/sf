@@ -152,30 +152,12 @@ onMounted(() => {
                 :key="card.imgSrc"
             >
               <div class="adv-slide__inner">
-                <a v-if="card.href.length > 0 && card.href.slice(-3)==='pdf'" class="adv-slide__link" :href="card.href"
+                <a v-if="card.href.length > 0 && card.href.slice(-3)==='pdf'" class="adv-slide__tagLink" :href="card.href"
                    target="_blank" download>
-                  <svg class="adv-slide__link-img" width="17" height="18" viewBox="0 0 17 18" fill="none"
-                       xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8.66991 7.26941L8.66992 0.79895L7.41977 0.798953L7.41975 7.26941L8.66991 7.26941Z"
-                          fill="#052E3E"/>
-                    <path d="M15.7435 15.8645L0.607422 15.8645L0.607427 17.1147L15.7435 17.1147L15.7435 15.8645Z"
-                          fill="#052E3E"/>
-                    <path d="M15 11L15 17.1107L16.2502 17.1107L16.2502 11L15 11Z" fill="#052E3E"/>
-                    <path d="M-2.67108e-07 11L0 17.1107L1.25015 17.1107L1.25015 11L-2.67108e-07 11Z" fill="#052E3E"/>
-                    <path d="M7.17362 11.5501L8.05762 10.6661L3.88385 6.49237L2.99985 7.37636L7.17362 11.5501Z"
-                          fill="#052E3E"/>
-                    <path d="M8.92973 11.5614L13.1035 7.38757L12.2195 6.50358L8.04574 10.6774L8.92973 11.5614Z"
-                          fill="#052E3E"/>
-                  </svg>
+                  <span>Скачать</span>
                 </a>
-                <a v-else-if="card.href.length > 0" class="adv-slide__link" :href="card.href" target="_blank">
-                  <svg class="adv-slide__link-img" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                       viewBox="0 0 12 12" fill="none">
-                    <path d="M9.94035 0.809326H4.03774V2.05947H9.94035V0.809326Z" fill="#052E3E"/>
-                    <path d="M11.1747 2.05957H9.92453V7.96216H11.1747V2.05957Z" fill="#052E3E"/>
-                    <path d="M6.54259 4.57531L0.81344 10.3044L1.69743 11.1884L7.42659 5.4593L6.54259 4.57531Z"
-                          fill="#052E3E"/>
-                  </svg>
+                <a v-else-if="card.href.length > 0" class="adv-slide__tagLink" :href="card.href" target="_blank">
+                  <span>Перейти</span>
                 </a>
                 <a v-else class="adv-slide__link" href="https://app.skyfort.capital/api/auth/signup" target="_blank">
                   <svg class="adv-slide__link-img" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
@@ -409,8 +391,6 @@ onMounted(() => {
 
   &__tag {
     position: absolute;
-    top: 0;
-    left: 0;
     z-index: 5;
     top: 26px;
     left: 19px;
@@ -424,9 +404,37 @@ onMounted(() => {
     span {
       @include adaptive-value('font-size', 11.7, 10, 1);
       line-height: calc(16 / 12);
-      letter-spacing: 0px;
+      letter-spacing: 0;
       position: relative;
       font-weight: 500;
+    }
+  }
+  &__tagLink {
+    position: absolute;
+    z-index: 5;
+    top: 26px;
+    right: 19px;
+    @include adaptive-value('padding-top', 8, 6.79, 1);
+    @include adaptive-value('padding-bottom', 8, 6.79, 1);
+    @include adaptive-value('padding-left', 19, 16.12, 1);
+    @include adaptive-value('padding-right', 19, 16.12, 1);
+    @include adaptive-value('border-radius', 53, 45, 1);
+    background: #fff;
+
+    span {
+      @include adaptive-value('font-size', 11.7, 10, 1);
+      line-height: calc(16 / 12);
+      letter-spacing: 0;
+      position: relative;
+      font-weight: 500;
+      transition: 0.15s;
+    }
+    @media (hover: hover) {
+      &:hover {
+        span {
+          color: #a5cce0;
+        }
+      }
     }
   }
 
@@ -468,7 +476,7 @@ onMounted(() => {
     transform: translateX(-1px);
     font-weight: 300;
     @include adaptive-value('padding-right', 69, 80, 1);
-    @include adaptive-value('height', 50, 40, 1);
+    @include adaptive-value('height', 75, 50, 1);
   }
 
   &__columns {
@@ -519,7 +527,7 @@ onMounted(() => {
   }
 
   &__desc {
-    @include adaptive-value('height', 85, 75, 1);
+    @include adaptive-value('height', 55, 50, 1);
     margin-bottom: 12px;
     @include adaptive-value('margin-bottom', 12, 10.18, 1);
     @include adaptive-value('font-size', 12, 10.18, 1);
@@ -570,7 +578,7 @@ onMounted(() => {
     .adv-slide__title {
       padding: 0;
       @include adaptive-value('margin-bottom', 16, 10.18, 1);
-      @include adaptive-value('font-size', 18, 15.27, 1);
+      @include adaptive-value('font-size', 17, 15.27, 1);
       letter-spacing: -0.33px;
       line-height: calc(21 / 18);
       font-weight: 400;
