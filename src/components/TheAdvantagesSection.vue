@@ -106,8 +106,8 @@ const sections = [
     svg: './icons/tg.svg',
     cards: [
       {
-        tag: 'Эксклюзивный отчет',
-        date: 'Февраль 2024',
+        tag: '',
+        date: '',
         desc: 'Первый отчет Skyfort об индустрии управления благосостоянием и актуальных стратегиях для клиентов на 2024 год.',
         title: 'Skyfort Outlook 2024: управление частным капиталом в условиях глобальной трансформации',
         href: './files/Skyfort_v5_pages.pdf',
@@ -115,8 +115,8 @@ const sections = [
         columns: []
       },
       {
-        tag: 'Мнение эксперта',
-        date: 'Декабрь 2023',
+        tag: '',
+        date: '',
         desc: 'Статья нашего СЕО Ильи Опренко о вызовах индустрии Private Banking и как на них отвечает Skyfort.',
         title: 'Что не так с индустрией Private Banking?',
         href: 'https://vc.ru/opinions/967953-chto-ne-tak-s-industriey-private-banking',
@@ -124,8 +124,8 @@ const sections = [
         columns: []
       },
       {
-        tag: 'Мнение эксперта',
-        date: 'Январь 2024',
+        tag: '',
+        date: '',
         desc: 'Статья СЕО Skyfort Илья Опренко о геополитических рисках и глобальных конкурирующих группах влияния.',
         title: 'Большая игра 2.0',
         href: 'https://vc.ru/opinions/986922-bolshaya-igra-2-0',
@@ -133,7 +133,7 @@ const sections = [
         columns: []
       },
       {
-        tag: 'Рекомендация Skyfort',
+        tag: '',
         date: '',
         desc: 'Авторский канал СЕО Ильи Опренко об индустрии управления капиталом, личных вызовах и источниках вдохновения.',
         title: 'Будни банкира',
