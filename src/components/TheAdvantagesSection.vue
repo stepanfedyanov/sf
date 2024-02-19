@@ -106,37 +106,37 @@ const sections = [
     svg: './icons/tg.svg',
     cards: [
       {
-        tag: 'Report',
+        tag: 'Эксклюзивный отчет',
         date: 'Февраль 2024',
-        desc: 'Сооснователь Skyfort Ильи Опренко о внимании к геополитическим рискам и альянсах инфлюенсеров и техногигантов.',
-        title: 'Skyfort Outlook 2024: финансы и геополитика',
+        desc: 'Первый отчет Skyfort об индустрии управления благосостоянием и актуальных стратегиях для клиентов на 2024 год.',
+        title: 'Skyfort Outlook 2024: управление частным капиталом в условиях глобальной трансформации',
         href: './files/Skyfort_v5_pages.pdf',
         imgSrc: './img/TheAdvantagesSection/2/1.jpg',
         columns: []
       },
       {
-        tag: 'Private banking',
-        date: 'Январь 2024',
-        desc: 'Илья Опренко — о том, на какие вызовы индустрии private banking создан ответить Skyfort.',
-        title: 'Wealth Management 3.0',
+        tag: 'Мнение эксперта',
+        date: 'Декабрь 2023',
+        desc: 'Статья нашего СЕО Ильи Опренко о вызовах индустрии Private Banking и как на них отвечает Skyfort.',
+        title: 'Что не так с индустрией Private Banking?',
         href: 'https://vc.ru/opinions/967953-chto-ne-tak-s-industriey-private-banking',
         imgSrc: './img/TheAdvantagesSection/2/2.jpg',
         columns: []
       },
       {
-        tag: 'Expert\'s view',
-        date: 'Декабрь 2023',
-        desc: 'Сооснователь Skyfort Ильи Опренко о внимании к геополитическим рискам и альянсах инфлюенсеров и техногигантов.',
-        title: 'Большая игра 2:0',
+        tag: 'Мнение эксперта',
+        date: 'Январь 2024',
+        desc: 'Статья СЕО Skyfort Илья Опренко о геополитических рисках и глобальных конкурирующих группах влияния.',
+        title: 'Большая игра 2.0',
         href: 'https://vc.ru/opinions/986922-bolshaya-igra-2-0',
         imgSrc: './img/TheAdvantagesSection/2/3.jpg',
         columns: []
       },
       {
-        tag: 'Channel',
-        date: 'Февраль 2024',
-        desc: 'Не будничный взгляд на то, каково это — менять индустрию и не терять вдохновения. Уникальное видение управления капиталом от суперпрофессионала в сфере private banking.',
-        title: 'Авторский канал Ильи Опренко «Будни банкира»',
+        tag: 'Рекомендация Skyfort',
+        date: '',
+        desc: 'Авторский канал СЕО Ильи Опренко об индустрии управления капиталом, личных вызовах и источниках вдохновения.',
+        title: 'Будни банкира',
         href: 'https://t.me/budnybankira',
         imgSrc: './img/TheAdvantagesSection/2/4.jpg',
         columns: []
