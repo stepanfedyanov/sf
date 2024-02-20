@@ -7,10 +7,6 @@ import TheSliderButton from './TheSliderButton.vue'
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 
-import {useGlobalStore} from '../stores/global'
-
-const globalStore = useGlobalStore()
-
 const props = defineProps({
   settings: Object,
   idx: Number
@@ -23,10 +19,6 @@ gsap.registerPlugin(ScrollTrigger)
 const swiper = ref(null)
 
 const advantageElement = ref(null)
-
-const openModal = () => {
-  globalStore.changeModalOpened(true)
-}
 
 onMounted(() => {
   // TODO: убрать на этапе мобильной анимации
@@ -180,9 +172,8 @@ onMounted(() => {
                     v-if="settings.cardStyle === 'top-image'"
                 />
                 <div class="adv-slide__inner-wrapper">
-                  <h3 class="adv-slide__title">
-                    {{ card.title }}
-                  </h3>
+                  <h3 v-if="card.columns.length > 0" class="adv-slide__bigTitle">{{ card.title }}</h3>
+                  <h3 v-else class="adv-slide__title" v-html="card.title"></h3>
                   <p class="adv-slide__desc" v-if="card.desc">
                     {{ card.desc }}
                   </p>
@@ -465,8 +456,7 @@ onMounted(() => {
       }
     }
   }
-
-  &__title {
+  &__bigTitle {
     font-family: 'Atyp Display', sans-serif;
     @include adaptive-value('font-size', 26.5, 22, 1);
     line-height: calc(29 / 26);
@@ -475,8 +465,17 @@ onMounted(() => {
     @include adaptive-value('padding-right', 69, 80, 1);
     transform: translateX(-1px);
     font-weight: 300;
+  }
+  &__title {
+    font-family: 'Atyp Display', sans-serif;
+    @include adaptive-value('font-size', 14, 13, 1);
+    line-height: calc(29 / 26);
+    letter-spacing: 0.2px;
+    margin-bottom: 16px;
     @include adaptive-value('padding-right', 69, 80, 1);
-    @include adaptive-value('height', 70, 50, 1);
+    transform: translateX(-1px);
+    font-weight: 300;
+    @include adaptive-value('padding-right', 69, 80, 1);
   }
 
   &__columns {
@@ -578,7 +577,7 @@ onMounted(() => {
     .adv-slide__title {
       padding: 0;
       @include adaptive-value('margin-bottom', 16, 10.18, 1);
-      @include adaptive-value('font-size', 17, 15.27, 1);
+      @include adaptive-value('font-size', 14, 13, 1);
       letter-spacing: -0.33px;
       line-height: calc(21 / 18);
       font-weight: 400;

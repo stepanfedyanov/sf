@@ -109,7 +109,7 @@ const sections = [
         tag: '',
         date: '',
         desc: 'Первый отчет Skyfort об индустрии управления благосостоянием и актуальных стратегиях для клиентов на 2024 год.',
-        title: 'Skyfort Outlook 2024: управление частным капиталом в условиях глобальной трансформации',
+        title: 'Skyfort Outlook 2024: управление<br/> частным капиталом в условиях<br/> глобальной трансформации',
         href: './files/Skyfort_v5_pages.pdf',
         imgSrc: './img/TheAdvantagesSection/2/1.jpg',
         columns: []
@@ -118,7 +118,7 @@ const sections = [
         tag: '',
         date: '',
         desc: 'Статья нашего СЕО Ильи Опренко о вызовах индустрии Private Banking и как на них отвечает Skyfort.',
-        title: 'Что не так с индустрией Private Banking?',
+        title: 'Что не так с индустрией<br/> Private Banking?',
         href: 'https://vc.ru/opinions/967953-chto-ne-tak-s-industriey-private-banking',
         imgSrc: './img/TheAdvantagesSection/2/2.jpg',
         columns: []
