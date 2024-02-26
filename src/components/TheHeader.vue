@@ -232,7 +232,7 @@ onMounted(() => {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1023px) {
   .header {
     &._opened {
       padding-bottom: 48px;

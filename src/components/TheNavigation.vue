@@ -19,6 +19,10 @@ const items = [
     id: 'team',
     title: 'Команда',
   },
+  {
+    id: 'modal',
+    title: 'Связаться с нами'
+  }
 ]
 
 const globalStore = useGlobalStore()
@@ -38,7 +42,8 @@ defineEmits(['openSection']);
           v-for="(item, idx) in items"
           :key="item"
       >
-        <span class="header__nav-item-link" @click="$emit('openSection', item.id)">{{ item.title }}</span>
+        <span v-if="item.id!='modal'" class="header__nav-item-link" @click="$emit('openSection', item.id)">{{ item.title }}</span>
+        <span v-else class="header__nav-item-link"  @click="openModal">{{ item.title }}</span>
       </li>
     </ul>
     <div class="header__btns">
@@ -88,7 +93,11 @@ defineEmits(['openSection']);
   }
 
   &__nav-item + &__nav-item {
-    @include adaptive-value('margin-left', 43, 0, 1);
+    @include adaptive-value('margin-left', 40, 0, 1);
+    @media (max-width: 1024px) {
+      @include adaptive-value('margin-left', 30, 0, 1);
+    }
+    
   }
 
   &__nav-item-link {
@@ -135,11 +144,6 @@ defineEmits(['openSection']);
       font-size: 13px;
       padding: 3px 18px;
       font-weight: 300;
-
-      span {
-        // transform: translateY(1px);
-      }
-
       &.black {
         padding: 3px 28px;
         font-weight: 100;
@@ -153,7 +157,7 @@ defineEmits(['openSection']);
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1023px) {
   .header {
     &__nav-list {
       display: none;
