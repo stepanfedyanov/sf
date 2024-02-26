@@ -162,6 +162,10 @@ defineEmits(['openSection']);
     &__nav-list {
       display: none;
     }
+    &__nav-item:last-child{
+      display: none;
+      visibility: hidden;
+    }
 
     &__btns {
       display: none;
