@@ -137,14 +137,14 @@ onMounted(() => {
         >
           Вход
         </TheButton>
-        <a href="https://app.skyfort.capital/api/auth/signup" target="_blank" class="header__signup-btn">
         <TheButton
           class="header__mobile-btn animate__animated animate__fadeIn"
           data-wow-delay=".4s"
           color="black"
           size="medium"
+          @click="openModal"
         >
-          Регистрация
+          Связаться
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="10"
@@ -162,7 +162,6 @@ onMounted(() => {
             />
           </svg>
         </TheButton>
-      </a>
       </div>
     </div>
   </header>

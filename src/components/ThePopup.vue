@@ -26,7 +26,7 @@ const closeModal = (event) => {
                 <a class="modal__card-link" href="mailto:skyfort@capital.com" target="_blank">skyfort@capital.com</a></div>
               <div class="modal__card-line">
                 <span class="modal__card-linkTitle">Телефон</span>
-                <a class="modal__card-link" href="tel:+79000998877">+7 900 099 88 77</a></div>
+                <a class="modal__card-link" href="tel:+79031005481">+7 903 100 54 81</a></div>
               <div class="modal__card-btns">
                 <a class="modal__card-btn" href="https://wa.me/+79031005481" target="_blank">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
