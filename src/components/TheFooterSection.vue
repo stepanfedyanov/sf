@@ -174,7 +174,19 @@ const navList = [
             </ul>
           </div>
           <div class="footer__bottom-line">
-            <span>Связаться с нами: <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital</a></span>
+            <span>
+              Связаться с нами: <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital,</a>&nbsp;
+              <a class="one_link" href="https://t.me/skyfort_support" target="_blank">Telegram,</a>&nbsp;
+              <a class="one_link" href="https://wa.me/+79031005481" target="_blank">WhatsApp</a>
+            </span>
+          </div>
+          <div class="footer__bottom-line">
+            <span>
+              По вопросам PR и коммуникаций: 
+              <a class="one_link" href="https://t.me/sofyapaskal" target="_blank">@sofyapaskal</a>
+              и
+              <a class="one_link" href="mailto:sofia.paskal@skyfort.capital">sofia.paskal@skyfort.capital</a>
+            </span>
           </div>
           <div class="footer__bottom-line">
             <nav class="footer__nav">
@@ -233,7 +245,21 @@ const navList = [
             </div>
             <a class="footer__bottom-link">&#169; 2024 Skyfort</a>
           </div>
-          <span class="one_link_wrapper">Связаться с нами: <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital</a></span>
+          <div class="one_link_wrapper">
+            <span>
+              Связаться с нами: <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital,</a><br/>
+              <a class="one_link" href="https://t.me/skyfort_support" target="_blank">Telegram,</a>&nbsp;
+              <a class="one_link" href="https://wa.me/+79031005481" target="_blank">WhatsApp</a>
+            </span>
+          </div>
+          <div class="one_link_wrapper">
+            <span>
+              По вопросам PR и коммуникаций: 
+              <a class="one_link" href="https://t.me/sofyapaskal" target="_blank">@sofyapaskal</a><br/>
+              и
+              <a class="one_link" href="mailto:sofia.paskal@skyfort.capital">sofia.paskal@skyfort.capital</a>
+            </span>
+          </div>
           <ul class="socials__list">
             <li class="socials__item" v-for="item in socialsList" :key="item.title">
               <a class="socials__link" :href="item.href" v-html="item.icon" target="_blank"></a>
@@ -333,18 +359,24 @@ const navList = [
     justify-content: space-between;
     .one_link{
       color: #99C2D6;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
   }
 
   &__bottom-line + &__bottom-line {
-    margin-top: 40px;
+    margin-top: 35px;
   }
 
   &__bottom-line:first-child {
     border-top: 1px rgba(255, 255, 255, 0.3) solid;
     padding-top: 40px;
-    margin-bottom: -30px;
+    margin-bottom: -20px;
   }
+  &__bottom-line:nth-child(2) {
+    margin-bottom: -20px;
+  }
+
 
   &__bottom-line:last-child {
     border-bottom: 1px rgba(255, 255, 255, 0.3) solid;
@@ -520,11 +552,13 @@ const navList = [
     }
     .one_link_wrapper{
       color: #FFF;
-      text-align: center;
-      font-size: 10px;
-      line-height: 24px;
+      text-align: left;
+      font-size: 13px;
+      line-height: 20px;
       .one_link{
         color: #99C2D6;
+        text-decoration: underline;
+        text-underline-offset: 3px;
       }
     }
     .socials__list{
