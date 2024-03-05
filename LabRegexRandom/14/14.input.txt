@@ -1,0 +1,382 @@
+﻿-- doing 1 "basic sanity checks"
+
+-- expectMatch	1.1 &		abc	abc		abc
+select * from test_regex('abc', 'abc', '');
+select * from test_regex('abc', 'abc', 'b');
+-- expectNomatch	1.2 &		abc	def
+select * from test_regex('abc', 'def', '');
+select * from test_regex('abc', 'def', 'b');
+-- expectMatch	1.3 &		abc	xyabxabce	abc
+select * from test_regex('abc', 'xyabxabce', '');
+select * from test_regex('abc', 'xyabxabce', 'b');
+
+-- doing 2 "invalid option combinations"
+
+-- expectError	2.1 qe		a	INVARG
+select * from test_regex('a', '', 'qe');
+-- expectError	2.2 qa		a	INVARG
+select * from test_regex('a', '', 'qa');
+-- expectError	2.3 qx		a	INVARG
+select * from test_regex('a', '', 'qx');
+-- expectError	2.4 qn		a	INVARG
+select * from test_regex('a', '', 'qn');
+-- expectError	2.5 ba		a	INVARG
+select * from test_regex('a', '', 'ba');
+
+-- doing 3 "basic syntax"
+
+-- expectIndices	3.1 &NS		""	a	{0 -1}
+select * from test_regex('', 'a', '0NS');
+select * from test_regex('', 'a', '0NSb');
+-- expectMatch	3.2 NS		a|	a	a
+select * from test_regex('a|', 'a', 'NS');
+-- expectMatch	3.3 -		a|b	a	a
+select * from test_regex('a|b', 'a', '-');
+-- expectMatch	3.4 -		a|b	b	b
+select * from test_regex('a|b', 'b', '-');
+-- expectMatch	3.5 NS		a||b	b	b
+select * from test_regex('a||b', 'b', 'NS');
+-- expectMatch	3.6 &		ab	ab	ab
+select * from test_regex('ab', 'ab', '');
+select * from test_regex('ab', 'ab', 'b');
+
+-- doing 4 "parentheses"
+
+-- expectMatch	4.1  -		(a)e		ae	ae	a
+select * from test_regex('(a)e', 'ae', '-');
+-- expectMatch	4.2  o		(a)e		ae
+select * from test_regex('(a)e', 'ae', 'o');
+-- expectMatch	4.3  b		{\(a\)b}	ab	ab	a
+select * from test_regex('\(a\)b', 'ab', 'b');
+-- expectMatch	4.4  -		a((b)c)		abc	abc	bc	b
+select * from test_regex('a((b)c)', 'abc', '-');
+-- expectMatch	4.5  -		a(b)(c)		abc	abc	b	c
+select * from test_regex('a(b)(c)', 'abc', '-');
+-- expectError	4.6  -		a(b		EPAREN
+select * from test_regex('a(b', '', '-');
+-- expectError	4.7  b		{a\(b}		EPAREN
+select * from test_regex('a\(b', '', 'b');
+-- # sigh, we blew it on the specs here... someday this will be fixed in POSIX,
+-- #  but meanwhile, it's fixed in AREs
+-- expectMatch	4.8  eU		a)b		a)b	a)b
+select * from test_regex('a)b', 'a)b', 'eU');
+-- expectError	4.9  -		a)b		EPAREN
+select * from test_regex('a)b', '', '-');
+-- expectError	4.10 b		{a\)b}		EPAREN
+select * from test_regex('a\)b', '', 'b');
+-- expectMatch	4.11 P		a(?:b)c		abc	abc
+select * from test_regex('a(?:b)c', 'abc', 'P');
+-- expectError	4.12 e		a(?:b)c		BADRPT
+select * from test_regex('a(?:b)c', '', 'e');
+-- expectIndices	4.13 S		a()b		ab	{0 1}	{1 0}
+select * from test_regex('a()b', 'ab', '0S');
+-- expectMatch	4.14 SP		a(?:)b		ab	ab
+select * from test_regex('a(?:)b', 'ab', 'SP');
+-- expectIndices	4.15 S		a(|b)c		ac	{0 1}	{1 0}
+select * from test_regex('a(|b)c', 'ac', '0S');
+-- expectMatch	4.16 S		a(b|)c		abc	abc	b
+select * from test_regex('a(b|)c', 'abc', 'S');
+
+-- doing 5 "simple one-char matching"
+-- # general case of brackets done later
+
+-- expectMatch	5.1 &		a.b		axb	axb
+select * from test_regex('a.b', 'axb', '');
+select * from test_regex('a.b', 'axb', 'b');
+-- expectNomatch	5.2 &n		"a.b"		"a\nb"
+select * from test_regex('a.b', E'a\nb', 'n');
+select * from test_regex('a.b', E'a\nb', 'nb');
+-- expectMatch	5.3 &		{a[bc]d}	abd	abd
+select * from test_regex('a[bc]d', 'abd', '');
+select * from test_regex('a[bc]d', 'abd', 'b');
+-- expectMatch	5.4 &		{a[bc]d}	acd	acd
+select * from test_regex('a[bc]d', 'acd', '');
+select * from test_regex('a[bc]d', 'acd', 'b');
+-- expectNomatch	5.5 &		{a[bc]d}	aed
+select * from test_regex('a[bc]d', 'aed', '');
+select * from test_regex('a[bc]d', 'aed', 'b');
+-- expectNomatch	5.6 &		{a[^bc]d}	abd
+select * from test_regex('a[^bc]d', 'abd', '');
+select * from test_regex('a[^bc]d', 'abd', 'b');
+-- expectMatch	5.7 &		{a[^bc]d}	aed	aed
+select * from test_regex('a[^bc]d', 'aed', '');
+select * from test_regex('a[^bc]d', 'aed', 'b');
+-- expectNomatch	5.8 &p		"a\[^bc]d"	"a\nd"
+select * from test_regex('a[^bc]d', E'a\nd', 'p');
+select * from test_regex('a[^bc]d', E'a\nd', 'pb');
+
+-- doing 6 "context-dependent syntax"
+-- # plus odds and ends
+
+-- expectError	6.1  -		*	BADRPT
+select * from test_regex('*', '', '-');
+-- expectMatch	6.2  b		*	*	*
+select * from test_regex('*', '*', 'b');
+-- expectMatch	6.3  b		{\(*\)}	*	*	*
+select * from test_regex('\(*\)', '*', 'b');
+-- expectError	6.4  -		(*)	BADRPT
+select * from test_regex('(*)', '', '-');
+-- expectMatch	6.5  b		^*	*	*
+select * from test_regex('^*', '*', 'b');
+-- expectError	6.6  -		^*	BADRPT
+select * from test_regex('^*', '', '-');
+-- expectNomatch	6.7  &		^b	^b
+select * from test_regex('^b', '^b', '');
+select * from test_regex('^b', '^b', 'b');
+-- expectMatch	6.8  b		x^	x^	x^
+select * from test_regex('x^', 'x^', 'b');
+-- expectNomatch	6.9  I		x^	x
+select * from test_regex('x^', 'x', 'I');
+-- expectMatch	6.10 n		"\n^"	"x\nb"	"\n"
+select * from test_regex(E'\n^', E'x\nb', 'n');
+-- expectNomatch	6.11 bS		{\(^b\)} ^b
+select * from test_regex('\(^b\)', '^b', 'bS');
+-- expectMatch	6.12 -		(^b)	b	b	b
+select * from test_regex('(^b)', 'b', '-');
+-- expectMatch	6.13 &		{x$}	x	x
+select * from test_regex('x$', 'x', '');
+select * from test_regex('x$', 'x', 'b');
+-- expectMatch	6.14 bS		{\(x$\)} x	x	x
+select * from test_regex('\(x$\)', 'x', 'bS');
+-- expectMatch	6.15 -		{(x$)}	x	x	x
+select * from test_regex('(x$)', 'x', '-');
+-- expectMatch	6.16 b		{x$y}	"x\$y"	"x\$y"
+select * from test_regex('x$y', 'x$y', 'b');
+-- expectNomatch	6.17 I		{x$y}	xy
+select * from test_regex('x$y', 'xy', 'I');
+-- expectMatch	6.18 n		"x\$\n"	"x\n"	"x\n"
+select * from test_regex(E'x$\n', E'x\n', 'n');
+-- expectError	6.19 -		+	BADRPT
+select * from test_regex('+', '', '-');
+-- expectError	6.20 -		?	BADRPT
+select * from test_regex('?', '', '-');
+
+-- These two are not yet incorporated in Tcl, cf
+-- https://core.tcl-lang.org/tcl/tktview?name=5ea71fdcd3291c38
+-- expectError	6.21 -		{x(\w)(?=(\1))}	ESUBREG
+select * from test_regex('x(\w)(?=(\1))', '', '-');
+-- expectMatch	6.22 HP		{x(?=((foo)))}	xfoo	x
+select * from test_regex('x(?=((foo)))', 'xfoo', 'HP');
+
+-- doing 7 "simple quantifiers"
+
+-- expectMatch	7.1  &N		a*	aa	aa
+select * from test_regex('a*', 'aa', 'N');
+select * from test_regex('a*', 'aa', 'Nb');
+-- expectIndices	7.2  &N		a*	b	{0 -1}
+select * from test_regex('a*', 'b', '0N');
+select * from test_regex('a*', 'b', '0Nb');
+-- expectMatch	7.3  -		a+	aa	aa
+select * from test_regex('a+', 'aa', '-');
+-- expectMatch	7.4  -		a?b	ab	ab
+select * from test_regex('a?b', 'ab', '-');
+-- expectMatch	7.5  -		a?b	b	b
+select * from test_regex('a?b', 'b', '-');
+-- expectError	7.6  -		**	BADRPT
+select * from test_regex('**', '', '-');
+-- expectMatch	7.7  bN		**	***	***
+select * from test_regex('**', '***', 'bN');
+-- expectError	7.8  &		a**	BADRPT
+select * from test_regex('a**', '', '');
+select * from test_regex('a**', '', 'b');
+-- expectError	7.9  &		a**b	BADRPT
+select * from test_regex('a**b', '', '');
+select * from test_regex('a**b', '', 'b');
+-- expectError	7.10 &		***	BADRPT
+select * from test_regex('***', '', '');
+select * from test_regex('***', '', 'b');
+-- expectError	7.11 -		a++	BADRPT
+select * from test_regex('a++', '', '-');
+-- expectError	7.12 -		a?+	BADRPT
+select * from test_regex('a?+', '', '-');
+-- expectError	7.13 -		a?*	BADRPT
+select * from test_regex('a?*', '', '-');
+-- expectError	7.14 -		a+*	BADRPT
+select * from test_regex('a+*', '', '-');
+-- expectError	7.15 -		a*+	BADRPT
+select * from test_regex('a*+', '', '-');
+-- tests for ancient brenext() bugs; not currently in Tcl
+select * from test_regex('.*b', 'aaabbb', 'b');
+select * from test_regex('.\{1,10\}', 'abcdef', 'bQ');
+
+-- doing 8 "braces"
+
+-- expectMatch	8.1  NQ		"a{0,1}"	""	""
+select * from test_regex('a{0,1}', '', 'NQ');
+-- expectMatch	8.2  NQ		"a{0,1}"	ac	a
+select * from test_regex('a{0,1}', 'ac', 'NQ');
+-- expectError	8.3  -		"a{1,0}"	BADBR
+select * from test_regex('a{1,0}', '', '-');
+-- expectError	8.4  -		"a{1,2,3}"	BADBR
+select * from test_regex('a{1,2,3}', '', '-');
+-- expectError	8.5  -		"a{257}"	BADBR
+select * from test_regex('a{257}', '', '-');
+-- expectError	8.6  -		"a{1000}"	BADBR
+select * from test_regex('a{1000}', '', '-');
+-- expectError	8.7  -		"a{1"		EBRACE
+select * from test_regex('a{1', '', '-');
+-- expectError	8.8  -		"a{1n}"		BADBR
+select * from test_regex('a{1n}', '', '-');
+-- expectMatch	8.9  BS		"a{b"		"a\{b"	"a\{b"
+select * from test_regex('a{b', 'a{b', 'BS');
+-- expectMatch	8.10 BS		"a{"		"a\{"	"a\{"
+select * from test_regex('a{', 'a{', 'BS');
+-- expectMatch	8.11 bQ		"a\\{0,1\\}b"	cb	b
+select * from test_regex('a\{0,1\}b', 'cb', 'bQ');
+-- expectError	8.12 b		"a\\{0,1"	EBRACE
+select * from test_regex('a\{0,1', '', 'b');
+-- expectError	8.13 -		"a{0,1\\"	BADBR
+select * from test_regex('a{0,1\', '', '-');
+-- expectMatch	8.14 Q		"a{0}b"		ab	b
+select * from test_regex('a{0}b', 'ab', 'Q');
+-- expectMatch	8.15 Q		"a{0,0}b"	ab	b
+select * from test_regex('a{0,0}b', 'ab', 'Q');
+-- expectMatch	8.16 Q		"a{0,1}b"	ab	ab
+select * from test_regex('a{0,1}b', 'ab', 'Q');
+-- expectMatch	8.17 Q		"a{0,2}b"	b	b
+select * from test_regex('a{0,2}b', 'b', 'Q');
+-- expectMatch	8.18 Q		"a{0,2}b"	aab	aab
+select * from test_regex('a{0,2}b', 'aab', 'Q');
+-- expectMatch	8.19 Q		"a{0,}b"	aab	aab
+select * from test_regex('a{0,}b', 'aab', 'Q');
+-- expectMatch	8.20 Q		"a{1,1}b"	aab	ab
+select * from test_regex('a{1,1}b', 'aab', 'Q');
+-- expectMatch	8.21 Q		"a{1,3}b"	aaaab	aaab
+select * from test_regex('a{1,3}b', 'aaaab', 'Q');
+-- expectNomatch	8.22 Q		"a{1,3}b"	b
+select * from test_regex('a{1,3}b', 'b', 'Q');
+-- expectMatch	8.23 Q		"a{1,}b"	aab	aab
+select * from test_regex('a{1,}b', 'aab', 'Q');
+-- expectNomatch	8.24 Q		"a{2,3}b"	ab
+select * from test_regex('a{2,3}b', 'ab', 'Q');
+-- expectMatch	8.25 Q		"a{2,3}b"	aaaab	aaab
+select * from test_regex('a{2,3}b', 'aaaab', 'Q');
+-- expectNomatch	8.26 Q		"a{2,}b"	ab
+select * from test_regex('a{2,}b', 'ab', 'Q');
+-- expectMatch	8.27 Q		"a{2,}b"	aaaab	aaaab
+select * from test_regex('a{2,}b', 'aaaab', 'Q');
+
+-- doing 9 "brackets"
+
+-- expectMatch	9.1  &		{a[bc]}		ac	ac
+select * from test_regex('a[bc]', 'ac', '');
+select * from test_regex('a[bc]', 'ac', 'b');
+-- expectMatch	9.2  &		{a[-]}		a-	a-
+select * from test_regex('a[-]', 'a-', '');
+select * from test_regex('a[-]', 'a-', 'b');
+-- expectMatch	9.3  &		{a[[.-.]]}	a-	a-
+select * from test_regex('a[[.-.]]', 'a-', '');
+select * from test_regex('a[[.-.]]', 'a-', 'b');
+-- expectMatch	9.4  &L		{a[[.zero.]]}	a0	a0
+select * from test_regex('a[[.zero.]]', 'a0', 'L');
+select * from test_regex('a[[.zero.]]', 'a0', 'Lb');
+-- expectMatch	9.5  &LM	{a[[.zero.]-9]}	a2	a2
+select * from test_regex('a[[.zero.]-9]', 'a2', 'LM');
+select * from test_regex('a[[.zero.]-9]', 'a2', 'LMb');
+-- expectMatch	9.6  &M		{a[0-[.9.]]}	a2	a2
+select * from test_regex('a[0-[.9.]]', 'a2', 'M');
+select * from test_regex('a[0-[.9.]]', 'a2', 'Mb');
+-- expectMatch	9.7  &+L	{a[[=x=]]}	ax	ax
+select * from test_regex('a[[=x=]]', 'ax', '+L');
+select * from test_regex('a[[=x=]]', 'ax', '+Lb');
+-- expectMatch	9.8  &+L	{a[[=x=]]}	ay	ay
+select * from test_regex('a[[=x=]]', 'ay', '+L');
+select * from test_regex('a[[=x=]]', 'ay', '+Lb');
+-- expectNomatch	9.9  &+L	{a[[=x=]]}	az
+select * from test_regex('a[[=x=]]', 'az', '+L');
+select * from test_regex('a[[=x=]]', 'az', '+Lb');
+-- expectError	9.10 &		{a[0-[=x=]]}	ERANGE
+select * from test_regex('a[0-[=x=]]', '', '');
+select * from test_regex('a[0-[=x=]]', '', 'b');
+-- expectMatch	9.11 &L		{a[[:digit:]]}	a0	a0
+select * from test_regex('a[[:digit:]]', 'a0', 'L');
+select * from test_regex('a[[:digit:]]', 'a0', 'Lb');
+-- expectError	9.12 &		{a[[:woopsie:]]}	ECTYPE
+select * from test_regex('a[[:woopsie:]]', '', '');
+select * from test_regex('a[[:woopsie:]]', '', 'b');
+-- expectNomatch	9.13 &L		{a[[:digit:]]}	ab
+select * from test_regex('a[[:digit:]]', 'ab', 'L');
+select * from test_regex('a[[:digit:]]', 'ab', 'Lb');
+-- expectError	9.14 &		{a[0-[:digit:]]}	ERANGE
+select * from test_regex('a[0-[:digit:]]', '', '');
+select * from test_regex('a[0-[:digit:]]', '', 'b');
+-- expectMatch	9.15 &LP	{[[:<:]]a}	a	a
+select * from test_regex('[[:<:]]a', 'a', 'LP');
+select * from test_regex('[[:<:]]a', 'a', 'LPb');
+-- expectMatch	9.16 &LP	{a[[:>:]]}	a	a
+select * from test_regex('a[[:>:]]', 'a', 'LP');
+select * from test_regex('a[[:>:]]', 'a', 'LPb');
+-- expectError	9.17 &		{a[[..]]b}	ECOLLATE
+select * from test_regex('a[[..]]b', '', '');
+select * from test_regex('a[[..]]b', '', 'b');
+-- expectError	9.18 &		{a[[==]]b}	ECOLLATE
+select * from test_regex('a[[==]]b', '', '');
+select * from test_regex('a[[==]]b', '', 'b');
+-- expectError	9.19 &		{a[[::]]b}	ECTYPE
+select * from test_regex('a[[::]]b', '', '');
+select * from test_regex('a[[::]]b', '', 'b');
+-- expectError	9.20 &		{a[[.a}		EBRACK
+select * from test_regex('a[[.a', '', '');
+select * from test_regex('a[[.a', '', 'b');
+-- expectError	9.21 &		{a[[=a}		EBRACK
+select * from test_regex('a[[=a', '', '');
+select * from test_regex('a[[=a', '', 'b');
+-- expectError	9.22 &		{a[[:a}		EBRACK
+select * from test_regex('a[[:a', '', '');
+select * from test_regex('a[[:a', '', 'b');
+-- expectError	9.23 &		{a[}		EBRACK
+select * from test_regex('a[', '', '');
+select * from test_regex('a[', '', 'b');
+-- expectError	9.24 &		{a[b}		EBRACK
+select * from test_regex('a[b', '', '');
+select * from test_regex('a[b', '', 'b');
+-- expectError	9.25 &		{a[b-}		EBRACK
+select * from test_regex('a[b-', '', '');
+select * from test_regex('a[b-', '', 'b');
+-- expectError	9.26 &		{a[b-c}		EBRACK
+select * from test_regex('a[b-c', '', '');
+select * from test_regex('a[b-c', '', 'b');
+-- expectMatch	9.27 &M		{a[b-c]}	ab	ab
+select * from test_regex('a[b-c]', 'ab', 'M');
+select * from test_regex('a[b-c]', 'ab', 'Mb');
+-- expectMatch	9.28 &		{a[b-b]}	ab	ab
+select * from test_regex('a[b-b]', 'ab', '');
+select * from test_regex('a[b-b]', 'ab', 'b');
+-- expectMatch	9.29 &M		{a[1-2]}	a2	a2
+select * from test_regex('a[1-2]', 'a2', 'M');
+select * from test_regex('a[1-2]', 'a2', 'Mb');
+-- expectError	9.30 &		{a[c-b]}	ERANGE
+select * from test_regex('a[c-b]', '', '');
+select * from test_regex('a[c-b]', '', 'b');
+-- expectError	9.31 &		{a[a-b-c]}	ERANGE
+select * from test_regex('a[a-b-c]', '', '');
+select * from test_regex('a[a-b-c]', '', 'b');
+-- expectMatch	9.32 &M		{a[--?]b}	a?b	a?b
+select * from test_regex('a[--?]b', 'a?b', 'M');
+select * from test_regex('a[--?]b', 'a?b', 'Mb');
+-- expectMatch	9.33 &		{a[---]b}	a-b	a-b
+select * from test_regex('a[---]b', 'a-b', '');
+select * from test_regex('a[---]b', 'a-b', 'b');
+-- expectMatch	9.34 &		{a[]b]c}	a]c	a]c
+select * from test_regex('a[]b]c', 'a]c', '');
+select * from test_regex('a[]b]c', 'a]c', 'b');
+-- expectMatch	9.35 EP		{a[\]]b}	a]b	a]b
+select * from test_regex('a[\]]b', 'a]b', 'EP');
+-- expectNomatch	9.36 bE		{a[\]]b}	a]b
+select * from test_regex('a[\]]b', 'a]b', 'bE');
+-- expectMatch	9.37 bE		{a[\]]b}	"a\\]b"	"a\\]b"
+select * from test_regex('a[\]]b', 'a\]b', 'bE');
+-- expectMatch	9.38 eE		{a[\]]b}	"a\\]b"	"a\\]b"
+select * from test_regex('a[\]]b', 'a\]b', 'eE');
+-- expectMatch	9.39 EP		{a[\\]b}	"a\\b"	"a\\b"
+select * from test_regex('a[\\]b', 'a\b', 'EP');
+-- expectMatch	9.40 eE		{a[\\]b}	"a\\b"	"a\\b"
+select * from test_regex('a[\\]b', 'a\b', 'eE');
+-- expectMatch	9.41 bE		{a[\\]b}	"a\\b"	"a\\b"
+select * from test_regex('a[\\]b', 'a\b', 'bE');
+-- expectError	9.42 -		{a[\Z]b}	EESCAPE
+select * from test_regex('a[\Z]b', '', '-');
+-- expectMatch	9.43 &		{a[[b]c}	"a\[c"	"a\[c"
+select * from test_regex('a[[b]c', 'a[c', '');
+select * from test_regex('a[[b]c', 'a[c', 'b');
+-- This only works in UTF8 encoding, so it's moved to test_regex_utf8.sql:

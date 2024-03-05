@@ -175,6 +175,11 @@ const navList = [
           </div>
           <div class="footer__bottom-line">
             <span>
+              Работать в Skyfort: <a class="one_link" href="mailto:recruiting@skyfort.capital">recruiting@skyfort.capital</a>
+            </span>
+          </div>
+          <div class="footer__bottom-line">
+            <span>
               Связаться с нами: <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital,</a>&nbsp;
               <a class="one_link" href="https://t.me/skyfort_support" target="_blank">Telegram,</a>&nbsp;
               <a class="one_link" href="https://wa.me/+79031005481" target="_blank">WhatsApp</a>
@@ -244,6 +249,11 @@ const navList = [
               <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип"/>
             </div>
             <a class="footer__bottom-link">&#169; 2024 Skyfort</a>
+          </div>
+          <div class="one_link_wrapper">
+            <span>
+              Работать в Skyfort: <a class="one_link" href="mailto:recruiting@skyfort.capital">recruiting@skyfort.capital</a>
+            </span>
           </div>
           <div class="one_link_wrapper">
             <span>
@@ -374,6 +384,9 @@ const navList = [
     margin-bottom: -20px;
   }
   &__bottom-line:nth-child(2) {
+    margin-bottom: -20px;
+  }
+  &__bottom-line:nth-child(3) {
     margin-bottom: -20px;
   }
 

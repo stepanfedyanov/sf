@@ -1,0 +1,180 @@
+﻿doing 1 "basic sanity checks"
+m  1	&	abc		abc	abc
+f  2	&	abc		def
+m  3	&	abc		xyabxabce	abc
+
+
+
+doing 2 "invalid option combinations"
+e  1	qe	a		INVARG
+e  2	qa	a		INVARG
+e  3	qx	a		INVARG
+e  4	qn	a		INVARG
+e  5	ba	a		INVARG
+
+
+
+doing 3 "basic syntax"
+i  1	&NS	""		a	{0 -1}
+m  2	NS	a|		a	a
+m  3	-	a|b		a	a
+m  4	-	a|b		b	b
+m  5	NS	a||b		b	b
+m  6	&	ab		ab	ab
+
+
+
+doing 4 "parentheses"
+m  1	-	(a)e		ae	ae	a
+m  2	o	(a)e		ae
+m  3	b	{\(a\)b}	ab	ab	a
+m  4	-	a((b)c)		abc	abc	bc	b
+m  5	-	a(b)(c)		abc	abc	b	c
+e  6	-	a(b		EPAREN
+e  7	b	{a\(b}		EPAREN
+# sigh, we blew it on the specs here... someday this will be fixed in POSIX,
+#  but meanwhile, it's fixed in AREs
+m  8	eU	a)b		a)b	a)b
+e  9	-	a)b		EPAREN
+e 10	b	{a\)b}		EPAREN
+m 11	P	a(?:b)c		abc	abc
+e 12	e	a(?:b)c		BADRPT
+i 13	S	a()b		ab	{0 1}	{1 0}
+m 14	SP	a(?:)b		ab	ab
+i 15	S	a(|b)c		ac	{0 1}	{1 0}
+m 16	S	a(b|)c		abc	abc	b
+
+
+
+doing 5 "simple one-char matching"
+# general case of brackets done later
+m  1	&	a.b		axb	axb
+f  2	&n	"a.b"		"a\nb"
+m  3	&	{a[bc]d}	abd	abd
+m  4	&	{a[bc]d}	acd	acd
+f  5	&	{a[bc]d}	aed
+f  6	&	{a[^bc]d}	abd
+m  7	&	{a[^bc]d}	aed	aed
+f  8	&p	"a\[^bc]d"	"a\nd"
+
+
+
+doing 6 "context-dependent syntax"
+# plus odds and ends
+e  1	-	*		BADRPT
+m  2	b	*		*	*
+m  3	b	{\(*\)}		*	*	*
+e  4	-	(*)		BADRPT
+m  5	b	^*		*	*
+e  6	-	^*		BADRPT
+f  7	&	^b		^b
+m  8	b	x^		x^	x^
+f  9	I	x^		x
+m 10	n	"\n^"		"x\nb"	"\n"
+f 11	bS	{\(^b\)}	^b
+m 12	-	(^b)		b	b	b
+m 13	&	{x$}		x	x
+m 14	bS	{\(x$\)}	x	x	x
+m 15	-	{(x$)}		x	x	x
+m 16	b	{x$y}		"x\$y"	"x\$y"
+f 17	I	{x$y}		xy
+m 18	n	"x\$\n"		"x\n"	"x\n"
+e 19	-	+		BADRPT
+e 20	-	?		BADRPT
+
+
+
+doing 7 "simple quantifiers"
+m  1	&N	a*		aa	aa
+i  2	&N	a*		b	{0 -1}
+m  3	-	a+		aa	aa
+m  4	-	a?b		ab	ab
+m  5	-	a?b		b	b
+e  6	-	**		BADRPT
+m  7	bN	**		***	***
+e  8	&	a**		BADRPT
+e  9	&	a**b		BADRPT
+e 10	&	***		BADRPT
+e 11	-	a++		BADRPT
+e 12	-	a?+		BADRPT
+e 13	-	a?*		BADRPT
+e 14	-	a+*		BADRPT
+e 15	-	a*+		BADRPT
+
+
+
+doing 8 "braces"
+m  1	NQ	"a{0,1}"	""	""
+m  2	NQ	"a{0,1}"	ac	a
+e  3	-	"a{1,0}"	BADBR
+e  4	-	"a{1,2,3}"	BADBR
+e  5	-	"a{257}"	BADBR
+e  6	-	"a{1000}"	BADBR
+e  7	-	"a{1"		EBRACE
+e  8	-	"a{1n}"		BADBR
+m  9	BS	"a{b"		"a\{b"	"a\{b"
+m 10	BS	"a{"		"a\{"	"a\{"
+m 11	bQ	"a\\{0,1\\}b"	cb	b
+e 12	b	"a\\{0,1"	EBRACE
+e 13	-	"a{0,1\\"	BADBR
+m 14	Q	"a{0}b"		ab	b
+m 15	Q	"a{0,0}b"	ab	b
+m 16	Q	"a{0,1}b"	ab	ab
+m 17	Q	"a{0,2}b"	b	b
+m 18	Q	"a{0,2}b"	aab	aab
+m 19	Q	"a{0,}b"	aab	aab
+m 20	Q	"a{1,1}b"	aab	ab
+m 21	Q	"a{1,3}b"	aaaab	aaab
+f 22	Q	"a{1,3}b"	b
+m 23	Q	"a{1,}b"	aab	aab
+f 24	Q	"a{2,3}b"	ab
+m 25	Q	"a{2,3}b"	aaaab	aaab
+f 26	Q	"a{2,}b"	ab
+m 27	Q	"a{2,}b"	aaaab	aaaab
+
+
+
+doing 9 "brackets"
+m  1	&	{a[bc]}		ac	ac
+m  2	&	{a[-]}		a-	a-
+m  3	&	{a[[.-.]]}	a-	a-
+m  4	&L	{a[[.zero.]]}	a0	a0
+m  5	&LM	{a[[.zero.]-9]}	a2	a2
+m  6	&M	{a[0-[.9.]]}	a2	a2
+m  7	&+L	{a[[=x=]]}	ax	ax
+m  8	&+L	{a[[=x=]]}	ay	ay
+f  9	&+L	{a[[=x=]]}	az
+e 10	&	{a[0-[=x=]]}	ERANGE
+m 11	&L	{a[[:digit:]]}	a0	a0
+e 12	&	{a[[:woopsie:]]}	ECTYPE
+f 13	&L	{a[[:digit:]]}	ab
+e 14	&	{a[0-[:digit:]]}	ERANGE
+m 15	&LP	{[[:<:]]a}	a	a
+m 16	&LP	{a[[:>:]]}	a	a
+e 17	&	{a[[..]]b}	ECOLLATE
+e 18	&	{a[[==]]b}	ECOLLATE
+e 19	&	{a[[::]]b}	ECTYPE
+e 20	&	{a[[.a}		EBRACK
+e 21	&	{a[[=a}		EBRACK
+e 22	&	{a[[:a}		EBRACK
+e 23	&	{a[}		EBRACK
+e 24	&	{a[b}		EBRACK
+e 25	&	{a[b-}		EBRACK
+e 26	&	{a[b-c}		EBRACK
+m 27	&M	{a[b-c]}	ab	ab
+m 28	&	{a[b-b]}	ab	ab
+m 29	&M	{a[1-2]}	a2	a2
+e 30	&	{a[c-b]}	ERANGE
+e 31	&	{a[a-b-c]}	ERANGE
+m 32	&M	{a[--?]b}	a?b	a?b
+m 33	&	{a[---]b}	a-b	a-b
+m 34	&	{a[]b]c}	a]c	a]c
+m 35	EP	{a[\]]b}	a]b	a]b
+f 36	bE	{a[\]]b}	a]b
+m 37	bE	{a[\]]b}	"a\\]b"	"a\\]b"
+m 38	eE	{a[\]]b}	"a\\]b"	"a\\]b"
+m 39	EP	{a[\\]b}	"a\\b"	"a\\b"
+m 40	eE	{a[\\]b}	"a\\b"	"a\\b"
+m 41	bE	{a[\\]b}	"a\\b"	"a\\b"
+e 42	-	{a[\Z]b}	EESCAPE
+m 43	&	{a[[b]c}	"a\[c"	"a\[c"
