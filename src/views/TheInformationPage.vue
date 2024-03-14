@@ -11,7 +11,4 @@ import TheFooterSection from "@/components/TheFooterSection.vue";
 </template>
 
 <style lang="scss">
-main {
- 
-}
 </style>
