@@ -192,6 +192,11 @@ const navList = [
               и
               <a class="one_link" href="mailto:sofia.paskal@skyfort.capital">sofia.paskal@skyfort.capital</a>
             </span>
+            <span>
+              Инвестиционный консультант: запись 
+              <a class="one_link" href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo=" target="_blank">&#x2116;238</a>
+              от 13.03.2024
+            </span>
           </div>
           <div class="footer__bottom-line">
             <nav class="footer__nav">
@@ -284,6 +289,13 @@ const navList = [
               </li>
             </ul>
           </nav>
+          <div class="mimi_one_link_wrapper">
+          <span>
+              Инвестиционный консультант: запись 
+              <a class="one_link" href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo=" target="_blank">&#x2116;238</a>
+              от 13.03.2024
+            </span>
+          </div>
         </div>
         <div class="disclaimer">
           <div>
@@ -561,6 +573,18 @@ const navList = [
         font-style: normal;
         font-weight: 400;
         line-height: 12px;
+      }
+    }
+    .mimi_one_link_wrapper{
+      margin-top:14px;
+      color: #FFF;
+      text-align: left;
+      font-size: 10px;
+      line-height: 20px;
+      .one_link{
+        color: #99C2D6;
+        text-decoration: underline;
+        text-underline-offset: 3px;
       }
     }
     .one_link_wrapper{

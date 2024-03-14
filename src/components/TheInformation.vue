@@ -179,6 +179,34 @@ const items = [
     <div class="documents">
       <h2 class="documents__title">Документы, относящиеся к деятельности компании</h2>
       <div class="liberty__link-wrapper wow animate__animated animate__fadeIn">
+        <a class="liberty__main-link" href="/files/Выписка.pdf" target="_blank">
+          <span class="liberty__main-link-left">
+            <img
+              class="liberty__link-img"
+              src="/img/TheLibertySection/link-img.svg"
+              alt="Сведения о лицензиях: запись &#x2116; от 13.03.2024 о включении ООО «Кэпитал Борд»в единый реестр инвестиционных советников."
+            />
+            <a class="liberty__link-text" href="/files/Выписка.pdf" target="_blank">
+              Сведения о лицензиях: запись &#x2116; от 13.03.2024 о включении ООО «Кэпитал Борд»в единый реестр инвестиционных советников.
+            </a>
+          </span>
+        </a>
+        <div class="liberty__link-info">
+          <div>
+            <span>Название</span>
+            <span>Сведения о лицензиях: запись &#x2116;238 от 13.03.2024 о включении ООО «Кэпитал Борд»в единый реестр инвестиционных советников.</span>
+          </div>
+          <div>
+            <span>Дата раскрытия</span>
+            <span>13.03.2024</span>
+          </div>
+          <div>
+            <span>Период актуальности</span>
+            <span>По настоящее время</span>
+          </div>
+        </div>
+      </div>
+      <div class="liberty__link-wrapper wow animate__animated animate__fadeIn">
         <a class="liberty__main-link" href="/files/policy_KI.pdf" target="_blank">
           <span class="liberty__main-link-left">
             <img
@@ -194,7 +222,7 @@ const items = [
         <div class="liberty__link-info">
           <div>
             <span>Название</span>
-            <span>Политика по выявлению и контролю конфликта интересов</span>
+            <span href="/files/policy_KI.pdf" target="_blank">Политика по выявлению и контролю конфликта интересов</span>
           </div>
           <div>
             <span>Дата раскрытия</span>
@@ -300,14 +328,16 @@ const items = [
   }
 }
 .documents {
+  @include adaptive-value('margin-bottom', 128, 78, 1);
+  display:flex;
+  flex-direction: column;
+  @include adaptive-value('gap', 32, 24, 1);
   &__title {
     @include adaptive-value('font-size', 32, 24, 1);
     line-height: calc(46 / 40);
     letter-spacing: -0.4px;
-    @include adaptive-value('margin-bottom', 32, 24, 1);
   }
   .liberty__link-wrapper {
-    @include adaptive-value('margin-bottom', 128, 78, 1);
     background: #f2f3f5;
     border-radius: 24px;
     display: flex;
