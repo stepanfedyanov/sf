@@ -192,11 +192,6 @@ const navList = [
               и
               <a class="one_link" href="mailto:sofia.paskal@skyfort.capital">sofia.paskal@skyfort.capital</a>
             </span>
-            <span>
-              Инвестиционный консультант: запись 
-              <a class="one_link" href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo=" target="_blank">&#x2116;238</a>
-              от 13.03.2024
-            </span>
           </div>
           <div class="footer__bottom-line">
             <nav class="footer__nav">
@@ -237,7 +232,7 @@ const navList = [
         </div>
         <div class="disclaimer">
           <div>
-            <span>Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br/>ИНН 9704220707; Зарегистрировано: 13.09.2023</span>
+            <span>Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br/>ИНН 9704220707; Зарегистрировано: 13.09.2023<br/>Включено в реестр инвестиционных советников ЦБ РФ <a class="disclaimer__link" href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo=" target="_blank">под номером 238</a> от 13.03.2024</span>
             <span>Информация, размещённая на данном веб-сайте, не является индивидуальной инвестиционной рекомендацией, и финансовые инструменты либо операции, упомянутые в ней, могут не соответствовать вашему инвестиционному профилю и инвестиционным целям (ожиданиям). Определение соответствия финансового инструмента либо операции вашим интересам, инвестиционным целям, инвестиционному горизонту и уровню допустимого риска является вашей задачей.</span>
           </div>
           <div>
@@ -289,18 +284,12 @@ const navList = [
               </li>
             </ul>
           </nav>
-          <div class="mimi_one_link_wrapper">
-          <span>
-              Инвестиционный консультант: запись 
-              <a class="one_link" href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo=" target="_blank">&#x2116;238</a>
-              от 13.03.2024
-            </span>
-          </div>
         </div>
         <div class="disclaimer">
           <div>
-            <span>Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br/>ИНН 9704220707; Зарегистрировано: 13.09.2023</span>
+            <span>Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br/>ИНН 9704220707; Зарегистрировано: 13.09.2023<br/>Включено в реестр инвестиционных советников ЦБ РФ <a class="disclaimer__link" href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo=" target="_blank">под номером 238</a> от 13.03.2024</span>
             <span>Юридический адрес: 125047, город Москва, вн. тер. г. муниципальный округ Тверской, ул. Бутырский вал, д. 10</span>
+
           </div>
           <div>
             <span>Информация, размещённая на данном веб-сайте, не является индивидуальной инвестиционной рекомендацией, и финансовые инструменты либо операции, упомянутые в ней, могут не соответствовать вашему инвестиционному профилю и инвестиционным целям (ожиданиям). Определение соответствия финансового инструмента либо операции вашим интересам, инвестиционным целям, инвестиционному горизонту и уровню допустимого риска является вашей задачей.</span>
@@ -332,8 +321,8 @@ const navList = [
     div{
       display: flex;
       flex-direction: column;
-      min-height: 155px;
-      height: 155px;
+      min-height: 170px;
+      height: 170px;
       justify-content: space-between;
       span{
         opacity: 0.5;
@@ -344,6 +333,10 @@ const navList = [
         font-weight: 400;
         line-height: 18px; /* 138.462% */
         letter-spacing: -0.195px;
+        .disclaimer__link{
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
       }
     }
   }
@@ -573,18 +566,6 @@ const navList = [
         font-style: normal;
         font-weight: 400;
         line-height: 12px;
-      }
-    }
-    .mimi_one_link_wrapper{
-      margin-top:14px;
-      color: #FFF;
-      text-align: left;
-      font-size: 10px;
-      line-height: 20px;
-      .one_link{
-        color: #99C2D6;
-        text-decoration: underline;
-        text-underline-offset: 3px;
       }
     }
     .one_link_wrapper{

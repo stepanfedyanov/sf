@@ -176,25 +176,26 @@ const items = [
         </div>
       </li>
     </ul>
+    <div class="documents-block">
     <div class="documents">
-      <h2 class="documents__title">Документы, относящиеся к деятельности компании</h2>
+      <h2 class="documents__title">Сведения о лицензиях</h2>
       <div class="liberty__link-wrapper wow animate__animated animate__fadeIn">
         <a class="liberty__main-link" href="/files/Выписка.pdf" target="_blank">
           <span class="liberty__main-link-left">
             <img
               class="liberty__link-img"
               src="/img/TheLibertySection/link-img.svg"
-              alt="Сведения о лицензиях: запись &#x2116;238 от 13.03.2024 о включении ООО «Кэпитал Борд» в единый реестр инвестиционных советников."
+              alt="ООО внесено в реестр инвестиционных советников Центрального Банка РФ. Номер записи 238. Данная информация размещена на официальном сайте Банка России."
             />
             <a class="liberty__link-text" href="/files/Выписка.pdf" target="_blank">
-              Сведения о лицензиях: запись &#x2116;238<br/> от 13.03.2024 о включении ООО «Кэпитал Борд»<br/> в единый реестр инвестиционных советников.
+              ООО внесено в реестр инвестиционных советников Центрального Банка РФ. Номер записи 238. Данная информация размещена на официальном сайте Банка России.
             </a>
           </span>
         </a>
         <div class="liberty__link-info">
           <div>
             <span>Название</span>
-            <span>Сведения о лицензиях: запись &#x2116;238 от 13.03.2024 о включении ООО «Кэпитал Борд» в единый реестр инвестиционных советников.</span>
+            <span><a href="/files/Выписка.pdf" target="_blank">ООО внесено в реестр инвестиционных советников Центрального Банка РФ. Номер записи 238. Данная информация размещена на официальном сайте Банка России.</a></span>
           </div>
           <div>
             <span>Дата раскрытия</span>
@@ -206,6 +207,9 @@ const items = [
           </div>
         </div>
       </div>
+    </div>
+    <div class="documents">
+      <h2 class="documents__title">Документы, относящиеся к деятельности компании</h2>
       <div class="liberty__link-wrapper wow animate__animated animate__fadeIn">
         <a class="liberty__main-link" href="/files/policy_KI.pdf" target="_blank">
           <span class="liberty__main-link-left">
@@ -222,7 +226,7 @@ const items = [
         <div class="liberty__link-info">
           <div>
             <span>Название</span>
-            <span href="/files/policy_KI.pdf" target="_blank">Политика по выявлению и контролю конфликта интересов</span>
+            <span><a href="/files/policy_KI.pdf" target="_blank">Политика по выявлению и контролю конфликта интересов</a></span>
           </div>
           <div>
             <span>Дата раскрытия</span>
@@ -234,6 +238,7 @@ const items = [
           </div>
         </div>
       </div>
+    </div>
     </div>
   </TheContainer>
 </template>
@@ -327,8 +332,12 @@ const items = [
     max-width: 430px;
   }
 }
-.documents {
+.documents-block{
+  display: flex;
+  flex-direction: column;
+  @include adaptive-value('gap', 40, 10, 1);
   @include adaptive-value('margin-bottom', 128, 78, 1);
+  .documents {
   display:flex;
   flex-direction: column;
   @include adaptive-value('gap', 32, 24, 1);
@@ -337,24 +346,23 @@ const items = [
     line-height: calc(46 / 40);
     letter-spacing: -0.4px;
   }
-  .liberty__link-wrapper {
+    .liberty__link-wrapper {
     background: #f2f3f5;
     border-radius: 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    //justify-content: space-between;
     gap:100px;
     padding: 0 32px;
-    .liberty__link-info {
+      .liberty__link-info {
       display: flex;
       flex-direction: row;
       gap:80px;
-      div{
+        div{
         display: flex;
         flex-direction: column;
         gap: 8px;
-        span:first-child{
+          span:first-child{
           @include adaptive-value('font-size', 18, 14, 1);
           color: #052E3E;
           font-size: 13px;
@@ -362,7 +370,7 @@ const items = [
           letter-spacing: 0.26px;
           opacity: 0.5;
         }
-        span:last-child{
+          span:last-child{
           @include adaptive-value('font-size', 18, 14, 1);
           color: #052E3E;
           font-size: 18px;
@@ -370,15 +378,16 @@ const items = [
           letter-spacing: 0.36px;
         }
       }
-      div:first-child{
+        div:first-child{
         display: none;
       }
     }
-    .liberty__main-link {
+      .liberty__main-link {
       width: 50%;
       background: #f2f3f5;
     }
   }
+}
 }
 .footer {
   @include adaptive-value('padding-top', 48, 43, 1);
@@ -444,24 +453,30 @@ const items = [
   .information__list{
     margin-bottom: 32px;
   }
-  .documents{
+  .documents-block{
+    .documents{
     padding: calc(24px + 15 * (100vw - 375px) / 669);
     &__title{
-      width: 85%;
+      width: 95%;
     }
-    .liberty__link-wrapper{
-      a{
+      .liberty__link-wrapper{
+        .liberty__main-link{
         display: none;
       }
-      .liberty__link-info{
+        .liberty__link-info{
         padding: 20px 0;
         flex-direction: column;
         gap:16px;
-        div:first-child{
+          a{
+            text-decoration: underline;
+            text-underline-offset: 2px;
+          }
+          div:first-child{
           display: flex;
         }
       }
     }
+  }
 
 
   }
