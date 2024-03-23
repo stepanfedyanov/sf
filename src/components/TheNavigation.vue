@@ -1,23 +1,27 @@
 <script setup>
-import {useGlobalStore} from '../stores/global';
+import { useRoute } from 'vue-router'
+import { useGlobalStore } from '../stores/global'
 import TheButton from './TheButton.vue'
+
+const route = useRoute()
+
 
 const items = [
   {
     id: 'project',
-    title: 'О проекте',
+    title: 'О проекте'
   },
   {
     id: 'products',
-    title: 'Продукты',
+    title: 'Продукты'
   },
   {
     id: 'analytics',
-    title: 'Аналитика',
+    title: 'Аналитика'
   },
   {
     id: 'team',
-    title: 'Команда',
+    title: 'Команда'
   },
   {
     id: 'modal',
@@ -30,42 +34,52 @@ const openModal = () => {
   globalStore.changeModalOpened(true)
 }
 
-defineEmits(['openSection']);
+defineEmits(['openSection'])
+
+
 </script>
 
 <template>
   <nav class="header__nav">
     <ul class="header__nav-list">
       <li
-          class="header__nav-item animate__animated animate__fadeIn"
-          :data-wow-delay="`${0.2 * idx}s`"
-          v-for="(item, idx) in items"
-          :key="item"
+        class="header__nav-item animate__animated animate__fadeIn"
+        :data-wow-delay="`${0.2 * idx}s`"
+        v-for="(item, idx) in items"
+        :key="item"
       >
-        <span v-if="item.id!='modal'" class="header__nav-item-link" @click="$emit('openSection', item.id)">{{ item.title }}</span>
-        <span v-else class="header__nav-item-link"  @click="openModal">{{ item.title }}</span>
+        <span
+          v-if="item.id != 'modal'"
+          class="header__nav-item-link"
+          @click="$emit('openSection', item.id)"
+          >{{ item.title }}</span
+        >
+        <span v-else class="header__nav-item-link" @click="openModal">{{ item.title }}</span>
       </li>
     </ul>
     <div class="header__btns">
       <TheButton
-          class="header__btn animate__animated animate__fadeIn"
-          data-wow-delay=".2s"
-          color="white"
-          size="small"
-          href="https://app.skyfort.capital"
+        class="header__btn animate__animated animate__fadeIn"
+        data-wow-delay=".2s"
+        color="white"
+        size="small"
+        href="https://app.skyfort.capital"
       >
         Вход
       </TheButton>
-      <a href="https://app.skyfort.capital/api/auth/signup" target="_blank">
-      <TheButton
+      <a
+        :href="route.query['UTM'] ? `https://app.skyfort.capital/api/auth/signup?UTM=${route.query['UTM']}` : 'https://app.skyfort.capital/api/auth/signup'"
+        target="_blank"
+      >
+        <TheButton
           class="header__btn animate__animated animate__fadeIn"
           data-wow-delay=".4s"
           color="black"
           size="small"
-      >
-        Регистрация
-      </TheButton>
-    </a>
+        >
+          Регистрация
+        </TheButton>
+      </a>
     </div>
   </nav>
 </template>
@@ -97,7 +111,6 @@ defineEmits(['openSection']);
     @media (max-width: 1024px) {
       @include adaptive-value('margin-left', 30, 0, 1);
     }
-    
   }
 
   &__nav-item-link {
@@ -162,7 +175,7 @@ defineEmits(['openSection']);
     &__nav-list {
       display: none;
     }
-    &__nav-item:last-child{
+    &__nav-item:last-child {
       display: none;
       visibility: hidden;
     }
@@ -179,7 +192,8 @@ defineEmits(['openSection']);
     }
 
     &__mobile-btn {
-      button, a {
+      button,
+      a {
         width: calc(100% - 46px);
         margin: 0 auto;
         display: block;
@@ -266,13 +280,11 @@ defineEmits(['openSection']);
 }
 
 @media (max-width: 810px) {
-  .header__inner-row{
+  .header__inner-row {
     margin-left: -10px;
   }
-  .header__nav-item + .header__nav-item{
+  .header__nav-item + .header__nav-item {
     margin-left: 10px;
   }
 }
-
-
 </style>
