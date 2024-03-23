@@ -194,6 +194,11 @@ const closeModal = (event) => {
     font-weight: 500;
     font-size: 14px;
     line-height: 120%;
+
+    img, svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
