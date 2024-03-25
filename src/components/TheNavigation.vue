@@ -68,7 +68,7 @@ defineEmits(['openSection'])
         Вход
       </TheButton>
       <a
-        :href="route.query['UTM'] ? `https://app.skyfort.capital/api/auth/signup?UTM=${route.query['UTM']}` : 'https://app.skyfort.capital/api/auth/signup'"
+        :href="route.query['src'] ? `https://app.skyfort.capital/api/auth/signup?src=${route.query['src']}` : 'https://app.skyfort.capital/api/auth/signup'"
         target="_blank"
       >
         <TheButton
