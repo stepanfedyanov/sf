@@ -220,6 +220,8 @@ onMounted(() => {
     letter-spacing: 0.5px;
     font-weight: 300;
     @include adaptive-value('margin-bottom', 20, 14, 1);
+    
+    white-space: pre-wrap;
   }
   &__desc {
     font-size: 12px;
