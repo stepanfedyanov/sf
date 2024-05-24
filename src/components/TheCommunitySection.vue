@@ -32,13 +32,6 @@ const staff = [
     href: 'https://uk.linkedin.com/in/insmirnov'
   },
   {
-    img: './img/TheCommunitySection/staff/4.png',
-    name: 'Николай Буров',
-    position: 'Старший банкир',
-    desc: 'Многолетний опыт в индустрии Wealth Management, включая ведение клиентских портфелей и разработку сложных инвестиционных инструментов (Tinkoff Private, UBS)',
-    href: 'https://ru.linkedin.com/in/николай-буров-339a066b'
-  },
-  {
     img: './img/TheCommunitySection/staff/5.png',
     name: 'Павел Бережной',
     position: 'Старший банкир, CFA',
