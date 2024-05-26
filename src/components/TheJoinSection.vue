@@ -1,10 +1,9 @@
 <script setup>
-import TheHeader from './TheHeader.vue'
 import TheMeet from './TheMeet.vue'
 import TheClouds from './TheClouds.vue'
 import { useGlobalStore } from '../stores/global';
 import { storeToRefs } from 'pinia';
-import TheNewHeader from './NewHeader/TheNewHeader.vue';
+import TheNewHeader from './TheNewHeader.vue';
 
 const globalStore = useGlobalStore();
 const { pageIsLoaded } = storeToRefs(globalStore);

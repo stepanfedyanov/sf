@@ -1,24 +1,20 @@
 <script setup>
-import HeaderMenuItem from './HeaderMenuItem.vue'
-import { ref, computed, onMounted, toRefs } from 'vue'
+import TheHeaderMenuItem from './TheHeaderMenuItem.vue'
+import { ref, watch, toRefs, computed } from 'vue'
 import { gsap } from 'gsap'
 
 const props = defineProps({
     isShow: Boolean,
-    items: Array
+    items: Array,
 })
-const {isShow, items} = toRefs(props)
+const { isShow, items } = toRefs(props)
 
-const new_items = computed(
-        () =>
-            this.items.sort((a, b) => {
+const sortedItems = computed(()=> items.value.slice().sort((a, b) => {
                 return b?.products?.length ?? 0 - a?.products?.length ?? 0;
-            }),
-        [items],
-    )
+}))
+
 
 const menuRef = ref(null);
-const menuContentRef = ref(null);
 
 function splitArrayIntoParts(arr, numParts){
   const length = arr.length;
@@ -33,62 +29,58 @@ function splitArrayIntoParts(arr, numParts){
     parts.push(arr.slice(start, end));
     start = end;
   }
-
   return parts;
 };
 
-const [column1, column2, column3] = splitArrayIntoParts(new_items, 3);
+let [column1, column2, column3] = splitArrayIntoParts(sortedItems.value, 3);
+watch(sortedItems, () => {
+    [column1, column2, column3] = splitArrayIntoParts(sortedItems.value, 3);
+})
 
-    onMounted(
-        () => {
-          const duration = 0.3;
-          if (new_items.value.length) {
-            if (isShow.value) {
-              gsap.to(menuRef.value, {
-                opacity: 1,
-                display: 'block',
-                duration,
-              });
-            } else {
-              gsap.to(menuRef.value, {
-                opacity: 0,
-                duration,
-              });
-              gsap.to(menuRef.value, {
-                display: 'none',
-                delay: duration,
-              });
-            }
-          }
-        },
-        {
-          dependencies: [isShow],
-        },
-      );
+watch(isShow, () => {
+    const duration = 0.3;
+    if (sortedItems.value.length) {
+        if (isShow.value) {
+        gsap.to( menuRef.value, {
+        opacity: 1,
+        display: 'block',
+        duration,
+        });
+      } else {
+        gsap.to( menuRef.value, {
+        opacity: 0,
+        duration,
+        });
+          gsap.to( menuRef.value, {
+          display: 'none',
+          delay: duration,
+        });
+      }
+    }
+});
 
 </script>
 <template>
-  <!-- if (!items.length) return null; -->
     <div class="box" ref="menuRef">
-      <div class="menu" ref="menuContentRef">
+      <div class="menu">
         <div class="column">
-            <HeaderMenuItem item="item" 
+            <TheHeaderMenuItem 
                 v-for="item in column1"
-                :key="item.category.slug"
+                :key="item.tag.slug"
                 :item="item" 
             />
         </div>
         <div class="column">
-            <HeaderMenuItem item="item" 
+            <TheHeaderMenuItem  
                 v-for="item in column2"
-                :key="item.category.slug"
+                :key="item.tag.slug"
                 :item="item" 
             />
         </div>
         <div class="column">
-            <HeaderMenuItem item="item" 
+            <TheHeaderMenuItem
                 v-for="item in column3"
-                :key="item.category.slug"
+                :key="item.tag.slug"
                 :item="item" 
             />
         </div>
