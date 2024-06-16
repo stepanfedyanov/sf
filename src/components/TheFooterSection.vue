@@ -2,7 +2,7 @@
 import TheButton from './TheButton.vue'
 import TheContainer from './TheContainer.vue'
 
-import {RouterLink} from 'vue-router'
+import { RouterLink } from 'vue-router'
 
 const socialsList = [
   {
@@ -20,23 +20,7 @@ const socialsList = [
 </defs>
 </svg>`
   },
-  {
-    title: 'instagram',
-    href: 'https://www.instagram.com/skyfort.capital/',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 38 37" fill="none">
-<g clip-path="url(#clip0_4_5429)">
-<path d="M22.3533 26.8984H15.5886C12.9892 26.8984 10.8909 24.7844 10.8909 22.2007V15.436C10.8909 12.8366 13.0048 10.7383 15.5886 10.7383H22.3533C24.9527 10.7383 27.051 12.8522 27.051 15.436V22.2007C27.051 24.8001 24.9371 26.8984 22.3533 26.8984ZM15.5886 12.1476C13.7721 12.1476 12.3002 13.6195 12.3002 15.436V22.2007C12.3002 24.0171 13.7721 25.4891 15.5886 25.4891H22.3533C24.1698 25.4891 25.6417 24.0171 25.6417 22.2007V15.436C25.6417 13.6195 24.1698 12.1476 22.3533 12.1476H15.5886Z" fill="white"/>
-<path d="M18.971 22.9523C16.6847 22.9523 14.837 21.1045 14.837 18.8183C14.837 16.5321 16.6847 14.6844 18.971 14.6844C21.2572 14.6844 23.105 16.5321 23.105 18.8183C23.105 21.1045 21.2572 22.9523 18.971 22.9523ZM18.971 16.0937C17.4677 16.0937 16.2463 17.3151 16.2463 18.8183C16.2463 20.3216 17.4677 21.543 18.971 21.543C20.4742 21.543 21.6956 20.3216 21.6956 18.8183C21.6956 17.3151 20.4742 16.0937 18.971 16.0937Z" fill="white"/>
-<path d="M23.2929 15.483C23.8377 15.483 24.2794 15.0413 24.2794 14.4964C24.2794 13.9516 23.8377 13.5099 23.2929 13.5099C22.748 13.5099 22.3063 13.9516 22.3063 14.4964C22.3063 15.0413 22.748 15.483 23.2929 15.483Z" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M20.3177 34.9301H18.0784C13.6939 34.9301 8.9022 31.8453 7.03877 29.747C-2.81079 18.6917 4.70556 1.71738 19.3625 1.71738C21.774 1.71738 24.0445 2.2811 25.9549 3.14235C28.1002 4.1132 29.1964 5.00577 30.8249 6.43074C35.507 10.5491 37.1355 18.77 34.5988 24.6422C34.129 25.707 33.7845 26.3177 33.2208 27.2729C30.7779 31.3129 25.3599 34.9301 20.3333 34.9301H20.3177ZM16.8727 0.198454C13.5216 0.73086 9.84174 2.07753 7.43025 4.36375C4.62727 7.01012 3.32757 8.49773 1.85562 12.5691C-0.618519 19.459 2.0122 28.275 7.53986 32.4403C11.3763 35.3216 16.262 37.3573 21.4451 36.4804C24.1228 36.0263 26.3464 35.4156 28.2725 34.1942C32.1873 31.7044 34.8493 28.9797 36.4935 24.1724C38.5605 18.175 37.1512 11.1911 33.2051 6.60299C29.4782 2.29676 23.4025 -0.835041 16.8727 0.198454Z" fill="white"/>
-</g>
-<defs>
-<clipPath id="clip0_4_5429">
-<rect width="36.5195" height="36.6861" fill="white" transform="translate(0.922089)"/>
-</clipPath>
-</defs>
-</svg>`
-  },
+
   {
     title: 'youtube',
     href: 'https://www.youtube.com/@skyfortrussia',
@@ -53,21 +37,7 @@ const socialsList = [
 </svg>
 `
   },
-  {
-    title: 'facebook',
-    href: 'https://www.facebook.com/skyfortrussia',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
-<g clip-path="url(#clip0_4_5428)">
-<path d="M20.076 14.0948V16.336H22.9756L22.5054 19.4237H20.0917V26.8057H16.7846V19.4237H14.0418V16.336H16.7846V13.2327C16.7846 11.4146 18.2579 9.95703 20.0603 9.95703H23.1637V12.7469H21.4396C20.6873 12.7469 20.0917 13.3581 20.0917 14.0948H20.076Z" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16.8787 1.79187C24.0101 0.882823 30.2324 4.80113 33.273 10.3965C36.6898 16.6971 35.577 24.1419 31.2668 29.173C28.665 32.2136 24.2922 34.7056 20.3268 34.8937C14.8882 35.1445 11.6908 34.0473 7.77248 30.9284C5.06099 28.7655 2.67864 24.8942 2.03604 20.0041C1.11131 13.0452 5.28042 6.65057 10.531 3.76669C12.7409 2.54418 14.0732 2.13668 16.8787 1.7762V1.79187ZM15.954 0.208874C14.5747 0.522339 13.65 0.632051 12.3491 1.11792C9.98242 2.01129 7.06718 3.75102 5.45282 5.60046C5.06099 6.03931 4.71618 6.35278 4.32434 6.86999C1.44045 10.7569 -0.0641914 14.5969 0.531395 20.8348C1.4718 30.5836 11.7222 38.0597 21.0321 36.4297C25.6871 35.6147 30.0286 33.5928 32.7714 29.8939C35.8277 25.7719 37.5048 21.3991 36.7368 15.7254C35.7807 8.67241 30.4831 2.79496 24.1981 0.882823C22.0509 0.224547 18.3363 -0.324015 15.9383 0.224547L15.954 0.208874Z" fill="white"/>
-</g>
-<defs>
-<clipPath id="clip0_4_5428">
-<rect width="36.5195" height="36.6537" fill="white" transform="translate(0.402588)"/>
-</clipPath>
-</defs>
-</svg>`
-  },
+
   {
     title: 'linkedin',
     href: 'https://linkedin.com/company/skyfortcapital',
@@ -101,9 +71,8 @@ const navList = [
     title: 'Раскрытие информации',
     href: 'information',
     router: true
-  },
+  }
 ]
-
 </script>
 
 <template>
@@ -112,9 +81,9 @@ const navList = [
       <div class="footer__inner">
         <div class="footer__top">
           <h2
-              class="footer__title wow animate__animated animate__fadeInUp"
-              data-wow-delay="0.2s"
-              data-wow-duration="1200"
+            class="footer__title wow animate__animated animate__fadeInUp"
+            data-wow-delay="0.2s"
+            data-wow-duration="1200"
           >
             Включайтесь в&nbsp;сообщество
           </h2>
@@ -123,42 +92,40 @@ const navList = [
             финансовых советников, экспертов и&nbsp;частных инвесторов
           </p>
           <TheButton
-              href="https://t.me/skyfortrussia"
-              target="_blank"
-              class="flex wow animate__animated animate__fadeIn"
-              data-wow-delay="0.1s"
-              size="big"
-              color="blue"
-              flex="flex"
+            href="https://t.me/skyfortrussia"
+            target="_blank"
+            class="flex wow animate__animated animate__fadeIn"
+            data-wow-delay="0.1s"
+            size="big"
+            color="blue"
+            flex="flex"
           >
             <svg
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                width="20"
-                height="20"
-                viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="20"
+              height="20"
+              viewBox="0 0 48 48"
             >
               <path
-                  d="M5.83,23.616c12.568-5.529,28.832-12.27,31.077-13.203c5.889-2.442,7.696-1.974,6.795,3.434 c-0.647,3.887-2.514,16.756-4.002,24.766c-0.883,4.75-2.864,5.313-5.979,3.258c-1.498-0.989-9.059-5.989-10.7-7.163 c-1.498-1.07-3.564-2.357-0.973-4.892c0.922-0.903,6.966-6.674,11.675-11.166c0.617-0.59-0.158-1.559-0.87-1.086 c-6.347,4.209-15.147,10.051-16.267,10.812c-1.692,1.149-3.317,1.676-6.234,0.838c-2.204-0.633-4.357-1.388-5.195-1.676 C1.93,26.43,2.696,24.995,5.83,23.616z"
+                d="M5.83,23.616c12.568-5.529,28.832-12.27,31.077-13.203c5.889-2.442,7.696-1.974,6.795,3.434 c-0.647,3.887-2.514,16.756-4.002,24.766c-0.883,4.75-2.864,5.313-5.979,3.258c-1.498-0.989-9.059-5.989-10.7-7.163 c-1.498-1.07-3.564-2.357-0.973-4.892c0.922-0.903,6.966-6.674,11.675-11.166c0.617-0.59-0.158-1.559-0.87-1.086 c-6.347,4.209-15.147,10.051-16.267,10.812c-1.692,1.149-3.317,1.676-6.234,0.838c-2.204-0.633-4.357-1.388-5.195-1.676 C1.93,26.43,2.696,24.995,5.83,23.616z"
               ></path>
-            </svg
-            >
+            </svg>
             Telegram
-          </TheButton
-          >
+          </TheButton>
         </div>
         <div class="footer__bottom">
           <div class="footer__bottom-line">
             <div class="footer__logo-wrapper wow animate__animated animate__fadeIn">
-              <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип"/>
+              <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип" />
             </div>
             <ul class="socials__list">
               <li
-                  class="socials__item wow animate__animated animate__fadeIn"
-                  :data-wow-delay="parseFloat(`${0.2 * idx}`) + 's'"
-                  v-for="(item, idx) in socialsList"
-                  :key="item.title"
+                class="socials__item wow animate__animated animate__fadeIn"
+                :data-wow-delay="parseFloat(`${0.2 * idx}`) + 's'"
+                v-for="(item, idx) in socialsList"
+                :key="item.title"
               >
                 <a class="socials__link" :href="item.href" target="_blank" v-html="item.icon"></a>
               </li>
@@ -166,70 +133,106 @@ const navList = [
           </div>
           <div class="footer__bottom-line">
             <span>
-              Работать в Skyfort: <a class="one_link" href="mailto:recruiting@skyfort.capital">recruiting@skyfort.capital</a>
+              Работать в Skyfort:
+              <a class="one_link" href="mailto:recruiting@skyfort.capital"
+                >recruiting@skyfort.capital</a
+              >
             </span>
           </div>
           <div class="footer__bottom-line">
             <span>
-              Связаться с нами: <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital,</a>&nbsp;
-              <a class="one_link" href="https://t.me/skyfort_support" target="_blank">Telegram,</a>&nbsp;
+              Связаться с нами:
+              <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital,</a
+              >&nbsp;
+              <a class="one_link" href="https://t.me/skyfort_support" target="_blank">Telegram,</a
+              >&nbsp;
               <a class="one_link" href="https://wa.me/+79031005481" target="_blank">WhatsApp</a>
             </span>
           </div>
           <div class="footer__bottom-line">
             <span>
-              По вопросам PR и коммуникаций: 
-              <a class="one_link" href="https://t.me/sofyapaskal" target="_blank">@sofyapaskal</a>
+              По вопросам PR и коммуникаций:
+              <a class="one_link" href="https://t.me/David_cap" target="_blank">@David_cap</a>
               и
-              <a class="one_link" href="mailto:sofia.paskal@skyfort.capital">sofia.paskal@skyfort.capital</a>
+              <a
+                class="one_link"
+                href="mailto:david.dadiani@skyfort.capital
+"
+                >david.dadiani@skyfort.capital
+              </a>
             </span>
           </div>
           <div class="footer__bottom-line">
             <nav class="footer__nav">
               <ul class="footer__nav-list">
                 <li
-                    class="footer__nav-item wow animate__animated animate__fadeIn"
-                    :data-wow-delay="parseFloat(`${0.3 * idx}`) + 's'"
-                    v-for="(item, idx) in navList"
-                    :key="item.title"
+                  class="footer__nav-item wow animate__animated animate__fadeIn"
+                  :data-wow-delay="parseFloat(`${0.3 * idx}`) + 's'"
+                  v-for="(item, idx) in navList"
+                  :key="item.title"
                 >
                   <router-link
-                      v-if="item.router"
-                      class="footer__nav-link"
-                      :to="item.href"
-                      target="_blank"
+                    v-if="item.router"
+                    class="footer__nav-link"
+                    :to="item.href"
+                    target="_blank"
                   >
                     {{ item.title }}
                   </router-link>
 
-                  <a
-                      v-else
-                      class="footer__nav-link"
-                      :href="item.href"
-                      target="_blank"
-                  >
+                  <a v-else class="footer__nav-link" :href="item.href" target="_blank">
                     {{ item.title }}
                   </a>
                 </li>
               </ul>
             </nav>
             <a
-                class="footer__bottom-link wow animate__animated animate__fadeIn"
-                data-wow-delay="0.6s"
-                data-wow-duration="1600">
+              class="footer__bottom-link wow animate__animated animate__fadeIn"
+              data-wow-delay="0.6s"
+              data-wow-duration="1600"
+            >
               &#169; 2024 Skyfort
             </a>
           </div>
         </div>
         <div class="disclaimer">
           <div>
-            <span>Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br/>ИНН 9704220707; Зарегистрировано: 13.09.2023<br/>Включено в реестр инвестиционных советников ЦБ РФ <a class="disclaimer__link" href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo=" target="_blank">под номером 238</a> от 13.03.2024</span>
-            <span>Информация, размещённая на данном веб-сайте, не является индивидуальной инвестиционной рекомендацией, и финансовые инструменты либо операции, упомянутые в ней, могут не соответствовать вашему инвестиционному профилю и инвестиционным целям (ожиданиям). Определение соответствия финансового инструмента либо операции вашим интересам, инвестиционным целям, инвестиционному горизонту и уровню допустимого риска является вашей задачей.</span>
+            <span
+              >Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br />ИНН 9704220707;
+              Зарегистрировано: 13.09.2023<br />Включено в реестр инвестиционных советников ЦБ РФ
+              <a
+                class="disclaimer__link"
+                href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo="
+                target="_blank"
+                >под номером 238</a
+              >
+              от 13.03.2024</span
+            >
+            <span
+              >Информация, размещённая на данном веб-сайте, не является индивидуальной
+              инвестиционной рекомендацией, и финансовые инструменты либо операции, упомянутые в
+              ней, могут не соответствовать вашему инвестиционному профилю и инвестиционным целям
+              (ожиданиям). Определение соответствия финансового инструмента либо операции вашим
+              интересам, инвестиционным целям, инвестиционному горизонту и уровню допустимого риска
+              является вашей задачей.</span
+            >
           </div>
           <div>
-            <span>Юридический адрес: 125047, город Москва, вн. тер. г. муниципальный округ Тверской, ул. Бутырский вал, д. 10</span>
-            <span>ООО «КЭПИТАЛ БОРД» (ОГРН 1237700608309, ИНН 9704220707), действующее под брендом Skyfort, не несёт ответственности за возможные убытки в случае совершения операций либо инвестирования в финансовые инструменты, упомянутые в данной информации, и не рекомендует использовать указанную информацию в качестве единственного источника информации при принятии инвестиционного решения.</span>
-            <span>Используемый технологический стек: React 17.0.2, Python 3.9.6, Vue 3.2.37, PostgreSQL 13.3</span>
+            <span
+              >Юридический адрес: 125047, город Москва, вн. тер. г. муниципальный округ Тверской,
+              ул. Бутырский вал, д. 10</span
+            >
+            <span
+              >ООО «КЭПИТАЛ БОРД» (ОГРН 1237700608309, ИНН 9704220707), действующее под брендом
+              Skyfort, не несёт ответственности за возможные убытки в случае совершения операций
+              либо инвестирования в финансовые инструменты, упомянутые в данной информации, и не
+              рекомендует использовать указанную информацию в качестве единственного источника
+              информации при принятии инвестиционного решения.</span
+            >
+            <span
+              >Используемый технологический стек: React 17.0.2, Python 3.9.6, Vue 3.2.37, PostgreSQL
+              13.3</span
+            >
           </div>
         </div>
       </div>
@@ -238,28 +241,39 @@ const navList = [
         <div class="footer__bottom">
           <div class="footer__logo-wrapper">
             <div>
-              <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип"/>
+              <img class="footer__logo-img" src="/img/TheFooterSection/logo.svg" alt="Логотип" />
             </div>
             <a class="footer__bottom-link">&#169; 2024 Skyfort</a>
           </div>
           <div class="one_link_wrapper">
             <span>
-              Работать в Skyfort: <a class="one_link" href="mailto:recruiting@skyfort.capital">recruiting@skyfort.capital</a>
+              Работать в Skyfort:
+              <a class="one_link" href="mailto:recruiting@skyfort.capital"
+                >recruiting@skyfort.capital</a
+              >
             </span>
           </div>
           <div class="one_link_wrapper">
             <span>
-              Связаться с нами: <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital,</a><br/>
-              <a class="one_link" href="https://t.me/skyfort_support" target="_blank">Telegram,</a>&nbsp;
+              Связаться с нами:
+              <a class="one_link" href="mailto:support@skyfort.capital">support@skyfort.capital,</a
+              ><br />
+              <a class="one_link" href="https://t.me/skyfort_support" target="_blank">Telegram,</a
+              >&nbsp;
               <a class="one_link" href="https://wa.me/+79031005481" target="_blank">WhatsApp</a>
             </span>
           </div>
           <div class="one_link_wrapper">
             <span>
-              По вопросам PR и коммуникаций: 
-              <a class="one_link" href="https://t.me/sofyapaskal" target="_blank">@sofyapaskal</a><br/>
+              По вопросам PR и коммуникаций:
+              <a class="one_link" href="https://t.me/David_cap" target="_blank">@David_cap</a><br />
               и
-              <a class="one_link" href="mailto:sofia.paskal@skyfort.capital">sofia.paskal@skyfort.capital</a>
+              <a
+                class="one_link"
+                href="mailto:david.dadiani@skyfort.capital
+"
+                >david.dadiani@skyfort.capital
+              </a>
             </span>
           </div>
           <ul class="socials__list">
@@ -279,14 +293,42 @@ const navList = [
         </div>
         <div class="disclaimer">
           <div>
-            <span>Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br/>ИНН 9704220707; Зарегистрировано: 13.09.2023<br/>Включено в реестр инвестиционных советников ЦБ РФ <a class="disclaimer__link" href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo=" target="_blank">под номером 238</a> от 13.03.2024</span>
-            <span>Юридический адрес: 125047, город Москва, вн. тер. г. муниципальный округ Тверской, ул. Бутырский вал, д. 10</span>
-
+            <span
+              >Общество с ограниченной ответственностью «КЭПИТАЛ БОРД»<br />ИНН 9704220707;
+              Зарегистрировано: 13.09.2023<br />Включено в реестр инвестиционных советников ЦБ РФ
+              <a
+                class="disclaimer__link"
+                href="https://cbr.ru/registries/?CF.Search=%D0%95%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9+%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80+%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&CF.TagId=&CF.Date.Time=Any&CF.Date.DateFrom=&CF.Date.DateTo="
+                target="_blank"
+                >под номером 238</a
+              >
+              от 13.03.2024</span
+            >
+            <span
+              >Юридический адрес: 125047, город Москва, вн. тер. г. муниципальный округ Тверской,
+              ул. Бутырский вал, д. 10</span
+            >
           </div>
           <div>
-            <span>Информация, размещённая на данном веб-сайте, не является индивидуальной инвестиционной рекомендацией, и финансовые инструменты либо операции, упомянутые в ней, могут не соответствовать вашему инвестиционному профилю и инвестиционным целям (ожиданиям). Определение соответствия финансового инструмента либо операции вашим интересам, инвестиционным целям, инвестиционному горизонту и уровню допустимого риска является вашей задачей.</span>
-            <span>ООО «КЭПИТАЛ БОРД» (ОГРН 1237700608309, ИНН 9704220707), действующее под брендом Skyfort, не несёт ответственности за возможные убытки в случае совершения операций либо инвестирования в финансовые инструменты, упомянутые в данной информации, и не рекомендует использовать указанную информацию в качестве единственного источника информации при принятии инвестиционного решения.</span>
-            <span>Используемый технологический стек: React 17.0.2, Python 3.9.6, Vue 3.2.37, PostgreSQL 13.3</span>
+            <span
+              >Информация, размещённая на данном веб-сайте, не является индивидуальной
+              инвестиционной рекомендацией, и финансовые инструменты либо операции, упомянутые в
+              ней, могут не соответствовать вашему инвестиционному профилю и инвестиционным целям
+              (ожиданиям). Определение соответствия финансового инструмента либо операции вашим
+              интересам, инвестиционным целям, инвестиционному горизонту и уровню допустимого риска
+              является вашей задачей.</span
+            >
+            <span
+              >ООО «КЭПИТАЛ БОРД» (ОГРН 1237700608309, ИНН 9704220707), действующее под брендом
+              Skyfort, не несёт ответственности за возможные убытки в случае совершения операций
+              либо инвестирования в финансовые инструменты, упомянутые в данной информации, и не
+              рекомендует использовать указанную информацию в качестве единственного источника
+              информации при принятии инвестиционного решения.</span
+            >
+            <span
+              >Используемый технологический стек: React 17.0.2, Python 3.9.6, Vue 3.2.37, PostgreSQL
+              13.3</span
+            >
           </div>
         </div>
       </div>
@@ -305,28 +347,28 @@ const navList = [
     display: none;
   }
 
-  .disclaimer{
+  .disclaimer {
     margin-top: 16px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 31px;
-    div{
+    div {
       display: flex;
       flex-direction: column;
       min-height: 170px;
       height: 170px;
       justify-content: space-between;
-      span{
+      span {
         opacity: 0.5;
         color: white;
-        font-family: "Articulat CF", sans-serif;
+        font-family: 'Articulat CF', sans-serif;
         font-size: 13px;
         font-style: normal;
         font-weight: 400;
         line-height: 18px; /* 138.462% */
         letter-spacing: -0.195px;
-        .disclaimer__link{
+        .disclaimer__link {
           text-decoration: underline;
           text-underline-offset: 2px;
         }
@@ -365,8 +407,8 @@ const navList = [
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .one_link{
-      color: #99C2D6;
+    .one_link {
+      color: #99c2d6;
       text-decoration: underline;
       text-underline-offset: 3px;
     }
@@ -387,7 +429,6 @@ const navList = [
   &__bottom-line:nth-child(3) {
     margin-bottom: -20px;
   }
-
 
   &__bottom-line:last-child {
     border-bottom: 1px rgba(255, 255, 255, 0.3) solid;
@@ -505,7 +546,6 @@ const navList = [
       justify-content: center;
     }
 
-
     &__bottom-link {
       display: block;
       text-align: center;
@@ -548,12 +588,12 @@ const navList = [
   }
 }
 @media (max-width: 820px) {
-  ._mobile{
+  ._mobile {
     padding: 0 32px;
-    .footer__logo-wrapper{
+    .footer__logo-wrapper {
       margin-bottom: 10px;
-      a{
-        color: #FFF;
+      a {
+        color: #fff;
         text-align: center;
         font-size: 10px;
         font-style: normal;
@@ -561,32 +601,32 @@ const navList = [
         line-height: 12px;
       }
     }
-    .one_link_wrapper{
-      color: #FFF;
+    .one_link_wrapper {
+      color: #fff;
       text-align: left;
       font-size: 13px;
       line-height: 20px;
-      .one_link{
-        color: #99C2D6;
+      .one_link {
+        color: #99c2d6;
         text-decoration: underline;
         text-underline-offset: 3px;
       }
     }
-    .socials__list{
+    .socials__list {
       justify-content: space-between;
       margin-top: 10px;
-      .socials__item{
+      .socials__item {
         width: 33px;
       }
     }
-    .footer__nav{
-      .footer__nav-list{
+    .footer__nav {
+      .footer__nav-list {
         justify-content: start;
         flex-wrap: wrap;
-        .footer__nav-item{
+        .footer__nav-item {
           margin-right: 19px;
           margin-left: 0;
-          color: #FFF;
+          color: #fff;
           text-align: center;
           font-size: 10px;
           font-style: normal;
@@ -596,20 +636,20 @@ const navList = [
         }
       }
     }
-    .disclaimer{
+    .disclaimer {
       margin: 24px 0;
       padding-top: 24px;
       border-top: 1px rgba(255, 255, 255, 0.3) solid;
       flex-direction: column;
-      gap:5px;
-      div{
+      gap: 5px;
+      div {
         justify-content: start;
         align-items: start;
         min-height: 0;
         height: auto;
         gap: 5px;
-        span{
-          color: #FFF;
+        span {
+          color: #fff;
           text-align: start;
           font-size: 10px;
           line-height: 20px;
